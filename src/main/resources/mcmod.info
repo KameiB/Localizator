@@ -1,0 +1,16 @@
+﻿[
+{
+  "modid": "${mod_id}",
+  "name": "${mod_name}",
+  "description": "Translatable Entity Name, yay!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://legacy.curseforge.com/minecraft/mc-mods/loc-entity-name",
+  "updateUrl": "",
+  "authorList": ["KameiB"],
+  "credits": "fonnymunkey",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

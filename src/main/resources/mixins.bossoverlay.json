@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "locentitynamemixin.mixin",
+  "refmap": "mixins.locentitynamemixin.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "client": [
+    "vanilla.BossOverlayMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}
