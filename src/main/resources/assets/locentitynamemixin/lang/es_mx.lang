@@ -1,1 +1,21 @@
+#PARSE_ESCAPES
 entity.locentityname.KameiB.name=§2El §a§lKame
+
+# Config
+config.locentityname.mixins=Mixins
+config.locentityname.mixins.tooltip=Habilitar/Deshabilitar §dMixins (ajustes)
+config.locentityname.client=Cliente
+config.locentityname.client.tooltip=Ver reflejados los §dmixins §een el cliente
+config.locentityname.mixins.vanillaMobLocCustomNamesMixin=(Minecraft) Mixin Nombres de mobs
+config.locentityname.mixins.vanillaMobLocCustomNamesMixin.tooltip=Habilita la configuración Cliente: \n- §b(Minecraft) Traducir nombres de mobs§r.
+config.locentityname.mixins.vanillaBossLocCustomNamesMixin=(Minecraft) Mixin Nombres de Boss
+config.locentityname.mixins.vanillaBossLocCustomNamesMixin.tooltip=Habilita la configuración Cliente: \n- §b(Minecraft) Traducir nombres de Boss§r.
+config.locentityname.mixins.neatLocHealthBarMixin=(Neat) Mixin Barra de salud
+config.locentityname.mixins.neatLocHealthBarMixin.tooltip=Habilita la configuración Cliente: \n- §b(Neat) Traducir nombre en barra de salud§r.
+
+config.locentityname.client.vanillaMobLocCustomNames=(Minecraft) Traducir nombres de mobs
+config.locentityname.client.vanillaMobLocCustomNames.tooltip=Aplica el mixin: \n- §d(Minecraft) Mixin Nombres de mobs§r. \n§cEste mixin necesita estar §aHabilitado§c!
+config.locentityname.client.vanillaBossLocCustomNames=(Minecraft) Traducir nombres de Boss
+config.locentityname.client.vanillaBossLocCustomNames.tooltip=Aplica el mixin: \n- §d(Minecraft) Mixin Nombres de Boss§r. \n§cEste mixin necesita estar §aHabilitado§c!
+config.locentityname.client.neatLocHealthBar=(Neat) Traducir nombre en barra de salud
+config.locentityname.client.neatLocHealthBar.tooltip=Aplica el mixin: \n- §d(Neat) Mixin Barra de salud§r. \n§cEste mixin necesita estar §aHabilitado§c!

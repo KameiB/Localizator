@@ -29,12 +29,6 @@ compileJava{
 //sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    //mappings channel: 'snapshot', version: '20171003-1.12'
     mappings channel: mappings_channel, version: mappings_version
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
@@ -90,14 +84,22 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-
-    implementation "org.spongepowered:mixin:0.8.5"
-    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     //minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    implementation "org.spongepowered:mixin:0.8.5"
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+
+    // The dependency format is as follows: "curse.maven:<mod_name>-<projectid>:<fileids>"
+    // The Mod Name is whatever you want to call it.
+    // The Project ID is a number shown at the mod's CurseForge main page.
+    // For the File ID, go to the mod's "Files" tab, then select a specific File.
+    // The numbers after the last '\' in the address bar is what you are looking for.
+    // See https://www.cursemaven.com/ for reference.
+    implementation fg.deobf("curse.maven:Neat-xplat-238372:2595310")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
