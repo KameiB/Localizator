@@ -17,7 +17,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'maven-publish'
 
 version = "${mod_version}"
-//group = 'com.kameib.locentitynamemixin' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+//group = 'com.kameib.localizator' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 group = "${mod_id}"
 archivesBaseName = "${file_name}-1.12.2"
 
@@ -100,6 +100,15 @@ dependencies {
     // The numbers after the last '\' in the address bar is what you are looking for.
     // See https://www.cursemaven.com/ for reference.
     implementation fg.deobf("curse.maven:Neat-xplat-238372:2595310")
+    
+    implementation fg.deobf("curse.maven:CarrotsLib-311327:2660247") // Needed for ArmorUnderwear
+    implementation fg.deobf("curse.maven:ArmorUnderwear-310383:2660325")
+    
+    implementation fg.deobf("curse.maven:FantasticLib-315773:3341793") // Needed for SetBonus
+    implementation fg.deobf("curse.maven:SetBonus-317158:3075168")
+    
+    implementation fg.deobf("curse.maven:TschippLib-262886:3459390") // Needed for ForgottenItems
+    implementation fg.deobf("curse.maven:ForgottenItems-262884:4167346")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

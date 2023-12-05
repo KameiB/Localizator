@@ -3,10 +3,10 @@
   "package": "localizator.mixin",
   "refmap": "mixins.localizator.refmap.json",
   "compatibilityLevel": "JAVA_8",
-  "target": "@env(DEFAULT)",
+  "target": "@env(INIT)",
   "minVersion": "0.8",
   "mixins": [
-    "neat.NeatHealthBarRendererMixin"
+    "LocalizatorLoader"
   ],
   "injectors": {
     "maxShiftBy": 10

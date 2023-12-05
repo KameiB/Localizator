@@ -5,8 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
-  "mixins": [
-    "neat.NeatHealthBarRendererMixin"
+  "client": [
+    "setbonus.TooltipRendererMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

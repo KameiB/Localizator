@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "forgottenitems.ItemBarkifiedAxeMixin",
+    "forgottenitems.ItemBoundAxeMixin",
+    "forgottenitems.ItemBoundPickaxeMixin",
+    "forgottenitems.ItemBoundShovelMixin",    
+    "forgottenitems.ItemCraftingRuneMixin",
+    "forgottenitems.ItemCushionedBootsMixin",
+    "forgottenitems.ItemEnderTalismanMixin",
+    "forgottenitems.ItemExplosionPickaxeMixin",
+    "forgottenitems.ItemGamblePickaxeMixin",
+    "forgottenitems.ItemGemMixin",
+    "forgottenitems.ItemGolemArmorMixin",
+    "forgottenitems.ItemHastyPickaxeMixin",
+    "forgottenitems.ItemHeatTalismanMixin",
+    "forgottenitems.ItemLifebeltMixin",
+    "forgottenitems.ItemObsidianHarvesterMixin",
+    "forgottenitems.ItemShockTalismanMixin",
+    "forgottenitems.ItemTalismanMixin",
+    "forgottenitems.ItemVeinPickaxeMixin",
+    "forgottenitems.ItemWaterTalismanMixin",
+    "forgottenitems.ItemWindTalismanMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

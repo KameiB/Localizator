@@ -1,0 +1,34 @@
+#PARSE_ESCAPES
+entity.localizator.KameiB.name=§aThe §2§lKameiB
+book.localizator.Example.title=§b§oWhen I die
+book.localizator.Example.author=§dAnna
+book.localizator.Example.page.1=When I die,\nI'll die by myself.\nNo one will die instead.\nWhen I feel ready\nI'll tell you,\n§o"Fynn, put me standing up",\nand will look\nand laugh happily.\nIf I fall down,\nit means I died.\n\n§r            FIN
+book.localizator.Example.lore=A great book
+
+# Config
+config.localizator.mixins=Mixins
+config.localizator.mixins.tooltip=Enable/Disable §dMixins (Tweaks)
+config.localizator.client=Client
+config.localizator.client.tooltip=Reflect Enabled §dMixins §eat Client Side
+config.localizator.mixins.minecraftMobLocCustomNamesMixin=(Minecraft) Mob Custom Names Mixin
+config.localizator.mixins.minecraftMobLocCustomNamesMixin.tooltip=Enables the Client config: \n- §b(Minecraft) Translate Mob Custom Names§r.
+config.localizator.mixins.minecraftBossLocCustomNamesMixin=(Minecraft) Boss Custom Names Mixin
+config.localizator.mixins.minecraftBossLocCustomNamesMixin.tooltip=Enables the Client config: \n- §b(Minecraft) Translate Boss Custom Names§r.
+config.localizator.mixins.minecraftLocLoreMixin=(Minecraft) Localized Lore Mixin
+config.localizator.mixins.minecraftLocLoreMixin.tooltip=Enables Localized Lore "LocLore" NBT tag support for items.
+config.localizator.mixins.minecraftLocWrittenBookMixin=(Minecraft) Localized Written Book Mixin
+config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Enables Localized Title "locTitle" and Author "locAuthor" NBT tags support for Written Books.
+config.localizator.mixins.neatLocHealthBarMixin=(Neat) Health Bar Mixin
+config.localizator.mixins.neatLocHealthBarMixin.tooltip=Enables the Client config: \n- §b(Neat) Translate Names In Health Bar§r.
+config.localizator.mixins.armorunderOzzyLinerMixin=(ArmorUnder) Applies Ozzy Liner text Mixin
+config.localizator.mixins.armorunderOzzyLinerMixin.tooltip=Localizes the MILD/COOL/WARM hardcoded texts when applying an Ozzy liner to a piece of armor.
+config.localizator.mixins.setbonusTooltipMixin=(SetBonus) Tooltip Mixin
+config.localizator.mixins.setbonusTooltipMixin.tooltip=Enables support for Language keys in Set and Bonus names (config file).
+
+config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
+config.localizator.client.minecraftMobLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Mob Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
+config.localizator.client.minecraftBossLocCustomNames=(Minecraft) Translate Boss Custom Names
+config.localizator.client.minecraftBossLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Boss Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
+config.localizator.client.neatLocHealthBar=(Neat) Translate Names In Health Bar
+config.localizator.client.neatLocHealthBar.tooltip=Applies the Mixin:\n- §d(Neat) Health Bar Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
+
