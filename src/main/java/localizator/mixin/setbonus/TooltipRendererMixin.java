@@ -30,6 +30,7 @@ public class TooltipRendererMixin {
      */
     @Overwrite
     @SubscribeEvent(priority = EventPriority.LOWEST)
+    // Line 29
     public static void tooltips(ItemTooltipEvent event) {
         if (SetBonusConfig.clientSettings.enableTooltips) {
             EntityPlayer player = event.getEntityPlayer();

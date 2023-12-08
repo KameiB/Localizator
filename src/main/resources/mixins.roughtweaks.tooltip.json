@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "roughtweaks.ItemHealMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

@@ -29,19 +29,17 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
 
     public LocalizatorPlugin(){
         MixinBootstrap.init();
-        // First load core (Vanilla) ones...
+        Localizator.LOGGER.log(Level.INFO, "[Localizator] Loading initialization mixin");
+        Mixins.addConfiguration("mixins.localizator.init.json");
+        
         for (Map.Entry<String, List<ConfigToMixin>> entry : vanillaMixins.entrySet()) {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
-                    Localizator.LOGGER.log(Level.INFO, "Localizator early loading: " + config.getName());
+                    Localizator.LOGGER.log(Level.INFO, "[Localizator] Early loading: " + config.getName());
                     Mixins.addConfiguration(config.getJson());
                 }
             }
-        }
-
-        // ... then the init one
-        Localizator.LOGGER.log(Level.INFO, "Initializing Localizator initialization mixin");
-        Mixins.addConfiguration("mixins.localizator.init.json");
+        }        
     }
 
     @Override

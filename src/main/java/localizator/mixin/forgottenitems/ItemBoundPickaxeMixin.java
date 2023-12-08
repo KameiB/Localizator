@@ -20,6 +20,7 @@ public abstract class ItemBoundPickaxeMixin {
      */
     @Overwrite
     @SideOnly(Side.CLIENT)
+    // Line 100
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)
     {
         if (stack.hasTagCompound() && stack.getTagCompound().hasKey("owner")) {

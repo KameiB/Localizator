@@ -17,7 +17,7 @@ public abstract class ItemWaterTalismanMixin {
             index = 1,
             remap = false
     )
-    // it originally calls to super("ender_talisman", "Teleports you where you're looking", 18, ItemList.enderGem);
+    // Line 21: super("water_talisman", "Creates a Water Block", 14, ItemList.waterGem);
     private static String localizator_ForgottenItems_ItemWaterTalisman_Constructor(String lore) {
         return "item.water_talisman.lore";
     }

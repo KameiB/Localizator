@@ -29,6 +29,7 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
      * @reason Adds "locTitle" and "locAuthor" support for Written Books.
      */
     @Overwrite
+    // Line 34
     public static boolean validBookTagContents(NBTTagCompound nbt) {
         if (!ItemWritableBook.isNBTValid(nbt))
         {
@@ -62,10 +63,11 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
     }
 
     @Inject(
-            method = "getItemStackDisplayName",
+            method = "getItemStackDisplayName(Lnet/minecraft/item/ItemStack;)Ljava/lang/String;",
             at = @At("HEAD"),
             cancellable = true
     )
+    // Line 57
     private void localizator_minecraftItemWrittenBook_getItemStackDisplayName(ItemStack stack, CallbackInfoReturnable<String> cir) {
         if (stack.hasTagCompound())
         {
@@ -80,11 +82,13 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
     }
     
     @Inject(
-            method = "addInformation",
+            method = "addInformation(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)V",
             at = @At("HEAD"),
             cancellable = true
     )
-    private void localizator_minecraftItemWrittenBook_addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
+    @SideOnly(Side.CLIENT)
+    // Line 74
+    private void localizator_minecraftItemWrittenBook_addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
         if (stack.hasTagCompound())
         {
             NBTTagCompound nbttagcompound = stack.getTagCompound();

@@ -24,6 +24,7 @@ public abstract class ItemCraftingRuneMixin {
      */
     @Overwrite
     @SideOnly(Side.CLIENT)
+    // Line 77
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)
     {
         EntityPlayer player = Minecraft.getMinecraft().player;

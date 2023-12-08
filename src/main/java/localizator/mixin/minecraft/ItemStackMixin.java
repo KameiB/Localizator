@@ -24,7 +24,12 @@ public abstract class ItemStackMixin
      * The existing "LocName" tag allows users to replace an item's name with a custom, translatable one.
      * But Vanilla doesn't have that support for the Lore. That's where my "LocLore" tag comes in handy!
      */
-    @Inject( method = "getTooltip", at = @At("RETURN") )
+    @Inject( method = "getTooltip(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/client/util/ITooltipFlag;)Ljava/util/List;",
+            at = @At("RETURN") 
+    )
+    // Line 890: return list;
+    // I decided to do this at the very end instead of Overwritting, just to be sure it doesn't break with another mixin.
+    // Would love to Overwrite, so when "LocLore" exists, then don't show "Lore" contents (Line 746), but well...
     public void lozalizator_vanillaItemStack_getTooltip(EntityPlayer playerIn, ITooltipFlag advanced, CallbackInfoReturnable<List<String>> cir) {
         List<String> list = cir.getReturnValue();
         ItemStack me = (ItemStack)((Object)this);

@@ -21,6 +21,7 @@ public abstract class ItemGemMixin {
      */
     @Overwrite
     @SideOnly(Side.CLIENT)
+    // Line 46
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)
     {        
         tooltip.add(I18n.format(I18n.format("tooltip.forgottenitems.gems.desc")));

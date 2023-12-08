@@ -61,11 +61,43 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.setbonusTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean setbonusTooltipMixin = true;
-		@Config.Comment("Enables support for Language keys in all Forgotten Items' items descriptions")
+		@Config.Comment("Enables support for Language keys in all Forgotten Items' items descriptions.")
 		@Config.Name("(ForgottenItems) Tooltips Mixin")
 		@Config.LangKey("config.localizator.mixins.forgottenitemsTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean forgottenitemsTooltipMixin = true;
+		@Config.Comment("Localizes the \"Current Adaptation:\" and \"reduction:\" hardcoded texts at armor tooltip.")
+		@Config.Name("(SRParasites) Armor Tooltips Mixin")
+		@Config.LangKey("config.localizator.mixins.srparasitesArmorTooltipMixin")
+		@Config.RequiresMcRestart
+		public boolean srparasitesArmorTooltipMixin = true;
+		@Config.Comment("Localizes the \"hits remaining\" hardcoded text \nadded to a weapon's tooltip when it has been imbued with a potion in a cauldron.")
+		@Config.Name("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin")
+		@Config.LangKey("config.localizator.mixins.bettersurvivalTooltipMixin")
+		@Config.RequiresMcRestart
+		public boolean bettersurvivalTooltipMixin = true;
+		
+		//@Config.Comment("Localizes the \"Power:\" hardcoded text \nshown when the custom item throwing physic is enabled.")
+		//@Config.Name("(ItemPhysic) Throw Power Mixin")
+		//@Config.LangKey("config.localizator.mixins.itemphysicThrowPowerMixin")
+		//@Config.RequiresMcRestart
+		//public boolean itemphysicThrowPowerMixin = true;
+
+		@Config.Comment("Enables Client - \"(BountifulBaubles) Remove Modifier from Name\" config option.")
+		@Config.Name("(BountifulBaubles) No Modifier at Name Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin")
+		@Config.RequiresMcRestart
+		public boolean bountifulbaublesNoModifierAtNameMixin = true;
+		@Config.Comment("Modifies the lang keys of Rough Tweaks items, so they don't collide with FirstAid. \nAlso, Enables the Client config: \n- \"(RoughTweaks) Show Heal Amount\".")
+		@Config.Name("(RoughTweaks) Localized Names and Better Tooltip Mixin")
+		@Config.LangKey("config.localizator.mixins.roughtweaksNamesAndTooltipMixin")
+		@Config.RequiresMcRestart
+		public boolean roughtweaksNamesAndTooltipMixin = true;
+		@Config.Comment("Localizes the \"Fertile Seasons:\", and seasons hardcoded texts at crop tooltip ")
+		@Config.Name("(SereneSeasons) Localized Crop Fertility Tooltip Mixin")
+		@Config.LangKey("config.localizator.mixins.sereneseasonsTooltipMixin")
+		@Config.RequiresMcRestart
+		public boolean sereneseasonsTooltipMixin = true;
 	}
 
 	public static class ClientConfig {
@@ -81,6 +113,19 @@ public class ForgeConfigHandler {
 		@Config.Name("(Neat) Translate Names In Health Bar")
 		@Config.LangKey("config.localizator.client.neatLocHealthBar")
 		public boolean neatLocHealthBar = true;
+		@Config.Comment("In SRP armor tooltip, translate resisted damage sources names. \nEntity names are taken from the registry. \nNon-entity names are taken from this mod's lang file. \n§cDisable this if it impacts performance.")
+		@Config.Name("(SRParasites) Translate Resisted Damage Sources")
+		@Config.LangKey("config.localizator.client.srparasitesResistances")
+		public boolean srparasitesResistances = true;
+		@Config.Comment("Prevents a Bauble's Modifier from displaying at its Name")
+		@Config.Name("(BountifulBaubles) Remove Modifier from Bauble Name")
+		@Config.LangKey("config.localizator.client.bountifulbaublesRemoveModifierFromName")
+		public boolean bountifulbaublesRemoveModifierFromName = true;
+		@Config.Comment("Removes the need of Shift on RoughTweaks Items Tooltip to show the Heal Amount. \n- \"(RoughTweaks) Localized Names and Better Tooltip Mixin\" needs to be enabled.")
+		@Config.Name("(RoughTweaks) Show Heal Amount")
+		@Config.LangKey("config.localizator.client.roughtweaksTooltip")		
+		public boolean roughtweaksTooltip = true;
+		
 	}
 
 	@Mod.EventBusSubscriber(modid = Localizator.MODID)

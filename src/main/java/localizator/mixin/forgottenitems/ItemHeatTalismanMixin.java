@@ -24,8 +24,8 @@ public abstract class ItemHeatTalismanMixin {
             index = 1,
             remap = false
     )
-    // it originally calls to super("ender_talisman", "Teleports you where you're looking", 18, ItemList.enderGem);
-    private static String localizator_ForgottenItems_ItemEnderTalisman_Constructor(String lore) {
+    // Line 38: super("heat_talisman", "Stores extreme amounts of heat", 8, ItemList.fireGem);
+    private static String localizator_ForgottenItems_ItemHeatTalisman_Constructor(String lore) {
         return "item.heat_talisman.lore";
     }
     
@@ -35,7 +35,8 @@ public abstract class ItemHeatTalismanMixin {
             at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z")
     )
     @SideOnly(Side.CLIENT)
-    private boolean localizator_ForgottenItems_ItemEnderTalisman_addInformation_tooltipAdd(List tooltip, Object e) {
+    // Line 72: tooltip.add(TextFormatting.RED + "It is not possible to charge the Talisman in Creative mode");
+    private boolean localizator_ForgottenItems_ItemHeatTalisman_addInformation_tooltipAdd(List tooltip, Object e) {
         return tooltip.add(TextFormatting.RED + I18n.format("item.heat_talisman.desc"));
     }
 }

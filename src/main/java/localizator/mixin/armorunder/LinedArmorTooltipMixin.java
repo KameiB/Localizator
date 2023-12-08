@@ -14,6 +14,7 @@ public abstract class LinedArmorTooltipMixin {
             index = 1,
             remap = false
     )
+    // Line 31: tip = Strings.translateFormatted("tooltip.auw.xlining.ozzy", new Object[]{what});
     private Object[] localizator_LinedArmorTooltip_addPlainLinedArmorTooltip(Object[] what) {
         if  (what[0] instanceof String) {
             String modifier = (String)what[0];

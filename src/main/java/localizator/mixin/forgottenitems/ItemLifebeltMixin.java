@@ -21,6 +21,7 @@ public abstract class ItemLifebeltMixin {
      */
     @Overwrite
     @SideOnly(Side.CLIENT)
+    // Line 53
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)
     {        
         tooltip.add(I18n.format(((Item)((Object)this)).getUnlocalizedNameInefficiently(stack) + ".desc"));

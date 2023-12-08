@@ -17,7 +17,7 @@ public abstract class ItemWindTalismanMixin {
             index = 1,
             remap = false
     )
-    // it originally calls to super("ender_talisman", "Teleports you where you're looking", 18, ItemList.enderGem);
+    // Line 20: super("wind_talisman", "Fly with the wind", 16, ItemList.windGem);
     private static String localizator_ForgottenItems_ItemWindTalisman_Constructor(String lore) {
         return "item.wind_talisman.lore";
     }

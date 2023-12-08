@@ -24,6 +24,16 @@ config.localizator.mixins.armorunderOzzyLinerMixin=(ArmorUnder) Applies Ozzy Lin
 config.localizator.mixins.armorunderOzzyLinerMixin.tooltip=Localizes the MILD/COOL/WARM hardcoded texts when applying an Ozzy liner to a piece of armor.
 config.localizator.mixins.setbonusTooltipMixin=(SetBonus) Tooltip Mixin
 config.localizator.mixins.setbonusTooltipMixin.tooltip=Enables support for Language keys in Set and Bonus names (config file).
+config.localizator.mixins.forgottenitemsTooltipMixin=(ForgottenItems) Tooltips Mixin
+config.localizator.mixins.forgottenitemsTooltipMixin.tooltip=Enables support for Language keys in all Forgotten Items' items descriptions.
+config.localizator.mixins.srparasitesArmorTooltipMixin=(SRParasites) Armor Tooltips Mixin
+config.localizator.mixins.srparasitesArmorTooltipMixin.tooltip=Localizes the "Current Adaptation:" and "reduction:" hardcoded texts at armor tooltip. \n6Also the damage source!
+config.localizator.mixins.bettersurvivalTooltipMixin=(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin
+config.localizator.mixins.bettersurvivalTooltipMixin.tooltip=Localizes the "hits remaining" hardcoded text \nadded to a weapon's tooltip when it has been imbued with a potion in a cauldron.
+config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin=(BountifulBaubles) No Modifier at Name Mixin
+config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin.tooltip=Enables the Client config: \n- §b(BountifulBaubles) Remove Modifier from Bauble Name§r.
+config.localizator.mixins.roughtweaksNamesAndTooltipMixin=(RoughTweaks) Localized Names and Better Tooltip Mixin
+config.localizator.mixins.roughtweaksNamesAndTooltipMixin.tooltip=Modifies the lang keys of Rough Tweaks items, so they don't collide with FirstAid. \nAlso, Enables the Client config: \n- §b(RoughTweaks) Show Heal Amount§r.
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Mob Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
@@ -31,4 +41,9 @@ config.localizator.client.minecraftBossLocCustomNames=(Minecraft) Translate Boss
 config.localizator.client.minecraftBossLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Boss Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
 config.localizator.client.neatLocHealthBar=(Neat) Translate Names In Health Bar
 config.localizator.client.neatLocHealthBar.tooltip=Applies the Mixin:\n- §d(Neat) Health Bar Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
-
+config.localizator.client.srparasitesResistances=(SRParasites) Translate Resisted Damage Sources
+config.localizator.client.srparasitesResistances.tooltip=In SRP armor tooltip, translate resisted damage sources names. \nEntity names are taken from Forge's registry. \nNon-entity names are taken from this mod's lang file. \n§4Disable this option if it impacts performance. \n§cRequires
+config.localizator.client.bountifulbaublesRemoveModifierFromName=(BountifulBaubles) Remove Modifier from Bauble Name
+config.localizator.client.bountifulbaublesRemoveModifierFromName.tooltip=Prevents a Bauble's Modifier from displaying at its Name
+config.localizator.client.roughtweaksTooltip=(RoughTweaks) Show Heal Amount
+config.localizator.client.roughtweaksTooltip.tooltip=Removes the need of Shift on RoughTweaks Items Tooltip to show the Heal Amount. \n- §d(RoughTweaks) Localized Names and Better Tooltip Mixin §cneeds to be §aEnabled§c!

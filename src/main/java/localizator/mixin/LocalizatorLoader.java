@@ -47,6 +47,30 @@ public class LocalizatorLoader {
         List<ConfigToMixin> forgottenitemsList = new ArrayList<>();
         forgottenitemsList.add(new ConfigToMixin("(ForgottenItems) Tooltips Mixin", ForgeConfigHandler.getBoolean("(ForgottenItems) Tooltips Mixin"), "mixins.forgottenitems.descriptions.json"));
         map.put("forgottenitems", forgottenitemsList);
+        // SRParasites
+        List<ConfigToMixin> srparasitesList = new ArrayList<>();
+        srparasitesList.add(new ConfigToMixin("(SRParasites) Armor Tooltips Mixin", ForgeConfigHandler.getBoolean("(SRParasites) Armor Tooltips Mixin"), "mixins.srparasites.armortooltip.json"));
+        map.put("srparasites", srparasitesList);
+        // Better Survival
+        List<ConfigToMixin> bettersurvivalList = new ArrayList<>();
+        bettersurvivalList.add(new ConfigToMixin("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin", ForgeConfigHandler.getBoolean("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin"), "mixins.bettersurvival.tooltip.json"));
+        map.put("mujmajnkraftsbettersurvival", bettersurvivalList);
+        // ItemPhysic
+        //List<ConfigToMixin> itemphysicList = new ArrayList<>();
+        //itemphysicList.add(new ConfigToMixin("(ItemPhysic) Throw Power Mixin", ForgeConfigHandler.getBoolean("(ItemPhysic) Throw Power Mixin"), "mixins.itemphysic.throwpower.json"));
+        //map.put("creativecore", itemphysicList);
+        // Bountiful Baubles
+        List<ConfigToMixin> bountifulbaublesList = new ArrayList<>();
+        bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) No Modifier at Name Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) No Modifier at Name Mixin"), "mixins.bountifulbaubles.attributeatname.json"));
+        map.put("bountifulbaubles", bountifulbaublesList);
+        // Rough Tweaks
+        List<ConfigToMixin> roughtweaksList = new ArrayList<>();
+        roughtweaksList.add(new ConfigToMixin("(RoughTweaks) Localized Names and Better Tooltip Mixin", ForgeConfigHandler.getBoolean("(RoughTweaks) Localized Names and Better Tooltip Mixin"), "mixins.roughtweaks.tooltip.json"));
+        map.put("roughtweaks", roughtweaksList);
+        // Serene Seasons
+        List<ConfigToMixin> sereneseasonsList = new ArrayList<>();
+        sereneseasonsList.add(new ConfigToMixin("(SereneSeasons) Localized Crop Fertility Tooltip Mixin", ForgeConfigHandler.getBoolean("(SereneSeasons) Localized Crop Fertility Tooltip Mixin"), "mixins.sereneseasons.tooltip.json"));
+        map.put("sereneseasons", sereneseasonsList);
 
         return Collections.unmodifiableMap(map);
     }
@@ -77,7 +101,7 @@ public class LocalizatorLoader {
             if (modIdList.contains(entry.getKey())) {
                 for (ConfigToMixin config : entry.getValue()) {
                     if (config.isEnabled()) {
-                        Localizator.LOGGER.log(Level.INFO, "Localizator late Loading: " + config.getName());
+                        Localizator.LOGGER.log(Level.INFO, "[Localizator] Late Loading: " + config.getName());
                         Mixins.addConfiguration(config.getJson());
                     }
                 }
