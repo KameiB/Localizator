@@ -1,6 +1,9 @@
 package localizator.mixin;
 
 import localizator.data.ConfigToMixin;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.resources.I18n;
+import net.minecraftforge.fml.client.GuiModList;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModClassLoader;
 import net.minecraftforge.fml.common.ModContainer;
@@ -11,6 +14,7 @@ import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.transformer.ext.Extensions;
 import localizator.Localizator;
@@ -71,6 +75,27 @@ public class LocalizatorLoader {
         List<ConfigToMixin> sereneseasonsList = new ArrayList<>();
         sereneseasonsList.add(new ConfigToMixin("(SereneSeasons) Localized Crop Fertility Tooltip Mixin", ForgeConfigHandler.getBoolean("(SereneSeasons) Localized Crop Fertility Tooltip Mixin"), "mixins.sereneseasons.tooltip.json"));
         map.put("sereneseasons", sereneseasonsList);
+        // Charm
+        List<ConfigToMixin> charmList = new ArrayList<>();
+        charmList.add(new ConfigToMixin("(Charm) Localized Cake Name Mixin", ForgeConfigHandler.getBoolean("(Charm) Localized Cake Name Mixin"), "mixins.charm.cakename.json"));
+        charmList.add(new ConfigToMixin("(Charm) Localized Composter JEI Mixin", ForgeConfigHandler.getBoolean("(Charm) Localized Composter JEI Mixin"), "mixins.charm.compostergui.json"));
+        map.put("charm", charmList);
+        // Dynamic Trees
+        List<ConfigToMixin> dynamictreesList = new ArrayList<>();
+        dynamictreesList.add(new ConfigToMixin("(DyamicTrees) Staff Mixin", ForgeConfigHandler.getBoolean("(DyamicTrees) Staff Mixin"), "mixins.dynamictrees.staff.json"));
+        map.put("dynamictrees", dynamictreesList);
+        // WAILA
+        List<ConfigToMixin> wailaList = new ArrayList<>();
+        wailaList.add(new ConfigToMixin("(WAILA) Entity Name Mixin", ForgeConfigHandler.getBoolean("(WAILA) Entity Name Mixin"), "mixins.waila.entityname.json"));
+        map.put("waila", wailaList);
+        // Corpse Complex
+        List<ConfigToMixin> corpsecomplexList = new ArrayList<>();
+        corpsecomplexList.add(new ConfigToMixin("(CorpseComplex) Grave Scroll Description Mixin", ForgeConfigHandler.getBoolean("(CorpseComplex) Grave Scroll Description Mixin"), "mixins.corpsecomplex.scroll.json"));
+        map.put("corpsecomplex", corpsecomplexList);
+        // Minecraft Forge FML
+        //List<ConfigToMixin> forgeList = new ArrayList<>();
+        //forgeList.add(new ConfigToMixin("(FML) Localized Mod List GUI Mixin", ForgeConfigHandler.getBoolean("(FML) Localized Mod List GUI Mixin"), "mixins.forge.modlist.json"));
+        //map.put("forge", forgeList);
 
         return Collections.unmodifiableMap(map);
     }
@@ -156,3 +181,4 @@ public class LocalizatorLoader {
         }
     }
 }
+

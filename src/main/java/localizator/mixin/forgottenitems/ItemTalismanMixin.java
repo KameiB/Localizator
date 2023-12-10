@@ -16,7 +16,7 @@ import java.util.List;
 
 @Mixin(ItemTalisman.class)
 public abstract class ItemTalismanMixin {
-    @Shadow
+    @Shadow(remap = false)
     private String lore;
     /**
      * @author KameiB

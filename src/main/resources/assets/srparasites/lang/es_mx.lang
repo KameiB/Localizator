@@ -37,6 +37,8 @@ fallingtree=Árbol cayendo
 # Ice and Fire
 dragon_fire=Fuego de Dragón
 dragon_ice=Hielo de Dragón
+gorgon=Gorgona
+dragon_lightning=Rayo de Dragón
 
 # Locks
 locks.shock=Electrochoque

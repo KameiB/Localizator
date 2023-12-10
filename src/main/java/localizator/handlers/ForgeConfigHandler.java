@@ -93,11 +93,46 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.roughtweaksNamesAndTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean roughtweaksNamesAndTooltipMixin = true;
-		@Config.Comment("Localizes the \"Fertile Seasons:\", and seasons hardcoded texts at crop tooltip ")
+		@Config.Comment("Localizes the \"Fertile Seasons:\", and seasons hardcoded texts at crop tooltip.")
 		@Config.Name("(SereneSeasons) Localized Crop Fertility Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.sereneseasonsTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean sereneseasonsTooltipMixin = true;
+		@Config.Comment("Localizes Special Cakes Hardcoded Names.")
+		@Config.Name("(Charm) Localized Cake Name Mixin")
+		@Config.LangKey("config.localizator.mixins.charmCakeNameMixin")
+		@Config.RequiresMcRestart
+		public boolean charmCakeNameMixin = true;
+		@Config.Comment("Localizes the Composter JEI Recipe Integration GUI.")
+		@Config.Name("(Charm) Localized Composter JEI Mixin")
+		@Config.LangKey("config.localizator.mixins.charmComposterRecipeMixin")
+		@Config.RequiresMcRestart
+		public boolean charmComposterRecipeMixin = true;
+		@Config.Comment("If you hate those weird \"Â\" symbols in the Staff tooltip as much as me, enable this Mixin.")
+		@Config.Name("(DyamicTrees) Staff Mixin")
+		@Config.LangKey("config.localizator.mixins.dynamictreesStaffMixin")
+		@Config.RequiresMcRestart
+		public boolean dynamictreesStaffMixin = true;
+		@Config.Comment("Enables support for Language Keys in Entity's CustomName tag.")
+		@Config.Name("(WAILA) Entity Name Mixin")
+		@Config.LangKey("config.localizator.mixins.wailaEntityNameMixin")
+		@Config.RequiresMcRestart
+		public boolean wailaEntityNameMixin = true;
+		@Config.Comment("Localizes the Grave Scroll description.")
+		@Config.Name("(CorpseComplex) Grave Scroll Description Mixin")
+		@Config.LangKey("config.localizator.mixins.corpsecomplexScrollMixin")
+		@Config.RequiresMcRestart
+		public boolean corpsecomplexScrollMixin = true;
+		@Config.Comment("In Charm's [de_DE, es_MX] lang files, the Creative Music Disc 6 lang key \nis registered as \"item.charm:record_creative6\", resulting in \nMinecraft adding \".name\" at the end of its name. \nMay cause lag when loading languages.")
+		@Config.Name("(Minecraft/Charm) Creative Disc 6 Mixin")
+		@Config.LangKey("config.localizator.mixins.charmCreative6Mixin")
+		@Config.RequiresMcRestart
+		public boolean charmCreative6Mixin = true;
+		//@Config.Comment("Localizes few texts in the Mod List screen.")
+		//@Config.Name("(FML) Localized Mod List GUI Mixin")
+		//@Config.LangKey("config.localizator.mixins.forgeModListMixin")
+		//@Config.RequiresMcRestart
+		//public boolean forgeModListMixin = true;
 	}
 
 	public static class ClientConfig {

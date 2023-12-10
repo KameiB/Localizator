@@ -25,13 +25,13 @@ import java.util.List;
 
 @Mixin(ModFertility.class)
 public abstract class ModFertilityMixin {
-    @Shadow private static HashMap<String, Integer> seedSeasons = new HashMap();
+    @Shadow(remap = false) private static HashMap<String, Integer> seedSeasons = new HashMap();
 
     /**
      * @author KameiB
      * @reason Fertile seasons texts were hardcoded (not localizable)
      */
-    @Overwrite
+    @Overwrite(remap = false)
     @SideOnly(Side.CLIENT)
     // Line 116
     public static void setupTooltips(ItemTooltipEvent event) {

@@ -25,14 +25,15 @@ import java.util.List;
 public abstract class ItemHealMixin extends Item {
     @Inject(
             method = "<init>(Ljava/lang/String;IIFLnet/minecraft/potion/PotionEffect;Lnet/minecraft/item/ItemStack;)V",
-            at = @At(value = "TAIL")
+            at = @At(value = "TAIL"),
+            remap = false
     )
     // Line 38: this.setTranslationKey(name);
     private void localizator_RoughTweaks_ItemHeal_setTranslationKey(String name, int useCount, int healRate, float healAmount, PotionEffect effect, ItemStack returnStack, CallbackInfo ci) {
         this.setTranslationKey(RoughTweaks.MODID + "." + name);
     }
 
-    @Mutable @Final @Shadow private float healAmount;
+    @Mutable @Final @Shadow(remap = false) private float healAmount;
     /**
      * @author KameiB
      * @reason Localize item Heal amount. 
@@ -50,8 +51,7 @@ public abstract class ItemHealMixin extends Item {
                 tooltip.add(TextFormatting.BLUE + I18n.format("tooltip.roughtweaks.itemheal.heal_amount") + " " + hearts + " " + I18n.format("tooltip.roughtweaks.itemheal.hearts"));
             }
         }
-        /*else
-        {
+        /*else {
             tooltip.add(I18n.format("tooltip.roughtweaks.itemheal.shift"));
         }*/
     }

@@ -28,7 +28,7 @@ public class TooltipRendererMixin {
      * @author KameiB
      * @reason Add support to lang keys in config file's set name and bonus name
      */
-    @Overwrite
+    @Overwrite(remap = false)
     @SubscribeEvent(priority = EventPriority.LOWEST)
     // Line 29
     public static void tooltips(ItemTooltipEvent event) {

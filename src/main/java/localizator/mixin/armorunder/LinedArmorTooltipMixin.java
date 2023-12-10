@@ -1,6 +1,6 @@
 package localizator.mixin.armorunder;
 
-import net.minecraft.client.resources.I18n;
+import net.minecraft.util.text.translation.I18n;
 import org.spongepowered.asm.mixin.Mixin;
 import org.jwaresoftware.mcmods.armorunder.runtime.LinedArmorTooltip;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,7 +19,7 @@ public abstract class LinedArmorTooltipMixin {
         if  (what[0] instanceof String) {
             String modifier = (String)what[0];
             modifier = "tooltip.auw.xlining.ozzy_" + modifier.toLowerCase();
-            what[0] = I18n.format(modifier);
+            what[0] = I18n.translateToLocal(modifier);
         }
         return what;
     }

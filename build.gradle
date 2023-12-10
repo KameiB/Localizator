@@ -5,13 +5,13 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        //classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        //classpath 'net.forge.gradle:ForgeGradle:5.1'
+        classpath group: 'net.forge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7.+'
     }
 }
         
-apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'net.forge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'maven-publish'
@@ -87,8 +87,8 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    //minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    //minecraft 'net.forge:forge:1.12.2-14.23.5.2859'
+    minecraft "net.forge:forge:${minecraft_version}-${forge_version}"
 
     implementation "org.spongepowered:mixin:0.8.5"
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
@@ -124,8 +124,17 @@ dependencies {
     implementation fg.deobf("curse.maven:RoughTweaks-251670:2573301")
 
     implementation fg.deobf("curse.maven:serene-seasons-291874:2799213")
-
     implementation fg.deobf("curse.maven:rustic-256141:3107974")
+
+    implementation fg.deobf("curse.maven:JEI-238222:3043174") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
+    implementation fg.deobf("curse.maven:charm-318872:3146596")
+
+    implementation fg.deobf("curse.maven:dynamictrees-252818:3812473")
+
+    implementation files("libs/Hwyla-1.8.26-B41_1.12.2.jar")
+
+    implementation fg.deobf("curse.maven:corpse-complex-271605:3176964")
+    //implementation files("libs/Hwyla-1.8.26-B41_1.12.2-sources.jar")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
