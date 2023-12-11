@@ -22,7 +22,6 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         list.add(new ConfigToMixin("(Minecraft) Boss Custom Names Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Boss Custom Names Mixin"), "mixins.core.bossoverlay.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Lore Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Localized Lore Mixin"), "mixins.core.loclore.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Written Book Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Localized Written Book Mixin"), "mixins.core.writtenbooks.json"));
-        list.add(new ConfigToMixin("(Minecraft/Charm) Creative Disc 6 Mixin", ForgeConfigHandler.getBoolean("(Minecraft/Charm) Creative Disc 6 Mixin"), "mixins.core.charmcreative6.json"));
         map.put("minecraft", list);
 
         return Collections.unmodifiableMap(map);

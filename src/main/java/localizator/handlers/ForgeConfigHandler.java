@@ -93,7 +93,7 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.roughtweaksNamesAndTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean roughtweaksNamesAndTooltipMixin = true;
-		@Config.Comment("Localizes the \"Fertile Seasons:\", and seasons hardcoded texts at crop tooltip.")
+		@Config.Comment("Localizes the \"Fertile Seasons:\", and seasons hardcoded texts at crop tooltip. \nAlso adds support to Rustic's Tomato Seeds and Chili seeds.")
 		@Config.Name("(SereneSeasons) Localized Crop Fertility Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.sereneseasonsTooltipMixin")
 		@Config.RequiresMcRestart
@@ -123,11 +123,7 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.corpsecomplexScrollMixin")
 		@Config.RequiresMcRestart
 		public boolean corpsecomplexScrollMixin = true;
-		@Config.Comment("In Charm's [de_DE, es_MX] lang files, the Creative Music Disc 6 lang key \nis registered as \"item.charm:record_creative6\", resulting in \nMinecraft adding \".name\" at the end of its name. \nMay cause lag when loading languages.")
-		@Config.Name("(Minecraft/Charm) Creative Disc 6 Mixin")
-		@Config.LangKey("config.localizator.mixins.charmCreative6Mixin")
-		@Config.RequiresMcRestart
-		public boolean charmCreative6Mixin = true;
+		
 		//@Config.Comment("Localizes few texts in the Mod List screen.")
 		//@Config.Name("(FML) Localized Mod List GUI Mixin")
 		//@Config.LangKey("config.localizator.mixins.forgeModListMixin")
