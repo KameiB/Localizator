@@ -1,0 +1,60 @@
+# ========================================================================
+event.started_=%s has begun!
+event.extended_=%s has been extended!
+event.finished_=%s is no longer spawning mobs!
+event.boss.started_=%s has been called!
+event.boss.extended_=%s is coming!
+event.boss.finished_=%s is unleashed!
+#
+# Soulstone:
+message.soulstone.pet.added_=Your %s has been bound, you will now find it in your Pet Manager.
+message.soulstone.mount.added_=Your %s has been bound, you will now find it in your Mount Manager.
+#
+# ========== Commands ==========
+lyc.command.debug.set_=Se actualizó %s.
+#
+# Spawners:
+lyc.command.spawners.creative_=Toggled Mob Spawn Triggers for Creative Mode players to %s.
+#
+# Beastiary:
+lyc.command.beastiary.packet=Force sent a full Beastiary update packet.
+#
+# Mob Events:
+lyc.command.mobevent.creative_=Toggled Mob Events for Creative Mode players to %s.
+#
+# Player:
+lyc.command.player.invalidarguments=Invalid command arguments, valid arguments are: spirit, focus
+lyc.command.player.spirit=Restored Player Spirit.
+lyc.command.player.focus=Restored Player Focus.
+#
+# ========== System ========== 
+lyc.version.newer_=You are currently using Lycanites Mobs %1$s but a newer version %2$s is now available, it is recommended to stay up to date!
+#
+# ========== Messages ==========
+# Beastiary:
+message.beastiary.new_=You discover the %1$s and begin to add notes to your Beastiary!
+message.beastiary.rank_=You learn more of the %1$s unlocking Knowledge Rank %2$s!
+message.beastiary.tameable_=You are now able to tame the %s.
+message.beastiary.summonable_=You are now able to summon the %s as a temporary minion! You will need a Summoning Item to summon it.
+message.beastiary.summonable.colors_=You can now summon variations of the %s!
+message.beastiary.summonable.skins_=You can now summon subspecies of the %s!
+message.beastiary.known_=You have already have Knowledge Rank %1$s of the %2$s.
+# Pet:
+message.pet.tamed_=The %s seems to love you now!
+message.pet.tamefail_=The %s wants more!
+message.pet.tamefail.knowledge_=You gained knowledge by feeding the %s. At Rank 2 you may tame it!
+message.pet.mount.baby_=The %s is too young to carry you!
+#
+# ========== Event creatures ==========
+#
+# Halloween Treat
+entity.twistedent.name=Twisted Ent
+entity.wickedtreant.name=Wicked Treant
+entity.vampirebat.name=Vampire Bat
+entity.shadowclown.name=Shadow Clown
+# Winter Gift (Small and Large)
+entity.gooderness.name=Gooderness
+entity.rufolph.name=Rudolph
+entity.saltytree.name=Salty Tree
+entity.satanclaws.name=Satan Claws
+entity.krampus.name=Krampus

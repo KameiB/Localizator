@@ -1,0 +1,60 @@
+# ========================================================================
+event.started_=¡El evento %s ha comenzado!
+event.extended_=¡El evento %s ha sido extendido!
+event.finished_=¡El evento %s ha acabado y ya no genera criaturas!
+event.boss.started_=¡%s ha sido llamado!
+event.boss.extended_=¡%s está viniendo!
+event.boss.finished_=¡%s ha llegado!
+#
+# Soulstone:
+message.soulstone.pet.added_=Tu %s se ha unido a tu alma, ¡ve al administrador de mascotas! ¡Recuerda que puedes subir de nivel a tu mascota con cargas!
+message.soulstone.mount.added_=Tu %s se ha unido a tu alma, ¡ve al administrador de monturas! ¡Recuerda que puedes subir de nivel a tu montura con cargas!
+#
+# ========== Commands ==========
+lyc.command.debug.set_=Se actualizó %s.
+#
+# Spawners:
+lyc.command.spawners.creative_=Los generadores naturales para el modo creativo están %s (true=activados y false=desactivados).
+#
+# Beastiary:
+lyc.command.beastiary.packet=La Fuerza envió un paquete completo de actualización de Bestiario.
+#
+# Mob Events:
+lyc.command.mobevent.creative_=Los eventos de criaturas para el modo creativo están %value% (true=activados y false=desactivados).
+#
+# Player:
+lyc.command.player.invalidarguments=Argumentos de comando inválidos, los argumentos válidos son: spirit, focus
+lyc.command.player.spirit=Se restauró el espíritu del jugador.
+lyc.command.player.focus=Se restauró el maná del jugador.
+#
+# ========== System ========== 
+lyc.version.newer_=Estás usando Lycanite's Mobs %1$s, pero hay una nueva versión %2$s disponible. ¡Se recomienda actualizar!
+#
+# ========== Messages ==========
+# Beastiary:
+message.beastiary.new_=¡Descubriste a %1$s y ahora aparece en tu bestiario!
+message.beastiary.rank_=¡Aprendiste mucho sobre %1$s y ahora tienes el rango de conocimiento nivel %2$s!
+message.beastiary.tameable_=¡Ahora eres capaz de domesticar a %s!
+message.beastiary.summonable_=¡Ahora puedes invocar a %s como un súbdito temporal con una vara de invocación!
+message.beastiary.summonable.colors_=¡Ahora tienes variaciones de %s para invocar!
+message.beastiary.summonable.skins_=¡Ahora tienes subespecies de %s para invocar!
+message.beastiary.known_=Conocimiento de nivel %1$s de %2$s ya obtenido.
+# Pet:
+message.pet.tamed_=¡Ahora %s te quiere y es tu mascota! ¡Crea una piedra del alma para unir tu mascota a tu alma!
+message.pet.tamefail_=¡No es suficiente y %s quiere más!
+message.pet.tamefail.knowledge_=¡Ganaste conocimiento alimentando a %s y si llegas al nivel 2 será domesticable!
+message.pet.mount.baby_=¡Parece que %s es demasiado pequeño para llevarte!
+#
+# ========== Event creatures ==========
+#
+# Halloween Treat
+entity.twistedent.name=Ent torcido
+entity.wickedtreant.name=Ent gigante malvado
+entity.vampirebat.name=Murciélago vampiro
+entity.shadowclown.name=Payaso de las sombras
+# Winter Gift (Small and Large)
+entity.gooderness.name=Bondad
+entity.rufolph.name=Rodolfo
+entity.saltytree.name=Árbol de la perdición
+entity.satanclaws.name=Satán Claus
+entity.krampus.name=Krampus

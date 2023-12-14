@@ -2,6 +2,7 @@ package localizator.mixin.roughtweaks;
 
 import lellson.roughTweaks.RoughTweaks;
 import lellson.roughTweaks.items.ItemHeal;
+import localizator.data.Production;
 import localizator.handlers.ForgeConfigHandler;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -39,7 +40,7 @@ public abstract class ItemHealMixin extends Item {
      * @reason Localize item Heal amount. 
      * Optional: Remove the need of pressing Shift to show the item's Heal amount.
      */
-    @Overwrite
+    @Overwrite(remap = Production.inProduction)
     @SideOnly(Side.CLIENT)
     // Line 91
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {

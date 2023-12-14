@@ -1,5 +1,6 @@
 package localizator.mixin.minecraft;
 
+import localizator.data.Production;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StringUtils;
@@ -28,7 +29,7 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
      * @author KameiB
      * @reason Adds "locTitle" and "locAuthor" support for Written Books.
      */
-    @Overwrite
+    @Overwrite(remap = Production.inProduction) // FALSE ONLY WHEN DEBUGGING!
     // Line 34
     public static boolean validBookTagContents(NBTTagCompound nbt) {
         if (!ItemWritableBook.isNBTValid(nbt))

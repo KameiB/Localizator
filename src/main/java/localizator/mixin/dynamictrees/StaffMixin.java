@@ -2,6 +2,7 @@ package localizator.mixin.dynamictrees;
 
 import com.ferreusveritas.dynamictrees.items.Staff;
 import com.ferreusveritas.dynamictrees.trees.Species;
+import localizator.data.Production;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -21,7 +22,7 @@ public abstract class StaffMixin {
      * @author KameiB
      * @reason I just HAD to remove that weird "Â" symbol from the tooltip... 
      */
-    @Overwrite
+    @Overwrite(remap = Production.inProduction) // FALSE ONLY FOR DEBUGGING!
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flagIn) {
         Species species = this.getSpecies(stack);

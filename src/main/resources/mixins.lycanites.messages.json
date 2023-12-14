@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "lycanitesmobs.BaseCreatureEntityMixin",
+    "lycanitesmobs.BeastiaryMixin",
+    "lycanitesmobs.CommandMainMixin",
+    "lycanitesmobs.ExtendedPlayerMixin",
+    "lycanitesmobs.GameEventListenerMixin",
+    "lycanitesmobs.ItemHalloweenTreatMixin",
+    "lycanitesmobs.ItemSoulContractMixin",
+    "lycanitesmobs.ItemSoulKeyMixin",
+    "lycanitesmobs.ItemSoulstoneMixin",
+    "lycanitesmobs.ItemWinterGiftLargeMixin",
+    "lycanitesmobs.ItemWinterGiftMixin",
+    "lycanitesmobs.MobEventPlayerClientMixin",
+    "lycanitesmobs.SpawnerMixin",
+    "lycanitesmobs.TameableCreatureEntityMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

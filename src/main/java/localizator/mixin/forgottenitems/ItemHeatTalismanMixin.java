@@ -30,13 +30,13 @@ public abstract class ItemHeatTalismanMixin {
     }
     
     
-    @Redirect(
+    @ModifyArg(
             method = "addInformation(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)V",
             at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z")
     )
     @SideOnly(Side.CLIENT)
     // Line 72: tooltip.add(TextFormatting.RED + "It is not possible to charge the Talisman in Creative mode");
-    private boolean localizator_ForgottenItems_ItemHeatTalisman_addInformation_tooltipAdd(List tooltip, Object e) {
-        return tooltip.add(TextFormatting.RED + I18n.format("item.heat_talisman.desc"));
+    private Object localizator_ForgottenItems_ItemHeatTalisman_addInformation_tooltipAdd(Object text) {
+        return TextFormatting.RED + I18n.format("item.heat_talisman.desc");
     }
 }

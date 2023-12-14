@@ -5,8 +5,9 @@
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
-  "mixins": [
-    "itemphysic.EventHandlerMixin"
+  "client": [
+    "forge.GuiModListMixin",
+    "forge.GuiSlotModListMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

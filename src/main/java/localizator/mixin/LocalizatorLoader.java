@@ -1,9 +1,6 @@
 package localizator.mixin;
 
 import localizator.data.ConfigToMixin;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.resources.I18n;
-import net.minecraftforge.fml.client.GuiModList;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModClassLoader;
 import net.minecraftforge.fml.common.ModContainer;
@@ -14,7 +11,6 @@ import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.transformer.ext.Extensions;
 import localizator.Localizator;
@@ -59,17 +55,13 @@ public class LocalizatorLoader {
         List<ConfigToMixin> bettersurvivalList = new ArrayList<>();
         bettersurvivalList.add(new ConfigToMixin("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin", ForgeConfigHandler.getBoolean("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin"), "mixins.bettersurvival.tooltip.json"));
         map.put("mujmajnkraftsbettersurvival", bettersurvivalList);
-        // ItemPhysic
-        //List<ConfigToMixin> itemphysicList = new ArrayList<>();
-        //itemphysicList.add(new ConfigToMixin("(ItemPhysic) Throw Power Mixin", ForgeConfigHandler.getBoolean("(ItemPhysic) Throw Power Mixin"), "mixins.itemphysic.throwpower.json"));
-        //map.put("creativecore", itemphysicList);
         // Bountiful Baubles
         List<ConfigToMixin> bountifulbaublesList = new ArrayList<>();
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) No Modifier at Name Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) No Modifier at Name Mixin"), "mixins.bountifulbaubles.attributeatname.json"));
         map.put("bountifulbaubles", bountifulbaublesList);
         // Rough Tweaks
         List<ConfigToMixin> roughtweaksList = new ArrayList<>();
-        roughtweaksList.add(new ConfigToMixin("(RoughTweaks) Localized Names and Better Tooltip Mixin", ForgeConfigHandler.getBoolean("(RoughTweaks) Localized Names and Better Tooltip Mixin"), "mixins.roughtweaks.tooltip.json"));
+        roughtweaksList.add(new ConfigToMixin("(RoughTweaks) Localized Names and Better Tooltip Mixin", ForgeConfigHandler.getBoolean("(RoughTweaks) Localized Names and Better Tooltip Mixin"), "mixins.roughtweaks.langkeys.json"));
         map.put("roughtweaks", roughtweaksList);
         // Serene Seasons
         List<ConfigToMixin> sereneseasonsList = new ArrayList<>();
@@ -93,9 +85,13 @@ public class LocalizatorLoader {
         corpsecomplexList.add(new ConfigToMixin("(CorpseComplex) Grave Scroll Description Mixin", ForgeConfigHandler.getBoolean("(CorpseComplex) Grave Scroll Description Mixin"), "mixins.corpsecomplex.scroll.json"));
         map.put("corpsecomplex", corpsecomplexList);
         // Minecraft Forge FML
-        //List<ConfigToMixin> forgeList = new ArrayList<>();
-        //forgeList.add(new ConfigToMixin("(FML) Localized Mod List GUI Mixin", ForgeConfigHandler.getBoolean("(FML) Localized Mod List GUI Mixin"), "mixins.forge.modlist.json"));
-        //map.put("forge", forgeList);
+        List<ConfigToMixin> forgeList = new ArrayList<>();
+        forgeList.add(new ConfigToMixin("(FML) Localized Mod List GUI Mixin", ForgeConfigHandler.getBoolean("(FML) Localized Mod List GUI Mixin"), "mixins.forge.modlist.json"));
+        map.put("FML", forgeList);
+        // Lycanites
+        List<ConfigToMixin> lycanitesList = new ArrayList<>();
+        lycanitesList.add(new ConfigToMixin("(Lycanites) Client-side Translated Messages Mixin", ForgeConfigHandler.getBoolean("(Lycanites) Client-side Translated Messages Mixin"), "mixins.lycanites.messages.json"));
+        map.put("lycanitesmobs", lycanitesList);
 
         return Collections.unmodifiableMap(map);
     }
@@ -116,6 +112,7 @@ public class LocalizatorLoader {
             try {
                 modClassLoader.addFile(mod.getSource());
                 modIdList.add(mod.getModId());
+                //Localizator.LOGGER.info("[Localizator] Added " + mod.getModId() + " to the class loader.");
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }

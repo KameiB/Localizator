@@ -1,5 +1,6 @@
 package localizator.mixin.forgottenitems;
 
+import localizator.data.Production;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -22,7 +23,7 @@ public abstract class ItemCraftingRuneMixin {
      * @author KameiB
      * @reason Localize item description
      */
-    @Overwrite
+    @Overwrite(remap = Production.inProduction) // FALSE ONLY IN DEBUGGING!
     @SideOnly(Side.CLIENT)
     // Line 77
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)

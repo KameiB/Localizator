@@ -1,5 +1,6 @@
 package localizator.mixin.forgottenitems;
 
+import localizator.data.Production;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -19,7 +20,7 @@ public abstract class ItemBarkifiedAxeMixin {
      * @author KameiB
      * @reason Localize item description
      */
-    @Overwrite
+    @Overwrite(remap = Production.inProduction) // FALSE ONLY IN DEBUGGING!
     @SideOnly(Side.CLIENT)
     // Line 38
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)

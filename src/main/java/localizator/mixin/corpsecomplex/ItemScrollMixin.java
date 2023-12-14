@@ -1,6 +1,7 @@
 package localizator.mixin.corpsecomplex;
 
 import c4.corpsecomplex.common.modules.spawning.ItemScroll;
+import localizator.data.Production;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -19,7 +20,7 @@ public abstract class ItemScrollMixin {
      * @author KameiB
      * @reason Grave scroll description was hardcoded
      */
-    @Overwrite
+    @Overwrite(remap = Production.inProduction) //FALSE ONLY FOR DEBUGGING!
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.add(I18n.format("item.corpsecomplex.scroll.desc"));

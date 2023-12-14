@@ -1,34 +1,35 @@
 package localizator.mixin.waila;
 
+import com.google.common.base.Strings;
 import mcp.mobius.waila.addons.core.HUDHandlerEntities;
+import mcp.mobius.waila.api.IWailaConfigHandler;
+import mcp.mobius.waila.api.IWailaEntityAccessor;
+import mcp.mobius.waila.config.FormattingConfig;
 import net.minecraft.client.resources.I18n;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.Overwrite;
+
+import java.util.List;
 
 @Mixin(HUDHandlerEntities.class)
 public abstract class HUDHandlerEntitiesMixin {
-    @ModifyArg(
-            method = "getWailaHead(Lnet/minecraft/entity/Entity;Ljava/util/List;Lmcp/mobius/waila/api/IWailaEntityAccessor;Lmcp/mobius/waila/api/IWailaConfigHandler;)Ljava/util/List;",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/lang/String;format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-                    ordinal = 0
-            ),
-            index = 1,
-            remap = false
-    )
-    @SideOnly(Side.CLIENT)
-    // Line 33: currenttip.add("\u00a7r" + String.format(FormattingConfig.entityFormat, entity.getName()));
-    private Object[] localizator_Waila_HUDHandlerEntities_getWailaHead_entityName(Object[] args) {
-        if (args[0] instanceof String) {
-            String name = (String)args[0];
-            if (I18n.hasKey(name)) {
-                args[0] = I18n.format(name);
+    
+    /**
+     * @author KameiB
+     * @reason If entity.getName is a lang key (from CustomName NBT tag), translate it
+     */
+    @Overwrite(remap = false)
+    public List<String> getWailaHead(Entity entity, List<String> currenttip, IWailaEntityAccessor accessor, IWailaConfigHandler config) {
+        if (!Strings.isNullOrEmpty(FormattingConfig.entityFormat)) {
+            try {
+                currenttip.add("\u00a7r" + String.format(FormattingConfig.entityFormat, 
+                        I18n.hasKey(entity.getName()) ? I18n.format(entity.getName()) : entity.getName()));
+            } catch (Exception e) {
+                currenttip.add("\u00a7r" + String.format(FormattingConfig.entityFormat, "Unknown"));
             }
-        }
-        return args;
+        } else currenttip.add("Unknown");
+
+        return currenttip;
     }
 }
