@@ -53,6 +53,8 @@ config.localizator.mixins.forgeModListMixin=(FML) Localized Mod List GUI Mixin
 config.localizator.mixins.forgeModListMixin.tooltip=Localizes few texts in the Mod List screen.
 config.localizator.mixins.lycanitesMessagesMixin=(Lycanites) Client-side Translated Messages Mixin
 config.localizator.mixins.lycanitesMessagesMixin.tooltip=The messages received from the server will be translated on client side to match their locale.
+config.localizator.mixins.battletowersMessagesMixin=(BattleTowers) Golem Defeated Message Mixin
+config.localizator.mixins.battletowersMessagesMixin.tooltip=Localize message sent from the server when the Battle Tower Golem is defeated.
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Mob Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!

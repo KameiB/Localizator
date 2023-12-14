@@ -127,7 +127,7 @@ dependencies {
     
     implementation fg.deobf("curse.maven:RoughTweaks-251670:2573301")
 
-    compileOnly(fg.deobf("curse.maven:serene-seasons-291874:2799213"))// DISABLE ONLY FOR DEBUGGING!
+    compileOnly(fg.deobf("curse.maven:serene-seasons-291874:2799213"))
     implementation fg.deobf("curse.maven:rustic-256141:3107974")
 
     compileOnly(fg.deobf("curse.maven:JEI-238222:3043174")) // Needed for ComposterCategoryMixin, ComposterRecipeMixin
@@ -140,6 +140,8 @@ dependencies {
     implementation fg.deobf("curse.maven:corpse-complex-271605:3176964")
 
     implementation fg.deobf("curse.maven:lycanites-mobs-224770:4486512")
+
+    implementation fg.deobf("curse.maven:atomicstrykers-battle-towers-227877:2817288")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

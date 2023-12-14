@@ -92,6 +92,10 @@ public class LocalizatorLoader {
         List<ConfigToMixin> lycanitesList = new ArrayList<>();
         lycanitesList.add(new ConfigToMixin("(Lycanites) Client-side Translated Messages Mixin", ForgeConfigHandler.getBoolean("(Lycanites) Client-side Translated Messages Mixin"), "mixins.lycanites.messages.json"));
         map.put("lycanitesmobs", lycanitesList);
+        // Battle Towers
+        List<ConfigToMixin> battletowersList = new ArrayList<>();
+        battletowersList.add(new ConfigToMixin("(BattleTowers) Golem Defeated Message Mixin", ForgeConfigHandler.getBoolean("(BattleTowers) Golem Defeated Message Mixin"), "mixins.battletowers.messages.json"));
+        map.put("battletowers", battletowersList);
 
         return Collections.unmodifiableMap(map);
     }

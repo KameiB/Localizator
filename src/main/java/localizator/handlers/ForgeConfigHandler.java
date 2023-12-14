@@ -127,6 +127,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.lycanitesMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean lycanitesMessagesMixin = !Production.inProduction;
+		@Config.Comment("Localize message sent from the server when the Battle Tower Golem is defeated.")
+		@Config.Name("(BattleTowers) Golem Defeated Message Mixin")
+		@Config.LangKey("config.localizator.mixins.battletowersMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean battletowersMessagesMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
