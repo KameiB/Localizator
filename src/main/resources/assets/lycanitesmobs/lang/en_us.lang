@@ -45,16 +45,3 @@ message.pet.tamefail_=The %s wants more!
 message.pet.tamefail.knowledge_=You gained knowledge by feeding the %s. At Rank 2 you may tame it!
 message.pet.mount.baby_=The %s is too young to carry you!
 #
-# ========== Event creatures ==========
-#
-# Halloween Treat
-entity.twistedent.name=Twisted Ent
-entity.wickedtreant.name=Wicked Treant
-entity.vampirebat.name=Vampire Bat
-entity.shadowclown.name=Shadow Clown
-# Winter Gift (Small and Large)
-entity.gooderness.name=Gooderness
-entity.rufolph.name=Rudolph
-entity.saltytree.name=Salty Tree
-entity.satanclaws.name=Satan Claws
-entity.krampus.name=Krampus

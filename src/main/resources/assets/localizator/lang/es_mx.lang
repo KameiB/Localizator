@@ -4,7 +4,7 @@ entity.localizator.KameiB.name=§2El §a§lKame
 book.localizator.Example.title=§b§oCuando me muera
 book.localizator.Example.author=§dAnna
 book.localizator.Example.page.1=Cuando me muera,\nme moriré sola.\nNadie se morirá por mí.\nCuando esté dispuesta\nte diré,\n§o"Fynn, ponme de pie",\ny miraré\ny me reiré\nalegremente.\nSi me caigo,\nes que ya he muerto.\n\n§r            FIN
-book.localizator.Example.lore=Un gran libro
+book.localizator.Example.lore=§6Un gran libro
 
 # Config
 config.localizator.mixins=Mixins
@@ -55,11 +55,15 @@ config.localizator.mixins.lycanitesMessagesMixin=(Lycanites) Mixin Cliente tradu
 config.localizator.mixins.lycanitesMessagesMixin.tooltip=Los mensajes recibidos por el servidor serán traducidos del lado del cliente, para que coincidan con su idioma.
 config.localizator.mixins.battletowersMessagesMixin=(BattleTowers) Mixin Mensaje Golem derrotado
 config.localizator.mixins.battletowersMessagesMixin.tooltip=Localiza el mensaje que el servidor envía cuando el Golem de Torre de Batalla es derrotado.
+config.localizator.mixins.callableHorsesMessagesMixin=(Callable Horses) Mixin Mensajes de caballos
+config.localizator.mixins.callableHorsesMessagesMixin.tooltip=Localiza todos los mensajes que el servidor envía, referentes a caballos.
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Aplica el mixin: \n- §d(Minecraft) Mixin Nombres de mobs§r. \n§cEste mixin necesita estar §aHabilitado§c!
 config.localizator.client.minecraftBossLocCustomNames=(Minecraft) Traducir nombres de Boss
 config.localizator.client.minecraftBossLocCustomNames.tooltip=Aplica el mixin: \n- §d(Minecraft) Mixin Nombres de Boss§r. \n§cEste mixin necesita estar §aHabilitado§c!
+config.localizator.client.minecraftHideLore=(Minecraft) Ocultar Lore si hay LocLore
+config.localizator.client.minecraftHideLore.tooltip=Si un item tiene ambos tags NBT "Lore" y "LocLore", el contenido de LocLore se antepondrá al contenido de Lore. \nSi tiene sólo uno de los tags de lore, dicho tag se mostrará normalmente. \n\n§cMixin requerido: \n- §d(Minecraft) Mixin Lore localizado
 config.localizator.client.neatLocHealthBar=(Neat) Traducir nombre en barra de salud
 config.localizator.client.neatLocHealthBar.tooltip=Aplica el mixin: \n- §d(Neat) Mixin Barra de salud§r. \n§cEste mixin necesita estar §aHabilitado§c!
 config.localizator.client.srparasitesResistances=(SRParasites) Traducir fuentes de daño resistidas

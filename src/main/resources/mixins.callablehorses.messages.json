@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "callablehorses.EntityEventsMixin",
+    "callablehorses.HoseManagerMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

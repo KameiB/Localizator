@@ -132,6 +132,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.battletowersMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean battletowersMessagesMixin = !Production.inProduction;
+		@Config.Comment("Localize all messages sent from the server.")
+		@Config.Name("(Callable Horses) Horse Messages Mixin")
+		@Config.LangKey("config.localizator.mixins.callableHorsesMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean callableHorsesMessagesMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
@@ -143,6 +148,10 @@ public class ForgeConfigHandler {
 		@Config.Name("(Minecraft) Translate Boss Custom Names")
 		@Config.LangKey("config.localizator.client.minecraftBossLocCustomNames")
 		public boolean minecraftBossLocCustomNames = !Production.inProduction;
+		@Config.Comment("If an item has both \"Lore\" and \"LocLore\" NBT tags, LocLore contents will override Lore contents. \nIf it has only one of the lore tags, it will be displayed normally. \nRequired Mixin: \n- \"(Minecraft) Localized Lore Mixin\".")
+		@Config.Name("(Minecraft) Hide Lore if LocLore exists")
+		@Config.LangKey("config.localizator.client.minecraftHideLore")
+		public boolean minecraftHideLore = !Production.inProduction;
 		@Config.Comment("Applies Mixins - \"(Neat) Health Bar Mixin\". This mixin needs to be enabled.")
 		@Config.Name("(Neat) Translate Names In Health Bar")
 		@Config.LangKey("config.localizator.client.neatLocHealthBar")

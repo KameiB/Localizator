@@ -4,7 +4,7 @@ entity.localizator.KameiB.name=§aThe §2§lKameiB
 book.localizator.Example.title=§b§oWhen I die
 book.localizator.Example.author=§dAnna
 book.localizator.Example.page.1=When I die,\nI'll die by myself.\nNo one will die instead.\nWhen I feel ready\nI'll tell you,\n§o"Fynn, put me standing up",\nand will look\nand laugh happily.\nIf I fall down,\nit means I died.\n\n§r            FIN
-book.localizator.Example.lore=A great book
+book.localizator.Example.lore=§6A great book
 
 # Config
 config.localizator.mixins=Mixins
@@ -55,11 +55,15 @@ config.localizator.mixins.lycanitesMessagesMixin=(Lycanites) Client-side Transla
 config.localizator.mixins.lycanitesMessagesMixin.tooltip=The messages received from the server will be translated on client side to match their locale.
 config.localizator.mixins.battletowersMessagesMixin=(BattleTowers) Golem Defeated Message Mixin
 config.localizator.mixins.battletowersMessagesMixin.tooltip=Localize message sent from the server when the Battle Tower Golem is defeated.
+config.localizator.mixins.callableHorsesMessagesMixin=(Callable Horses) Horse Messages Mixin
+config.localizator.mixins.callableHorsesMessagesMixin.tooltip=Localize all messages sent from the server.
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
-config.localizator.client.minecraftMobLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Mob Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
+config.localizator.client.minecraftMobLocCustomNames.tooltip=If an entity has the CustomName tag and it contains a language key, translate it.Applies the Mixin:\n- §d(Minecraft) Mob Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
 config.localizator.client.minecraftBossLocCustomNames=(Minecraft) Translate Boss Custom Names
 config.localizator.client.minecraftBossLocCustomNames.tooltip=Applies the Mixin:\n- §d(Minecraft) Boss Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
+config.localizator.client.minecraftHideLore=(Minecraft) Hide Lore if LocLore exists
+config.localizator.client.minecraftHideLore.tooltip=If an item has both "Lore" and "LocLore" NBT tags, LocLore contents will override Lore contents. \nIf it has only one of the lore tags, it will be displayed normally. \n\n§cRequired Mixin: \n- §d"(Minecraft) Localized Lore Mixin"
 config.localizator.client.neatLocHealthBar=(Neat) Translate Names In Health Bar
 config.localizator.client.neatLocHealthBar.tooltip=Applies the Mixin:\n- §d(Neat) Health Bar Mixin§r. \n§cThis mixin needs to be §aEnabled§c!
 config.localizator.client.srparasitesResistances=(SRParasites) Translate Resisted Damage Sources

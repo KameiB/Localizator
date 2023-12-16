@@ -120,7 +120,7 @@ dependencies {
     implementation fg.deobf("curse.maven:better-survival-mod-260360:4469260")
 
     implementation fg.deobf("curse.maven:creativecore-257814:4722163") // Needed for ItemPhysic_Full
-    implementation fg.deobf("curse.maven:itemphysic-258587:3487676")
+    //implementation fg.deobf("curse.maven:itemphysic-258587:3487676")
     
     implementation fg.deobf("curse.maven:Baubles-227083:2518667") // Needed for Bountiful Baubles
     implementation fg.deobf("curse.maven:bountifulbaubles-313536:3568240")
@@ -142,6 +142,10 @@ dependencies {
     implementation fg.deobf("curse.maven:lycanites-mobs-224770:4486512")
 
     implementation fg.deobf("curse.maven:atomicstrykers-battle-towers-227877:2817288")
+
+    implementation fg.deobf("curse.maven:callable-horses-331746:3568565")
+
+    //implementation fg.deobf("curse.maven:enhancedvisuals-255389:3507523")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

@@ -96,6 +96,10 @@ public class LocalizatorLoader {
         List<ConfigToMixin> battletowersList = new ArrayList<>();
         battletowersList.add(new ConfigToMixin("(BattleTowers) Golem Defeated Message Mixin", ForgeConfigHandler.getBoolean("(BattleTowers) Golem Defeated Message Mixin"), "mixins.battletowers.messages.json"));
         map.put("battletowers", battletowersList);
+        // Callable Horses
+        List<ConfigToMixin> callablehorsesList = new ArrayList<>();
+        callablehorsesList.add(new ConfigToMixin("(Callable Horses) Horse Messages Mixin", ForgeConfigHandler.getBoolean("(Callable Horses) Horse Messages Mixin"), "mixins.callablehorses.messages.json"));
+        map.put("callablehorses", callablehorsesList);
 
         return Collections.unmodifiableMap(map);
     }
