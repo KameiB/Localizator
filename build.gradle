@@ -120,7 +120,7 @@ dependencies {
     implementation fg.deobf("curse.maven:better-survival-mod-260360:4469260")
 
     implementation fg.deobf("curse.maven:creativecore-257814:4722163") // Needed for ItemPhysic_Full
-    //implementation fg.deobf("curse.maven:itemphysic-258587:3487676")
+    implementation fg.deobf("curse.maven:itemphysic-258587:3487676")
     
     implementation fg.deobf("curse.maven:Baubles-227083:2518667") // Needed for Bountiful Baubles
     implementation fg.deobf("curse.maven:bountifulbaubles-313536:3568240")

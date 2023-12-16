@@ -25,7 +25,7 @@ public abstract class WeaponToolArmorBaseMixin {
     )
     @SideOnly(Side.CLIENT)
     // Line 105: tooltip.add(TextFormatting.DARK_PURPLE + "Current Adaptation:");
-    private boolean localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipAdaptation(List tooltip, Object e) {
+    private boolean localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipAdaptation(List<String> tooltip, Object e) {
         return tooltip.add(TextFormatting.DARK_PURPLE + I18n.format("tooltip.srparasites.armor.adaptation"));
     }
 
@@ -47,7 +47,7 @@ public abstract class WeaponToolArmorBaseMixin {
             else { // Entity damage OR damage not included in Lang file
                 resistanceTranslated = EntityList.getTranslationName(new ResourceLocation(resistanceRaw));
                 if (resistanceTranslated == null) {
-                    // Non registered entity? or Damage not included in Lang file.
+                    // Non registered entity? or Damage not included in Lang file. Show it as is.
                     // Include it in your Lang file, so it shows translated.
                     resistanceTranslated = resistanceRaw;
                 }

@@ -100,6 +100,11 @@ public class LocalizatorLoader {
         List<ConfigToMixin> callablehorsesList = new ArrayList<>();
         callablehorsesList.add(new ConfigToMixin("(Callable Horses) Horse Messages Mixin", ForgeConfigHandler.getBoolean("(Callable Horses) Horse Messages Mixin"), "mixins.callablehorses.messages.json"));
         map.put("callablehorses", callablehorsesList);
+        // Item Physic
+        List<ConfigToMixin> itemphysicList = new ArrayList<>();
+        itemphysicList.add(new ConfigToMixin("(ItemPhysic) Power: Status Message Mixin", ForgeConfigHandler.getBoolean("(ItemPhysic) Power: Status Message Mixin"), "mixins.itemphysic.message.json"));
+        itemphysicList.add(new ConfigToMixin("(ItemPhysic) ERRORED patch Mixin", ForgeConfigHandler.getBoolean("(ItemPhysic) ERRORED patch Mixin"), "mixins.itemphysic.erroredpatch.json"));
+        map.put("itemphysic", itemphysicList);
 
         return Collections.unmodifiableMap(map);
     }

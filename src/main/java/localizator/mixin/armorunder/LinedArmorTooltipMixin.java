@@ -24,12 +24,5 @@ public abstract class LinedArmorTooltipMixin {
                     I18n.translateToLocal("tooltip.auw.xlining.ozzy_" + format[0].toString().toLowerCase()));
         }
         return I18n.translateToLocalFormatted(key,format);
-        
-        /*if  (what[0] instanceof String) {
-            String modifier = (String)what[0];
-            modifier = "tooltip.auw.xlining.ozzy_" + modifier.toLowerCase();
-            what[0] = I18n.translateToLocal(modifier);
-        }
-        return what;*/
     }
 }

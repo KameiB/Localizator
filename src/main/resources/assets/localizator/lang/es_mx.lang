@@ -57,6 +57,10 @@ config.localizator.mixins.battletowersMessagesMixin=(BattleTowers) Mixin Mensaje
 config.localizator.mixins.battletowersMessagesMixin.tooltip=Localiza el mensaje que el servidor envía cuando el Golem de Torre de Batalla es derrotado.
 config.localizator.mixins.callableHorsesMessagesMixin=(Callable Horses) Mixin Mensajes de caballos
 config.localizator.mixins.callableHorsesMessagesMixin.tooltip=Localiza todos los mensajes que el servidor envía, referentes a caballos.
+config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) Mixin Mensaje de estado "Power: "
+config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localiza el mensaje de estado "Power: " cuando lanzas un item. \n§c--Primero asegúrate de que el mod ItemPhysic está habilitado!
+config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) Mixin Parchar ERRORED
+config.localizator.mixins.itemphysicErroredMixin.tooltip=Si un item no está TAN mal en su estructura, obtener su nombre y mostrarlo. \n§aFunciona con el Interior Ozzy y otros items de ArmorUnderwear!
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Aplica el mixin: \n- §d(Minecraft) Mixin Nombres de mobs§r. \n§cEste mixin necesita estar §aHabilitado§c!

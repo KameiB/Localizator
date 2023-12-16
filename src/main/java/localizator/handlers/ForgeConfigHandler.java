@@ -137,6 +137,16 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.callableHorsesMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean callableHorsesMessagesMixin = !Production.inProduction;
+		@Config.Comment("Localize the \"Power: \" status message when throwing an item.")
+		@Config.Name("(ItemPhysic) Power: Status Message Mixin")
+		@Config.LangKey("config.localizator.mixins.itemphysicMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean itemphysicMessagesMixin = !Production.inProduction;
+		@Config.Comment("If an item is not THAT errored, retrieve its name and display it. \nWorks with ArmorUnderwear Ozzy Liners, etc!")
+		@Config.Name("(ItemPhysic) ERRORED patch Mixin")
+		@Config.LangKey("config.localizator.mixins.itemphysicErroredMixin")
+		@Config.RequiresMcRestart
+		public boolean itemphysicErroredMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
