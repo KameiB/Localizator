@@ -147,6 +147,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.itemphysicErroredMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicErroredMixin = !Production.inProduction;
+		@Config.Comment("Reverse the order of a dropped item description, so it shows the same as on its tooltip.")
+		@Config.Name("(ItemPhysic) Reverse Description Mixin")
+		@Config.LangKey("config.localizator.mixins.itemphysicReverseDescriptionMixin")
+		@Config.RequiresMcRestart
+		public boolean itemphysicReverseDescriptionMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {

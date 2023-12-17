@@ -61,6 +61,8 @@ config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) "Power: " Status 
 config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localize the "Power: " status message when throwing an item. \n§c--First ensure ItemPhysic mod is enabled!
 config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) ERRORED patch Mixin
 config.localizator.mixins.itemphysicErroredMixin.tooltip=If an item is not THAT errored, retrieve its name and display it. \n§aWorks with ArmorUnderwear Ozzy Liners, etc!
+config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Reverse Description Mixin
+config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Reverse the order of a dropped item description, so it shows the same as on its tooltip.
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
 config.localizator.client.minecraftMobLocCustomNames.tooltip=If an entity has the CustomName tag and it contains a language key, translate it.Applies the Mixin:\n- §d(Minecraft) Mob Custom Names Mixin§r. \n§cThis mixin needs to be §aEnabled§c!

@@ -33,13 +33,13 @@ public abstract class ErroredPatch {
     private ItemStack ItemPhysic_EventHandler_renderTickFull_getItemName(EntityItem entity) {
         localizator$itemName = "ERRORED";
         if (entity.getItem() != null) { // Just in case. I'm not THAT reckless
-            //if (!(entity.getItem().isEmpty())) { // It doesn't enter here
+            //if (!(entity.getItem().isEmpty())) { // Code doesn't enter here
             //if (entity.getItem().hasDisplayName()) { // Neither here
             localizator$itemName = entity.getItem().getDisplayName(); // Let's just take it by force. The exception will be caught anyway.
             //}
             //}
         }
-        //Localizator.LOGGER.info("Item: " + entity.getItem().getDisplayName());
+        //Localizator.LOGGER.info("Item: " + entity.getItem().getDisplayName()); // Used for testing how viable this approach was.
 
         // Continue with normal behaviour
         return entity.getItem();
@@ -60,6 +60,9 @@ public abstract class ErroredPatch {
     // Step 2: At least show the item name
     // Line 270: list.add("ERRORED");
     private Object ArmorUnder_EventHandler_renderTickFull_showItemNameIfPossible(Object text) {
-        return localizator$itemName;
+        if (localizator$itemName != null && !localizator$itemName.isEmpty()) { // Extra precautions just in case...
+            return localizator$itemName;
+        }
+        return "ERRORED";
     }
 }

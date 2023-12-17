@@ -61,6 +61,8 @@ config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) Mixin Mensaje de 
 config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localiza el mensaje de estado "Power: " cuando lanzas un item. \n§c--Primero asegúrate de que el mod ItemPhysic está habilitado!
 config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) Mixin Parchar ERRORED
 config.localizator.mixins.itemphysicErroredMixin.tooltip=Si un item no está TAN mal en su estructura, obtener su nombre y mostrarlo. \n§aFunciona con el Interior Ozzy y otros items de ArmorUnderwear!
+config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Mixin Descripción invertida
+config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Invierte el orden de la descripción de un item que está en el suelo, para que se muestre igual que en el inventario.
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Aplica el mixin: \n- §d(Minecraft) Mixin Nombres de mobs§r. \n§cEste mixin necesita estar §aHabilitado§c!
