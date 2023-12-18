@@ -39,9 +39,10 @@ dragon_fire=Dragon Fire
 dragon_ice=Dragon Ice
 gorgon=Gorgon
 dragon_lightning=Dragon Lightning
+acid=Acid
 
 # Locks
-locks.shock=Shocking
+locks.shock=Lock Shock
 
 # Lycanites Mobs
 cold_fire=Cold Fire

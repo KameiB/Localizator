@@ -23,7 +23,7 @@ wither=Descomposición
 anvil=Yunque
 fallingBlock=Bloque cayendo
 dragonBreath=Aliento de dragón
-fireworks=Cohete de fuego artificial
+fireworks=Fuegos artificiales
 thorns=Espinas
 thrown=Proyectil
 arrow=Flecha
@@ -35,13 +35,14 @@ mob=Mob
 fallingtree=Árbol cayendo
 
 # Ice and Fire
-dragon_fire=Fuego de Dragón
-dragon_ice=Hielo de Dragón
+dragon_fire=Fuego de dragón
+dragon_ice=Hielo de dragón
 gorgon=Gorgona
-dragon_lightning=Rayo de Dragón
+dragon_lightning=Rayo de dragón
+acid=Ácido
 
 # Locks
-locks.shock=Electrochoque
+locks.shock=Choque de candado
 
 # Lycanites Mobs
 cold_fire=Fuego frío

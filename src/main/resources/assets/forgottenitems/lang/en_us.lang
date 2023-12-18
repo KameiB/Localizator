@@ -1,4 +1,4 @@
-# Added by KameiB. Item tooltips
+# Item tooltips
 item.vein_pickaxe.desc=§bVein Mines the block broken§r
 item.obsidian_harvester.desc=§bVery useful for mining Obsidian§r
 item.heat_talisman.lore=§eStores extreme amounts of heat§r

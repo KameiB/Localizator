@@ -18,7 +18,7 @@ public abstract class ItemShockTalismanMixin {
             remap = false
     )
     // Line 12: super("shock_talisman", "Converts fall damage into an explosion", 6, ItemList.shockGem);
-    private static String localizator_ForgottenItems_ItemShockTalisman_Constructor(String lore) {
+    private static String ForgottenItems_ItemShockTalisman_Constructor(String lore) {
         return "item.shock_talisman.lore";
     }
     

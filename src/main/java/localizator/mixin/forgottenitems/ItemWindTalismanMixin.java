@@ -18,7 +18,7 @@ public abstract class ItemWindTalismanMixin {
             remap = false
     )
     // Line 20: super("wind_talisman", "Fly with the wind", 16, ItemList.windGem);
-    private static String localizator_ForgottenItems_ItemWindTalisman_Constructor(String lore) {
+    private static String ForgottenItems_ItemWindTalisman_Constructor(String lore) {
         return "item.wind_talisman.lore";
     }
     

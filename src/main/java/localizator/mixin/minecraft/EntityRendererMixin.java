@@ -1,5 +1,6 @@
 package localizator.mixin.minecraft;
 
+import localizator.data.Production;
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.resources.I18n;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,10 +18,11 @@ public abstract class EntityRendererMixin {
             method = "drawNameplate",
             at = @At("HEAD"),
             argsOnly = true,
-            ordinal = 0
+            ordinal = 0,
+            remap = Production.inProduction
     )
     // Line 2019: public static void drawNameplate(FontRenderer fontRendererIn, String str, float x, float y, float z, int verticalShift, float viewerYaw, float viewerPitch, boolean isThirdPersonFrontal, boolean isSneaking)
-    private static String localizatorEntityRenderer_drawNamePlate(String str) {
+    private static String Minecraft_EntityRenderer_drawNamePlate(String str) {
         if (ForgeConfigHandler.clientConfig.minecraftMobLocCustomNames) {
             int lastIndex = str.lastIndexOf("§r");
             String langKey = lastIndex == (str.length() - 2) ? str.substring(0, lastIndex) : str;

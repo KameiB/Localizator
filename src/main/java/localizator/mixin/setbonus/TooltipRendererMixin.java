@@ -19,96 +19,87 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import java.util.Iterator;
+
 import java.util.List;
 
 @Mixin(TooltipRenderer.class)
-public class TooltipRendererMixin {
+public abstract class TooltipRendererMixin {
     /**
      * @author KameiB
      * @reason Add support to lang keys in config file's set name and bonus name
+     * Code based on original MIT Licensed code:
+     * https://github.com/Laike-Endaril/Set-Bonus/blob/1.12.2/src/main/java/com/fantasticsource/setbonus/client/TooltipRenderer.java
      */
     @Overwrite(remap = false)
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    // Line 29
-    public static void tooltips(ItemTooltipEvent event) {
-        if (SetBonusConfig.clientSettings.enableTooltips) {
-            EntityPlayer player = event.getEntityPlayer();
-            if (player != null) {
-                List<String> tooltip = event.getToolTip();
-                boolean edited = false;
-                Iterator var4 = ClientData.sets.values().iterator();
+    @SideOnly(Side.CLIENT) // Just to remind myself that this is running on client side
+    public static void tooltips(ItemTooltipEvent event) {    
+        if (!SetBonusConfig.clientSettings.enableTooltips) return;
 
-                label89:
-                while(var4.hasNext()) {
-                    Set set = (Set)var4.next();
-                    Iterator var6 = set.involvedEquips.values().iterator();
+        EntityPlayer player = event.getEntityPlayer();
+        if (player == null) return;
 
-                    while(true) {
-                        ItemFilter filter;
-                        do {
-                            if (!var6.hasNext()) {
-                                continue label89;
-                            }
+        List<String> tooltip = event.getToolTip();
 
-                            filter = (ItemFilter)var6.next();
-                        } while(!filter.matches(event.getItemStack()));
-
-                        if (!edited) {
-                            edited = true;
-                            tooltip.add("");
-                        }
-
-                        int count = set.getNumberEquipped(player);
-                        int max = set.getMaxNumber();
-                        String color = "" + (count == 0 ? TextFormatting.RED : (count == max ? TextFormatting.GREEN : TextFormatting.YELLOW));
-                        //tooltip.add(color + TextFormatting.BOLD + "=== " + set.name + " (" + count + "/" + max + ") ===");
-                        tooltip.add(color + TextFormatting.BOLD + "=== " + (I18n.hasKey(set.name) ? I18n.format(set.name) : set.name) + " (" + count + "/" + max + ") ===");
-                        Iterator var11 = ClientData.bonuses.values().iterator();
-
-                        while(var11.hasNext()) {
-                            ClientBonus bonus = (ClientBonus)var11.next();
-                            int req = 0;
-                            boolean otherReqs = false;
-                            Iterator var15 = bonus.bonusRequirements.iterator();
-
-                            while(var15.hasNext()) {
-                                ABonusRequirement requirement = (ABonusRequirement)var15.next();
-                                if (requirement instanceof SetRequirement) {
-                                    SetRequirement setRequirement = (SetRequirement)requirement;
-                                    if (setRequirement.set.id.equals(set.id)) {
-                                        req = Tools.max(new int[]{req, setRequirement.num});
-                                    } else {
-                                        otherReqs = true;
-                                    }
-                                } else {
-                                    otherReqs = true;
-                                }
-                            }
-
-                            if (req > 0) {
-                                ClientBonus.BonusInstance bonusInstance = bonus.getBonusInstance(player);
-                                color = "";
-                                int active = set.getNumberEquipped(player);
-                                if (bonusInstance.active) {
-                                    color = color + TextFormatting.GREEN;
-                                } else if (active >= req) {
-                                    color = color + TextFormatting.DARK_PURPLE;
-                                } else if (active == 0) {
-                                    color = color + TextFormatting.RED;
-                                } else {
-                                    color = color + TextFormatting.YELLOW;
-                                }
-
-                                //tooltip.add(color + " (" + active + "/" + req + ")" + (otherReqs ? "*" : "") + " " + bonus.name);
-                                tooltip.add(color + " (" + active + "/" + req + ")" + (otherReqs ? "*" : "") + " " + (I18n.hasKey(bonus.name) ? I18n.format(bonus.name) : bonus.name));
-                            }
-                        }
-
+        boolean edited = false;
+        for (Set set : ClientData.sets.values())
+        {
+            for (ItemFilter filter : set.involvedEquips.values())
+            {
+                if (filter.matches(event.getItemStack()))
+                {
+                    if (!edited)
+                    {
+                        edited = true;
                         tooltip.add("");
+//                        tooltip.add("" + LIGHT_PURPLE + UNDERLINE + I18n.translateToLocalFormatted(SetBonus.MODID + ".tooltip.pressDetailKey"));
+//                        tooltip.add("");
                     }
-                }
+                    int count = set.getNumberEquipped(player);
+                    int max = set.getMaxNumber();
+                    String color = "" + (count == 0 ? TextFormatting.RED : count == max ? TextFormatting.GREEN : TextFormatting.YELLOW);
+                    //tooltip.add(color + TextFormatting.BOLD + "=== " + set.name + " (" + count + "/" + max + ") ===");
+                    tooltip.add(color + TextFormatting.BOLD + "=== " + (I18n.hasKey(set.name) ? I18n.format(set.name) : set.name) + " (" + count + "/" + max + ") ===");
+                    for (ClientBonus bonus : ClientData.bonuses.values())
+                    {
+                        int req = 0;
+                        boolean otherReqs = false;
 
+                        for (ABonusRequirement requirement : bonus.bonusRequirements)
+                        {
+                            if (requirement instanceof SetRequirement)
+                            {
+                                SetRequirement setRequirement = ((SetRequirement) requirement);
+                                if (setRequirement.set.id.equals(set.id))
+                                {
+                                    req = Tools.max(req, setRequirement.num);
+                                }
+                                else otherReqs = true;
+                            }
+                            else otherReqs = true;
+                        }
+
+                        if (req > 0)
+                        {
+                            ClientBonus.BonusInstance bonusInstance = bonus.getBonusInstance(player);
+
+                            color = "";
+                            int active = set.getNumberEquipped(player);
+
+                            if (bonusInstance.active) color += TextFormatting.GREEN; //All requirements met
+                            else
+                            {
+                                if (active >= req) color += TextFormatting.DARK_PURPLE; //Set requirements are met, but non-set requirements are not met
+                                else if (active == 0) color += TextFormatting.RED; //No set requirements met
+                                else color += TextFormatting.YELLOW; //Some set requirements met
+                            }
+
+                            //tooltip.add(color + " (" + active + "/" + req + ")" + (otherReqs ? "*" : "") + " " + bonus.name);
+                            tooltip.add(color + " (" + active + "/" + req + ")" + (otherReqs ? "*" : "") + " " + (I18n.hasKey(bonus.name) ? I18n.format(bonus.name) : bonus.name));
+                        }
+                    }
+                    tooltip.add("");
+                }
             }
         }
     }

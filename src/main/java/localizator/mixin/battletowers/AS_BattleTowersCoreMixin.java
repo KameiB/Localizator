@@ -7,15 +7,9 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
-
-import java.util.Set;
 
 @Mixin(AS_BattleTowersCore.class)
 public abstract class AS_BattleTowersCoreMixin {    
-    @Shadow(remap = false)
-    private Set<AS_TowerDestroyer> towerDestroyers;
-    
     /**
      * @author KameiB
      * @reason Send a lang key instead of a hardcoded text

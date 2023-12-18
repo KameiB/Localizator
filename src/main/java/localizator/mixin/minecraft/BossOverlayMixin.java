@@ -1,5 +1,6 @@
 package localizator.mixin.minecraft;
 
+import localizator.data.Production;
 import localizator.handlers.ForgeConfigHandler;
 import net.minecraft.client.gui.GuiBossOverlay;
 import net.minecraft.client.resources.I18n;
@@ -22,10 +23,11 @@ public abstract class BossOverlayMixin {
      */
     @Redirect(
             method = "renderBossHealth()V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/text/ITextComponent;getFormattedText()Ljava/lang/String;")
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/text/ITextComponent;getFormattedText()Ljava/lang/String;"),
+            remap = Production.inProduction
     )
     // Line 43: String s = bossinfoclient.getName().getFormattedText();
-    public String localizatorRenderBossHealth_getFormattedTextName(ITextComponent bossName) {
+    private String Minecraft_GuiBossOverlay_RenderBossHealth_getFormattedTextName(ITextComponent bossName) {
         StringBuilder stringbuilder = new StringBuilder();
 
         for (ITextComponent itextcomponent : bossName)

@@ -31,6 +31,7 @@ public abstract class ItemStackMixin
     private boolean localizator$hasLocLore;
     @Unique
     private List<String> localizator$tooltip ;
+    
     @Redirect(
             method = "getTooltip(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/client/util/ITooltipFlag;)Ljava/util/List;",
             at = @At( value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 0),

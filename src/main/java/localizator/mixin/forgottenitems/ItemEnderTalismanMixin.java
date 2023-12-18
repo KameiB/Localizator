@@ -18,7 +18,7 @@ public abstract class ItemEnderTalismanMixin {
             remap = false
     )
     // Line 28: super("ender_talisman", "Teleports you where you're looking", 18, ItemList.enderGem);
-    private static String localizator_ForgottenItems_ItemEnderTalisman(String lore) {
+    private static String ForgottenItems_ItemEnderTalisman(String lore) {
         return "item.ender_talisman.lore";
     }    
 }

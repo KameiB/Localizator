@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.List;
 
@@ -37,17 +36,17 @@ public abstract class WeaponToolArmorBaseMixin {
     @SideOnly(Side.CLIENT)
     // Line 113: tooltip.add(TextFormatting.YELLOW + "-> " + (String)resistanceS.get(i));
     private Object localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipResistance(Object resistanceObj) {
-        if (resistanceObj instanceof String && ForgeConfigHandler.clientConfig.srparasitesResistances) {
+        if (ForgeConfigHandler.clientConfig.srparasitesResistances) {
             String resistanceFull = ((String)resistanceObj);
             String resistanceRaw = resistanceFull.substring(resistanceFull.indexOf("-> ") + 3);            
-            String resistanceTranslated;
+            String resistanceTranslated = "";
             if (I18n.hasKey(resistanceRaw)) { // Non-entity damage
                 resistanceTranslated = I18n.format(resistanceRaw);
             }
             else { // Entity damage OR damage not included in Lang file
                 resistanceTranslated = EntityList.getTranslationName(new ResourceLocation(resistanceRaw));
                 if (resistanceTranslated == null) {
-                    // Non registered entity? or Damage not included in Lang file. Show it as is.
+                    // Non registered entity? or Damage not included in Lang file. Show it as-is.
                     // Include it in your Lang file, so it shows translated.
                     resistanceTranslated = resistanceRaw;
                 }
@@ -68,10 +67,6 @@ public abstract class WeaponToolArmorBaseMixin {
     @SideOnly(Side.CLIENT)
     // Line 114: tooltip.add(TextFormatting.YELLOW + " reduction: " + formatResult + "%");
     private Object localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipReduction(Object reductionObj) {
-        if (reductionObj instanceof String) {
-            String reduction = ((String)reductionObj).replace(" reduction:", I18n.format("tooltip.srparasites.armor.reduction"));
-            reductionObj = reduction;
-        }
-        return reductionObj;
+        return ((String)reductionObj).replace(" reduction:", I18n.format("tooltip.srparasites.armor.reduction"));        
     }
 }

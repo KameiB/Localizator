@@ -66,10 +66,11 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
     @Inject(
             method = "getItemStackDisplayName(Lnet/minecraft/item/ItemStack;)Ljava/lang/String;",
             at = @At("HEAD"),
-            cancellable = true
+            cancellable = true,
+            remap = Production.inProduction
     )
     // Line 57
-    private void localizator_minecraftItemWrittenBook_getItemStackDisplayName(ItemStack stack, CallbackInfoReturnable<String> cir) {
+    private void localizator_Minecraft_ItemWrittenBook_getItemStackDisplayName(ItemStack stack, CallbackInfoReturnable<String> cir) {
         if (stack.hasTagCompound())
         {
             NBTTagCompound nbttagcompound = stack.getTagCompound();
@@ -85,11 +86,12 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
     @Inject(
             method = "addInformation(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)V",
             at = @At("HEAD"),
-            cancellable = true
+            cancellable = true,
+            remap = Production.inProduction
     )
     @SideOnly(Side.CLIENT)
     // Line 74
-    private void localizator_minecraftItemWrittenBook_addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
+    private void localizator_Minecraft_ItemWrittenBook_addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
         if (stack.hasTagCompound())
         {
             NBTTagCompound nbttagcompound = stack.getTagCompound();

@@ -25,7 +25,7 @@ import java.util.List;
 
 @Mixin(ModFertility.class)
 public abstract class ModFertilityMixin {
-    @Shadow(remap = false) private static HashMap<String, Integer> seedSeasons = new HashMap();
+    @Shadow(remap = false) private static HashMap<String, Integer> seedSeasons = new HashMap<>();
 
     /**
      * @author KameiB
@@ -66,7 +66,7 @@ public abstract class ModFertilityMixin {
 
     /** 
      * @author KameiB
-     * @reason "rustic:chili_pepper_seeds" and "rustic:tomato_seeds" are not instances of IPlantable, but ItemStakeCropSeed.
+     * @reason Rustic's "rustic:chili_pepper_seeds" and "rustic:tomato_seeds" are not instances of IPlantable, but ItemStakeCropSeed.
      * Therefore, I had to add that special case, so those seeds show their fertile seasons on tooltip.
      */
     @Inject(

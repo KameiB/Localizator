@@ -18,17 +18,3 @@ charm.jei.recipe.composter.compost_chance=Probab. de compostar:
 charm.jei.recipe.composter.outputs=Genera %s
 charm.jei.recipe.composter.1_item=1 item
 charm.jei.recipe.composter.many_items=1-%d items
-
-# Records
-#item.charm:record_creative1.name=Disco de música creativo 1
-#item.charm:record_creative2.name=Disco de música creativo 2
-#item.charm:record_creative3.name=Disco de música creativo 3
-#item.charm:record_creative4.name=Disco de música creativo 4
-#item.charm:record_creative5.name=Disco de música creativo 5
-#item.charm:record_creative6.name=Disco de música creativo 6
-#item.charm:record_creative1=Disco de música creativo 1_
-#item.charm:record_creative2=Disco de música creativo 2_
-#item.charm:record_creative3=Disco de música creativo 3_
-#item.charm:record_creative4=Disco de música creativo 4_
-#item.charm:record_creative5=Disco de música creativo 5_
-#item.charm:record_creative6=Disco de música creativo 6_

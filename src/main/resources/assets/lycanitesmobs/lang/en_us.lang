@@ -11,7 +11,7 @@ message.soulstone.pet.added_=Your %s has been bound, you will now find it in you
 message.soulstone.mount.added_=Your %s has been bound, you will now find it in your Mount Manager.
 #
 # ========== Commands ==========
-lyc.command.debug.set_=Se actualizó %s.
+lyc.command.debug.set_=Updated %s.
 #
 # Spawners:
 lyc.command.spawners.creative_=Toggled Mob Spawn Triggers for Creative Mode players to %s.

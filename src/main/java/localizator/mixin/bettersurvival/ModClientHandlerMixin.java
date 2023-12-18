@@ -9,7 +9,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(ModClientHandler.class)
-public abstract class ModClientHandlerMixin {    
+public abstract class ModClientHandlerMixin {
+    /**
+     * @author KameiB
+     * @reason Localize the hardcoded "hits remaining" text on a potion-imbued weapon tooltip
+     */
     @ModifyArg(
             method = "onTooltipRender(Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;)V",
             at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 3),            

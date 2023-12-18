@@ -12,10 +12,10 @@ public abstract class ComposterCategoryMixin {
     /**
      * @author KameiB
      * @reason Composter JEI recipe GUI title is hardcoded
-     * Note: I tried just changing the return, but Mixin said getTitle is not cancellable :c
      */
     @Overwrite(remap = false)
     @SideOnly(Side.CLIENT)
+    // Line 32
     public String getTitle() {
         return I18n.format("charm.jei.recipe.composter");
     }

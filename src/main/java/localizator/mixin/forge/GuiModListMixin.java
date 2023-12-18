@@ -10,18 +10,10 @@ import net.minecraftforge.fml.common.ModContainer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.List;
-import java.util.Locale;
 
 @Mixin(GuiModList.class)
 public abstract class GuiModListMixin {
-    @Shadow(remap = false) private GuiButton configModButton;
-    @Shadow(remap = false) private GuiButton disableModButton;
     @Shadow(remap = false) private ModContainer selectedMod;    
         
     @ModifyArg(
@@ -36,15 +28,16 @@ public abstract class GuiModListMixin {
         return button;        
     }
     
-    @Inject(
+    @ModifyArg(
             method = "Lnet/minecraftforge/fml/client/GuiModList;initGui()V",
             at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 2),
             remap = Production.inProduction
     )
     // Localize "Disable" button text
     // Line 177: this.buttonList.add(disableModButton);
-    private void localizator_Forge_GuiModList_initGui_disableButton(CallbackInfo ci) {
-        disableModButton.displayString = I18n.format("fml.button.disable");        
+    private Object localizator_Forge_GuiModList_initGui_disableButton(Object button) {
+        ((GuiButton)button).displayString = I18n.format("fml.button.disable");
+        return button;
     }
         
     @ModifyArg(

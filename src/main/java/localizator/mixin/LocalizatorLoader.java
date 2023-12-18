@@ -126,7 +126,6 @@ public class LocalizatorLoader {
             try {
                 modClassLoader.addFile(mod.getSource());
                 modIdList.add(mod.getModId());
-                //Localizator.LOGGER.info("[Localizator] Added " + mod.getModId() + " to the class loader.");
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }

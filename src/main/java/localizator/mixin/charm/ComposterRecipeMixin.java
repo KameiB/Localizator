@@ -23,6 +23,7 @@ public abstract class ComposterRecipeMixin {
      */
     @Overwrite(remap = false)
     @SideOnly(Side.CLIENT)
+    // Line 36
     public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         int max = Composter.maxOutput;
         String numItems = max > 1 ? I18n.format("charm.jei.recipe.composter.many_items", max) : I18n.format("charm.jei.recipe.composter.1_item");        

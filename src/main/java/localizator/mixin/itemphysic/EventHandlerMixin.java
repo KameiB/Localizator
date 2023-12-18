@@ -25,7 +25,7 @@ public abstract class EventHandlerMixin {
     @SideOnly(Side.CLIENT)
     // String text = "Power: " + renderPower;
     // Line 306: mc.player.sendStatusMessage(new TextComponentString(text), true);
-    private ITextComponent localizator_ItemPhysic_EventHandler_PowerStatusMessage(ITextComponent textComponent) {
+    private ITextComponent ItemPhysic_EventHandler_PowerStatusMessage(ITextComponent textComponent) {
         String power = textComponent.getUnformattedText().substring(textComponent.getUnformattedText().indexOf("Power: ") + 6);
         return new TextComponentTranslation("notif.itemphysic.throw_power", power);        
     }
