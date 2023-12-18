@@ -6,6 +6,8 @@ import localizator.data.Production;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class ErroredPatch {
     @Unique
     private String localizator$itemName = "ERRORED";
-    @Unique
-    private String localizator$tempName = "ERRORED";
     @Redirect(
             method = "renderTickFull()V",
             at = @At(
@@ -35,13 +35,14 @@ public abstract class ErroredPatch {
     // Step 1: Try to cheese the item's name 
     // Line 266: entity.getItem().getItem().addInformation(entity.getItem(), mc.player.world, list, TooltipFlags.NORMAL);
     private ItemStack ItemPhysic_EventHandler_renderTickFull_getItemName(EntityItem entity) {
-        localizator$itemName = "ERRORED";        
-        //if (!(entity.getItem().isEmpty())) { // Code doesn't enter here
-        //if (entity.getItem().hasDisplayName()) { // Neither here            
-        localizator$tempName = entity.getItem().getDisplayName(); // Let's pray the exception is caught here before saving to my field            
-        localizator$itemName = localizator$tempName;
-        //}
-        //}
+        localizator$itemName = "ERRORED";
+        if (ForgeModContainer.removeErroringEntities) { // This should cover us well
+            //if (!(entity.getItem().isEmpty())) { // Code doesn't enter here
+            //if (entity.getItem().hasDisplayName()) { // Neither here            
+            localizator$itemName = entity.getItem().getDisplayName();            
+            //}
+            //}
+        }
         //Localizator.LOGGER.info("Item: " + entity.getItem().getDisplayName()); // Used for testing how viable this approach was.
 
         // Continue with normal behaviour

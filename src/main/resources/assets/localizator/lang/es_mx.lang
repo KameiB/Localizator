@@ -58,7 +58,7 @@ config.localizator.mixins.callableHorsesMessagesMixin.tooltip=Localiza todos los
 config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) Mixin Mensaje de estado "Power: "
 config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localiza el mensaje de estado "Power: " cuando lanzas un item.\n
 config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) Mixin Parchar ERRORED
-config.localizator.mixins.itemphysicErroredMixin.tooltip=Si un item no está TAN mal en su estructura, obtener su nombre y mostrarlo. \n§aFunciona con el Interior Ozzy y otros items de ArmorUnderwear!\n
+config.localizator.mixins.itemphysicErroredMixin.tooltip=Si un item no está TAN mal en su estructura, obtener su nombre y mostrarlo. \n§aFunciona con el Interior Ozzy y otros items de ArmorUnderwear!\n\n§4Necesita la opción de Forge §e"Remover Entidades con error"§4 para funcionar de manera segura!
 config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Mixin Descripción invertida
 config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Invierte el orden de la descripción de un item que está en el suelo, para que se muestre igual que en el inventario.\n
 
