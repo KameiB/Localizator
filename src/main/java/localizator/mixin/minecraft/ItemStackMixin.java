@@ -84,9 +84,9 @@ public abstract class ItemStackMixin
     // If item doesn't have the "LocLore" NBT tag, add the "Lore" contents regardless of the "Hide Lore" config option. (Vanilla behaviour)
     // Line 754: list.add(TextFormatting.DARK_PURPLE + "" + TextFormatting.ITALIC + nbttaglist3.getStringTagAt(l1));
     private boolean Minecraft_ItemStack_insteadOfLore(List<String> list, Object text) {
-        if (!(localizator$hasLocLore && ForgeConfigHandler.clientConfig.minecraftHideLore)) {
-            return list.add((String)text);
+        if (localizator$hasLocLore && ForgeConfigHandler.clientConfig.minecraftHideLore) {
+            return false;
         }
-        return false;
+        return list.add((String)text);
     }
 }
