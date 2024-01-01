@@ -106,6 +106,10 @@ public class LocalizatorLoader {
         itemphysicList.add(new ConfigToMixin("(ItemPhysic) ERRORED patch Mixin", ForgeConfigHandler.getBoolean("(ItemPhysic) ERRORED patch Mixin"), "mixins.itemphysic.erroredpatch.json"));
         itemphysicList.add(new ConfigToMixin("(ItemPhysic) Reverse Description Mixin", ForgeConfigHandler.getBoolean("(ItemPhysic) Reverse Description Mixin"), "mixins.itemphysic.reversedescription.json"));
         map.put("itemphysic", itemphysicList);
+        // Recurrent Complex
+        List<ConfigToMixin> reccomplexList = new ArrayList<>();
+        reccomplexList.add(new ConfigToMixin("(RecComplex) Artifact Names Mixin", ForgeConfigHandler.getBoolean("(RecComplex) Artifact Names Mixin"), "mixins.reccomplex.artifacts.json"));
+        map.put("reccomplex", reccomplexList);
 
         return Collections.unmodifiableMap(map);
     }

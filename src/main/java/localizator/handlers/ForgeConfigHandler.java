@@ -142,6 +142,7 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.itemphysicMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("If an item is not THAT errored, retrieve its name and display it. \nWorks with ArmorUnderwear's Ozzy Liners and other items!")
 		@Config.Name("(ItemPhysic) ERRORED patch Mixin")
 		@Config.LangKey("config.localizator.mixins.itemphysicErroredMixin")
@@ -152,6 +153,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.itemphysicReverseDescriptionMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicReverseDescriptionMixin = !Production.inProduction;
+		@Config.Comment("Localizes Artifacts custom names.")
+		@Config.Name("(RecComplex) Artifact Names Mixin")
+		@Config.LangKey("config.localizator.mixins.reccomplexLocArtifacts")
+		@Config.RequiresMcRestart
+		public boolean reccomplexLocArtifacts = !Production.inProduction;
 	}
 
 	public static class ClientConfig {

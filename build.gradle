@@ -103,47 +103,50 @@ dependencies {
     // For the File ID, go to the mod's "Files" tab, then select a specific File.
     // The numbers after the last '\' in the address bar is what you are looking for.
     // See https://www.cursemaven.com/ for reference.
-    implementation fg.deobf("curse.maven:Neat-xplat-238372:2595310")
-    
-    implementation fg.deobf("curse.maven:CarrotsLib-311327:2660247") // Needed for ArmorUnderwear
-    implementation fg.deobf("curse.maven:ArmorUnderwear-310383:2660325")
-    
-    implementation fg.deobf("curse.maven:FantasticLib-315773:3341793") // Needed for SetBonus
-    implementation fg.deobf("curse.maven:SetBonus-317158:3075168")
-    
-    implementation fg.deobf("curse.maven:TschippLib-262886:3459390") // Needed for ForgottenItems
-    implementation fg.deobf("curse.maven:ForgottenItems-262884:4167346")
-    
-    implementation files("libs/SRParasites-1.12.2v1.9.11.jar")
+    compileOnly fg.deobf("curse.maven:Neat-xplat-${neat_version}")
 
-    implementation fg.deobf("curse.maven:reach-fix-556777:4633407") // Needed when running BetterSurvival
-    implementation fg.deobf("curse.maven:better-survival-mod-260360:4469260")
-
-    implementation fg.deobf("curse.maven:creativecore-257814:4722163") // Needed for ItemPhysic_Full
-    implementation fg.deobf("curse.maven:itemphysic-258587:3487676")
+    compileOnly fg.deobf("curse.maven:CarrotsLib-${carrotslib_version}") // Needed for ArmorUnderwear
+    compileOnly fg.deobf("curse.maven:ArmorUnderwear-${armorunder_version}")
     
-    implementation fg.deobf("curse.maven:Baubles-227083:2518667") // Needed for Bountiful Baubles
-    implementation fg.deobf("curse.maven:bountifulbaubles-313536:3568240")
+    implementation fg.deobf("curse.maven:FantasticLib-${fantasticlib_version}") // Needed for SetBonus
+    implementation fg.deobf("curse.maven:SetBonus-${setbonus_version}")
     
-    implementation fg.deobf("curse.maven:RoughTweaks-251670:2573301")
+    implementation fg.deobf("curse.maven:TschippLib-${tschipplib_version}") // Needed for ForgottenItems
+    implementation fg.deobf("curse.maven:ForgottenItems-${forgottenitems_version}")
 
-    compileOnly(fg.deobf("curse.maven:serene-seasons-291874:2799213"))
-    implementation fg.deobf("curse.maven:rustic-256141:3107974")
+    compileOnly files("libs/SRParasites-1.12.2v1.9.11.jar")
 
-    compileOnly(fg.deobf("curse.maven:JEI-238222:3043174")) // Needed for ComposterCategoryMixin, ComposterRecipeMixin
-    implementation fg.deobf("curse.maven:charm-318872:3146596")
+    compileOnly fg.deobf("curse.maven:reach-fix-${reachfix_version}") // Needed when running BetterSurvival
+    compileOnly fg.deobf("curse.maven:better-survival-mod-${bettersurvival_version}")
 
-    implementation fg.deobf("curse.maven:dynamictrees-252818:3812473")
+    implementation fg.deobf("curse.maven:creativecore-${creativecore_version}") // Needed for ItemPhysic_Full
+    implementation fg.deobf("curse.maven:itemphysic-${itemphysic_version}")
+    
+    implementation fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
+    implementation fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
+
+    compileOnly fg.deobf("curse.maven:RoughTweaks-${roughtweaks_version}")
+
+    compileOnly(fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}"))
+    compileOnly fg.deobf("curse.maven:rustic-${rustic_version}")
+
+    compileOnly fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
+    compileOnly fg.deobf("curse.maven:charm-${charm_version}")
+
+    implementation fg.deobf("curse.maven:dynamictrees-${dynamictrees_version}")
 
     implementation files("libs/Hwyla-1.8.26-B41_1.12.2.jar")
 
-    implementation fg.deobf("curse.maven:corpse-complex-271605:3176964")
+    compileOnly fg.deobf("curse.maven:corpse-complex-${corpsecomplex_version}")
 
-    implementation fg.deobf("curse.maven:lycanites-mobs-224770:4486512")
+    compileOnly fg.deobf("curse.maven:lycanites-mobs-${lycanitesmobs_version}")
 
-    implementation fg.deobf("curse.maven:atomicstrykers-battle-towers-227877:2817288")
+    compileOnly fg.deobf("curse.maven:atomicstrykers-battle-towers-${battletowers_version}")
 
-    implementation fg.deobf("curse.maven:callable-horses-331746:3568565")
+    compileOnly fg.deobf("curse.maven:callable-horses-${callablehorses_version}")
+    
+    implementation fg.deobf("curse.maven:IvToolkit-${ivtoolkit_version}")
+    implementation fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
 
     //implementation fg.deobf("curse.maven:enhancedvisuals-255389:3507523")
 
