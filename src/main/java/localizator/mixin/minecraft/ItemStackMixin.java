@@ -11,6 +11,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.text.TextFormatting;
 
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
@@ -65,12 +66,13 @@ public abstract class ItemStackMixin
     private void Minecraft_ItemStack_beforeLore(EntityPlayer playerIn, ITooltipFlag advanced, CallbackInfoReturnable<List<String>> cir) {
         localizator$hasLocLore = false;
         NBTTagCompound displayTag = stackTagCompound.getCompoundTag("display");
-        if (displayTag.getTagId("LocLore") == 9) {
-            NBTTagList locloreList = displayTag.getTagList("LocLore", 8);
+        if (displayTag.getTagId("LocLore") == Constants.NBT.TAG_LIST) { // 9
+            NBTTagList locloreList = displayTag.getTagList("LocLore", Constants.NBT.TAG_STRING); // 8
             if (!locloreList.isEmpty()) {
                 localizator$hasLocLore = true;
-                if (displayTag.getTagId("LocLoreArg") == 9) {
-                    NBTTagList locloreArgList = displayTag.getTagList("LocLoreArg", 8);
+                // New capability: send 1 argument to each LocLore line!
+                if (displayTag.getTagId("LocLoreArg") == Constants.NBT.TAG_LIST) { // 9
+                    NBTTagList locloreArgList = displayTag.getTagList("LocLoreArg", Constants.NBT.TAG_STRING); // 8
                     // The "LocLoreArg" list needs to be the same size as the "LocLore" list
                     if (!locloreArgList.isEmpty() && (locloreArgList.tagCount() == locloreList.tagCount())) {
                         for (int l1 = 0; l1 < locloreList.tagCount(); ++l1) {
@@ -125,8 +127,8 @@ public abstract class ItemStackMixin
             cancellable = true,
             remap = Production.inProduction
     )
-    // Return a translated name with a fixed argument (Optional).
-    // This feature was added to support Recurrent Complex's chaotic names on custom loot.
+    // Return a translated name with fixed arguments (Optional).
+    // This feature was added to support Recurrent Complex's chaotic names (up to 2 chaotic names per Artifact name) on custom loot.
     // Example of LocName lang key: lang.key=%s the legendary Staff
     // LocNameArgs tag must be a list of strings 
     // (it can be a number in the form of a String. Its contents can be set in code or config file)

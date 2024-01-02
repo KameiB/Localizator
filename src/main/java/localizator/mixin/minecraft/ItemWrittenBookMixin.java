@@ -10,6 +10,7 @@ import net.minecraft.item.ItemWritableBook;
 import net.minecraft.item.ItemWrittenBook;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
@@ -36,21 +37,21 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
         {
             return false;
         }
-        if (nbt.hasKey("locTitle", 8)) {
+        if (nbt.hasKey("locTitle", Constants.NBT.TAG_STRING)) { // 8
             String s = nbt.getString("locTitle");
             if (s == null) return false;
             if (I18n.canTranslate(s)) {
                 return I18n.translateToLocal(s).length() <= 32 ?
-                    (nbt.hasKey("author", 8) || nbt.hasKey("locAuthor", 8))
+                    (nbt.hasKey("author", Constants.NBT.TAG_STRING) || nbt.hasKey("locAuthor", Constants.NBT.TAG_STRING)) // 8, 8
                         : false;
             }
             else {
                 return s.length() <= 32 ?
-                    (nbt.hasKey("author", 8) || nbt.hasKey("locAuthor", 8))
+                    (nbt.hasKey("author", Constants.NBT.TAG_STRING) || nbt.hasKey("locAuthor", Constants.NBT.TAG_STRING)) // 8, 8
                         : false;
             }
         }
-        else if (!nbt.hasKey("title", 8))
+        else if (!nbt.hasKey("title", Constants.NBT.TAG_STRING)) // 8
         {
             return false;
         }
@@ -58,7 +59,7 @@ implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTag
         {
             String s = nbt.getString("title");
             return s != null && s.length() <= 32 ?
-                    (nbt.hasKey("author", 8) || nbt.hasKey("locAuthor", 8))
+                    (nbt.hasKey("author", Constants.NBT.TAG_STRING) || nbt.hasKey("locAuthor", Constants.NBT.TAG_STRING)) // 8, 8
                     : false;
         }
     }
