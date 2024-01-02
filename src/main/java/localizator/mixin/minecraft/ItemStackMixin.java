@@ -2,6 +2,7 @@ package localizator.mixin.minecraft;
 
 import localizator.data.Production;
 import localizator.handlers.ForgeConfigHandler;
+import localizator.util.LocNameArguments;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -131,7 +132,7 @@ public abstract class ItemStackMixin
     // (it can be a number in the form of a String. Its contents can be set in code or config file)
     // Line 613: return I18n.translateToLocal(nbttagcompound.getString("LocName"));
     private void Minecraft_ItemStack_LocNameWithArgs(CallbackInfoReturnable<String> cir) {        
-        // All the safety checks must've been ran earlier
+        // All the safety checks must've been run earlier
         List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack)((Object)this));
         if (!argsList.isEmpty()) {
             NBTTagCompound nbtTagCompound = getSubCompound("display");
