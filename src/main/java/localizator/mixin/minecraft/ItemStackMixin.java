@@ -2,7 +2,6 @@ package localizator.mixin.minecraft;
 
 import localizator.data.Production;
 import localizator.handlers.ForgeConfigHandler;
-import localizator.util.LocNameArguments;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,7 +30,7 @@ public abstract class ItemStackMixin
 
     @Shadow(remap = Production.inProduction)
     public NBTTagCompound getSubCompound(String key) {
-        return this.stackTagCompound != null && this.stackTagCompound.hasKey(key, 10) ? this.stackTagCompound.getCompoundTag(key) : null;
+        return stackTagCompound != null && stackTagCompound.hasKey(key, 10) ? stackTagCompound.getCompoundTag(key) : null;
     }
 
     @Unique
@@ -64,7 +63,7 @@ public abstract class ItemStackMixin
     // Line 746: if (nbttagcompound1.getTagId("Lore") == 9)
     private void Minecraft_ItemStack_beforeLore(EntityPlayer playerIn, ITooltipFlag advanced, CallbackInfoReturnable<List<String>> cir) {
         localizator$hasLocLore = false;
-        NBTTagCompound displayTag = this.stackTagCompound.getCompoundTag("display");
+        NBTTagCompound displayTag = stackTagCompound.getCompoundTag("display");
         if (displayTag.getTagId("LocLore") == 9) {
             NBTTagList locloreList = displayTag.getTagList("LocLore", 8);
             if (!locloreList.isEmpty()) {
@@ -135,7 +134,7 @@ public abstract class ItemStackMixin
         // All the safety checks must've been ran earlier
         List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack)((Object)this));
         if (!argsList.isEmpty()) {
-            NBTTagCompound nbtTagCompound = this.getSubCompound("display");
+            NBTTagCompound nbtTagCompound = getSubCompound("display");
             cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
                     nbtTagCompound.getString("LocName"),
                     argsList.toArray()));
