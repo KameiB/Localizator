@@ -2,7 +2,7 @@ package localizator.mixin.reccomplex;
 
 import ivorius.reccomplex.random.Artifact;
 import ivorius.reccomplex.random.Person;
-import localizator.wrapper.IChaoticName;
+import localizator.wrapper.IArtifactMixin;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Random;
 
 @Mixin(Artifact.class)
-public abstract class ArtifactMixin implements IChaoticName {
+public abstract class ArtifactMixin implements IArtifactMixin {
     @Shadow(remap = false)
-    private static List<String> objectTypes = Arrays.asList("tool", "eye", "board", "weapon", "toy", "memory", "relic", "orb", "block", "killer", "diminisher", "eater", "devourer", "helper", "teacher", "remedy", "prophet", "stone", "artifact", "scroll", "amulet", "ring", "tablet");
+    private static List<String> objectTypes;
     @Shadow(remap = false)
-    private static List<String> traits = Arrays.asList("ominous", "odd", "uncontrollable", "catastrophical", "silent", "furious", "banned", "secret", "unknown", "popular", "forgotten", "lost", "heroic", "famous", "colossal", "mad", "wise", "uncontrollable", "glorious", "unprecedented", "unbelievable", "incredible", "lesser", "greater", "striking", "red", "gold", "silver", "blue", "marine", "glowing", "crimson", "violet", "white", "black", "sinister");
+    private static List<String> traits;
     @Shadow(remap = false)
-    private static List<String> powers = Arrays.asList("tears", "darkness", "gloom", "twilight", "light", "fire", "gold", "luck", "cold", "wealth", "fury", "magic", "nature", "beasts", "rapture", "salvation", "destruction", "perdition");
+    private static List<String> powers;
     @Shadow(remap = false)
     private String objectType;
     @Shadow(remap = false)
@@ -67,7 +67,7 @@ public abstract class ArtifactMixin implements IChaoticName {
         }
         
         Artifact artifact = new Artifact(objectType, trait, power, uniqueName);
-        IChaoticName chaoticArtifact = (IChaoticName) artifact;
+        IArtifactMixin chaoticArtifact = (IArtifactMixin) artifact;
         chaoticArtifact.setPreName(name1);
         chaoticArtifact.setPostName(name2);
         

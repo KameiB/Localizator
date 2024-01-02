@@ -3,10 +3,8 @@ package localizator.mixin.reccomplex;
 import ivorius.reccomplex.random.Artifact;
 import ivorius.reccomplex.random.item.ArtifactItem;
 import localizator.data.Production;
-import localizator.wrapper.IChaoticName;
+import localizator.wrapper.IArtifactMixin;
 import localizator.util.LocNameArguments;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -32,7 +30,7 @@ public abstract class ArtifactItemMixin {
     // Line 85: artifactStack.setStackDisplayName(artifact.getFullName());
     private static String RecComplex_ArtifactItem_any_getFullLocName(Artifact artifact) {
         localizator$tempArtifact = artifact;
-        return ((IChaoticName)artifact).getFullLocName();
+        return ((IArtifactMixin)artifact).getFullLocName();
     }
     
     @Redirect(
@@ -47,7 +45,7 @@ public abstract class ArtifactItemMixin {
     // ... to setTranslatableName
     // Line 85: artifactStack.setStackDisplayName(artifact.getFullName());
     private static ItemStack RecComplex_ArtifactItem_any_setLocNameAndLocNameArgs(ItemStack artifactStack, String locName) {        
-        LocNameArguments.appendLocNameArgs(artifactStack, Arrays.asList(((IChaoticName) localizator$tempArtifact).getPreName(), ((IChaoticName) localizator$tempArtifact).getPostName()));
+        LocNameArguments.appendLocNameArgs(artifactStack, Arrays.asList(((IArtifactMixin) localizator$tempArtifact).getPreName(), ((IArtifactMixin) localizator$tempArtifact).getPostName()));
         
         return artifactStack.setTranslatableName(locName);
     }

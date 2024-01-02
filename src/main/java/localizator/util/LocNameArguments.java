@@ -9,7 +9,7 @@ import net.minecraftforge.common.util.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LocNameArguments {
+public abstract class LocNameArguments {
     public static ItemStack appendLocNameArgs(ItemStack stack, Iterable<String> tooltip) {
         NBTTagCompound tag = stack.hasTagCompound() ? stack.getTagCompound() : new NBTTagCompound();
         boolean needAppend = false;

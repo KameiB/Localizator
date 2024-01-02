@@ -103,10 +103,10 @@ dependencies {
     // For the File ID, go to the mod's "Files" tab, then select a specific File.
     // The numbers after the last '\' in the address bar is what you are looking for.
     // See https://www.cursemaven.com/ for reference.
-    compileOnly fg.deobf("curse.maven:Neat-xplat-${neat_version}")
+    implementation fg.deobf("curse.maven:Neat-xplat-${neat_version}")
 
-    compileOnly fg.deobf("curse.maven:CarrotsLib-${carrotslib_version}") // Needed for ArmorUnderwear
-    compileOnly fg.deobf("curse.maven:ArmorUnderwear-${armorunder_version}")
+    implementation fg.deobf("curse.maven:CarrotsLib-${carrotslib_version}") // Needed for ArmorUnderwear
+    implementation fg.deobf("curse.maven:ArmorUnderwear-${armorunder_version}")
     
     implementation fg.deobf("curse.maven:FantasticLib-${fantasticlib_version}") // Needed for SetBonus
     implementation fg.deobf("curse.maven:SetBonus-${setbonus_version}")
@@ -114,10 +114,10 @@ dependencies {
     implementation fg.deobf("curse.maven:TschippLib-${tschipplib_version}") // Needed for ForgottenItems
     implementation fg.deobf("curse.maven:ForgottenItems-${forgottenitems_version}")
 
-    compileOnly files("libs/SRParasites-1.12.2v1.9.11.jar")
+    implementation files("libs/SRParasites-1.12.2v1.9.11.jar")
 
-    compileOnly fg.deobf("curse.maven:reach-fix-${reachfix_version}") // Needed when running BetterSurvival
-    compileOnly fg.deobf("curse.maven:better-survival-mod-${bettersurvival_version}")
+    implementation fg.deobf("curse.maven:reach-fix-${reachfix_version}") // Needed when running BetterSurvival
+    implementation fg.deobf("curse.maven:better-survival-mod-${bettersurvival_version}")
 
     implementation fg.deobf("curse.maven:creativecore-${creativecore_version}") // Needed for ItemPhysic_Full
     implementation fg.deobf("curse.maven:itemphysic-${itemphysic_version}")
@@ -125,25 +125,25 @@ dependencies {
     implementation fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
     implementation fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
 
-    compileOnly fg.deobf("curse.maven:RoughTweaks-${roughtweaks_version}")
+    implementation fg.deobf("curse.maven:RoughTweaks-${roughtweaks_version}")
 
-    compileOnly(fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}"))
-    compileOnly fg.deobf("curse.maven:rustic-${rustic_version}")
+    implementation fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}")
+    implementation fg.deobf("curse.maven:rustic-${rustic_version}")
 
-    compileOnly fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
-    compileOnly fg.deobf("curse.maven:charm-${charm_version}")
+    implementation fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
+    implementation fg.deobf("curse.maven:charm-${charm_version}")
 
     implementation fg.deobf("curse.maven:dynamictrees-${dynamictrees_version}")
 
     implementation files("libs/Hwyla-1.8.26-B41_1.12.2.jar")
 
-    compileOnly fg.deobf("curse.maven:corpse-complex-${corpsecomplex_version}")
+    implementation fg.deobf("curse.maven:corpse-complex-${corpsecomplex_version}")
 
-    compileOnly fg.deobf("curse.maven:lycanites-mobs-${lycanitesmobs_version}")
+    implementation fg.deobf("curse.maven:lycanites-mobs-${lycanitesmobs_version}")
 
-    compileOnly fg.deobf("curse.maven:atomicstrykers-battle-towers-${battletowers_version}")
+    implementation fg.deobf("curse.maven:atomicstrykers-battle-towers-${battletowers_version}")
 
-    compileOnly fg.deobf("curse.maven:callable-horses-${callablehorses_version}")
+    implementation fg.deobf("curse.maven:callable-horses-${callablehorses_version}")
     
     implementation fg.deobf("curse.maven:IvToolkit-${ivtoolkit_version}")
     implementation fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")

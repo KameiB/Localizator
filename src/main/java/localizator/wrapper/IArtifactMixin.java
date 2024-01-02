@@ -1,6 +1,6 @@
 package localizator.wrapper;
 
-public interface IChaoticName {
+public interface IArtifactMixin {
     public String getPreName();
     public String getPostName();
     public void setPreName(String preName);

@@ -21,9 +21,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Mixin(ItemStack.class)
@@ -32,7 +29,10 @@ public abstract class ItemStackMixin
     @Shadow(remap = Production.inProduction)
     private NBTTagCompound stackTagCompound;
 
-    @Shadow @Nullable public abstract NBTTagCompound getSubCompound(String key);
+    @Shadow(remap = Production.inProduction)
+    public NBTTagCompound getSubCompound(String key) {
+        return this.stackTagCompound != null && this.stackTagCompound.hasKey(key, 10) ? this.stackTagCompound.getCompoundTag(key) : null;
+    }
 
     @Unique
     private boolean localizator$hasLocLore;
@@ -128,11 +128,11 @@ public abstract class ItemStackMixin
     // Return a translated name with a fixed argument (Optional).
     // This feature was added to support Recurrent Complex's chaotic names on custom loot.
     // Example of LocName lang key: lang.key=%s the legendary Staff
-    // LocNameArg tag must contain a String 
+    // LocNameArgs tag must be a list of strings 
     // (it can be a number in the form of a String. Its contents can be set in code or config file)
     // Line 613: return I18n.translateToLocal(nbttagcompound.getString("LocName"));
     private void Minecraft_ItemStack_LocNameWithArgs(CallbackInfoReturnable<String> cir) {        
-        // All the safety checks must've been run earlier
+        // All the safety checks must've been ran earlier
         List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack)((Object)this));
         if (!argsList.isEmpty()) {
             NBTTagCompound nbtTagCompound = this.getSubCompound("display");
