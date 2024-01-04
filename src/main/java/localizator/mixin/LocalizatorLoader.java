@@ -110,6 +110,10 @@ public class LocalizatorLoader {
         List<ConfigToMixin> reccomplexList = new ArrayList<>();
         reccomplexList.add(new ConfigToMixin("(RecComplex) Artifact Names Mixin", ForgeConfigHandler.getBoolean("(RecComplex) Artifact Names Mixin"), "mixins.reccomplex.artifacts.json"));
         map.put("reccomplex", reccomplexList);
+        // iChunUtil
+        List<ConfigToMixin> ichunutilList = new ArrayList<>();
+        ichunutilList.add(new ConfigToMixin("(iChunUtil) Fix Patrons and Version URL Mixin", ForgeConfigHandler.getBoolean("(iChunUtil) Fix Patrons and Version URL Mixin"), "mixins.ichunutil.urls.json"));
+        map.put("ichunutil", ichunutilList);
 
         return Collections.unmodifiableMap(map);
     }

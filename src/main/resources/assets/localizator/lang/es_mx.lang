@@ -63,6 +63,8 @@ config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Mixin D
 config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Invierte el orden de la descripción de un item que está en el suelo, para que se muestre igual que en el inventario.\n 
 config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Mixin Nombres de Artefactos
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localiza los nombres personalizados de los Artefactos.\n 
+config.localizator.mixins.ichunutilFixURLs=(iChunUtil) Mixin Arreglar URLs de Patrons y Version
+config.localizator.mixins.ichunutilFixURLs.tooltip=Apunta las referencias a Patrons y Version hacia la URL de un repositorio válido, para prevenir java.io.FileNotFoundException.\n 
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Si una entidad tiene un nombre personalizado (etiqueta CustomName con una clave de idioma) lo traduce. \n\n§cMixin necesario: \n- §d(Minecraft) Mixin Nombres de mobs\n 

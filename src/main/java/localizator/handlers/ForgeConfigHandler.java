@@ -157,6 +157,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.reccomplexLocArtifacts")
 		@Config.RequiresMcRestart
 		public boolean reccomplexLocArtifacts = !Production.inProduction;
+		@Config.Comment("Point Patrons and Version calls to valid repo URLs, to prevent java.io.FileNotFoundException.")
+		@Config.Name("(iChunUtil) Fix Patrons and Version URL Mixin")
+		@Config.LangKey("config.localizator.mixins.ichunutilFixURLs")
+		@Config.RequiresMcRestart
+		public boolean ichunutilFixURLs = !Production.inProduction;
 	}
 
 	public static class ClientConfig {

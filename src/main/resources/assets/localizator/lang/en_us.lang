@@ -63,6 +63,8 @@ config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Reverse
 config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Reverse the order of a dropped item description, so it shows the same as on its tooltip.\n 
 config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Artifact Names Mixin
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localizes Artifacts custom names.\n 
+config.localizator.mixins.ichunutilFixURLs=(iChunUtil) Fix Patrons and Version URL Mixin
+config.localizator.mixins.ichunutilFixURLs.tooltip=Point Patrons and Version calls to valid repo URLs, to prevent java.io.FileNotFoundException.\n 
 
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
 config.localizator.client.minecraftMobLocCustomNames.tooltip=If an entity has a custom name (CustomName tag with a language key in it), translate it. \n\n§cRequired Mixin:\n- §d(Minecraft) Mob Custom Names Mixin\n 

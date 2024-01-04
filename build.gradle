@@ -127,7 +127,7 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:RoughTweaks-${roughtweaks_version}")
 
-    compileOnly(fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}"))
+    compileOnly fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}")
     compileOnly fg.deobf("curse.maven:rustic-${rustic_version}")
 
     compileOnly fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
@@ -147,6 +147,8 @@ dependencies {
     
     implementation fg.deobf("curse.maven:IvToolkit-${ivtoolkit_version}")
     implementation fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
+
+    compileOnly fg.deobf("curse.maven:ichunutil-${ichunutil_version}")
 
     //implementation fg.deobf("curse.maven:enhancedvisuals-255389:3507523")
 
