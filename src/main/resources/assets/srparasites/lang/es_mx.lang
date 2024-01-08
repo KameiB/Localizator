@@ -49,3 +49,6 @@ cold_fire=Fuego frío
 
 # Simple Difficulty
 parasites=Lombrices
+
+# Biomes names
+biome.srparasites:biome_parasite.name=Bioma parásito

@@ -11,22 +11,33 @@ import org.apache.logging.log4j.Level;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Config(modid = Localizator.MODID)
 public class ForgeConfigHandler {
-	@Config.Comment("Enable/Disable Tweaks")
-	@Config.Name("Mixins")
-	@Config.LangKey("config.localizator.mixins")
-	public static final MixinConfig mixinConfig = new MixinConfig();
+	@Config.Comment("Enable/Disable Localization Mixins (Tweaks)")
+	@Config.Name("Localizing_Mixins")
+	@Config.LangKey("config.localizator.localizingMixins")
+	public static final LocalizingMixinsConfig localizingMixinsConfig = new LocalizingMixinsConfig();
 
-	@Config.Comment("Client-Side Options")
+	@Config.Comment("Enable/Disable QoL/bug-fix Mixins (Tweaks)")
+	@Config.Name("Miscelaneous_Mixins")
+	@Config.LangKey("config.localizator.miscelaneousMixins")
+	public static final MiscelaneousMixinsConfig miscelaneousMixinsConfig = new MiscelaneousMixinsConfig();
+
+	@Config.Comment("Apply Enabled Server-Side Mixins")
+	@Config.Name("Server")
+	@Config.LangKey("config.localizator.server")
+	public static final ServerConfig serverConfig = new ServerConfig();
+	
+	@Config.Comment("Apply Enabled Client-side Mixins")
 	@Config.Name("Client")
 	@Config.LangKey("config.localizator.client")
 	public static final ClientConfig clientConfig = new ClientConfig();
 
-	public static class MixinConfig {
+	public static class LocalizingMixinsConfig {
 		@Config.Comment("Enables the Client config: \n- (Minecraft) Translate Mob Custom Names")
 		@Config.Name("(Minecraft) Mob Custom Names Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftMobLocCustomNamesMixin")
@@ -42,6 +53,16 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.minecraftLocLoreMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocLoreMixin = !Production.inProduction;
+		@Config.Comment("Makes the \"LocName\" NBT tag, support language keys that accept parameters.\nAlso, enables the Server config: \n- (Minecraft) Show LocName instead of Name")
+		@Config.Name("(Minecraft) Better Localized Name Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftLocNameMixin")
+		@Config.RequiresMcRestart
+		public boolean minecraftLocNameMixin = !Production.inProduction;
+		@Config.Comment("Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack")
+		@Config.Name("(Minecraft) Localized Biome Name Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftBiomeMixin")
+		@Config.RequiresMcRestart
+		public boolean minecraftBiomeMixin = !Production.inProduction;
 		@Config.Comment("Enables \"locTitle\" and \"locAuthor\" NBT tags support.\nFor Written Books with localized author and title.")
 		@Config.Name("(Minecraft) Localized Written Book Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftLocWrittenBookMixin")
@@ -76,12 +97,7 @@ public class ForgeConfigHandler {
 		@Config.Name("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.bettersurvivalTooltipMixin")
 		@Config.RequiresMcRestart
-		public boolean bettersurvivalTooltipMixin = !Production.inProduction;
-		@Config.Comment("Enables the Client config: \n- (BountifulBaubles) Remove Modifier from Bauble Name")
-		@Config.Name("(BountifulBaubles) No Modifier at Name Mixin")
-		@Config.LangKey("config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin")
-		@Config.RequiresMcRestart
-		public boolean bountifulbaublesNoModifierAtNameMixin = !Production.inProduction;
+		public boolean bettersurvivalTooltipMixin = !Production.inProduction;		
 		@Config.Comment("Modifies the lang keys of Rough Tweaks items, so they don't collide with FirstAid. \nAlso, Enables the Client config: \n- (RoughTweaks) Show Heal Amount")
 		@Config.Name("(RoughTweaks) Localized Names and Better Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.roughtweaksNamesAndTooltipMixin")
@@ -101,12 +117,7 @@ public class ForgeConfigHandler {
 		@Config.Name("(Charm) Localized Composter JEI Mixin")
 		@Config.LangKey("config.localizator.mixins.charmComposterRecipeMixin")
 		@Config.RequiresMcRestart
-		public boolean charmComposterRecipeMixin = !Production.inProduction;
-		@Config.Comment("If you hate those weird \"Â\" symbols in the Staff tooltip as much as me, enable this Mixin.")
-		@Config.Name("(DyamicTrees) Staff Mixin")
-		@Config.LangKey("config.localizator.mixins.dynamictreesStaffMixin")
-		@Config.RequiresMcRestart
-		public boolean dynamictreesStaffMixin = !Production.inProduction;
+		public boolean charmComposterRecipeMixin = !Production.inProduction;		
 		@Config.Comment("Enables support for Language Keys in Entity's CustomName tag.")
 		@Config.Name("(WAILA) Entity Name Mixin")
 		@Config.LangKey("config.localizator.mixins.wailaEntityNameMixin")
@@ -142,6 +153,24 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.itemphysicMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicMessagesMixin = !Production.inProduction;
+		@Config.Comment("Localizes Artifacts custom names.")
+		@Config.Name("(RecComplex) Artifact Names Mixin")
+		@Config.LangKey("config.localizator.mixins.reccomplexLocArtifacts")
+		@Config.RequiresMcRestart
+		public boolean reccomplexLocArtifacts = !Production.inProduction;
+	}
+	
+	public static class MiscelaneousMixinsConfig {
+		@Config.Comment("Enables the Client config: \n- (BountifulBaubles) Remove Modifier from Bauble Name")
+		@Config.Name("(BountifulBaubles) No Modifier at Name Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin")
+		@Config.RequiresMcRestart
+		public boolean bountifulbaublesNoModifierAtNameMixin = !Production.inProduction;
+		@Config.Comment("If you hate those weird \"Â\" symbols in the Staff tooltip as much as me, enable this Mixin.")
+		@Config.Name("(DyamicTrees) Staff Mixin")
+		@Config.LangKey("config.localizator.mixins.dynamictreesStaffMixin")
+		@Config.RequiresMcRestart
+		public boolean dynamictreesStaffMixin = !Production.inProduction;
 		@Config.Comment("If an item is not THAT errored, retrieve its name and display it. \nWorks with ArmorUnderwear's Ozzy Liners and other items!")
 		@Config.Name("(ItemPhysic) ERRORED patch Mixin")
 		@Config.LangKey("config.localizator.mixins.itemphysicErroredMixin")
@@ -152,16 +181,21 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.itemphysicReverseDescriptionMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicReverseDescriptionMixin = !Production.inProduction;
-		@Config.Comment("Localizes Artifacts custom names.")
-		@Config.Name("(RecComplex) Artifact Names Mixin")
-		@Config.LangKey("config.localizator.mixins.reccomplexLocArtifacts")
-		@Config.RequiresMcRestart
-		public boolean reccomplexLocArtifacts = !Production.inProduction;
 		@Config.Comment("Point Patrons and Version calls to valid repo URLs, to prevent java.io.FileNotFoundException.")
 		@Config.Name("(iChunUtil) Fix Patrons and Version URL Mixin")
 		@Config.LangKey("config.localizator.mixins.ichunutilFixURLs")
 		@Config.RequiresMcRestart
 		public boolean ichunutilFixURLs = !Production.inProduction;
+		@Config.Comment("Adds cobweb immunity to the Ankh Charm. \nIf it makes sense to you as well c:")
+		@Config.Name("(BountifulBaubles) Ankh Charm Web Immune Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity")
+		@Config.RequiresMcRestart
+		public boolean bountifulbaublesAnkhCharmWebImmunity = !Production.inProduction;
+		@Config.Comment("Adds cobweb immunity to the Ankh Shield. \nIf it makes sense to you as well c:")
+		@Config.Name("(BountifulBaubles) Ankh Shield Web Immune Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity")
+		@Config.RequiresMcRestart
+		public boolean bountifulbaublesAnkhShieldmWebImmunity = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
@@ -192,8 +226,14 @@ public class ForgeConfigHandler {
 		@Config.Comment("Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \nRequired Mixin: \n- (RoughTweaks) Localized Names and Better Tooltip Mixin")
 		@Config.Name("(RoughTweaks) Show Heal Amount")
 		@Config.LangKey("config.localizator.client.roughtweaksTooltip")		
-		public boolean roughtweaksTooltip = !Production.inProduction;
-		
+		public boolean roughtweaksTooltip = !Production.inProduction;		
+	}
+	
+	public static class ServerConfig {
+		@Config.Comment("If an item has both LocName and Name display NBT tags, show LocName instead of Name. \nThis is useful for Mixins that localize mods like Recurrent Complex, \nwhich assign custom hardcoded names to items on generation. \nRequired Mixin: \n- (Minecraft) Better Localized Name Mixin")
+		@Config.Name("(Minecraft) Show LocName instead of Name")
+		@Config.LangKey("config.localizator.server.minecraftLocNameOverName")
+		public boolean minecraftLocNameOverName = !Production.inProduction;
 	}
 
 	@Mod.EventBusSubscriber(modid = Localizator.MODID)
@@ -218,13 +258,38 @@ public class ForgeConfigHandler {
 	private static boolean isFirstBoot = false;
 
 	public static boolean getBoolean(String name) {
-		if(configFile==null) {
+		if(configFile == null) {
 			configFile = new File("config", Localizator.MODID + ".cfg");
-			if (configFile.exists() && configFile.isFile()) {
+			if (configFile.exists() && configFile.isFile()) {				
+				String configCurrentVersion = "";
+				try	(Stream<String> streamOld = Files.lines(configFile.toPath())) {
+					configCurrentVersion = streamOld.filter(s -> s.trim().contains("Enable/Disable Localization Mixins (Tweaks)")).collect(Collectors.joining());
+				} catch (Exception e) {
+					Localizator.LOGGER.error("Failed to parse LocEntityNameMixin config: " + e);
+				}
+				Production.migratedCfg = !(configCurrentVersion.contains("Enable/Disable Localization Mixins (Tweaks)"));
+				if (Production.migratedCfg) {
+					String oldCfgName = Localizator.MODID + "_old.cfg";
+					Localizator.LOGGER.warn("[Localizator] Found an old-version config file. Renaming it to \"" + oldCfgName + "\" and creating a new one...");
+					// Migrate from old cfg version to current one
+					try {
+						Files.deleteIfExists(new File("config", oldCfgName).toPath());
+					} catch (Exception e) {
+						Localizator.LOGGER.error("Failed to delete old config file: " + oldCfgName + ". " + e);
+					}
+					if (!(configFile.renameTo(new File("config", oldCfgName)))) {
+						Localizator.LOGGER.error("Failed to rename config file to: " + oldCfgName);
+					}
+					configFile = null;
+					configBooleanString = "";
+					return false;
+				}
+				
+				
 				try (Stream<String> stream = Files.lines(configFile.toPath())) {
 					configBooleanString = stream.filter(s -> s.trim().startsWith("B:")).collect(Collectors.joining());
 				} catch (Exception ex) {
-					Localizator.LOGGER.log(Level.ERROR, "Failed to parse LocEntityNameMixin config: " + ex);
+					Localizator.LOGGER.error("Failed to parse LocEntityNameMixin config: " + ex);
 				}
 			} else {
 				isFirstBoot = !Production.inProduction; // (For DEBUG purposes) If the config file doesn't exist yet, assume all mixins are enabled.

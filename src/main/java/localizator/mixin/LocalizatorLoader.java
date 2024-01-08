@@ -58,6 +58,8 @@ public class LocalizatorLoader {
         // Bountiful Baubles
         List<ConfigToMixin> bountifulbaublesList = new ArrayList<>();
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) No Modifier at Name Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) No Modifier at Name Mixin"), "mixins.bountifulbaubles.attributeatname.json"));
+        bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Ankh Charm Web Immune Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Charm Web Immune Mixin"), "mixins.bountifulbaubles.ankhcharmcobweb.json"));
+        bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Ankh Shield Web Immune Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Shield Web Immune Mixin"), "mixins.bountifulbaubles.ankhshieldcobweb.json"));
         map.put("bountifulbaubles", bountifulbaublesList);
         // Rough Tweaks
         List<ConfigToMixin> roughtweaksList = new ArrayList<>();
@@ -144,7 +146,7 @@ public class LocalizatorLoader {
             if (modIdList.contains(entry.getKey())) {
                 for (ConfigToMixin config : entry.getValue()) {
                     if (config.isEnabled()) {
-                        Localizator.LOGGER.log(Level.INFO, "[Localizator] Late Loading: " + config.getName());
+                        Localizator.LOGGER.info("[Localizator] Late Loading: " + config.getName());
                         Mixins.addConfiguration(config.getJson());
                     }
                 }

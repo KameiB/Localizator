@@ -49,3 +49,6 @@ cold_fire=Cold Fire
 
 # Simple Difficulty
 parasites=Parasites
+
+# Biomes names
+biome.srparasites:biome_parasite.name=Parasite Biome

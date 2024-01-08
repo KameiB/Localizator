@@ -53,7 +53,7 @@ public abstract class ThreadGetResourcesMixin {
             catch(Exception e)
             {
                 iChunUtil.LOGGER.warn("Error retrieving iChunUtil patron list.");
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         }
         try
@@ -70,7 +70,7 @@ public abstract class ThreadGetResourcesMixin {
         catch(Exception e)
         {
             iChunUtil.LOGGER.warn("Error retrieving mods versions list.");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
     

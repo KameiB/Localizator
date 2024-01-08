@@ -1,3 +1,5 @@
+# To generate your own translations, please check:
+# https://github.com/KameiB/langkey-generators
 item.reccomplex.chaotic.mad.board.name=§o%1$s, el tablero loco
 item.reccomplex.chaotic.mad.board.beasts.name=§o%1$s, el tablero loco de las bestias
 item.reccomplex.chaotic.mad.board.cold.name=§o%1$s, el tablero loco del frío

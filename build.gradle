@@ -130,8 +130,8 @@ dependencies {
     compileOnly fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}")
     compileOnly fg.deobf("curse.maven:rustic-${rustic_version}")
 
-    compileOnly fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
-    compileOnly fg.deobf("curse.maven:charm-${charm_version}")
+    implementation fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
+    implementation fg.deobf("curse.maven:charm-${charm_version}")
 
     implementation fg.deobf("curse.maven:dynamictrees-${dynamictrees_version}")
 
@@ -149,6 +149,11 @@ dependencies {
     implementation fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
 
     compileOnly fg.deobf("curse.maven:ichunutil-${ichunutil_version}")
+
+    //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
+    //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")
+
+    //implementation fg.deobf("curse.maven:quark-243121:2924091")
 
     //implementation fg.deobf("curse.maven:enhancedvisuals-255389:3507523")
 

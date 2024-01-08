@@ -5,6 +5,7 @@ import localizator.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,5 +26,10 @@ public class Localizator {
     public void preInit(FMLPreInitializationEvent event) {
         ModRegistry.init();
         Localizator.PROXY.preInit();
+    }
+    
+    @Mod.EventHandler
+    public void onInit(FMLInitializationEvent event) {
+        Localizator.PROXY.onInit(event);
     }
 }

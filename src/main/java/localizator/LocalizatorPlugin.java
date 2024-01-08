@@ -22,6 +22,8 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         list.add(new ConfigToMixin("(Minecraft) Boss Custom Names Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Boss Custom Names Mixin"), "mixins.core.bossoverlay.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Lore Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Localized Lore Mixin"), "mixins.core.loclore.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Written Book Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Localized Written Book Mixin"), "mixins.core.writtenbooks.json"));
+        list.add(new ConfigToMixin("(Minecraft) Better Localized Name Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Better Localized Name Mixin"), "mixins.core.locname.json"));
+        list.add(new ConfigToMixin("(Minecraft) Localized Biome Name Mixin", ForgeConfigHandler.getBoolean("(Minecraft) Localized Biome Name Mixin"), "mixins.core.biomename.json"));
         map.put("minecraft", list);
 
         return Collections.unmodifiableMap(map);
@@ -29,17 +31,22 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
 
     public LocalizatorPlugin(){
         MixinBootstrap.init();
-        Localizator.LOGGER.log(Level.INFO, "[Localizator] Loading initialization mixin");
+        Localizator.LOGGER.info("[Localizator] Loading initialization mixin");
         Mixins.addConfiguration("mixins.localizator.init.json");
         
         for (Map.Entry<String, List<ConfigToMixin>> entry : vanillaMixins.entrySet()) {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
-                    Localizator.LOGGER.log(Level.INFO, "[Localizator] Early loading: " + config.getName());
+                    Localizator.LOGGER.info("[Localizator] Early loading: " + config.getName());
                     Mixins.addConfiguration(config.getJson());
                 }
             }
-        }        
+        }
+        if (ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Charm Web Immune Mixin") 
+                || ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Shield Web Immune Mixin")) {
+            Localizator.LOGGER.info("[Localizator] Early loading: " + "(Minecraft) Entity.isInWeb Accessor for BountifulBaubles Mixins");
+            Mixins.addConfiguration("mixins.core.entityaccessor.json");
+        }
     }
 
     @Override

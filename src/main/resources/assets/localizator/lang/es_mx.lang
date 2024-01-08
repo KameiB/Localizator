@@ -7,18 +7,28 @@ book.localizator.Example.page.1=Cuando me muera,\nme moriré sola.\nNadie se mor
 book.localizator.Example.lore=§6Un gran libro
 
 # Config
-config.localizator.mixins=Mixins
-config.localizator.mixins.tooltip=Habilitar/Deshabilitar §dMixins (ajustes)
-config.localizator.client=Cliente
-config.localizator.client.tooltip=Ver reflejados los §dmixins§e en el cliente
+config.localizator.localizingMixins=1. Mixins de localización
+config.localizator.localizingMixins.tooltip=Habilitar/Deshabilitar Mixins relacionados con localización
+config.localizator.miscelaneousMixins=2. Mixins misceláneos
+config.localizator.miscelaneousMixins.tooltip=Habilitar/Deshabilitar Mixins relacionados con Calidad de Vida y arreglar bugs
+config.localizator.server=3. Servidor
+config.localizator.server.tooltip=Aplicar §dMixins§e habilitados que corren del lado del §9Servidor
+config.localizator.client=4. Cliente
+config.localizator.client.tooltip=Aplicar §dMixins§e habilitados que corren del lado del §bCliente
+
+# Localizing Mixin config
 config.localizator.mixins.minecraftMobLocCustomNamesMixin=(Minecraft) Mixin Nombres de Entidades
 config.localizator.mixins.minecraftMobLocCustomNamesMixin.tooltip=Habilita la configuración Cliente: \n- §b(Minecraft) Traducir nombres de mobs\n 
 config.localizator.mixins.minecraftBossLocCustomNamesMixin=(Minecraft) Mixin Nombres de Boss
 config.localizator.mixins.minecraftBossLocCustomNamesMixin.tooltip=Habilita la configuración Cliente: \n- §b(Minecraft) Traducir nombres de Boss\n 
 config.localizator.mixins.minecraftLocLoreMixin=(Minecraft) Mixin Lore localizado
 config.localizator.mixins.minecraftLocLoreMixin.tooltip=Habilita el soporte del tag NBT "LocLore" \nPara "lore" traducible en los items.\n 
+config.localizator.mixins.minecraftLocNameMixin=(Minecraft) Mixin Nombre localizado mejorado
+config.localizator.mixins.minecraftLocNameMixin.tooltip=Hace que la etiqueta NBT "LocName", soporte claves \n§ede idioma que aceptan parámetros.\nEs usado por Mixins como: \n- §d(RecComplex) Mixin Nombres de Artefactos\n\nTambién, habilita la configuración Servidor: \n- §9(Minecraft) Mostrar LocName en lugar de Name\n 
 config.localizator.mixins.minecraftLocWrittenBookMixin=(Minecraft) Mixin Libro escrito localizado
-config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Habilita el soporte de los tags NBT "locTitle" y "locAuthor"\nPara título y autor traducibles en los libros escritos.\n 
+config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Habilita el soporte de los tags NBT "locTitle" y "locAuthor"\nPara título y autor traducibles en los libros escritos.\n
+config.localizator.mixins.minecraftBiomeMixin=(Minecraft) Mixin Nombres localizados de Biomas
+config.localizator.mixins.minecraftBiomeMixin.tooltip=Localiza los nombres de los Biomas. \nPara biomas de mods, por favor crea e incluye sus respectivas claves de idioma en tu modpack.\n\nPuedes usar el comando §b/ct biomes§r de CraftTweaker para obtener todos los biomas registrados.\n 
 config.localizator.mixins.neatLocHealthBarMixin=(Neat) Mixin Barra de salud
 config.localizator.mixins.neatLocHealthBarMixin.tooltip=Habilita la configuración Cliente: \n- §b(Neat) Traducir nombre en barra de salud\n 
 config.localizator.mixins.armorunderOzzyLinerMixin=(ArmorUnder) Mixin Interior Ozzy
@@ -28,25 +38,21 @@ config.localizator.mixins.setbonusTooltipMixin.tooltip=Habilita el soporte de cl
 config.localizator.mixins.forgottenitemsTooltipMixin=(ForgottenItems) Mixin Descripción de items
 config.localizator.mixins.forgottenitemsTooltipMixin.tooltip=Localiza las descripciones de todos los items de Forgotten Items.\n 
 config.localizator.mixins.srparasitesArmorTooltipMixin=(SRParasites) Mixin Descripción de Armadura
-config.localizator.mixins.srparasitesArmorTooltipMixin.tooltip=Localiza los textos hardcodeados "Current Adaptation:" y "reduction:" en la descripción de las armaduras de parásito. \nTambién las fuentes de daño resistidas! \n\nPara las fuentes de daño, habilita la opción cliente: \n- §b(SRParasites) Traducir fuentes de daño resistidas\n 
-config.localizator.mixins.bettersurvivalTooltipMixin=(BetterSurvival) Mixin Descripción de Armas con Poción
+config.localizator.mixins.srparasitesArmorTooltipMixin.tooltip=Localiza los textos hardcodeados "Current Adaptation:" y "reduction:" en la descripción de las armaduras de parásito. \nTambién las fuentes de daño resistidas! \n\nPara las fuentes de daño, habilita la opción cliente: \n- §b(SRParasites) Traducir fuentes de daño\n 
+config.localizator.mixins.bettersurvivalTooltipMixin=(BetterSurvival) Mixin Descripción de Armas imbuidas
 config.localizator.mixins.bettersurvivalTooltipMixin.tooltip=Localiza el texto hardcodeado "hits remaining" en la descripción de las armas que fueron imbuidas con una Poción en un Caldero.\n 
-config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin=(BountifulBaubles) Mixin Quitar Modificador en el Nombre
-config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin.tooltip=Habilita la configuración Cliente: \n- §b(BountifulBaubles) Quitar Modificador del nombre de las Baubles\n 
-config.localizator.mixins.roughtweaksNamesAndTooltipMixin=(RoughTweaks) Mixin Nombres localizados y mejor descripción
-config.localizator.mixins.roughtweaksNamesAndTooltipMixin.tooltip=Modifica las claves de idioma de los items de Rough Tweaks, para que no colisionen con las del Mod FirstAid. \nTambién, habilita la configuración Cliente: \n- §b(RoughTweaks) Mostrar cuántos corazones cura\n 
+config.localizator.mixins.roughtweaksNamesAndTooltipMixin=(RoughTweaks) Mixin Nombres localizados
+config.localizator.mixins.roughtweaksNamesAndTooltipMixin.tooltip=Modifica las claves de idioma de los items de Rough Tweaks, para que no colisionen con las del Mod FirstAid. \nTambién, habilita la configuración Cliente: \n- §b(RoughTweaks) Mostrar descripción siempre\n 
 config.localizator.mixins.sereneseasonsTooltipMixin=(SereneSeasons) Mixin Fertilidad de cultivos
 config.localizator.mixins.sereneseasonsTooltipMixin.tooltip=Localiza los textos hardcodeados "Fertile Seasons:", y las estaciones en la descripción de los cultivos. \nTambién agrega soporte a las semillas de Rustic: \n- Semillas de Tomate \n- Semillas de Chile\n 
 config.localizator.mixins.charmCakeNameMixin=(Charm) Mixin Nombres de pasteles
 config.localizator.mixins.charmCakeNameMixin.tooltip=Localiza los nombres hardcodeados de los pasteles especiales.\n 
 config.localizator.mixins.charmComposterRecipeMixin=(Charm) Mixin Compostador en JEI
 config.localizator.mixins.charmComposterRecipeMixin.tooltip=Localiza los textos del menú de recetas del Compostador en el JEI.\n 
-config.localizator.mixins.dynamictreesStaffMixin=(DyamicTrees) Mixin Baston del bosque
-config.localizator.mixins.dynamictreesStaffMixin.tooltip=Si odias esos extraños símbolos "Â" en la descripción del Bastón del bosque tanto como yo, habilita este Mixin.\n 
 config.localizator.mixins.wailaEntityNameMixin=(WAILA) Mixin Nombres de Entidades
 config.localizator.mixins.wailaEntityNameMixin.tooltip=Habilita el soporte de claves de idioma en el tag CustomName de las entidades.\n 
-config.localizator.mixins.corpsecomplexScrollMixin=(CorpseComplex) Mixin Descripción del Pergamino de tumba
-config.localizator.mixins.corpsecomplexScrollMixin.tooltip=Localiza el texto hardcodeado de la descripción del Pergamino de Tumba.\n 
+config.localizator.mixins.corpsecomplexScrollMixin=(CorpseComplex) Mixin Pergamino de tumba
+config.localizator.mixins.corpsecomplexScrollMixin.tooltip=Localiza el texto hardcodeado en la descripción del Pergamino de Tumba.\n 
 config.localizator.mixins.forgeModListMixin=(FML) Mixin Lista de Mods localizada
 config.localizator.mixins.forgeModListMixin.tooltip=Localiza los textos hardcodeados en la pantalla Lista de Mods de Forge.\nTambién resalta la información importante en la pantalla de detalles de Mod.\n 
 config.localizator.mixins.lycanitesMessagesMixin=(Lycanites) Mixin Cliente traduce los mensajes
@@ -57,15 +63,30 @@ config.localizator.mixins.callableHorsesMessagesMixin=(Callable Horses) Mixin Me
 config.localizator.mixins.callableHorsesMessagesMixin.tooltip=Localiza todos los mensajes referentes a caballos que el servidor envía.\n 
 config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) Mixin Mensaje de estado "Power: "
 config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localiza el mensaje de estado "Power: " cuando lanzas un item.\n 
+config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Mixin Nombres de Artefactos
+config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localiza los nombres personalizados de los Artefactos.\n 
+
+# Miscelaneous Mixin Config
+config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin=(BountifulBaubles) Mixin Quitar Modificador del Nombre
+config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin.tooltip=Habilita la configuración Cliente: \n- §b(BountifulBaubles) Quitar Modificador del nombre\n 
+config.localizator.mixins.dynamictreesStaffMixin=(DyamicTrees) Mixin Baston del bosque
+config.localizator.mixins.dynamictreesStaffMixin.tooltip=Si odias esos extraños símbolos "Â" en la descripción del Bastón del bosque tanto como yo, habilita este Mixin.\n 
 config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) Mixin Parchar ERRORED
 config.localizator.mixins.itemphysicErroredMixin.tooltip=Si un item no está TAN mal en su estructura, obtener su nombre y mostrarlo. \n§aFunciona con el Interior Ozzy y otros items de ArmorUnderwear!\n\n§4Necesita la opción de Forge §e"Remover Entidades con error"§4 para funcionar de manera segura!\n 
 config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Mixin Descripción invertida
 config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Invierte el orden de la descripción de un item que está en el suelo, para que se muestre igual que en el inventario.\n 
-config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Mixin Nombres de Artefactos
-config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localiza los nombres personalizados de los Artefactos.\n 
-config.localizator.mixins.ichunutilFixURLs=(iChunUtil) Mixin Arreglar URLs de Patrons y Version
+config.localizator.mixins.ichunutilFixURLs=(iChunUtil) Mixin Arreglar URLs inválidas
 config.localizator.mixins.ichunutilFixURLs.tooltip=Apunta las referencias a Patrons y Version hacia la URL de un repositorio válido, para prevenir java.io.FileNotFoundException.\n 
+config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity=(BountifulBaubles) Mixin Talismán Ankh inmune a telarañas
+config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity.tooltip=Agrega inmunidad a telarañas al Talismán Ankh. \nSi también tiene sentido para tí c: \n 
+config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubles) Mixin Escudo Ankh inmune a telarañas
+config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Agrega inmunidad a telarañas al Escudo Ankh. \nSi también tiene sentido para tí c: \n 
 
+# Server config
+config.localizator.server.minecraftLocNameOverName=(Minecraft) Mostrar LocName en lugar de Name
+config.localizator.server.minecraftLocNameOverName.tooltip=Si un item tiene ambas etiquetas NBT LocName y Name, \n§emostrar el contenido de LocName en lugar de Name. \nEsto es útil para Mixins que localizan mods como \nRecurrent Complex, el cual asigna nombres \nhardcodeados a items durante la generación. \n\n§cMixin necesario:\n- §d(Minecraft) Mixin Nombre localizado mejorado\n  
+
+# Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
 config.localizator.client.minecraftMobLocCustomNames.tooltip=Si una entidad tiene un nombre personalizado (etiqueta CustomName con una clave de idioma) lo traduce. \n\n§cMixin necesario: \n- §d(Minecraft) Mixin Nombres de mobs\n 
 config.localizator.client.minecraftBossLocCustomNames=(Minecraft) Traducir nombres de Boss
@@ -74,9 +95,18 @@ config.localizator.client.minecraftHideLore=(Minecraft) Ocultar Lore si hay LocL
 config.localizator.client.minecraftHideLore.tooltip=Si un item tiene ambos tags NBT "Lore" y "LocLore", el contenido de LocLore se antepondrá al contenido de Lore. \nSi tiene sólo uno de los tags de lore, dicho tag se mostrará normalmente. \n\n§cMixin necesario: \n- §d(Minecraft) Mixin Lore localizado\n 
 config.localizator.client.neatLocHealthBar=(Neat) Traducir nombre en barra de salud
 config.localizator.client.neatLocHealthBar.tooltip=Si una entidad tiene un nombre personalizado (etiqueta CustomName con una clave de idioma) lo traduce en su barra de salud. \n\n§cMixin necesario: \n- §d(Neat) Mixin Barra de salud\n 
-config.localizator.client.srparasitesResistances=(SRParasites) Traducir fuentes de daño resistidas
+config.localizator.client.srparasitesResistances=(SRParasites) Traducir fuentes de daño
 config.localizator.client.srparasitesResistances.tooltip=En la descripción de la armadura de parásito, traduce los nombres de las fuentes de daño a las que se ha adaptado. \nLos nombres de las entidades se toman del registro de Forge (automático). \nLos daños que no son de entidades se toman de un archivo de idioma (.lang). \n\n§cMixin necesario: \n- §d(SRParasites) Mixin Descripción de Armadura \n§4Deshabilita esta opción si impacta el rendimiento.\n 
 config.localizator.client.bountifulbaublesRemoveModifierFromName=(BountifulBaubles) Quitar Modificador del nombre
 config.localizator.client.bountifulbaublesRemoveModifierFromName.tooltip=Evita que se agregue el Modificador en el nombre de las Baubles. \n\n§cMixin necesario: \n- §d(BountifulBaubles) Mixin Quitar Modificador en el Nombre\n 
-config.localizator.client.roughtweaksTooltip=(RoughTweaks) Mostrar cuántos corazones cura
+config.localizator.client.roughtweaksTooltip=(RoughTweaks) Mostrar descripción siempre
 config.localizator.client.roughtweaksTooltip.tooltip=Evita la necesidad de presionar Shift para que se muestre cuántos corazones curan los items de curación. \n\n§cMixin necesario: \n- §d(RoughTweaks) Mixin Nombres localizados y mejor descripción\n 
+
+# Messages
+message.localizator.newconfig.0=[Localizator] Hola hola! Soy %s!
+message.localizator.newconfig.1=Separé las categorías de Mixins en Mixins de localización y misceláneos, por lo que la estructura del archivo de configuración cambió.
+message.localizator.newconfig.2=Renombré tu archivo cfg a %s y creé uno nuevo con la nueva estructura.
+message.localizator.newconfig.3=§ePor favor abre la pantalla de configuración de Localizator y vuelve a habilitar tus opciones deseadas.
+message.localizator.newconfig.4=Disculpa las molestias!
+message.localizator.newconfig.5=[§6§nHaz clic aquí para abrir tu viejo archivo cfg§r]
+message.localizator.newconfig.hovertext=Clic para abrir %s

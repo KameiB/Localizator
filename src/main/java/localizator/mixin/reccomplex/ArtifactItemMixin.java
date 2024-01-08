@@ -26,11 +26,11 @@ public abstract class ArtifactItemMixin {
             ),
             remap = false
     )
-    // Snitch a copy of the Artifact and return a LocName...
+    // Snitch a copy of the Artifact
     // Line 85: artifactStack.setStackDisplayName(artifact.getFullName());
     private static String RecComplex_ArtifactItem_any_getFullLocName(Artifact artifact) {
         localizator$tempArtifact = artifact;
-        return ((IArtifactMixin)artifact).getFullLocName();
+        return artifact.getFullName();
     }
     
     @Redirect(
@@ -42,14 +42,14 @@ public abstract class ArtifactItemMixin {
             ),
             remap = false
     )
-    // ... to setTranslatableName
+    // Add LocName and LocNameArgs
     // Line 85: artifactStack.setStackDisplayName(artifact.getFullName());
-    private static ItemStack RecComplex_ArtifactItem_any_setLocNameAndLocNameArgs(ItemStack artifactStack, String locName) {        
+    private static ItemStack RecComplex_ArtifactItem_any_setLocNameAndLocNameArgs(ItemStack artifactStack, String name) {        
         // First, set the DisplayName (because this method will clear the LocName and LocNameArgs NBT tags)
-        artifactStack.setStackDisplayName(localizator$tempArtifact.getFullName());
+        artifactStack.setStackDisplayName(name);
         // Then, set the LocName. Localizator shows LocName (if exists) instead of DisplayName.
         // I use both DisplayName and LocName, so if the player removes Localizator, Minecraft shows DisplayName instead of LocName.
-        artifactStack.setTranslatableName(locName);
+        artifactStack.setTranslatableName(((IArtifactMixin)localizator$tempArtifact).getFullLocName());
         
         // Finally, append LocNameArgs.
         // This method creates a copy of the ItemStack it receives and returns the copy, instead of modifying the original ItemStack.

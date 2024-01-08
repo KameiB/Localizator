@@ -20,21 +20,16 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
 @Mixin(ItemStack.class)
-public abstract class ItemStackMixin
+public abstract class ItemStackLocLoreMixin
         implements net.minecraftforge.common.capabilities.ICapabilitySerializable<NBTTagCompound>{
     @Shadow(remap = Production.inProduction)
     private NBTTagCompound stackTagCompound;
-
-    @Shadow(remap = Production.inProduction)
-    public NBTTagCompound getSubCompound(String key) {
-        return stackTagCompound != null && stackTagCompound.hasKey(key, 10) ? stackTagCompound.getCompoundTag(key) : null;
-    }
-
     @Unique
     private boolean localizator$hasLocLore;
     @Unique
@@ -45,6 +40,7 @@ public abstract class ItemStackMixin
             at = @At( value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 0),
             remap = Production.inProduction
     )
+    @SideOnly(Side.CLIENT)
     // Get a copy of the local variable "list"
     // Line 697: list.add(s);
     private boolean Minecraft_ItemStack_captureTooltipList(List<String> list, Object text) {
@@ -118,6 +114,7 @@ public abstract class ItemStackMixin
             ),
             remap = Production.inProduction
     )
+    @SideOnly(Side.CLIENT)
     // Line 754: list.add(TextFormatting.DARK_PURPLE + "" + TextFormatting.ITALIC + nbttaglist3.getStringTagAt(l1));
     private boolean Minecraft_ItemStack_insteadOfLore(List<String> list, Object text) {
         if (localizator$hasLocLore && ForgeConfigHandler.clientConfig.minecraftHideLore) {
@@ -125,62 +122,6 @@ public abstract class ItemStackMixin
         }
         else {
             return list.add((String) text);
-        }
-    }
-
-    /**
-     * <br>Return a translated name with fixed arguments (Optional) before checking for the Name tag, so an item can have both (when created).</br>  
-     * <br>Why both? so if the player stops using Localizator, they will still see the name contained in the Name tag before the LocName.</br>
-     * <br>This feature was added to support Recurrent Complex's chaotic names (up to 2 chaotic names per Artifact name) on custom loot.</br> 
-     * <br>Example of LocName lang key: lang.key=%s the legendary Staff</br>
-     * <br>LocNameArgs tag must be a list of strings 
-     * (it can be a number in the form of a String. Its contents can be set in code or config file)
-     * </br>
-     **/
-    @Inject(
-            method = "getDisplayName()Ljava/lang/String;",
-            at = @At("HEAD"),
-            cancellable = true,
-            remap = Production.inProduction
-    )
-    // Inject just before checking if item has the "Name" NBT tag
-    // Line 606: if (nbttagcompound.hasKey("Name", 8))
-    private void Minecraft_ItemStack_getDisplayName_LocNameWithArgs(CallbackInfoReturnable<String> cir) {
-        NBTTagCompound nbtTagCompound = getSubCompound("display");
-        if (nbtTagCompound != null) {
-            if (nbtTagCompound.hasKey("LocName", Constants.NBT.TAG_STRING)) {
-                List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack) ((Object) this));
-                if (argsList.isEmpty()) {
-                    cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocal(nbtTagCompound.getString("LocName")));                    
-                }
-                else {
-                    cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
-                            nbtTagCompound.getString("LocName"),
-                            argsList.toArray()));
-                }
-            }
-        }
-    }
-
-    /**
-     * <br>Just after return, clear the LocName and LocNameArgs tags (if present).</br>
-     * <br>This is meant to be called when the player renames an item that has the LocName tag.</br>
-     * <br>If we don't remove it now, the player won't be able to see the name they assigned.</br>
-     * <p>Yes, if a player renames an item and then renames it again with an empty name, the item will be left with its original name.</p>
-     * <b>It's a feature, not a bug ok? xc</b>
-     */
-    @Inject(
-            method = "setStackDisplayName(Ljava/lang/String;)Lnet/minecraft/item/ItemStack;",
-            at = @At("TAIL"),
-            cancellable = false,
-            remap = Production.inProduction
-    )
-    // Line 629: return this;
-    private void Minecraft_ItemStack_setStackDisplayName_clearLocName(String displayName, CallbackInfoReturnable<ItemStack> cir) {
-        NBTTagCompound nbtTagCompound = getSubCompound("display");
-        if (nbtTagCompound != null) {
-            nbtTagCompound.removeTag("LocNameArgs");
-            nbtTagCompound.removeTag("LocName");
         }
     }
 }
