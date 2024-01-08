@@ -33,7 +33,8 @@ public abstract class ItemTrinketAnkhMixin extends ItemTrinketPotionCharm implem
             ((EntityAccessor)player).setPlayerInCobWeb(false);
         }
     }
-    
+
+    // Had to override this method just to add the added cobweb immunity in the place I wanted
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

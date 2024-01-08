@@ -4,7 +4,6 @@ import localizator.data.ConfigToMixin;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModClassLoader;
 import net.minecraftforge.fml.common.ModContainer;
-import org.apache.logging.log4j.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.MixinEnvironment;
 import org.spongepowered.asm.mixin.Mixins;
@@ -57,7 +56,7 @@ public class LocalizatorLoader {
         map.put("mujmajnkraftsbettersurvival", bettersurvivalList);
         // Bountiful Baubles
         List<ConfigToMixin> bountifulbaublesList = new ArrayList<>();
-        bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) No Modifier at Name Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) No Modifier at Name Mixin"), "mixins.bountifulbaubles.attributeatname.json"));
+        bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Tooltip fixes Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) Tooltip fixes Mixin"), "mixins.bountifulbaubles.tooltips.json"));
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Ankh Charm Web Immune Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Charm Web Immune Mixin"), "mixins.bountifulbaubles.ankhcharmcobweb.json"));
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Ankh Shield Web Immune Mixin", ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Shield Web Immune Mixin"), "mixins.bountifulbaubles.ankhshieldcobweb.json"));
         map.put("bountifulbaubles", bountifulbaublesList);

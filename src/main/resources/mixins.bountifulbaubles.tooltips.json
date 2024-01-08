@@ -6,7 +6,8 @@
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "client": [
-    "bountifulbaubles.BaubleAttributeModifierHandlerMixin"
+    "bountifulbaubles.BaubleAttributeModifierHandlerMixin",
+    "bountifulbaubles.ItemRingFlywheelMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

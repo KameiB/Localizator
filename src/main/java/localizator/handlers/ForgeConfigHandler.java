@@ -161,11 +161,11 @@ public class ForgeConfigHandler {
 	}
 	
 	public static class MiscelaneousMixinsConfig {
-		@Config.Comment("Enables the Client config: \n- (BountifulBaubles) Remove Modifier from Bauble Name")
-		@Config.Name("(BountifulBaubles) No Modifier at Name Mixin")
-		@Config.LangKey("config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin")
+		@Config.Comment("Applies some QoL tooltip fixes. \n* Fixes Flywheel Ring's energy tooltip string not rendering its color properly. \n* Enables the Client config: \n- (BountifulBaubles) Remove Modifier from Bauble Name")
+		@Config.Name("(BountifulBaubles) Tooltip fixes Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesTooltipFixesMixin")
 		@Config.RequiresMcRestart
-		public boolean bountifulbaublesNoModifierAtNameMixin = !Production.inProduction;
+		public boolean bountifulbaublesTooltipFixesMixin = !Production.inProduction;
 		@Config.Comment("If you hate those weird \"Â\" symbols in the Staff tooltip as much as me, enable this Mixin.")
 		@Config.Name("(DyamicTrees) Staff Mixin")
 		@Config.LangKey("config.localizator.mixins.dynamictreesStaffMixin")
@@ -280,6 +280,7 @@ public class ForgeConfigHandler {
 					if (!(configFile.renameTo(new File("config", oldCfgName)))) {
 						Localizator.LOGGER.error("Failed to rename config file to: " + oldCfgName);
 					}
+					Localizator.LOGGER.info("[Localizator] Please re-enable all your desired Mixins and configurations. Sorry for the inconvenience!");
 					configFile = null;
 					configBooleanString = "";
 					return false;

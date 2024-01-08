@@ -44,6 +44,7 @@ public abstract class ItemShieldAnkhMixin extends ItemShieldObsidian {
         }
     }
     
+    // Had to override this method just to add the added cobweb immunity in the place I wanted
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
