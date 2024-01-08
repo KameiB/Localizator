@@ -45,3 +45,5 @@ message.pet.tamefail_=The %s wants more!
 message.pet.tamefail.knowledge_=You gained knowledge by feeding the %s. At Rank 2 you may tame it!
 message.pet.mount.baby_=The %s is too young to carry you!
 #
+# Damage sources
+cold_fire=Cold Fire

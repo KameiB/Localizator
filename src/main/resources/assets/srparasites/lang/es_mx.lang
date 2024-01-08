@@ -1,54 +1,5 @@
 tooltip.srparasites.armor.adaptation=Adaptación actual:
 tooltip.srparasites.armor.reduction=§a  Reducción:
 
-## Non-entity damage sources (Optional). Fill these in your Lang file to fit your modpack's needs
-# Vanilla
-inFire=Fuego
-onFire=En llamas
-lightningBolt=Rayo
-lava=Lava
-hotFloor=Piso caliente
-inWall=Pared
-cramming=Abarrotamiento
-drown=Ahogamiento
-starve=Hambre
-cactus=Cactus
-fall=Caída
-flyIntoWall=Energía cinética
-outOfWorld=Vacío
-generic=Genérico
-magic=Magia
-indirectMagic=Magia indirecta
-wither=Descomposición
-anvil=Yunque
-fallingBlock=Bloque cayendo
-dragonBreath=Aliento de dragón
-fireworks=Fuegos artificiales
-thorns=Espinas
-thrown=Proyectil
-arrow=Flecha
-explosion=Explosión
-player=Jugador
-mob=Mob
-
-# Dynamic Trees
-fallingtree=Árbol cayendo
-
-# Ice and Fire
-dragon_fire=Fuego de dragón
-dragon_ice=Hielo de dragón
-gorgon=Gorgona
-dragon_lightning=Rayo de dragón
-acid=Ácido
-
-# Locks
-locks.shock=Choque de candado
-
-# Lycanites Mobs
-cold_fire=Fuego frío
-
-# Simple Difficulty
-parasites=Lombrices
-
 # Biomes names
 biome.srparasites:biome_parasite.name=Bioma parásito

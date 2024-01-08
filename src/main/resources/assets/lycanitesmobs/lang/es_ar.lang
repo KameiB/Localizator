@@ -177,3 +177,6 @@ Russet Amalgalich  Lvl 2 (Phase 3)=Amalgalich Marron  Nivel 2 (Fase 3)
 Russet Amalgalich  Lvl 3 (Phase 1)=Amalgalich Marron  Nivel 3 (Fase 1)
 Russet Amalgalich  Lvl 3 (Phase 2)=Amalgalich Marron  Nivel 3 (Fase 2)
 Russet Amalgalich  Lvl 3 (Phase 3)=Amalgalich Marron  Nivel 3 (Fase 3)
+#
+# Damage sources
+cold_fire=Fuego frío

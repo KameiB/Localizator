@@ -1,1 +1,9 @@
+# Biome names
 biome.iceandfire:glacier.name=Glacier
+
+# Damage sources
+dragon_fire=Dragon Fire
+dragon_ice=Dragon Ice
+gorgon=Gorgon
+dragon_lightning=Dragon Lightning
+acid=Acid

@@ -1,3 +1,4 @@
+# Biome names
 biome.minecraft:ocean.name=Océano
 biome.minecraft:plains.name=Llanuras
 biome.minecraft:desert.name=Desierto
@@ -60,3 +61,32 @@ biome.minecraft:mutated_savanna_rock.name=Meseta de sabana destrozada
 biome.minecraft:mutated_mesa.name=Tierras baldías erosionadas
 biome.minecraft:mutated_mesa_rock.name=Meseta boscosa de tierras baldías modificada
 biome.minecraft:mutated_mesa_clear_rock.name=Meseta boscosa de tierras baldías
+
+# Damage sources
+inFire=Fuego
+onFire=En llamas
+lightningBolt=Rayo
+lava=Lava
+hotFloor=Piso caliente
+inWall=Pared
+cramming=Abarrotamiento
+drown=Ahogamiento
+starve=Hambre
+cactus=Cactus
+fall=Caída
+flyIntoWall=Energía cinética
+outOfWorld=Vacío
+generic=Genérico
+magic=Magia
+indirectMagic=Magia indirecta
+wither=Descomposición
+anvil=Yunque
+fallingBlock=Bloque cayendo
+dragonBreath=Aliento de dragón
+fireworks=Fuegos artificiales
+thorns=Espinas
+thrown=Proyectil
+arrow=Flecha
+explosion=Explosión
+player=Jugador
+mob=Mob
