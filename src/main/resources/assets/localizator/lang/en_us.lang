@@ -1,0 +1,112 @@
+#PARSE_ESCAPES
+localizator.description=No more hardcoded texts. I'll localize them!
+entity.localizator.KameiB.name=§aThe §2§lKameiB
+book.localizator.Example.title=§b§oWhen I die
+book.localizator.Example.author=§dAnna
+book.localizator.Example.page.1=When I die,\nI'll die by myself.\nNo one will die instead.\nWhen I feel ready\nI'll tell you,\n§o"Fynn, put me standing up",\nand will look\nand laugh happily.\nIf I fall down,\nit means I died.\n\n§r            FIN
+book.localizator.Example.lore=§6A great book
+
+# Config
+config.localizator.localizingMixins=1. Localizing Mixins
+config.localizator.localizingMixins.tooltip=Enable/Disable Mixins (Tweaks) related to localization
+config.localizator.miscelaneousMixins=2. Miscelaneous Mixins
+config.localizator.miscelaneousMixins.tooltip=Enable/Disable Mixins (Tweaks) related to QoL or bug fixes
+config.localizator.server=3. Server
+config.localizator.server.tooltip=Apply Enabled §9Server-side §dMixins§e
+config.localizator.client=4. Client
+config.localizator.client.tooltip=Apply Enabled §bClient-side §dMixins§e
+
+# Localizing Mixin config
+config.localizator.mixins.minecraftMobLocCustomNamesMixin=(Minecraft) Mob Custom Names Mixin
+config.localizator.mixins.minecraftMobLocCustomNamesMixin.tooltip=Enables the Client config: \n- §b(Minecraft) Translate Mob Custom Names\n 
+config.localizator.mixins.minecraftBossLocCustomNamesMixin=(Minecraft) Boss Custom Names Mixin
+config.localizator.mixins.minecraftBossLocCustomNamesMixin.tooltip=Enables the Client config: \n- §b(Minecraft) Translate Boss Custom Names\n 
+config.localizator.mixins.minecraftLocLoreMixin=(Minecraft) Localized Lore Mixin
+config.localizator.mixins.minecraftLocLoreMixin.tooltip=Enables Localized Lore "LocLore" NBT tag support.\nFor items with translatable "lore".\n 
+config.localizator.mixins.minecraftLocNameMixin=(Minecraft) Better Localized Name Mixin
+config.localizator.mixins.minecraftLocNameMixin.tooltip=Makes the "LocName" NBT tag, support language keys that accept parameters.\nUsed by Mixins like: \n- §d(RecComplex) Artifact Names Mixin\n\nAlso, enables the Server config: \n- §9(Minecraft) Show LocName instead of Name\n 
+config.localizator.mixins.minecraftLocWrittenBookMixin=(Minecraft) Localized Written Book Mixin
+config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Enables "locTitle" and "locAuthor" NBT tags support.\nFor Written Books with localized author and title.\n
+config.localizator.mixins.minecraftBiomeMixin=(Minecraft) Localized Biome Name Mixin
+config.localizator.mixins.minecraftBiomeMixin.tooltip=Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes.\n 
+config.localizator.mixins.neatLocHealthBarMixin=(Neat) Health Bar Mixin
+config.localizator.mixins.neatLocHealthBarMixin.tooltip=Enables the Client config: \n- §b(Neat) Translate Names In Health Bar\n 
+config.localizator.mixins.armorunderOzzyLinerMixin=(ArmorUnder) Applies Ozzy Liner text Mixin
+config.localizator.mixins.armorunderOzzyLinerMixin.tooltip=Localizes the MILD/COOL/WARM hardcoded texts when applying an Ozzy liner to a piece of armor.\n 
+config.localizator.mixins.setbonusTooltipMixin=(SetBonus) Tooltip Mixin
+config.localizator.mixins.setbonusTooltipMixin.tooltip=Enables support for Language keys in Set and Bonus names (config file).\n 
+config.localizator.mixins.forgottenitemsTooltipMixin=(ForgottenItems) Tooltips Mixin
+config.localizator.mixins.forgottenitemsTooltipMixin.tooltip=Localizes all Forgotten Items' item descriptions.\n 
+config.localizator.mixins.srparasitesArmorTooltipMixin=(SRParasites) Armor Tooltips Mixin
+config.localizator.mixins.srparasitesArmorTooltipMixin.tooltip=Localizes the "Current Adaptation:" and "reduction:" hardcoded texts on parasite armor tooltip. \nAlso the damage source!\n\nFor damage sources, enable the Client config: \n- §b(SRParasites) Translate Resisted Damage Sources\n 
+config.localizator.mixins.bettersurvivalTooltipMixin=(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin
+config.localizator.mixins.bettersurvivalTooltipMixin.tooltip=Localizes the "hits remaining" hardcoded text added to a weapon's tooltip when it has been imbued with a potion in a cauldron.\n
+config.localizator.mixins.roughtweaksNamesAndTooltipMixin=(RoughTweaks) Localized Names Mixins
+config.localizator.mixins.roughtweaksNamesAndTooltipMixin.tooltip=Modifies the lang keys of Rough Tweaks items, so they don't collide with FirstAid. \nAlso, Enables the Client config: \n- §b(RoughTweaks) Show Heal Amount\n 
+config.localizator.mixins.sereneseasonsTooltipMixin=(SereneSeasons) Localized Crop Fertility Tooltip Mixin
+config.localizator.mixins.sereneseasonsTooltipMixin.tooltip=Localizes the "Fertile Seasons:", and seasons hardcoded texts at crop tooltip. \nAlso adds support to the following Rustic seeds: \n- Tomato Seeds \n- Chili seeds.\n 
+config.localizator.mixins.charmCakeNameMixin=(Charm) Cake Name Mixin
+config.localizator.mixins.charmCakeNameMixin.tooltip=Localizes special Cakes hardcoded Names.\n 
+config.localizator.mixins.charmComposterRecipeMixin=(Charm) Localized Composter JEI Mixin
+config.localizator.mixins.charmComposterRecipeMixin.tooltip=Localizes the Composter JEI Recipe Integration GUI.\n 
+config.localizator.mixins.wailaEntityNameMixin=(WAILA) Entity Name Mixin
+config.localizator.mixins.wailaEntityNameMixin.tooltip=Enables support for Language Keys in Entity's CustomName tag.\n 
+config.localizator.mixins.corpsecomplexScrollMixin=(CorpseComplex) Grave Scroll Description Mixin
+config.localizator.mixins.corpsecomplexScrollMixin.tooltip=Localizes the Grave Scroll description hardcoded text.\n 
+config.localizator.mixins.forgeModListMixin=(FML) Localized Mod List GUI Mixin
+config.localizator.mixins.forgeModListMixin.tooltip=Localizes hardcoded texts in Forge's Mod List screen.\nAlso highlights the important information at the Mod details screen.\n 
+config.localizator.mixins.lycanitesMessagesMixin=(Lycanites) Client-side Translated Messages Mixin
+config.localizator.mixins.lycanitesMessagesMixin.tooltip=The messages received from the server will be translated on client side to match their locale.\n 
+config.localizator.mixins.battletowersMessagesMixin=(BattleTowers) Golem Defeated Message Mixin
+config.localizator.mixins.battletowersMessagesMixin.tooltip=Localizes the message sent when the Battle Tower Golem is defeated.\n 
+config.localizator.mixins.callableHorsesMessagesMixin=(Callable Horses) Horse Messages Mixin
+config.localizator.mixins.callableHorsesMessagesMixin.tooltip=Localizes all horse-related messages sent from the server.\n 
+config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) "Power: " Status Message Mixin
+config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localizes the "Power: " status message when throwing an item. \n 
+config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Artifact Names Mixin
+config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localizes Artifacts custom names.\n 
+
+# Miscelaneous Mixin Config
+config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin=(BountifulBaubles) No Modifier at Name Mixin
+config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin.tooltip=Enables the Client config: \n- §b(BountifulBaubles) Remove Modifier from Bauble Name\n 
+config.localizator.mixins.dynamictreesStaffMixin=(DyamicTrees) Staff Mixin
+config.localizator.mixins.dynamictreesStaffMixin.tooltip=If you hate those weird "Â" symbols in the Staff tooltip as much as me, enable this Mixin.\n 
+config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) ERRORED patch Mixin
+config.localizator.mixins.itemphysicErroredMixin.tooltip=If an item is not THAT errored, retrieve its name and display it. \n§aWorks with ArmorUnderwear's Ozzy Liners and other items!\n\n§4Needs Forge's §eRemove Erroring Entities§4 to work safely!\n 
+config.localizator.mixins.itemphysicReverseDescriptionMixin=(ItemPhysic) Reverse Description Mixin
+config.localizator.mixins.itemphysicReverseDescriptionMixin.tooltip=Reverse the order of a dropped item description, so it shows the same as on its tooltip.\n 
+config.localizator.mixins.ichunutilFixURLs=(iChunUtil) Fix invalid URL calls Mixin
+config.localizator.mixins.ichunutilFixURLs.tooltip=Point Patrons and Version calls to valid repo URLs, to prevent java.io.FileNotFoundException.\n 
+config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity=(BountifulBaubles) Ankh Charm Web Immune Mixin
+config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity.tooltip=Adds cobweb immunity to the Ankh Charm. \nIf it makes sense to you as well c: \n 
+config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubles) Ankh Shield Web Immune Mixin
+config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Adds cobweb immunity to the Ankh Shield. \nIf it makes sense to you as well c: \n 
+
+# Server config
+config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name
+config.localizator.server.minecraftLocNameOverName.tooltip=If an item has both LocName and Name display NBT tags, show LocName instead of Name. \nThis is useful for Mixins that localize mods like Recurrent Complex, \nwhich assign custom hardcoded names to items on generation. \n\n§cRequired Mixin:\n- §d(Minecraft) Better Localized Name Mixin\n 
+
+# Client config
+config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
+config.localizator.client.minecraftMobLocCustomNames.tooltip=If an entity has a custom name (CustomName tag with a language key in it), translate it. \n\n§cRequired Mixin:\n- §d(Minecraft) Mob Custom Names Mixin\n 
+config.localizator.client.minecraftBossLocCustomNames=(Minecraft) Translate Boss Custom Names
+config.localizator.client.minecraftBossLocCustomNames.tooltip=If a Boss has a custom Name (CustomName tag with a language key in it), translate it on client side. \nThe corresponding language key must exist! \n\n§cRequired Mixin:\n- §d(Minecraft) Boss Custom Names Mixin\n 
+config.localizator.client.minecraftHideLore=(Minecraft) Hide Lore if LocLore exists
+config.localizator.client.minecraftHideLore.tooltip=If an item has both "Lore" and "LocLore" NBT tags, LocLore contents will override Lore contents. \nIf it has only one of the lore tags, it will be displayed normally. \n\n§cRequired Mixin: \n- §d(Minecraft) Localized Lore Mixin\n 
+config.localizator.client.neatLocHealthBar=(Neat) Translate Names In Health Bar
+config.localizator.client.neatLocHealthBar.tooltip=If an entity has a custom name (CustomName tag with a language key), translate it. \n\n§cRequired Mixin:\n- §d(Neat) Health Bar Mixin\n 
+config.localizator.client.srparasitesResistances=(SRParasites) Translate Resisted Damage Sources
+config.localizator.client.srparasitesResistances.tooltip=In SRP armor tooltip, translate resisted damage sources names. \nEntity names are taken from Forge's registry (automatic). \nNon-entity names are taken from a lang file. \n\n§cRequired Mixin: \n- §d(SRParasites) Armor Tooltips Mixin \n§4Disable this option if it impacts performance.\n 
+config.localizator.client.bountifulbaublesRemoveModifierFromName=(BountifulBaubles) Remove Modifier from Bauble Name
+config.localizator.client.bountifulbaublesRemoveModifierFromName.tooltip=Prevents a Bauble's Modifier from displaying at Bauble Name\n\n§cRequired Mixin: \n- §d(SRParasites) Armor Tooltips Mixin\n 
+config.localizator.client.roughtweaksTooltip=(RoughTweaks) Show Heal Amount
+config.localizator.client.roughtweaksTooltip.tooltip=Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \n\n§cRequired Mixin: \n- §d(RoughTweaks) Localized Names and Better Tooltip Mixin\n 
+
+# Messages
+message.localizator.newconfig.0=[Localizator] Hello there! It's %s!
+message.localizator.newconfig.1=I separated Mixin categories into Localization and QoL Mixins, so the config file structure changed.
+message.localizator.newconfig.2=I renamed your cfg file into %s and created a new one with the new structure.
+message.localizator.newconfig.3=§ePlease open Localizator Configuration screen and enable your desired options.
+message.localizator.newconfig.4=Sorry for the inconvenience!
+message.localizator.newconfig.5=[§6§nClick here to open your old cfg file§r]
+message.localizator.newconfig.hovertext=Click to open %s

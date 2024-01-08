@@ -1,0 +1,29 @@
+# Item tooltips
+item.vein_pickaxe.desc=§bVein Mines the block broken§r
+item.obsidian_harvester.desc=§bVery useful for mining Obsidian§r
+item.heat_talisman.lore=§eStores extreme amounts of heat§r
+item.heat_talisman.desc=It is not possible to charge the Talisman in Creative mode
+item.hasty_pickaxe.desc=§bMore advanced than gold§r
+item.gamble_pickaxe.desc=§bWhen breaking a block, there's a chance to either duplicate it or destroy it§r
+item.barkified_axe.desc=Automatically barkifies logs when breaking them
+item.cushioned_boots.desc=§3Soften your fall§r
+item.explosion_pickaxe.desc=§bCreates an Explosion when breaking blocks§r
+item.lifebelt.desc=§3Float in water§r
+item.shock_talisman.lore=§eConverts fall damage into an explosion§r
+item.ender_talisman.lore=§eTeleports you where you're looking§r
+item.water_talisman.lore=§eCreates a Water Block§r
+item.wind_talisman.lore=§eFly with the wind§r
+
+item.golem_helmet.desc=§3Hard like a Rock§r
+item.golem_chestplate.desc=§3Hard like a Rock§r
+item.golem_leggings.desc=§3Hard like a Rock§r
+item.golem_boots.desc=§3Hard like a Rock§r
+
+tooltip.forgottenitems.bound_tools.bound_to=§fBound to§r
+tooltip.forgottenitems.bound_tools.unbound=Unbound
+tooltip.forgottenitems.bound_tools.desc=§bStays in the inventory on death§r
+
+tooltip.forgottenitems.crafting_rune.output=Output:
+tooltip.forgottenitems.crafting_rune.output_none=None/Error
+
+tooltip.forgottenitems.gems.desc=§eIt glows and sparkles§r

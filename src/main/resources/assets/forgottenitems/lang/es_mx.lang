@@ -1,0 +1,29 @@
+# Added by KameiB. Item tooltips
+item.vein_pickaxe.desc=§bMina toda la vena del bloque roto§r
+item.obsidian_harvester.desc=§bMuy util para minar obsidiana§r
+item.heat_talisman.lore=§eAlmacena cantidades extremas de calor§r
+item.heat_talisman.desc=No es posible recargar el Talisman en modo Creativo
+item.hasty_pickaxe.desc=§bMas avanzado que el oro§r
+item.gamble_pickaxe.desc=§bAl romper un bloque, hay una probabilidad de duplicarlo o destruirlo§r
+item.barkified_axe.desc=Descorteza automaticamente los troncos al romperlos
+item.cushioned_boots.desc=§3Suaviza tu caida§r
+item.explosion_pickaxe.desc=§bCrea una explosion cuando rompes bloques§r
+item.lifebelt.desc=§3Flotas en el agua§r
+item.shock_talisman.lore=§eConvierte el daño por caida en una explosion§r
+item.ender_talisman.lore=§eTe teletransporta a donde apuntas§r
+item.water_talisman.lore=§eCrea un bloque de Agua§r
+item.wind_talisman.lore=§eVuela con el viento§r
+
+item.golem_helmet.desc=§3Duro como La Roca§r
+item.golem_chestplate.desc=§3Duro como La Roca§r
+item.golem_leggings.desc=§3Duro como La Roca§r
+item.golem_boots.desc=§3Duro como La Roca§r
+
+tooltip.forgottenitems.bound_tools.bound_to=§fUnido a§r
+tooltip.forgottenitems.bound_tools.unbound=No unido
+tooltip.forgottenitems.bound_tools.desc=§bPermanece en tu inventario cuando mueres§r
+
+tooltip.forgottenitems.crafting_rune.output=Salida:
+tooltip.forgottenitems.crafting_rune.output_none=Nada/Error
+
+tooltip.forgottenitems.gems.desc=§eBrilla y destellea§r
