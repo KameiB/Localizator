@@ -67,8 +67,8 @@ config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Mixin Nombres de A
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localiza los nombres personalizados de los Artefactos.\n 
 
 # Miscelaneous Mixin Config
-config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin=(BountifulBaubles) Mixin Quitar Modificador del Nombre
-config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin.tooltip=Habilita la configuración Cliente: \n- §b(BountifulBaubles) Quitar Modificador del nombre\n 
+config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
+config.localizator.mixins.bountifulbaublesTooltipFixesMixin.tooltip=Aplica cambios de Calidad de Vida a las descripciones de algunos items. \n* Arregla que la cantidad de energía en la descripción del Anillo Volante no muestre su color. \n* Habilita la configuración Cliente: \n- §b(BountifulBaubles) Quitar Modificador del nombre\n 
 config.localizator.mixins.dynamictreesStaffMixin=(DyamicTrees) Mixin Baston del bosque
 config.localizator.mixins.dynamictreesStaffMixin.tooltip=Si odias esos extraños símbolos "Â" en la descripción del Bastón del bosque tanto como yo, habilita este Mixin.\n 
 config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) Mixin Parchar ERRORED

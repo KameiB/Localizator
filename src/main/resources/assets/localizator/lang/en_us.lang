@@ -67,8 +67,8 @@ config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Artifact Names Mix
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localizes Artifacts custom names.\n 
 
 # Miscelaneous Mixin Config
-config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin=(BountifulBaubles) No Modifier at Name Mixin
-config.localizator.mixins.bountifulbaublesNoModifierAtNameMixin.tooltip=Enables the Client config: \n- §b(BountifulBaubles) Remove Modifier from Bauble Name\n 
+config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
+config.localizator.mixins.bountifulbaublesTooltipFixesMixin.tooltip=Applies some QoL tooltip fixes. \n* Fixes Flywheel Ring's energy tooltip string not rendering its color properly. \n* Enables the Client config: \n- §b(BountifulBaubles) Remove Modifier from Bauble Name\n 
 config.localizator.mixins.dynamictreesStaffMixin=(DyamicTrees) Staff Mixin
 config.localizator.mixins.dynamictreesStaffMixin.tooltip=If you hate those weird "Â" symbols in the Staff tooltip as much as me, enable this Mixin.\n 
 config.localizator.mixins.itemphysicErroredMixin=(ItemPhysic) ERRORED patch Mixin
