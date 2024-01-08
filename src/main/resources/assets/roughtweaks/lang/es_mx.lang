@@ -1,9 +1,0 @@
-item.roughtweaks.salve.name=Pomada curativa
-item.roughtweaks.plaster.name=Curita avanzado
-item.roughtweaks.bandage.name=Vendaje avanzado
-item.roughtweaks.medikit.name=Kit medico
-item.roughtweaks.medikitEnchanted.name=Kit medico encantado
-
-tooltip.roughtweaks.itemheal.heal_amount=Cura:
-tooltip.roughtweaks.itemheal.hearts=corazones
-tooltip.roughtweaks.itemheal.shift=Presiona §6Shift§7 para mas info
