@@ -1,0 +1,20 @@
+# Cakes
+tile.charm.cake_danger_sight.name=Cake of Danger Sight
+tile.charm.cake_fire_resistance.name=Cake of Fire Resistance
+tile.charm.cake_invisibility.name=Cake of Invisibility
+tile.charm.cake_leaping.name=Cake of Leaping
+tile.charm.cake_night_vision.name=Cake of Night Vision
+tile.charm.cake_regeneration.name=Cake of Regeneration
+tile.charm.cake_resilience.name=Cake of Stability
+tile.charm.cake_resistance.name=Cake of Fortitude
+tile.charm.cake_strength.name=Cake of Strength
+tile.charm.cake_swiftness.name=Cake of Swiftness
+tile.charm.cake_water_breathing.name=Cake of Water Breathing
+tile.charm.cake_haste.name=Cake of Haste
+
+# JEI
+charm.jei.recipe.composter=Composter
+charm.jei.recipe.composter.compost_chance=Compost chance:
+charm.jei.recipe.composter.outputs=Outputs %s
+charm.jei.recipe.composter.1_item=1 item
+charm.jei.recipe.composter.many_items=1-%d items

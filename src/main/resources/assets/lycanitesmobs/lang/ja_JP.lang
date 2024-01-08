@@ -1,0 +1,171 @@
+﻿# ========================================================================
+event.started_=%s が発生しています！
+event.extended_=%s が拡張されました！
+event.finished_=%s は終了しました！
+event.boss.started_=%s が呼び出されました！
+event.boss.extended_=%s が近づいています！
+event.boss.finished_=%s は登場しました！
+#
+# Soulstone:
+message.soulstone.pet.added_=あなたの %s はバインドされています。ペット管理バーで見つけることができます。チャージを食べさせます！
+message.soulstone.mount.added_=%s はバインドされています。マウント管理バーで見つけることができます。チャージを食べさせます！
+#
+# ========== Commands ==========
+lyc.command.debug.set_=%s が更新されました.
+#
+# Spawners:
+lyc.command.spawners.creative_=クリエイティブモードでのスポーナーが %s に設定されました。（true = 有効、false = 無効）。
+#
+# Mob Events:
+lyc.command.mobevent.creative_=Los eventos de criaturas para el modo creativo están %value% (true=activados y false=desactivados).
+#
+# ========== System ========== 
+lyc.version.newer_=現在使用しているホラークリーチャーのバージョンは %1$s ですが、新しいバージョン %2$s が見つかりました。より良いエクスペリエンスを得るために更新することをお勧めします！
+#
+# ========== Messages ==========
+# Beastiary:
+message.beastiary.new_=%1$s を発見しましたので、生物の本に情報が記入されました！
+message.beastiary.rank_=%1$s について知識を高めましたので知識ランクがレベル %2$s になりました！
+message.beastiary.tameable_=%s を飼いならせるようになりました！
+message.beastiary.summonable_=%s を召喚できるようになりました！ただし、この前に、召喚するアイテムを準備する必要があります。
+message.beastiary.summonable.colors_=%s の色違いを召喚できるようになりました！
+message.beastiary.summonable.skins_=%s の亜種を召喚できるようになりました！
+message.beastiary.known_=あなたはすでに %2$s の知識ランクレベル %1$s を持っています。
+# Pet:
+message.pet.tamed_=%s はあなたが好きになってペットになりました！魂の石でソールバインドを忘れずに！
+message.pet.tamefail_=%s はもっと欲しい！
+message.pet.tamefail.knowledge_=%s にエサをやることで知識を高めています。レベル２に上がったら飼いならす事が出来ます！
+message.pet.mount.baby_=%s は若すぎて騎乘できません！
+#
+# ========== Event creatures ==========
+# Names for creatures with special skin (I know this looks disgusting, but trust me, it's better like this)
+Flowersaur=フラワーサウルス
+Gooderness=善良さ
+Satan Claws=サンタ殺ーす
+Krampus=Krampus
+Twisted Ent=ツイストエント
+Salty Tree=滅びの木
+Vampire Bat=吸血コウモリ
+Wicked Treant=邪悪トレアント
+Rudolph=ルドルフ
+Shadow Clown=暗闇のピエロ
+#
+# ========== English Boss Names ==========
+# Mini bosses and final bosses names with variants. This is a support for people who join an English server
+# and want the boss names to become translated in their locale
+Celestial Geonach=セレスティアル ゲオナッチ
+Celestial Geonach  Lvl 1=セレスティアル ゲオナッチ  レベル１
+Celestial Geonach  Lvl 2=セレスティアル ゲオナッチ  レベル２
+Celestial Geonach  Lvl 3=セレスティアル ゲオナッチ  レベル３
+Crimson Epion=クリムゾン エッピオン
+Crimson Epion  Lvl 1=クリムゾン エッピオン  レベル１
+Crimson Epion  Lvl 2=クリムゾン エッピオン  レベル２
+Crimson Epion  Lvl 3=クリムゾン エッピオン  レベル３
+Ebon Malwrath=黒檀 カコ
+Ebon Malwrath  Lvl 1=黒檀 カコ  レベル１
+Ebon Malwrath  Lvl 2=黒檀 カコ  レベル２
+Ebon Malwrath  Lvl 3=黒檀 カコ  レベル３
+Lunar Grue=ルナー グルエ
+Lunar Grue  Lvl 1=ルナー グルエ  レベル１
+Lunar Grue  Lvl 2=ルナー グルエ  レベル２
+Lunar Grue  Lvl 3=ルナー グルエ  レベル３
+Mottled Abaia=まだら アビア
+Mottled Abaia  Lvl 1=まだら アビア  レベル１
+Mottled Abaia  Lvl 2=まだら アビア  レベル２
+Mottled Abaia  Lvl 3=まだら アビア  レベル３
+Phosphorescent Chupacabra=りん光 チュバカブラ
+Phosphorescent Chupacabra  Lvl 1=りん光 チュバカブラ  レベル１
+Phosphorescent Chupacabra  Lvl 2=りん光 チュバカブラ  レベル２
+Phosphorescent Chupacabra  Lvl 3=りん光 チュバカブラ  レベル３
+Royal Apollyon=ロイヤル アポリオーン
+Royal Apollyon  Lvl 1=ロイヤル アポリオーン  レベル１
+Royal Apollyon  Lvl 2=ロイヤル アポリオーン  レベル２
+Royal Apollyon  Lvl 3=ロイヤル アポリオーン  レベル３
+Umber Lobber=アンバー ロバー
+Umber Lobber  Lvl 1=アンバー ロバー  レベル１
+Umber Lobber  Lvl 2=アンバー ロバー  レベル２
+Umber Lobber  Lvl 3=アンバー ロバー  レベル３
+# RAHOVART
+Rahovart  Lvl 1 (Phase 1)=ラーヴァント  レベル１ （フェーズ１）
+Rahovart  Lvl 1 (Phase 2)=ラーヴァント  レベル１ （フェーズ２）
+Rahovart  Lvl 1 (Phase 3)=ラーヴァント  レベル１ （フェーズ３）
+Rahovart  Lvl 2 (Phase 1)=ラーヴァント  レベル２ （フェーズ１）
+Rahovart  Lvl 2 (Phase 2)=ラーヴァント  レベル２ （フェーズ２）
+Rahovart  Lvl 2 (Phase 3)=ラーヴァント  レベル２ （フェーズ３）
+Rahovart  Lvl 3 (Phase 1)=ラーヴァント  レベル３ （フェーズ１）
+Rahovart  Lvl 3 (Phase 2)=ラーヴァント  レベル３ （フェーズ２）
+Rahovart  Lvl 3 (Phase 3)=ラーヴァント  レベル３ （フェーズ３）
+Dark Rahovart  Lvl 1 (Phase 1)=ダーク ラーヴァント  レベル１ （フェーズ１）
+Dark Rahovart  Lvl 1 (Phase 2)=ダーク ラーヴァント  レベル１ （フェーズ２）
+Dark Rahovart  Lvl 1 (Phase 3)=ダーク ラーヴァント  レベル１ （フェーズ３）
+Dark Rahovart  Lvl 2 (Phase 1)=ダーク ラーヴァント  レベル２ （フェーズ１）
+Dark Rahovart  Lvl 2 (Phase 2)=ダーク ラーヴァント  レベル２ （フェーズ２）
+Dark Rahovart  Lvl 2 (Phase 3)=ダーク ラーヴァント  レベル２ （フェーズ３）
+Dark Rahovart  Lvl 3 (Phase 1)=ダーク ラーヴァント  レベル３ （フェーズ１）
+Dark Rahovart  Lvl 3 (Phase 2)=ダーク ラーヴァント  レベル３ （フェーズ２）
+Dark Rahovart  Lvl 3 (Phase 3)=ダーク ラーヴァント  レベル３ （フェーズ３）
+Lux Rahovart  Lvl 1 (Phase 1)=ラックス ラーヴァント  レベル１ （フェーズ１）
+Lux Rahovart  Lvl 1 (Phase 2)=ラックス ラーヴァント  レベル１ （フェーズ２）
+Lux Rahovart  Lvl 1 (Phase 3)=ラックス ラーヴァント  レベル１ （フェーズ３）
+Lux Rahovart  Lvl 2 (Phase 1)=ラックス ラーヴァント  レベル２ （フェーズ１）
+Lux Rahovart  Lvl 2 (Phase 2)=ラックス ラーヴァント  レベル２ （フェーズ２）
+Lux Rahovart  Lvl 2 (Phase 3)=ラックス ラーヴァント  レベル２ （フェーズ３）
+Lux Rahovart  Lvl 3 (Phase 1)=ラックス ラーヴァント  レベル３ （フェーズ１）
+Lux Rahovart  Lvl 3 (Phase 2)=ラックス ラーヴァント  レベル３ （フェーズ２）
+Lux Rahovart  Lvl 3 (Phase 3)=ラックス ラーヴァント  レベル３ （フェーズ３）
+# ASMODEUS
+Asmodeus  Lvl 1 (Phase 1)=アモスティール  レベル１ （フェーズ１）
+Asmodeus  Lvl 1 (Phase 2)=アモスティール  レベル１ （フェーズ２）
+Asmodeus  Lvl 1 (Phase 3)=アモスティール  レベル１ （フェーズ３）
+Asmodeus  Lvl 2 (Phase 1)=アモスティール  レベル２ （フェーズ１）
+Asmodeus  Lvl 2 (Phase 2)=アモスティール  レベル２ （フェーズ２）
+Asmodeus  Lvl 2 (Phase 3)=アモスティール  レベル２ （フェーズ３）
+Asmodeus  Lvl 3 (Phase 1)=アモスティール  レベル３ （フェーズ１）
+Asmodeus  Lvl 3 (Phase 2)=アモスティール  レベル３ （フェーズ２）
+Asmodeus  Lvl 3 (Phase 3)=アモスティール  レベル３ （フェーズ３）
+Azure Asmodeus  Lvl 1 (Phase 1)=アズレ アモスティール  レベル１ （フェーズ１）
+Azure Asmodeus  Lvl 1 (Phase 2)=アズレ アモスティール  レベル１ （フェーズ２）
+Azure Asmodeus  Lvl 1 (Phase 3)=アズレ アモスティール  レベル１ （フェーズ３）
+Azure Asmodeus  Lvl 2 (Phase 1)=アズレ アモスティール  レベル２ （フェーズ１）
+Azure Asmodeus  Lvl 2 (Phase 2)=アズレ アモスティール  レベル２ （フェーズ２）
+Azure Asmodeus  Lvl 2 (Phase 3)=アズレ アモスティール  レベル２ （フェーズ３）
+Azure Asmodeus  Lvl 3 (Phase 1)=アズレ アモスティール  レベル３ （フェーズ１）
+Azure Asmodeus  Lvl 3 (Phase 2)=アズレ アモスティール  レベル３ （フェーズ２）
+Azure Asmodeus  Lvl 3 (Phase 3)=アズレ アモスティール  レベル３ （フェーズ３）
+Verdant Asmodeus  Lvl 1 (Phase 1)=ヴァーダント アモスティール  レベル１ （フェーズ１）
+Verdant Asmodeus  Lvl 1 (Phase 2)=ヴァーダント アモスティール  レベル１ （フェーズ２）
+Verdant Asmodeus  Lvl 1 (Phase 3)=ヴァーダント アモスティール  レベル１ （フェーズ３）
+Verdant Asmodeus  Lvl 2 (Phase 1)=ヴァーダント アモスティール  レベル２ （フェーズ１）
+Verdant Asmodeus  Lvl 2 (Phase 2)=ヴァーダント アモスティール  レベル２ （フェーズ２）
+Verdant Asmodeus  Lvl 2 (Phase 3)=ヴァーダント アモスティール  レベル２ （フェーズ３）
+Verdant Asmodeus  Lvl 3 (Phase 1)=ヴァーダント アモスティール  レベル３ （フェーズ１）
+Verdant Asmodeus  Lvl 3 (Phase 2)=ヴァーダント アモスティール  レベル３ （フェーズ２）
+Verdant Asmodeus  Lvl 3 (Phase 3)=ヴァーダント アモスティール  レベル３ （フェーズ３）
+# AMALGALICH
+Amalgalich  Lvl 1 (Phase 1)=アマルガリッチ  レベル１ （フェーズ１）
+Amalgalich  Lvl 1 (Phase 2)=アマルガリッチ  レベル１ （フェーズ２）
+Amalgalich  Lvl 1 (Phase 3)=アマルガリッチ  レベル１ （フェーズ３）
+Amalgalich  Lvl 2 (Phase 1)=アマルガリッチ  レベル２ （フェーズ１）
+Amalgalich  Lvl 2 (Phase 2)=アマルガリッチ  レベル２ （フェーズ２）
+Amalgalich  Lvl 2 (Phase 3)=アマルガリッチ  レベル２ （フェーズ３）
+Amalgalich  Lvl 3 (Phase 1)=アマルガリッチ  レベル３ （フェーズ１）
+Amalgalich  Lvl 3 (Phase 2)=アマルガリッチ  レベル３ （フェーズ２）
+Amalgalich  Lvl 3 (Phase 3)=アマルガリッチ  レベル３ （フェーズ３）
+Ashen Amalgalich  Lvl 1 (Phase 1)=灰 アマルガリッチ  レベル１ （フェーズ１）
+Ashen Amalgalich  Lvl 1 (Phase 2)=灰 アマルガリッチ  レベル１ （フェーズ２）
+Ashen Amalgalich  Lvl 1 (Phase 3)=灰 アマルガリッチ  レベル１ （フェーズ３）
+Ashen Amalgalich  Lvl 2 (Phase 1)=灰 アマルガリッチ  レベル２ （フェーズ１）
+Ashen Amalgalich  Lvl 2 (Phase 2)=灰 アマルガリッチ  レベル２ （フェーズ２）
+Ashen Amalgalich  Lvl 2 (Phase 3)=灰 アマルガリッチ  レベル２ （フェーズ３）
+Ashen Amalgalich  Lvl 3 (Phase 1)=灰 アマルガリッチ  レベル３ （フェーズ１）
+Ashen Amalgalich  Lvl 3 (Phase 2)=灰 アマルガリッチ  レベル３ （フェーズ２）
+Ashen Amalgalich  Lvl 3 (Phase 3)=灰 アマルガリッチ  レベル３ （フェーズ３）
+Russet Amalgalich  Lvl 1 (Phase 1)=赤茶色 アマルガリッチ  レベル１ （フェーズ１）
+Russet Amalgalich  Lvl 1 (Phase 2)=赤茶色 アマルガリッチ  レベル１ （フェーズ２）
+Russet Amalgalich  Lvl 1 (Phase 3)=赤茶色 アマルガリッチ  レベル１ （フェーズ３）
+Russet Amalgalich  Lvl 2 (Phase 1)=赤茶色 アマルガリッチ  レベル２ （フェーズ１）
+Russet Amalgalich  Lvl 2 (Phase 2)=赤茶色 アマルガリッチ  レベル２ （フェーズ２）
+Russet Amalgalich  Lvl 2 (Phase 3)=赤茶色 アマルガリッチ  レベル２ （フェーズ３）
+Russet Amalgalich  Lvl 3 (Phase 1)=赤茶色 アマルガリッチ  レベル３ （フェーズ１）
+Russet Amalgalich  Lvl 3 (Phase 2)=赤茶色 アマルガリッチ  レベル３ （フェーズ２）
+Russet Amalgalich  Lvl 3 (Phase 3)=赤茶色 アマルガリッチ  レベル３ （フェーズ３）
