@@ -115,6 +115,10 @@ public class LocalizatorLoader {
         List<ConfigToMixin> ichunutilList = new ArrayList<>();
         ichunutilList.add(new ConfigToMixin("(iChunUtil) Fix Patrons and Version URL Mixin", ForgeConfigHandler.getBoolean("(iChunUtil) Fix Patrons and Version URL Mixin"), "mixins.ichunutil.urls.json"));
         map.put("ichunutil", ichunutilList);
+        // Varied Commodities
+        List<ConfigToMixin> variedCommoditiesList = new ArrayList<>();
+        variedCommoditiesList.add(new ConfigToMixin("(VariedComm) Localized Book Mixin", ForgeConfigHandler.getBoolean("(VariedComm) Localized Book Mixin"), "mixins.variedcommodities.book.json"));
+        map.put("variedcommodities", variedCommoditiesList);
 
         return Collections.unmodifiableMap(map);
     }

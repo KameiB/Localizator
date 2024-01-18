@@ -5,6 +5,7 @@ import localizator.handlers.ForgeConfigHandler;
 import localizator.util.LocNameArguments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.util.Constants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -50,9 +51,9 @@ public abstract class ItemStackLocNameMixin
                 if (nbtTagCompound.hasKey("LocName", Constants.NBT.TAG_STRING)) {
                     List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack) ((Object) this));
                     if (argsList.isEmpty()) {
-                        cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocal(nbtTagCompound.getString("LocName")));
+                        cir.setReturnValue(TextFormatting.RESET + net.minecraft.util.text.translation.I18n.translateToLocal(nbtTagCompound.getString("LocName")));
                     } else {
-                        cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
+                        cir.setReturnValue(TextFormatting.RESET + net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
                                 nbtTagCompound.getString("LocName"),
                                 argsList.toArray()));
                     }
@@ -83,7 +84,7 @@ public abstract class ItemStackLocNameMixin
         List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack)((Object)this));
         if (!argsList.isEmpty()) {
             NBTTagCompound nbtTagCompound = getSubCompound("display");
-            cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
+            cir.setReturnValue(TextFormatting.RESET + net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
                     nbtTagCompound.getString("LocName"),
                     argsList.toArray()));
         }

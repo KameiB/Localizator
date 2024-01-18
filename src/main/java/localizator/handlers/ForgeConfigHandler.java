@@ -68,6 +68,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.minecraftLocWrittenBookMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocWrittenBookMixin = !Production.inProduction;
+		@Config.Comment("Enables \"locPages\" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.")
+		@Config.Name("(Minecraft) Localized Writable Book Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftLocWritableBookMixin")
+		@Config.RequiresMcRestart
+		public boolean minecraftLocWritableBookMixin = !Production.inProduction;
 		@Config.Comment("Enables the Client config: \n- (Neat) Translate Names In Health Bar")
 		@Config.Name("(Neat) Health Bar Mixin")
 		@Config.LangKey("config.localizator.mixins.neatLocHealthBarMixin")
@@ -158,6 +163,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.reccomplexLocArtifacts")
 		@Config.RequiresMcRestart
 		public boolean reccomplexLocArtifacts = !Production.inProduction;
+		@Config.Comment("Enables \"locPages\" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.")
+		@Config.Name("(VariedCommodities) Localized Book Mixin")
+		@Config.LangKey("config.localizator.mixins.variedCommoditiesLocBookMixin")
+		@Config.RequiresMcRestart
+		public boolean variedCommoditiesLocBookMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

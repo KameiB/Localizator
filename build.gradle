@@ -150,6 +150,8 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:ichunutil-${ichunutil_version}")
 
+    implementation fg.deobf("curse.maven:varied-commodities-${variedcommodities_version}")
+
     //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
     //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")
 

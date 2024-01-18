@@ -26,7 +26,9 @@ config.localizator.mixins.minecraftLocLoreMixin.tooltip=Enables Localized Lore "
 config.localizator.mixins.minecraftLocNameMixin=(Minecraft) Better Localized Name Mixin
 config.localizator.mixins.minecraftLocNameMixin.tooltip=Makes the "LocName" NBT tag, support language keys that accept parameters.\nUsed by Mixins like: \n- §d(RecComplex) Artifact Names Mixin\n\nAlso, enables the Server config: \n- §9(Minecraft) Show LocName instead of Name\n 
 config.localizator.mixins.minecraftLocWrittenBookMixin=(Minecraft) Localized Written Book Mixin
-config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Enables "locTitle" and "locAuthor" NBT tags support.\nFor Written Books with localized author and title.\n
+config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Enables "locTitle" and "locAuthor" NBT tags support.\nFor Written Books with localized author and title.\n 
+config.localizator.mixins.minecraftLocWritableBookMixin=(Minecraft) Localized Writable Book Mixin
+config.localizator.mixins.minecraftLocWritableBookMixin.tooltip=Enables "locPages" NBT List tag support. \nFor Command-Generated Writable Books with localized pages.\n 
 config.localizator.mixins.minecraftBiomeMixin=(Minecraft) Localized Biome Name Mixin
 config.localizator.mixins.minecraftBiomeMixin.tooltip=Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes.\n 
 config.localizator.mixins.neatLocHealthBarMixin=(Neat) Health Bar Mixin
@@ -65,6 +67,8 @@ config.localizator.mixins.itemphysicMessagesMixin=(ItemPhysic) "Power: " Status 
 config.localizator.mixins.itemphysicMessagesMixin.tooltip=Localizes the "Power: " status message when throwing an item. \n 
 config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Artifact Names Mixin
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localizes Artifacts custom names.\n 
+config.localizator.mixins.variedCommoditiesLocBookMixin=(VariedComm) Localized Book Mixin
+config.localizator.mixins.variedCommoditiesLocBookMixin.tooltip=Enables "locPages" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
