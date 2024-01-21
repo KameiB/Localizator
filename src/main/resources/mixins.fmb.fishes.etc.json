@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "package": "localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "fishingmadebetter.BetterFishUtilMixin",
+    "fishingmadebetter.FishingEventHandlerMixin",
+    "fishingmadebetter.FishingReloadCommandMixin",
+    "fishingmadebetter.ItemBetterFishingRodMixin",
+    "fishingmadebetter.ItemBobberMixin",
+    "fishingmadebetter.ItemFishBucketMixin",
+    "fishingmadebetter.ItemFishSliceMixin",
+    "fishingmadebetter.TileEntityBaitBoxMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

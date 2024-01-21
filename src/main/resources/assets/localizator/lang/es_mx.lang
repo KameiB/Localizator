@@ -69,6 +69,8 @@ config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Mixin Nombres de A
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localiza los nombres personalizados de los Artefactos.\n 
 config.localizator.mixins.variedCommoditiesLocBookMixin=(VariedComm) Mixin Libro localizado
 config.localizator.mixins.variedCommoditiesLocBookMixin.tooltip=Habilita el soporte del tag NBT "locPages". \nPara páginas traducibles en los libros generados por comandos.\n 
+config.localizator.mixins.fishingmadebetterLocFishesEtcMixin=(FishingMadeBetter) Mixin Peces localizados
+config.localizator.mixins.fishingmadebetterLocFishesEtcMixin.tooltip=Localiza la información de los peces que pescas (Nombre, Peso, Escama, Vivo) \nTambién localiza:\n- Cubeta con pez\n- Rebanada de pez\n- Flotador\n- Mensajes de comandos y Caja de carnada.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
@@ -85,6 +87,8 @@ config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity=(BountifulBaubles
 config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity.tooltip=Agrega inmunidad a telarañas al Talismán Ankh. \nSi también tiene sentido para tí c: \n 
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubles) Mixin Escudo Ankh inmune a telarañas
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Agrega inmunidad a telarañas al Escudo Ankh. \nSi también tiene sentido para tí c: \n 
+config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBetter) Mixin Instrucciones en Minijuego
+config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Agrega una pequeña ayuda para los jugadores que no saben cómo pescar. \n "Presiona [LEFT] / [RIGHT]".\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Mostrar LocName en lugar de Name

@@ -167,7 +167,12 @@ public class ForgeConfigHandler {
 		@Config.Name("(VariedCommodities) Localized Book Mixin")
 		@Config.LangKey("config.localizator.mixins.variedCommoditiesLocBookMixin")
 		@Config.RequiresMcRestart
-		public boolean variedCommoditiesLocBookMixin = !Production.inProduction;
+		public boolean variedcommoditiesLocBookMixin = !Production.inProduction;
+		@Config.Comment("Localizes caught fishes information (Name, Weight, Scale, Alive)\nAlso localizes:\n- Fish Bucket\n- Fish Slice\n- Bobber\n- Command and Bait Bucket messages messages.")
+		@Config.Name("(FishingMadeBetter) Localized Fishes Mixin")
+		@Config.LangKey("config.localizator.mixins.fishingmadebetterLocFishesEtcMixin")
+		@Config.RequiresMcRestart
+		public boolean fishingmadebetterLocFishesEtcMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {
@@ -206,6 +211,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity")
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesAnkhShieldmWebImmunity = !Production.inProduction;
+		@Config.Comment("Adds a little help for players that don't know how to fish. \n \"Press [LEFT] / [RIGHT]\".")
+		@Config.Name("(FishingMadeBetter) Instructions on Minigame Mixin")
+		@Config.LangKey("config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin")
+		@Config.RequiresMcRestart
+		public boolean fishingmadebetterMinigameHelpTextMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {

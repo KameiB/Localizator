@@ -107,20 +107,20 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:CarrotsLib-${carrotslib_version}") // Needed for ArmorUnderwear
     compileOnly fg.deobf("curse.maven:ArmorUnderwear-${armorunder_version}")
-    
-    implementation fg.deobf("curse.maven:FantasticLib-${fantasticlib_version}") // Needed for SetBonus
-    implementation fg.deobf("curse.maven:SetBonus-${setbonus_version}")
-    
-    implementation fg.deobf("curse.maven:TschippLib-${tschipplib_version}") // Needed for ForgottenItems
-    implementation fg.deobf("curse.maven:ForgottenItems-${forgottenitems_version}")
+
+    compileOnly fg.deobf("curse.maven:FantasticLib-${fantasticlib_version}") // Needed for SetBonus
+    compileOnly fg.deobf("curse.maven:SetBonus-${setbonus_version}")
+
+    compileOnly fg.deobf("curse.maven:TschippLib-${tschipplib_version}") // Needed for ForgottenItems
+    compileOnly fg.deobf("curse.maven:ForgottenItems-${forgottenitems_version}")
 
     compileOnly files("libs/SRParasites-1.12.2v1.9.11.jar")
 
     compileOnly fg.deobf("curse.maven:reach-fix-${reachfix_version}") // Needed when running BetterSurvival
     compileOnly fg.deobf("curse.maven:better-survival-mod-${bettersurvival_version}")
 
-    implementation fg.deobf("curse.maven:creativecore-${creativecore_version}") // Needed for ItemPhysic_Full
-    implementation fg.deobf("curse.maven:itemphysic-${itemphysic_version}")
+    compileOnly fg.deobf("curse.maven:creativecore-${creativecore_version}") // Needed for ItemPhysic_Full
+    compileOnly fg.deobf("curse.maven:itemphysic-${itemphysic_version}")
     
     implementation fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
     implementation fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
@@ -130,12 +130,12 @@ dependencies {
     compileOnly fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}")
     compileOnly fg.deobf("curse.maven:rustic-${rustic_version}")
 
-    implementation fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
-    implementation fg.deobf("curse.maven:charm-${charm_version}")
+    compileOnly fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
+    compileOnly fg.deobf("curse.maven:charm-${charm_version}")
 
-    implementation fg.deobf("curse.maven:dynamictrees-${dynamictrees_version}")
+    compileOnly fg.deobf("curse.maven:dynamictrees-${dynamictrees_version}")
 
-    implementation files("libs/Hwyla-1.8.26-B41_1.12.2.jar")
+    compileOnly files("libs/Hwyla-1.8.26-B41_1.12.2.jar")
 
     compileOnly fg.deobf("curse.maven:corpse-complex-${corpsecomplex_version}")
 
@@ -145,12 +145,14 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:callable-horses-${callablehorses_version}")
     
-    implementation fg.deobf("curse.maven:IvToolkit-${ivtoolkit_version}")
-    implementation fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
+    compileOnly fg.deobf("curse.maven:IvToolkit-${ivtoolkit_version}")
+    compileOnly fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
 
     compileOnly fg.deobf("curse.maven:ichunutil-${ichunutil_version}")
 
-    implementation fg.deobf("curse.maven:varied-commodities-${variedcommodities_version}")
+    compileOnly fg.deobf("curse.maven:varied-commodities-${variedcommodities_version}")
+
+    implementation fg.deobf("curse.maven:fishing-made-better-${fishingmadebetter_version}")
 
     //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
     //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")

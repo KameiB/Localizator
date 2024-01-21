@@ -69,6 +69,8 @@ config.localizator.mixins.reccomplexLocArtifacts=(RecComplex) Artifact Names Mix
 config.localizator.mixins.reccomplexLocArtifacts.tooltip=Localizes Artifacts custom names.\n 
 config.localizator.mixins.variedCommoditiesLocBookMixin=(VariedComm) Localized Book Mixin
 config.localizator.mixins.variedCommoditiesLocBookMixin.tooltip=Enables "locPages" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.\n 
+config.localizator.mixins.fishingmadebetterLocFishesEtcMixin=(FishingMadeBetter) Localized Fishes Mixin
+config.localizator.mixins.fishingmadebetterLocFishesEtcMixin.tooltip=Localizes caught fishes information (Name, Weight, Scales, Alive) \nAlso localizes:\n- Fish Bucket\n- Fish Slice\n- Bobber\n- Command and Bait Bucket messages.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
@@ -85,6 +87,8 @@ config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity=(BountifulBaubles
 config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity.tooltip=Adds cobweb immunity to the Ankh Charm. \nIf it makes sense to you as well c: \n 
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubles) Ankh Shield Web Immune Mixin
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Adds cobweb immunity to the Ankh Shield. \nIf it makes sense to you as well c: \n 
+config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBetter) Instructions on Minigame Mixin
+config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Adds a little help for players that don't know how to fish. \n "Press [LEFT] / [RIGHT]".\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name

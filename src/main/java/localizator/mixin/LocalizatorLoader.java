@@ -119,6 +119,11 @@ public class LocalizatorLoader {
         List<ConfigToMixin> variedCommoditiesList = new ArrayList<>();
         variedCommoditiesList.add(new ConfigToMixin("(VariedComm) Localized Book Mixin", ForgeConfigHandler.getBoolean("(VariedComm) Localized Book Mixin"), "mixins.variedcommodities.book.json"));
         map.put("variedcommodities", variedCommoditiesList);
+        // Fishing Made Better
+        List<ConfigToMixin> FMBList = new ArrayList<>();
+        FMBList.add(new ConfigToMixin("(FishingMadeBetter) Localized Fishes Mixin", ForgeConfigHandler.getBoolean("(FishingMadeBetter) Localized Fishes Mixin"), "mixins.fmb.fishes.etc.json"));
+        FMBList.add(new ConfigToMixin("(FishingMadeBetter) Instructions on Minigame Mixin", ForgeConfigHandler.getBoolean("(FishingMadeBetter) Instructions on Minigame Mixin"), "mixins.fmb.minigame.json"));
+        map.put("fishingmadebetter", FMBList);
 
         return Collections.unmodifiableMap(map);
     }
