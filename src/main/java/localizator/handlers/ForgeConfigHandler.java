@@ -173,6 +173,26 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.fishingmadebetterLocFishesEtcMixin")
 		@Config.RequiresMcRestart
 		public boolean fishingmadebetterLocFishesEtcMixin = !Production.inProduction;
+		@Config.Comment("Localizes Fancy Block Particles Keybinds texts on Settings screen.")
+		@Config.Name("(FBP) Localized Keybinds Mixin")
+		@Config.LangKey("config.localizator.mixins.fbpKeyBindsMixin")
+		@Config.RequiresMcRestart
+		public boolean fbpKeybindsMixin = !Production.inProduction;
+		@Config.Comment("Localizes LevelUp Reloaded Keybinds texts on Settings screen.")
+		@Config.Name("(LevelUp2) Localized Keybinds Mixin")
+		@Config.LangKey("config.localizator.mixins.levelup2KeybindsMixin")
+		@Config.RequiresMcRestart
+		public boolean levelup2KeybindsMixin = !Production.inProduction;
+		@Config.Comment("Localizes Mo'Bends Keybinds texts on Settings screen.")
+		@Config.Name("(Mo'Bends) Localized Keybinds Mixin")
+		@Config.LangKey("config.localizator.mixins.mobendsKeybindsMixin")
+		@Config.RequiresMcRestart
+		public boolean mobendsKeybindsMixin = !Production.inProduction;
+		@Config.Comment("Localizes Scaling Health Keybinds texts on Settings screen.")
+		@Config.Name("(ScalingHealth) Localized Keybinds Mixin")
+		@Config.LangKey("config.localizator.mixins.scalingHealthKeybindsMixin")
+		@Config.RequiresMcRestart
+		public boolean scalingHealthKeybindsMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {
@@ -211,7 +231,7 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity")
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesAnkhShieldmWebImmunity = !Production.inProduction;
-		@Config.Comment("Adds a little help for players that don't know how to fish. \n \"Press [LEFT] / [RIGHT]\".")
+		@Config.Comment("Enables the Client config:\n- (FishingMadeBetter) Instructions on Minigame")
 		@Config.Name("(FishingMadeBetter) Instructions on Minigame Mixin")
 		@Config.LangKey("config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin")
 		@Config.RequiresMcRestart
@@ -246,7 +266,11 @@ public class ForgeConfigHandler {
 		@Config.Comment("Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \nRequired Mixin: \n- (RoughTweaks) Localized Names and Better Tooltip Mixin")
 		@Config.Name("(RoughTweaks) Show Heal Amount")
 		@Config.LangKey("config.localizator.client.roughtweaksTooltip")		
-		public boolean roughtweaksTooltip = !Production.inProduction;		
+		public boolean roughtweaksTooltip = !Production.inProduction;
+		@Config.Comment("Adds a little help for players that don't know how to fish. \n \"Press [LEFT] / [RIGHT]\". \nRequired Mixin: \n- (FishingMadeBetter) Instructions on Minigame Mixin")
+		@Config.Name("(FishingMadeBetter) Instructions on Minigame")
+		@Config.LangKey("config.localizator.client.fishingmadebetterMinigameHelpText")
+		public boolean fishingmadebetterMinigameHelpText = !Production.inProduction;
 	}
 	
 	public static class ServerConfig {

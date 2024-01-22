@@ -71,6 +71,14 @@ config.localizator.mixins.variedCommoditiesLocBookMixin=(VariedComm) Localized B
 config.localizator.mixins.variedCommoditiesLocBookMixin.tooltip=Enables "locPages" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.\n 
 config.localizator.mixins.fishingmadebetterLocFishesEtcMixin=(FishingMadeBetter) Localized Fishes Mixin
 config.localizator.mixins.fishingmadebetterLocFishesEtcMixin.tooltip=Localizes caught fishes information (Name, Weight, Scales, Alive) \nAlso localizes:\n- Fish Bucket\n- Fish Slice\n- Bobber\n- Command and Bait Bucket messages.\n 
+config.localizator.mixins.fbpKeyBindsMixin=(FBP) Localized Keybinds Mixin
+config.localizator.mixins.fbpKeyBindsMixin.tooltip=Localizes Fancy Block Particles Keybinds texts on Settings screen.\n 
+config.localizator.mixins.levelup2KeybindsMixin=(LevelUp2) Localized Keybinds Mixin
+config.localizator.mixins.levelup2KeybindsMixin.tooltip=Localizes LevelUp Reloaded Keybinds texts on Settings screen.\n 
+config.localizator.mixins.mobendsKeybindsMixin=(Mo'Bends) Localized Keybinds Mixin
+config.localizator.mixins.mobendsKeybindsMixin.tooltip=Localizes Mo'Bends Keybinds texts on Settings screen.\n 
+config.localizator.mixins.scalingHealthKeybindsMixin=(ScalingHealth) Localized Keybinds Mixin
+config.localizator.mixins.scalingHealthKeybindsMixin.tooltip=Localizes Scaling Health Keybinds texts on Settings screen.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
@@ -88,7 +96,7 @@ config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity.tooltip=Adds cobw
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubles) Ankh Shield Web Immune Mixin
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Adds cobweb immunity to the Ankh Shield. \nIf it makes sense to you as well c: \n 
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBetter) Instructions on Minigame Mixin
-config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Adds a little help for players that don't know how to fish. \n "Press [LEFT] / [RIGHT]".\n 
+config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Enables the Client config:\n\n- §b(FishingMadeBetter) Instructions on Minigame.\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name
@@ -109,6 +117,8 @@ config.localizator.client.bountifulbaublesRemoveModifierFromName=(BountifulBaubl
 config.localizator.client.bountifulbaublesRemoveModifierFromName.tooltip=Prevents a Bauble's Modifier from displaying at Bauble Name\n\n§cRequired Mixin: \n- §d(SRParasites) Armor Tooltips Mixin\n 
 config.localizator.client.roughtweaksTooltip=(RoughTweaks) Show Heal Amount
 config.localizator.client.roughtweaksTooltip.tooltip=Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \n\n§cRequired Mixin: \n- §d(RoughTweaks) Localized Names and Better Tooltip Mixin\n 
+config.localizator.client.fishingmadebetterMinigameHelpText=(FishingMadeBetter) Instructions on Minigame
+config.localizator.client.fishingmadebetterMinigameHelpText.tooltip=Adds a little help for players that don't know how to fish. \n "Press [LEFT] / [RIGHT]" \n\n§cRequired Mixin: \n- §d(FishingMadeBetter) Instructions on Minigame Mixin\n 
 
 # Messages
 message.localizator.newconfig.0=[Localizator] Hello there! It's %s!

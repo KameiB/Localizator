@@ -124,6 +124,22 @@ public class LocalizatorLoader {
         FMBList.add(new ConfigToMixin("(FishingMadeBetter) Localized Fishes Mixin", ForgeConfigHandler.getBoolean("(FishingMadeBetter) Localized Fishes Mixin"), "mixins.fmb.fishes.etc.json"));
         FMBList.add(new ConfigToMixin("(FishingMadeBetter) Instructions on Minigame Mixin", ForgeConfigHandler.getBoolean("(FishingMadeBetter) Instructions on Minigame Mixin"), "mixins.fmb.minigame.json"));
         map.put("fishingmadebetter", FMBList);
+        // Fancy Block Particles
+        List<ConfigToMixin> FBPList = new ArrayList<>();
+        FBPList.add(new ConfigToMixin("(FBP) Localized Keybinds Mixin", ForgeConfigHandler.getBoolean("(FBP) Localized Keybinds Mixin"), "mixins.fbp.keybinds.json"));
+        map.put("fbp", FBPList);
+        // LevelUp2
+        List<ConfigToMixin> levelUp2List = new ArrayList<>();
+        levelUp2List.add(new ConfigToMixin("(LevelUp2) Localized Keybinds Mixin", ForgeConfigHandler.getBoolean("(LevelUp2) Localized Keybinds Mixin"), "mixins.levelup2.keybinds.json"));
+        map.put("levelup2", levelUp2List);
+        // Mo'Bends
+        List<ConfigToMixin> mobendsList = new ArrayList<>();
+        mobendsList.add(new ConfigToMixin("(Mo'Bends) Localized Keybinds Mixin", ForgeConfigHandler.getBoolean("(Mo'Bends) Localized Keybinds Mixin"), "mixins.mobends.keybinds.json"));
+        map.put("mobends", mobendsList);
+        // Scaling Health
+        List<ConfigToMixin> scalingHealthList = new ArrayList<>();
+        scalingHealthList.add(new ConfigToMixin("(ScalingHealth) Localized Keybinds Mixin", ForgeConfigHandler.getBoolean("(ScalingHealth) Localized Keybinds Mixin"), "mixins.scalinghealth.keybinds.json"));
+        map.put("scalinghealth", scalingHealthList);
 
         return Collections.unmodifiableMap(map);
     }

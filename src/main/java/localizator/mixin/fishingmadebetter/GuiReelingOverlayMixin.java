@@ -1,6 +1,7 @@
 package localizator.mixin.fishingmadebetter;
 
 import localizator.data.Production;
+import localizator.handlers.ForgeConfigHandler;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.resources.I18n;
@@ -81,11 +82,13 @@ public abstract class GuiReelingOverlayMixin extends Gui {
     )
     // Before Line 55: int posX = this.getBarPosX(scaledWidth);
     private void FMB_GuiReelingOverlay_onRenderOverlay_drawPressLeftRight(RenderGameOverlayEvent.Post e, CallbackInfo ci) {
-        // Trying to emulate the situation when a player doesn't know how to play and just stare at the fish swimming further in the distance.
-        if((Math.abs(localizator$myFishingData.getReelTarget() - localizator$myFishingData.getReelAmount()) > (localizator$myFishingData.getErrorVariance() + 10)) && localizator$myFishingData.getLineBreak() > 0 ) {
-            String txtInstructions = I18n.format("fishingmadebetter.reelingoverlay.move_with", KeybindManager.reelIn.getDisplayName(), KeybindManager.reelOut.getDisplayName());
-            fontRenderer.drawStringWithShadow(txtInstructions, localizator$myX - (fontRenderer.getStringWidth(txtInstructions) * 0.5f), localizator$myY + 12, fontColor);
-        }        
+        if (ForgeConfigHandler.clientConfig.fishingmadebetterMinigameHelpText) {
+            // Trying to emulate the situation when a player doesn't know how to play and just stare at the fish swimming further in the distance.
+            if ((Math.abs(localizator$myFishingData.getReelTarget() - localizator$myFishingData.getReelAmount()) > (localizator$myFishingData.getErrorVariance() + 10)) && localizator$myFishingData.getLineBreak() > 0) {
+                String txtInstructions = I18n.format("fishingmadebetter.reelingoverlay.move_with", KeybindManager.reelIn.getDisplayName(), KeybindManager.reelOut.getDisplayName());
+                fontRenderer.drawStringWithShadow(txtInstructions, localizator$myX - (fontRenderer.getStringWidth(txtInstructions) * 0.5f), localizator$myY + 12, fontColor);
+            }
+        }
     }
 
     @Unique
