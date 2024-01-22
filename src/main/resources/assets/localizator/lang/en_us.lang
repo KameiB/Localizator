@@ -31,6 +31,8 @@ config.localizator.mixins.minecraftLocWritableBookMixin=(Minecraft) Localized Wr
 config.localizator.mixins.minecraftLocWritableBookMixin.tooltip=Enables "locPages" NBT List tag support. \nFor Command-Generated Writable Books with localized pages.\n 
 config.localizator.mixins.minecraftBiomeMixin=(Minecraft) Localized Biome Name Mixin
 config.localizator.mixins.minecraftBiomeMixin.tooltip=Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes.\n 
+config.localizator.mixins.minecraftLocContainerNameMixin=(Minecraft) Localized Container Name Mixin
+config.localizator.mixins.minecraftLocContainerNameMixin.tooltip=Localizes a Container (TileEntityLockable) CustomName.\n 
 config.localizator.mixins.neatLocHealthBarMixin=(Neat) Health Bar Mixin
 config.localizator.mixins.neatLocHealthBarMixin.tooltip=Enables the Client config: \n- §b(Neat) Translate Names In Health Bar\n 
 config.localizator.mixins.armorunderOzzyLinerMixin=(ArmorUnder) Applies Ozzy Liner text Mixin
@@ -78,7 +80,7 @@ config.localizator.mixins.levelup2KeybindsMixin.tooltip=Localizes LevelUp Reload
 config.localizator.mixins.mobendsKeybindsMixin=(Mo'Bends) Localized Keybinds Mixin
 config.localizator.mixins.mobendsKeybindsMixin.tooltip=Localizes Mo'Bends Keybinds texts on Settings screen.\n 
 config.localizator.mixins.scalingHealthKeybindsMixin=(ScalingHealth) Localized Keybinds Mixin
-config.localizator.mixins.scalingHealthKeybindsMixin.tooltip=Localizes Scaling Health Keybinds texts on Settings screen.\n 
+config.localizator.mixins.scalingHealthKeybindsMixin.tooltip=Localizes Scaling Health Keybinds texts on Settings screen.\n
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin

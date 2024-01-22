@@ -73,6 +73,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.minecraftLocWritableBookMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocWritableBookMixin = !Production.inProduction;
+		@Config.Comment("Localizes a Container (TileEntityLockable) CustomName.")
+		@Config.Name("(Minecraft) Localized Container Name Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftLocContainerNameMixin")
+		@Config.RequiresMcRestart
+		public boolean minecraftLocContainerNameMixin = !Production.inProduction;
 		@Config.Comment("Enables the Client config: \n- (Neat) Translate Names In Health Bar")
 		@Config.Name("(Neat) Health Bar Mixin")
 		@Config.LangKey("config.localizator.mixins.neatLocHealthBarMixin")
