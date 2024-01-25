@@ -46,7 +46,7 @@ public abstract class ItemBetterFishingRodMixin extends ItemFishingRod  {
             tooltip.add("  " + I18n.format("tooltip.fishingmadebetter.fishing_rod.reel.speed") + ": " + reel.getReelSpeed() + "m/s");
             tooltip.add(TextFormatting.BLUE + "" + TextFormatting.BOLD + I18n.format("tooltip.fishingmadebetter.fishing_rod.bobber") + ": " + TextFormatting.RESET + "" + TextFormatting.GRAY + I18n.format("item.fishingmadebetter." + bobber.getRegistryName().getPath() + ".name") + TextFormatting.RESET);
             tooltip.add(bobber.getMaxDamage() != 0 ? "  " + I18n.format("tooltip.fishingmadebetter.fishing_rod.durability.title") + ": " + (bobber.getMaxDamage() - getBobberDamage(stack)) + "/" + bobber.getMaxDamage() : "  " + I18n.format("tooltip.fishingmadebetter.fishing_rod.durability.title") + ": -/-");
-            tooltip.add(I18n.format("tooltip.fishingmadebetter.bobber.can_fish_in",
+            tooltip.add("  " + I18n.format("tooltip.fishingmadebetter.bobber.can_fish_in",
                     I18n.format("tooltip.fishingmadebetter.bobber." + (bobber.isLavaBobber() ? "obsidian" : bobber.isVoidBobber() ? "void" : "water"))));
 
             if (bobber.getVarianceModifier() != 0) {
