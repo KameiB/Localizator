@@ -72,6 +72,7 @@ public class LocalizatorLoader {
         List<ConfigToMixin> charmList = new ArrayList<>();
         charmList.add(new ConfigToMixin("(Charm) Localized Cake Name Mixin", ForgeConfigHandler.getBoolean("(Charm) Localized Cake Name Mixin"), "mixins.charm.cakename.json"));
         charmList.add(new ConfigToMixin("(Charm) Localized Composter JEI Mixin", ForgeConfigHandler.getBoolean("(Charm) Localized Composter JEI Mixin"), "mixins.charm.compostergui.json"));
+        charmList.add(new ConfigToMixin("(Charm) Localized Container Name Mixin", ForgeConfigHandler.getBoolean("(Charm) Localized Container Name Mixin"), "mixins.charm.containername.json"));
         map.put("charm", charmList);
         // Dynamic Trees
         List<ConfigToMixin> dynamictreesList = new ArrayList<>();
