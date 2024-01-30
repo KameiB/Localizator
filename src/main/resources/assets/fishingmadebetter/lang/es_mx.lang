@@ -226,3 +226,5 @@ item.fmb.advanced-fishing:fish:42.desc=§7§oun pez raro y traslucido, se especu
 
 notif.fishingmadebetter.command.reload_success=Archivos de configuración recargados para Fishing Made Better.
 notif.fishingmadebetter.command.reload_fail=Los archivos de configuración no pudieron cargarse porque no existe el directorio con los datos de los peces.
+
+jei.fishingmadebetter.category.fish_requirements=FMB - Requisitos de pez
