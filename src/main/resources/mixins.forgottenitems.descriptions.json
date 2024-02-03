@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "localizator.mixin",
+  "package": "kameib.localizator.mixin",
   "refmap": "mixins.localizator.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
@@ -9,7 +9,7 @@
     "forgottenitems.ItemBarkifiedAxeMixin",
     "forgottenitems.ItemBoundAxeMixin",
     "forgottenitems.ItemBoundPickaxeMixin",
-    "forgottenitems.ItemBoundShovelMixin",    
+    "forgottenitems.ItemBoundShovelMixin",
     "forgottenitems.ItemCraftingRuneMixin",
     "forgottenitems.ItemCushionedBootsMixin",
     "forgottenitems.ItemEnderTalismanMixin",

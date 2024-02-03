@@ -228,3 +228,6 @@ notif.fishingmadebetter.command.reload_success=Archivos de configuración recarg
 notif.fishingmadebetter.command.reload_fail=Los archivos de configuración no pudieron cargarse porque no existe el directorio con los datos de los peces.
 
 jei.fishingmadebetter.category.fish_requirements=FMB - Requisitos de pez
+jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip=Hora: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Requiere lluvia: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Requiere tormenta eléctrica: %s
