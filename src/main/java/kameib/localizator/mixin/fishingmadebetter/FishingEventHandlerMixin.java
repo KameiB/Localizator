@@ -46,7 +46,7 @@ public abstract class FishingEventHandlerMixin {
         locLoreList.add("tooltip.fishingmadebetter.fish.weight");
         argList.add(String.valueOf(BetterFishUtil.getFishWeight(itemStack)));
         
-        if (((FishData) CustomConfigurationHandler.fishDataMap.get(BetterFishUtil.getFishId(itemStack))).allowScaling) {
+        if (CustomConfigurationHandler.fishDataMap.get(BetterFishUtil.getFishId(itemStack)).allowScaling) {
             if (BetterFishUtil.doesFishHasScale(itemStack)) {
                 locLoreList.add("tooltip.fishingmadebetter.fish.scale_attached");                
             }
@@ -123,7 +123,7 @@ public abstract class FishingEventHandlerMixin {
             index = 0,
             remap = false
     )
-    // Send a localized message
+    // Send a localized message (when in Creative)
     // Line 505: player.sendMessage(new TextComponentString(String.format("%s %s in %s at Y%s-%s", populationData.getQuantity(), fishData.fishId, fishData.liquid.toString(), fishData.minYLevel, fishData.maxYLevel)));
     private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage1(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.fishQty_Y_levels", // Message
@@ -145,7 +145,7 @@ public abstract class FishingEventHandlerMixin {
             index = 0,
             remap = false
     )
-    // Send a localized message
+    // Send a localized message (when in Creative)
     // Line 506: player.sendMessage(new TextComponentString(String.format("MinLine %sm, Time %s, MaxLight %s, Rain %s, Thunder %s", fishData.minDeepLevel, fishData.time.toString(), fishData.maxLightLevel, fishData.rainRequired, fishData.thunderRequired)));
     private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage2(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.fishEnvironmentConditions", // Message
@@ -167,7 +167,7 @@ public abstract class FishingEventHandlerMixin {
             index = 0,
             remap = false
     )
-    // Send a localized message
+    // Send a localized message (when in Survival, limited)
     // Line 541: player.sendMessage((new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.detected", new Object[0])).appendText(" " + fishData.fishId + "."));
     private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageLimited(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.survival.limited", // Message
@@ -185,7 +185,7 @@ public abstract class FishingEventHandlerMixin {
             index = 0,
             remap = false
     )
-    // Send a localized message
+    // Send a localized message (when in Survival, detailed)
     // Line 543: player.sendMessage((new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.detected", new Object[0])).appendText(" " + fishData.fishId + ", " + fishData.description + " in ").appendSibling(new TextComponentTranslation(quantity, new Object[0])));
     private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageDetailed(ITextComponent par1) {
         int pop = localizator$myPopulationData.getQuantity();
