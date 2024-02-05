@@ -97,6 +97,8 @@ dependencies {
     implementation "org.spongepowered:mixin:0.8.5"
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
+    implementation fg.deobf("curse.maven:fermiumbooter-${fermiumbooter_version}")
+
     // The dependency format is as follows: "curse.maven:<mod_name>-<projectid>:<fileids>"
     // The Mod Name is whatever you want to call it.
     // The Project ID is a number shown at the mod's CurseForge main page.
