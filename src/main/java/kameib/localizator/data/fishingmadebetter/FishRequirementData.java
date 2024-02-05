@@ -14,8 +14,10 @@ public class FishRequirementData {
     public boolean rainRequired, thunderRequired;
     public List<String> biomeTagList;
     public FishData.TimeToFish timeToFish;
+    public String fishId;
     
     public FishRequirementData(FishData fishData) {
+        fishId = fishData.fishId;
         minYLevel = fishData.minYLevel;
         maxYLevel = fishData.maxYLevel;
         liquid = fishData.liquid;
