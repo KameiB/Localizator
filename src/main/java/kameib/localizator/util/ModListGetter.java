@@ -22,8 +22,6 @@ public class ModListGetter {
             File[] modFiles = modsFolder.listFiles();
 
             if (modFiles != null) {
-                System.out.println("Installed Mods:");
-
                 String modId;
                 for (File modFile : modFiles) {
                     if (modFile.isFile() && modFile.getName().endsWith(".jar")) {
@@ -31,8 +29,9 @@ public class ModListGetter {
                             continue;
                         }
                         modId = getModIdFromJar(modFile);
-                        modList.add(modId);
-                        System.out.println("Mod Name: " + modFile.getName() + ", Mod ID: " + modId);
+                        if (modId != null) {
+                            modList.add(modId);
+                        }
                     }
                 }
             } else {
@@ -66,7 +65,7 @@ public class ModListGetter {
             e.printStackTrace();
         }
 
-        return "Unknown";
+        return null;
     }
 
     private static String readInputStream(InputStream inputStream) throws IOException {
