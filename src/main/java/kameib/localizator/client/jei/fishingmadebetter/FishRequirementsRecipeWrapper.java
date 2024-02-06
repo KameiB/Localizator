@@ -4,6 +4,7 @@ import com.sun.istack.internal.NotNull;
 import kameib.localizator.data.Drawing;
 import kameib.localizator.data.Texture;
 import kameib.localizator.data.fishingmadebetter.FishRequirementData;
+import kameib.localizator.util.FMB_BetterFishUtil;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.wrapper.ICraftingRecipeWrapper;
@@ -11,6 +12,7 @@ import mezz.jei.gui.elements.DrawableResource;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -49,6 +51,9 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         if (fishData.minDeepLevel < REEL_LONG_RANGE) {
             reelStackList.add(new ItemStack(ItemManager.REEL_LONG));
         }
+        if (reelStackList.isEmpty()) {
+            reelStackList.add(new ItemStack(Items.AIR));
+        }
         // ---------------     Bobbers    ------------------
         List<ItemStack> bobberStackList = new ArrayList<>();
         if (fishData.liquid == FishData.FishingLiquid.LAVA) {
@@ -70,19 +75,26 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         inputs.add(fishingRodStackList);
         inputs.add(reelStackList);
         inputs.add(bobberStackList);
-        inputs.add(Collections.singletonList(new ItemStack(Objects.requireNonNull(Item.getByNameOrId("fishingmadebetter:bait_bucket")))));
+        Item baitBucketItem = Item.getByNameOrId("fishingmadebetter:bait_bucket");
+        if (baitBucketItem == null) {
+            baitBucketItem = Items.AIR;
+        }
+        inputs.add(Collections.singletonList(new ItemStack(baitBucketItem)));
         // ---------------      Baits     ------------------
-        Item bait;
+        Item bait = null;
         for (String baitName : fishData.baitItemMap.keySet()) {
             for (int baitMetadata : fishData.baitItemMap.get(baitName)) {
                 bait = Item.getByNameOrId(baitName);
                 if (bait != null) {
-                    this.inputs.add(Collections.singletonList(new ItemStack(bait, 1, baitMetadata)));
+                    inputs.add(Collections.singletonList(new ItemStack(bait, 1, baitMetadata)));
                 }
             }
         }
+        if (bait == null) {
+            inputs.add(Collections.singletonList(new ItemStack(Items.AIR)));
+        }
         // OUTPUT
-        this.output = new ItemStack(Objects.requireNonNull(Item.getByNameOrId(fishData.itemId)), 1, fishData.itemMetaData);
+        this.output = FMB_BetterFishUtil.fishIdToItemStack(fishData.fishId);
         
         // Initialize Y Meter & Mini game Overlays
         for (Integer dimension : fishRequirementData.dimensionList) {
@@ -95,6 +107,10 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                     overlayList.add(new BiomeDimensionOverlay(fishRequirementData, dimension, biome));
                 }
             }
+        }
+        // If fish can't be caught in any dimension/biome, initialize the overlays with an empty texture
+        if (overlayList.isEmpty()) {
+            overlayList.add(new BiomeDimensionOverlay(fishRequirementData.minYLevel, fishRequirementData.maxYLevel));
         }
     }
     
@@ -168,6 +184,48 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         public DrawableResource minigameBorder;
         public DrawableResource[] yMeter = new DrawableResource[4]; // 0 = Background, 1 = Range, 2 = Foreground, 3 = OceanLevel 
 
+        /**
+         * If fish requirements have no dimensions or no biomes to display, initialize my overlays with a transparent texture.
+         * @param minYLevel Fish minYLevel, for the Y Meter
+         * @param maxYLevel Fish maxYLevel, for the Y Meter
+         */
+        public BiomeDimensionOverlay(int minYLevel, int maxYLevel) {
+            // Mini game border
+            minigameBorder = new DrawableResource(TEXTURE_MINIGAME_OUTLINE.texture, DRAWING_OUTLINE.u, DRAWING_OUTLINE.v, DRAWING_OUTLINE.width, DRAWING_OUTLINE.height,
+                    0, 0, 0, 0, TEXTURE_MINIGAME_OUTLINE.textureWidth, TEXTURE_MINIGAME_OUTLINE.textureHeight);
+
+            // Y METER
+            // Background
+            yMeter[0] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_BACKGROUND.u, DRAWING_YMETER_BACKGROUND.v, DRAWING_YMETER_BACKGROUND.width, DRAWING_YMETER_BACKGROUND.height,
+                    0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+            // Range
+            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (maxYLevel / 5)), DRAWING_YRANGE.width, maxYLevel / 5 - (minYLevel / 5) + 1,
+                    YMETER_RANGE_TOP_OFFSET + (MAX_Y_LEVEL - (maxYLevel / 5)), 0, YMETER_RANGE_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+            // Foreground
+            yMeter[2] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_FOREGROUND.u, DRAWING_YMETER_FOREGROUND.v, DRAWING_YMETER_FOREGROUND.width, DRAWING_YMETER_FOREGROUND.height,
+                    0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+            // Sea level
+            yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_SEA_LEVEL.u, DRAWING_SEA_LEVEL.v, DRAWING_SEA_LEVEL.width, DRAWING_SEA_LEVEL.height,
+                    1 + (MAX_Y_LEVEL - (YMETER_SEA / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+            
+            // MINIGAME (Empty)
+            // Liquid
+            minigameInner[0] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+            // Sky
+            minigameInner[1] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+            // Surroundings
+            minigameInner[2] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+            // Rain
+            minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+            // Thunder
+            minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+        }
+        
         public BiomeDimensionOverlay(FishRequirementData fishRequirementData, int dimension, String biomeTag) {
             // Mini game border
             minigameBorder = new DrawableResource(TEXTURE_MINIGAME_OUTLINE.texture, DRAWING_OUTLINE.u, DRAWING_OUTLINE.v, DRAWING_OUTLINE.width, DRAWING_OUTLINE.height,
@@ -178,7 +236,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             yMeter[0] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_BACKGROUND.u, DRAWING_YMETER_BACKGROUND.v, DRAWING_YMETER_BACKGROUND.width, DRAWING_YMETER_BACKGROUND.height,
                     0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Range
-            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (fishRequirementData.maxYLevel / 5)), DRAWING_YRANGE.width, fishRequirementData.maxYLevel / 5 - Math.max(fishRequirementData.minYLevel / 5, 0) + 1,
+            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (fishRequirementData.maxYLevel / 5)), DRAWING_YRANGE.width, fishRequirementData.maxYLevel / 5 - (fishRequirementData.minYLevel / 5) + 1,
                     YMETER_RANGE_TOP_OFFSET + (MAX_Y_LEVEL - (fishRequirementData.maxYLevel / 5)), 0, YMETER_RANGE_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Foreground
             yMeter[2] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_FOREGROUND.u, DRAWING_YMETER_FOREGROUND.v, DRAWING_YMETER_FOREGROUND.width, DRAWING_YMETER_FOREGROUND.height,
@@ -386,5 +444,6 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     public static final Drawing DRAWING_SEA_LEVEL = new Drawing(22, 49, 8 + 1, 1);
     public static final Drawing DRAWING_LAVA_LEVEL = new Drawing(22, 51, 8 + 1, 1);
     public static final Drawing DRAWING_VOID_LEVEL = new Drawing(22, 53, 8 + 1, 1);
+    public static final Drawing DRAWING_INVALID = new Drawing(0, 144, minigameBackgroundBarWidth, minigameBackgroundBarHeight);
 
 }

@@ -4,6 +4,7 @@ import kameib.localizator.Localizator;
 import kameib.localizator.client.jei.fishingmadebetter.FMBJeiPlugin;
 import kameib.localizator.util.FMB_BetterFishUtil;
 import kameib.localizator.util.text.event.FishRequirementsClickEvent;
+import net.minecraftforge.fml.common.Optional;
 import mezz.jei.api.IJeiRuntime;
 import mezz.jei.api.IRecipesGui;
 import mezz.jei.api.recipe.IFocus;
@@ -26,6 +27,7 @@ import javax.annotation.Nonnull;
 @SideOnly(Side.CLIENT)
 public class FishRequirementsOnClickEvent {
     @SubscribeEvent
+    @Optional.Method(modid = "fishingmadebetter")
     public void onChatGuiClick(GuiScreenEvent.MouseInputEvent event) {
         if(!(event.getGui() instanceof GuiChat)) {
             return;
@@ -60,6 +62,7 @@ public class FishRequirementsOnClickEvent {
         
     }
 
+    @Optional.Method(modid = "jei")
     private void openJEIRecipesGUI(ItemStack fishStack) {
         // Get the JEI runtime
         IJeiRuntime jeiRuntime = FMBJeiPlugin.getJeiRuntime();

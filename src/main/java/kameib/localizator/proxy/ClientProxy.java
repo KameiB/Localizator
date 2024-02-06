@@ -3,6 +3,7 @@ package kameib.localizator.proxy;
 
 import kameib.localizator.client.event.FishRequirementsOnClickEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 public class ClientProxy extends CommonProxy {
@@ -16,6 +17,8 @@ public class ClientProxy extends CommonProxy {
     }
     
     protected void registerEvents() {
-        MinecraftForge.EVENT_BUS.register(new FishRequirementsOnClickEvent());
+        if (Loader.isModLoaded("jei") && Loader.isModLoaded("fishingmadebetter")) {
+            MinecraftForge.EVENT_BUS.register(new FishRequirementsOnClickEvent());            
+        }
     }
 }
