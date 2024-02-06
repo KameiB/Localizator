@@ -18,11 +18,8 @@ public class FishRequirementData {
     
     public FishRequirementData(FishData fishData) {
         fishId = fishData.fishId;
-        minYLevel = Math.max(fishData.minYLevel, 0); // Put minYLevel inside the 0-140 range
-        maxYLevel = Math.min(fishData.maxYLevel, 140); // Put maxYLevel inside the 0-140 range
-        if (minYLevel >= maxYLevel) {
-            minYLevel = maxYLevel;
-        }
+        minYLevel = fishData.minYLevel;
+        maxYLevel = fishData.maxYLevel;
         liquid = fishData.liquid;
         timeToFish = fishData.time;
         rainRequired = fishData.rainRequired;

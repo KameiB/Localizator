@@ -186,10 +186,15 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
         /**
          * If fish requirements have no dimensions or no biomes to display, initialize my overlays with a transparent texture.
-         * @param minYLevel Fish minYLevel, for the Y Meter
-         * @param maxYLevel Fish maxYLevel, for the Y Meter
+         * @param minYLevelIn Fish minYLevel, for the Y Meter
+         * @param maxYLevelIn Fish maxYLevel, for the Y Meter
          */
-        public BiomeDimensionOverlay(int minYLevel, int maxYLevel) {
+        public BiomeDimensionOverlay(int minYLevelIn, int maxYLevelIn) {
+            int minYLevel = Math.max(minYLevelIn, 0); // Put minYLevel inside the 0-140 range
+            int maxYLevel = Math.min(maxYLevelIn, 140); // Put maxYLevel inside the 0-140 range
+            if (minYLevel >= maxYLevel) {
+                minYLevel = maxYLevel;
+            }
             // Mini game border
             minigameBorder = new DrawableResource(TEXTURE_MINIGAME_OUTLINE.texture, DRAWING_OUTLINE.u, DRAWING_OUTLINE.v, DRAWING_OUTLINE.width, DRAWING_OUTLINE.height,
                     0, 0, 0, 0, TEXTURE_MINIGAME_OUTLINE.textureWidth, TEXTURE_MINIGAME_OUTLINE.textureHeight);
@@ -199,7 +204,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             yMeter[0] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_BACKGROUND.u, DRAWING_YMETER_BACKGROUND.v, DRAWING_YMETER_BACKGROUND.width, DRAWING_YMETER_BACKGROUND.height,
                     0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Range
-            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (maxYLevel / 5)), DRAWING_YRANGE.width, maxYLevel / 5 - (minYLevel / 5) + 1,
+            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (maxYLevel / 5)), DRAWING_YRANGE.width, (maxYLevel / 5) - (minYLevel / 5) + 1,
                     YMETER_RANGE_TOP_OFFSET + (MAX_Y_LEVEL - (maxYLevel / 5)), 0, YMETER_RANGE_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Foreground
             yMeter[2] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_FOREGROUND.u, DRAWING_YMETER_FOREGROUND.v, DRAWING_YMETER_FOREGROUND.width, DRAWING_YMETER_FOREGROUND.height,
@@ -227,6 +232,11 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         }
         
         public BiomeDimensionOverlay(FishRequirementData fishRequirementData, int dimension, String biomeTag) {
+            int minYLevel = Math.max(fishRequirementData.minYLevel, 0); // Put minYLevel inside the 0-140 range
+            int maxYLevel = Math.min(fishRequirementData.maxYLevel, 140); // Put maxYLevel inside the 0-140 range
+            if (minYLevel >= maxYLevel) {
+                minYLevel = maxYLevel;
+            }
             // Mini game border
             minigameBorder = new DrawableResource(TEXTURE_MINIGAME_OUTLINE.texture, DRAWING_OUTLINE.u, DRAWING_OUTLINE.v, DRAWING_OUTLINE.width, DRAWING_OUTLINE.height,
                     0, 0, 0, 0, TEXTURE_MINIGAME_OUTLINE.textureWidth, TEXTURE_MINIGAME_OUTLINE.textureHeight);
@@ -236,8 +246,8 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             yMeter[0] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_BACKGROUND.u, DRAWING_YMETER_BACKGROUND.v, DRAWING_YMETER_BACKGROUND.width, DRAWING_YMETER_BACKGROUND.height,
                     0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Range
-            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (fishRequirementData.maxYLevel / 5)), DRAWING_YRANGE.width, fishRequirementData.maxYLevel / 5 - (fishRequirementData.minYLevel / 5) + 1,
-                    YMETER_RANGE_TOP_OFFSET + (MAX_Y_LEVEL - (fishRequirementData.maxYLevel / 5)), 0, YMETER_RANGE_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+            yMeter[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YRANGE.u, DRAWING_YRANGE.v + (MAX_Y_LEVEL - (maxYLevel / 5)), DRAWING_YRANGE.width, (maxYLevel / 5) - (minYLevel / 5) + 1,
+                    YMETER_RANGE_TOP_OFFSET + (MAX_Y_LEVEL - (maxYLevel / 5)), 0, YMETER_RANGE_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Foreground
             yMeter[2] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_YMETER_FOREGROUND.u, DRAWING_YMETER_FOREGROUND.v, DRAWING_YMETER_FOREGROUND.width, DRAWING_YMETER_FOREGROUND.height,
                     0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
