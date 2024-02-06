@@ -1,8 +1,6 @@
 package kameib.localizator.client.jei.fishingmadebetter;
 
 import kameib.localizator.Localizator;
-import kameib.localizator.data.Drawing;
-import kameib.localizator.data.Texture;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IGuiItemStackGroup;
@@ -11,7 +9,6 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -21,7 +18,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
-public class FishRequirementsRecipeCategory extends GuiScreen implements IRecipeCategory<IRecipeWrapper> {
+public class FishRequirementsRecipeCategory implements IRecipeCategory<IRecipeWrapper> {
     private final IGuiHelper guiHelper;
     
     public FishRequirementsRecipeCategory(IGuiHelper guiHelper) {
@@ -42,15 +39,15 @@ public class FishRequirementsRecipeCategory extends GuiScreen implements IRecipe
     public String getModName() {
         return Localizator.NAME;
     }
-    @Nullable
-    @Override
-    public IDrawable getIcon() {
-        return this.guiHelper.createDrawableIngredient(new ItemStack(ItemManager.FISH_TRACKER_DIAMOND));
-    }
     @Override
     @Nonnull
     public IDrawable getBackground() {
         return this.guiHelper.createDrawable(new ResourceLocation("fishingmadebetter","textures/gui/fishreq_gui.png"), 7, 5, 163, 120);
+    }
+    @Nullable
+    @Override
+    public IDrawable getIcon() {
+        return this.guiHelper.createDrawableIngredient(new ItemStack(ItemManager.FISH_TRACKER_DIAMOND));
     }
 
     @Override
@@ -97,11 +94,6 @@ public class FishRequirementsRecipeCategory extends GuiScreen implements IRecipe
                 guiItemStacks.set(slot, ingredients.getInputs(VanillaTypes.ITEM).get((slot - 1)));
             }
         }
-    }
-    
-    public void drawImage(Texture texture, int x, int y, Drawing drawing) {
-        this.mc.renderEngine.bindTexture(texture.texture);
-        drawModalRectWithCustomSizedTexture(x, y, drawing.u, drawing.v, drawing.width, drawing.height, texture.textureWidth, texture.textureHeight);
     }
 
     private static final short SLOT_FISH = 0;

@@ -227,7 +227,3 @@ item.fmb.advanced-fishing:fish:42.desc=§7§oa rare transulscent fish, speculate
 notif.fishingmadebetter.command.reload_success=Config files reloaded for Fishing Made Better.
 notif.fishingmadebetter.command.reload_fail=Config files could not be loaded because the folder for the fishes data does not exist.
 
-jei.fishingmadebetter.category.fish_requirements=Fish Requirements
-jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip=Time: %s
-jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Requires Rain: %s
-jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Requires Thunderstorm: %s

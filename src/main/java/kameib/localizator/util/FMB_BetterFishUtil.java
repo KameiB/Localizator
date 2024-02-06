@@ -1,5 +1,6 @@
 package kameib.localizator.util;
 
+import joptsimple.internal.Strings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -7,6 +8,9 @@ import net.minecraft.util.text.TextFormatting;
 import net.theawesomegem.fishingmadebetter.common.configuration.CustomConfigurationHandler;
 import net.theawesomegem.fishingmadebetter.common.data.FishCaughtData;
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
+
+import java.util.Locale;
+import java.util.Objects;
 
 public class FMB_BetterFishUtil {
     // If itemStack is a BetterFish, then get its custom lang key
@@ -30,6 +34,30 @@ public class FMB_BetterFishUtil {
         if(fishData == null) return unformattedFishId; // If it's not found return the pure fishId, without formatting.
 
         return String.format("%s%s:%d%s", "item.fmb.", fishData.itemId, fishData.itemMetaData, ".name");
+    }
+    
+    public static String fishIdToRecipe(String fishId) {
+        if (Strings.isNullOrEmpty(fishId)) {
+            return null;
+        }
+        FishData fishData = CustomConfigurationHandler.fishDataMap.get(fishId);
+        if (fishData == null) {
+            return null;
+        }
+        
+        return fishId.toLowerCase(Locale.ENGLISH).replace(" ", "_") + "_requirements";
+    }
+    
+    public static ItemStack fishIdToItemStack(String fishId) {
+        if (Strings.isNullOrEmpty(fishId)) {
+            return null;
+        }
+        FishData fishData = CustomConfigurationHandler.fishDataMap.get(fishId);
+        if (fishData == null) {
+            return null;
+        }
+        
+        return new ItemStack(Objects.requireNonNull(Item.getByNameOrId(fishData.itemId)), 1, fishData.itemMetaData);
     }
 
     // For bait fishes

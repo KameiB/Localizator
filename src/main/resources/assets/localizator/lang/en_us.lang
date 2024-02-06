@@ -132,3 +132,9 @@ message.localizator.newconfig.3=§ePlease open Localizator Configuration screen 
 message.localizator.newconfig.4=Sorry for the inconvenience!
 message.localizator.newconfig.5=[§6§nClick here to open your old cfg file§r]
 message.localizator.newconfig.hovertext=Click to open %s
+
+# JEI Plugin
+jei.fishingmadebetter.category.fish_requirements=Fish Requirements
+jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip=Time: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Requires Rain: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Requires Thunderstorm: %s

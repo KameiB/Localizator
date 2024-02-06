@@ -1,15 +1,17 @@
 package kameib.localizator.client.jei.fishingmadebetter;
 
-import kameib.localizator.client.jei.fishingmadebetter.FishRequirementsRecipeCategory;
-import kameib.localizator.client.jei.fishingmadebetter.FishRequirementsRecipeMaker;
+import mezz.jei.api.IJeiRuntime;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 
+import javax.annotation.Nonnull;
+
 @JEIPlugin
 public class FMBJeiPlugin implements IModPlugin {
     private FishRequirementsRecipeCategory fishReq;
+    private static IJeiRuntime runtime;
     
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
@@ -19,7 +21,14 @@ public class FMBJeiPlugin implements IModPlugin {
     
     @Override
     public void register(IModRegistry registry) {        
-        //registry.addRecipeCatalyst(new ItemStack(ItemManager.FISH_TRACKER_DIAMOND), FishRequirementsRecipeCategory.UID);
         registry.addRecipes(FishRequirementsRecipeMaker.getFishRequirementsRecipes(),fishReq.getUid());
+    }
+
+    public void onRuntimeAvailable(@Nonnull IJeiRuntime jeiRuntime) {
+        runtime = jeiRuntime;
+    }
+    
+    public static IJeiRuntime getJeiRuntime() {
+        return runtime;
     }
 }

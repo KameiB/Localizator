@@ -3,8 +3,13 @@ package kameib.localizator.mixin.fishingmadebetter;
 import kameib.localizator.data.Production;
 import kameib.localizator.util.FMB_BetterFishUtil;
 import kameib.localizator.util.LocLoreUtil;
+import kameib.localizator.util.text.event.FishRequirementsClickEvent;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.world.World;
 import net.theawesomegem.fishingmadebetter.BetterFishUtil;
 import net.theawesomegem.fishingmadebetter.common.capability.world.PopulationData;
@@ -128,7 +133,9 @@ public abstract class FishingEventHandlerMixin {
     private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage1(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.fishQty_Y_levels", // Message
             localizator$myPopulationData.getQuantity(), // Quantity
-                new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData)).setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)), // Fish Name
+                new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData)) // Fish Name
+                        .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
+                                .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS, localizator$myFishData.fishId))),
                 new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.liquid." + localizator$myFishData.liquid.toString()), // Liquid
                 localizator$myFishData.minYLevel, // Min Y Level
                 localizator$myFishData.maxYLevel); // Max Y Level
@@ -171,7 +178,10 @@ public abstract class FishingEventHandlerMixin {
     // Line 541: player.sendMessage((new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.detected", new Object[0])).appendText(" " + fishData.fishId + "."));
     private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageLimited(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.survival.limited", // Message
-                    new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData)).setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true))); // Fish Name
+                    new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData))
+                            .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
+                                    .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS, localizator$myFishData.fishId))
+                                    .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponentTranslation("jei.fishingmadebetter.category.fish_requirements")))));
     }
 
     @ModifyArg(
@@ -209,7 +219,10 @@ public abstract class FishingEventHandlerMixin {
         }
         
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.survival.detailed", // Message
-                new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData)).setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)), // Fish Name
+                new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData))// Fish Name
+                        .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
+                                .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS, localizator$myFishData.fishId))
+                                .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponentTranslation("jei.fishingmadebetter.category.fish_requirements")))),
                     new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedDesc(localizator$myFishData)), // Fish Description
                     new TextComponentTranslation(quantity)); // Detailed quantity
     }

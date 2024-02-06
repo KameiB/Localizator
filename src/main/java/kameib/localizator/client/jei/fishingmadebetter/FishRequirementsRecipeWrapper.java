@@ -134,7 +134,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
     @Nullable
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation( fishRequirementData.fishId.toUpperCase(Locale.ENGLISH).replace(" ", "_") + "_REQUIREMENTS");
+        return new ResourceLocation( fishRequirementData.fishId.toLowerCase(Locale.ENGLISH).replace(" ", "_") + "_requirements");
     }
 
     public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
