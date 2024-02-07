@@ -3,7 +3,7 @@ package kameib.localizator.mixin.fishingmadebetter;
 import kameib.localizator.data.Production;
 import kameib.localizator.util.FMB_BetterFishUtil;
 import kameib.localizator.util.LocLoreUtil;
-import kameib.localizator.util.text.event.FishRequirementsClickEvent;
+import kameib.localizator.common.text.event.FishRequirementsClickEvent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;

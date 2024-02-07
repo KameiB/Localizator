@@ -1,4 +1,4 @@
-package kameib.localizator.util.text.event;
+package kameib.localizator.common.text.event;
 
 import net.minecraft.util.text.event.ClickEvent;
 
