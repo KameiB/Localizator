@@ -180,7 +180,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     }
 
     public static class BiomeDimensionOverlay {
-        public DrawableResource[] minigameInner = new DrawableResource[5]; // 0 = Liquid, 1 = Sky, 2 = Surroundings, 3 = Rain, 4 = Thunder
+        public DrawableResource[] minigameInner = new DrawableResource[6]; // 0 = Liquid, 1 = Sky, 2 = Surroundings, 3 = Night Darkness, 4 = Rain, 5 = Thunder
         public DrawableResource minigameBorder;
         public DrawableResource[] yMeter = new DrawableResource[4]; // 0 = Background, 1 = Range, 2 = Foreground, 3 = OceanLevel 
 
@@ -215,19 +215,22 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             
             // MINIGAME (Empty)
             // Liquid
-            minigameInner[0] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+            minigameInner[0] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT_DARKNESS.u, DRAWING_NIGHT_DARKNESS.v, DRAWING_NIGHT_DARKNESS.width, DRAWING_NIGHT_DARKNESS.height,
                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
             // Sky
-            minigameInner[1] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+            minigameInner[1] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
             // Surroundings
-            minigameInner[2] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+            minigameInner[2] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT_DARKNESS.u, DRAWING_NIGHT_DARKNESS.v, DRAWING_NIGHT_DARKNESS.width, DRAWING_NIGHT_DARKNESS.height,
+                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+            // Night Darkness
+            minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT_DARKNESS.u, DRAWING_NIGHT_DARKNESS.v, DRAWING_NIGHT_DARKNESS.width, DRAWING_NIGHT_DARKNESS.height,
                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
             // Rain
-            minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+            minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT_DARKNESS.u, DRAWING_NIGHT_DARKNESS.v, DRAWING_NIGHT_DARKNESS.width, DRAWING_NIGHT_DARKNESS.height,
                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
             // Thunder
-            minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_INVALID.u, DRAWING_INVALID.v, DRAWING_INVALID.width, DRAWING_INVALID.height,
+            minigameInner[5] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT_DARKNESS.u, DRAWING_NIGHT_DARKNESS.v, DRAWING_NIGHT_DARKNESS.width, DRAWING_NIGHT_DARKNESS.height,
                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
         }
         
@@ -264,11 +267,14 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                     // Surroundings
                     minigameInner[2] = new DrawableResource(TEXTURE_DIMENSION_CAVE.texture, DRAWING_NETHER.u, DRAWING_NETHER.v, DRAWING_NETHER.width, DRAWING_NETHER.height,
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_DIMENSION_CAVE.textureWidth, TEXTURE_DIMENSION_CAVE.textureHeight);
-                    // Rain
+                    // Night Darkness
                     minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
-                    // Thunder
+                    // Rain
                     minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
+                            MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+                    // Thunder
+                    minigameInner[5] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     // Y meter. Lava Ocean level
                     yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_LAVA_LEVEL.u, DRAWING_LAVA_LEVEL.v, DRAWING_LAVA_LEVEL.width, DRAWING_LAVA_LEVEL.height,
@@ -286,11 +292,14 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                     // Surroundings
                     minigameInner[2] = new DrawableResource(TEXTURE_DIMENSION_CAVE.texture, DRAWING_THE_END.u, DRAWING_THE_END.v, DRAWING_THE_END.width, DRAWING_THE_END.height,
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_DIMENSION_CAVE.textureWidth, TEXTURE_DIMENSION_CAVE.textureHeight);
-                    // Rain
+                    // Night Darkness
                     minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
-                    // Thunder
+                    // Rain
                     minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
+                            MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+                    // Thunder
+                    minigameInner[5] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     // Y meter. Void level
                     yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_VOID_LEVEL.u, DRAWING_VOID_LEVEL.v, DRAWING_VOID_LEVEL.width, DRAWING_VOID_LEVEL.height,
@@ -325,15 +334,24 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                             // Sky
                             minigameInner[1] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT.u, DRAWING_NIGHT.v, DRAWING_NIGHT.width, DRAWING_NIGHT.height,
                                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+                            // Night Darkness
+                            minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_NIGHT_DARKNESS.u, DRAWING_NIGHT_DARKNESS.v, DRAWING_NIGHT_DARKNESS.width, DRAWING_NIGHT_DARKNESS.height,
+                                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                             break;
                         case ANY:
                             // Sky
                             minigameInner[1] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_DAY_NIGHT.u, DRAWING_DAY_NIGHT.v, DRAWING_DAY_NIGHT.width, DRAWING_DAY_NIGHT.height,
                                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+                            // Night Darkness
+                            minigameInner[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_DAY_NIGHT_DARKNESS.u, DRAWING_DAY_NIGHT_DARKNESS.v, DRAWING_DAY_NIGHT_DARKNESS.width, DRAWING_DAY_NIGHT_DARKNESS.height,
+                                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
                             break;
                         default:
                             // Sky
                             minigameInner[1] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_DAY.u, DRAWING_DAY.v, DRAWING_DAY.width, DRAWING_DAY.height,
+                                    MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
+                            // Night Darkness
+                            minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                                     MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     }
                     // Surroundings
@@ -341,20 +359,20 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_BIOME.textureWidth, TEXTURE_BIOME.textureHeight);
                     if (fishRequirementData.rainRequired) {
                         // Rain
-                        minigameInner[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_RAIN.u, DRAWING_RAIN.v, DRAWING_RAIN.width, DRAWING_RAIN.height,
+                        minigameInner[4] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_RAIN.u, DRAWING_RAIN.v, DRAWING_RAIN.width, DRAWING_RAIN.height,
                                 MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
                     } else {
                         // Rain
-                        minigameInner[3] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
+                        minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                                 MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     }
                     if (fishRequirementData.thunderRequired) {
                         // Thunder
-                        minigameInner[4] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_THUNDERSTORM.u, DRAWING_THUNDERSTORM.v, DRAWING_THUNDERSTORM.width, DRAWING_THUNDERSTORM.height,
+                        minigameInner[5] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_THUNDERSTORM.u, DRAWING_THUNDERSTORM.v, DRAWING_THUNDERSTORM.width, DRAWING_THUNDERSTORM.height,
                                 MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
                     } else {
                         // Thunder
-                        minigameInner[4] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
+                        minigameInner[5] = new DrawableResource(TEXTURE_LIQUID_SKY.texture, DRAWING_TIMELESS.u, DRAWING_TIMELESS.v, DRAWING_TIMELESS.width, DRAWING_TIMELESS.height,
                                 MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     }
                     // Y meter. Sea level
@@ -368,8 +386,9 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             minigameInner[0].draw(minecraft, x, y); // Liquid
             minigameInner[1].draw(minecraft, x, y); // Time (sky)
             minigameInner[2].draw(minecraft, x, y); // Surroundings
-            minigameInner[3].draw(minecraft, x, y); // Rain
-            minigameInner[4].draw(minecraft, x, y); // Thunderstorm
+            minigameInner[3].draw(minecraft, x, y); // Night darkness
+            minigameInner[4].draw(minecraft, x, y); // Rain
+            minigameInner[5].draw(minecraft, x, y); // Thunderstorm
             minigameBorder.draw(minecraft, x, y); // Border
         }
         
@@ -454,6 +473,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     public static final Drawing DRAWING_SEA_LEVEL = new Drawing(22, 49, 8 + 1, 1);
     public static final Drawing DRAWING_LAVA_LEVEL = new Drawing(22, 51, 8 + 1, 1);
     public static final Drawing DRAWING_VOID_LEVEL = new Drawing(22, 53, 8 + 1, 1);
-    public static final Drawing DRAWING_INVALID = new Drawing(0, 144, minigameBackgroundBarWidth, minigameBackgroundBarHeight);
+    public static final Drawing DRAWING_NIGHT_DARKNESS = new Drawing(0, 144, minigameBackgroundBarWidth, minigameBackgroundBarHeight);
+    public static final Drawing DRAWING_DAY_NIGHT_DARKNESS = new Drawing(128, 48, minigameBackgroundBarWidth, minigameBackgroundBarHeight);
 
 }
