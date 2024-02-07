@@ -279,6 +279,24 @@ public class ForgeConfigHandler {
 		@Config.Name("(FishingMadeBetter) Instructions on Minigame")
 		@Config.LangKey("config.localizator.client.fishingmadebetterMinigameHelpText")
 		public boolean fishingmadebetterMinigameHelpText = !Production.inProduction;
+		@Config.Comment("The Overworld Sea Level line shown over the Fish Requirements JEI Plugin")
+		@Config.Name("(FMB/JEI) Y Meter. Overworld Sea Level")
+		@Config.RangeInt(min = 0, max = 140)
+		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterSeaLevelText")
+		@Config.RequiresMcRestart
+		public int fishingmadebetterYmeterSeaLevel = 62;
+		@Config.Comment("The Nether Lava Ocean Level line shown over the Fish Requirements JEI Plugin")
+		@Config.Name("(FMB/JEI) Y Meter. Nether Lava Ocean Level")
+		@Config.RangeInt(min = 0, max = 140)
+		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterLavaLevelText")
+		@Config.RequiresMcRestart
+		public int fishingmadebetterYmeterLavaLevel = 31;
+		@Config.Comment("The End Void Level line shown over the Fish Requirements JEI Plugin.\nIt's set to 5 just for visuals.")
+		@Config.Name("(FMB/JEI) Y Meter. The End Void Level")
+		@Config.RangeInt(min = 0, max = 140)
+		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterVoidLevelText")
+		@Config.RequiresMcRestart
+		public int fishingmadebetterYmeterVoidLevel = 5;
 	}
 	
 	public static class ServerConfig {

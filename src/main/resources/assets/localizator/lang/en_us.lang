@@ -123,6 +123,12 @@ config.localizator.client.roughtweaksTooltip=(RoughTweaks) Show Heal Amount
 config.localizator.client.roughtweaksTooltip.tooltip=Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \n\n§cRequired Mixin: \n- §d(RoughTweaks) Localized Names and Better Tooltip Mixin\n 
 config.localizator.client.fishingmadebetterMinigameHelpText=(FishingMadeBetter) Instructions on Minigame
 config.localizator.client.fishingmadebetterMinigameHelpText.tooltip=Adds a little help for players that don't know how to fish. \n "Press [LEFT] / [RIGHT]" \n\n§cRequired Mixin: \n- §d(FishingMadeBetter) Instructions on Minigame Mixin\n 
+config.localizator.client.fishingmadebetterYmeterSeaLevelText=(FMB/JEI) Y Meter. Overworld Sea Level
+config.localizator.client.fishingmadebetterYmeterSeaLevelText.tooltip=The Overworld §bSea Level§e line shown over the Fish Requirements JEI Plugin\n 
+config.localizator.client.fishingmadebetterYmeterLavaLevelText=(FMB/JEI) Y Meter. Nether Lava Ocean Level
+config.localizator.client.fishingmadebetterYmeterLavaLevelText.tooltip=The Nether §cLava Ocean§e Level line shown over the Fish Requirements JEI Plugin\n 
+config.localizator.client.fishingmadebetterYmeterVoidLevelText=(FMB/JEI) Y Meter. The End Void Level
+config.localizator.client.fishingmadebetterYmeterVoidLevelText.tooltip=The End §dVoid§e Level line shown over the Fish Requirements JEI Plugin.\nIt's set to 5 just for visuals.\n 
 
 # Messages
 message.localizator.newconfig.0=[Localizator] Hello there! It's %s!

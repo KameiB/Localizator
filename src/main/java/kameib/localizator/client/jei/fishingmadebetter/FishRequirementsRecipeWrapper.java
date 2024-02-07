@@ -4,6 +4,7 @@ import com.sun.istack.internal.NotNull;
 import kameib.localizator.data.Drawing;
 import kameib.localizator.data.Texture;
 import kameib.localizator.data.fishingmadebetter.FishRequirementData;
+import kameib.localizator.handlers.ForgeConfigHandler;
 import kameib.localizator.util.FMB_BetterFishUtil;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
@@ -211,7 +212,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                     0, 0, 0, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             // Sea level
             yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_SEA_LEVEL.u, DRAWING_SEA_LEVEL.v, DRAWING_SEA_LEVEL.width, DRAWING_SEA_LEVEL.height,
-                    1 + (MAX_Y_LEVEL - (YMETER_SEA / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+                    1 + (MAX_Y_LEVEL - (ForgeConfigHandler.clientConfig.fishingmadebetterYmeterSeaLevel / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
             
             // MINIGAME (Empty)
             // Liquid
@@ -278,7 +279,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     // Y meter. Lava Ocean level
                     yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_LAVA_LEVEL.u, DRAWING_LAVA_LEVEL.v, DRAWING_LAVA_LEVEL.width, DRAWING_LAVA_LEVEL.height,
-                            1 + (MAX_Y_LEVEL - (YMETER_LAVA_OCEAN / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+                            1 + (MAX_Y_LEVEL - (ForgeConfigHandler.clientConfig.fishingmadebetterYmeterLavaLevel / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
                 }
                     break;
                 case 1: // The End
@@ -303,7 +304,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                             MINIGAME_INNER_TOP_OFFSET, 0, MINIGAME_INNER_LEFT_OFFSET, 0, TEXTURE_LIQUID_SKY.textureWidth, TEXTURE_LIQUID_SKY.textureHeight);
                     // Y meter. Void level
                     yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_VOID_LEVEL.u, DRAWING_VOID_LEVEL.v, DRAWING_VOID_LEVEL.width, DRAWING_VOID_LEVEL.height,
-                            1 + (MAX_Y_LEVEL - (YMETER_VOID / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+                            1 + (MAX_Y_LEVEL - (ForgeConfigHandler.clientConfig.fishingmadebetterYmeterVoidLevel / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
                     }
                     break;
                 default: // Overworld
@@ -377,7 +378,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                     }
                     // Y meter. Sea level
                     yMeter[3] = new DrawableResource(TEXTURE_OVERLAYS.texture, DRAWING_SEA_LEVEL.u, DRAWING_SEA_LEVEL.v, DRAWING_SEA_LEVEL.width, DRAWING_SEA_LEVEL.height,
-                            1 + (MAX_Y_LEVEL - (YMETER_SEA / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
+                            1 + (MAX_Y_LEVEL - (ForgeConfigHandler.clientConfig.fishingmadebetterYmeterSeaLevel / 5)), 0, YMETER_LEVEL_LEFT_OFFSET, 0, TEXTURE_OVERLAYS.textureWidth, TEXTURE_OVERLAYS.textureHeight);
                 }
             }
         }
@@ -423,10 +424,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     private static final int YMETER_RANGE_TOP_OFFSET = 1;
     private static final int YMETER_LEVEL_LEFT_OFFSET = -1;
     private static final short MAX_Y_LEVEL = 28;
-    private static final short YMETER_LAVA_OCEAN = 31;
-    private static final short YMETER_VOID = 5;
-    private static final short YMETER_SEA = 62;
-
+    
 
     public static final Texture TEXTURE_MINIGAME_OUTLINE = new Texture(new ResourceLocation("fishingmadebetter", "textures/gui/reeling_hud_outline.png"), 256, 256);
     public static final Texture TEXTURE_LIQUID_SKY = new Texture(new ResourceLocation("fishingmadebetter", "textures/gui/reeling_hud_underoverlay.png"), 256, 256);
