@@ -7,13 +7,17 @@ import javax.annotation.Nonnull;
 public class FishRequirementsClickEvent extends ClickEvent {
     private final FishRequirementsAction fishRequirementsAction;
     private final String fishId;
-    
-    
 
     public FishRequirementsClickEvent(FishRequirementsAction theAction, String theValue) {
         super(Action.RUN_COMMAND, "");// An empty command, as the action is custom
         this.fishRequirementsAction = theAction;
         this.fishId = theValue;
+    }
+
+    @Override
+    @Nonnull
+    public String getValue() {
+        return fishId;
     }
 
     public FishRequirementsAction getFishRequirementsAction() {
