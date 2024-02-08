@@ -135,7 +135,8 @@ public abstract class FishingEventHandlerMixin {
             localizator$myPopulationData.getQuantity(), // Quantity
                 new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData)) // Fish Name
                         .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
-                                .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS, localizator$myFishData.fishId))),
+                                .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.Action.FISH_REQUIREMENTS, localizator$myFishData.fishId))
+                                .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponentTranslation("jei.fishingmadebetter.category.fish_requirements")))),
                 new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.liquid." + localizator$myFishData.liquid.toString()), // Liquid
                 localizator$myFishData.minYLevel, // Min Y Level
                 localizator$myFishData.maxYLevel); // Max Y Level
@@ -180,7 +181,7 @@ public abstract class FishingEventHandlerMixin {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.survival.limited", // Message
                     new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData))
                             .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
-                                    .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS, localizator$myFishData.fishId))
+                                    .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.Action.FISH_REQUIREMENTS, localizator$myFishData.fishId))
                                     .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponentTranslation("jei.fishingmadebetter.category.fish_requirements")))));
     }
 
@@ -221,7 +222,7 @@ public abstract class FishingEventHandlerMixin {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.survival.detailed", // Message
                 new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData))// Fish Name
                         .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
-                                .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS, localizator$myFishData.fishId))
+                                .setClickEvent(new FishRequirementsClickEvent(FishRequirementsClickEvent.Action.FISH_REQUIREMENTS, localizator$myFishData.fishId))
                                 .setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponentTranslation("jei.fishingmadebetter.category.fish_requirements")))),
                     new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedDesc(localizator$myFishData)), // Fish Description
                     new TextComponentTranslation(quantity)); // Detailed quantity

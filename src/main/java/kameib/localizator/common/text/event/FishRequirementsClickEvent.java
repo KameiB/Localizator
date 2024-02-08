@@ -1,46 +1,50 @@
 package kameib.localizator.common.text.event;
 
+import com.google.common.collect.Maps;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 
 import javax.annotation.Nonnull;
+import java.util.Map;
 
 public class FishRequirementsClickEvent extends ClickEvent {
-    private final FishRequirementsAction fishRequirementsAction;
-    private final String fishId;
+    private final Action action;
+    private final String value;
 
-    public FishRequirementsClickEvent(FishRequirementsAction theAction, String theValue) {
-        super(Action.RUN_COMMAND, "");// An empty command, as the action is custom
-        this.fishRequirementsAction = theAction;
-        this.fishId = theValue;
+    public FishRequirementsClickEvent(Action theAction, String theValue) {
+        super(ClickEvent.Action.SUGGEST_COMMAND, "");// An empty command, as the action is custom
+        this.action = theAction;
+        this.value = theValue;
+    }
+    
+    public Action getFishRequirementsAction() {
+        return this.action;
     }
 
     @Override
     @Nonnull
     public String getValue() {
-        return fishId;
-    }
-
-    public FishRequirementsAction getFishRequirementsAction() {
-        return fishRequirementsAction;
+        return action.canonicalName + " " + value;
     }
     
-    public String getFishId() {
-        return fishId;
+    public String getfishId() {
+        return value;
     }
 
     @Override
     @Nonnull
     public String toString() {
-        return "FishRequirementsClickEvent{action=" + fishRequirementsAction + ", fishId='" + this.fishId + "'" + '}';
+        return "FishRequirementsClickEvent{action=" + action + ", value='" + this.value + "'" + '}';
     }
    
-    public enum FishRequirementsAction {
+    public static enum Action {
         FISH_REQUIREMENTS("fish_requirements", true);
-        
+
+        private static final Map<String, Action> NAME_MAPPING = Maps.<String, Action>newHashMap();
         private final boolean allowedInChat;
         private final String canonicalName;
         
-        FishRequirementsAction(String canonicalNameIn, boolean allowedInChatIn) {
+        Action(String canonicalNameIn, boolean allowedInChatIn) {
             this.canonicalName = canonicalNameIn;
             this.allowedInChat = allowedInChatIn;
         }
@@ -53,6 +57,19 @@ public class FishRequirementsClickEvent extends ClickEvent {
         public String getCanonicalName()
         {
             return this.canonicalName;
+        }
+
+        public static Action getValueByCanonicalName(String canonicalNameIn)
+        {
+            return NAME_MAPPING.get(canonicalNameIn);
+        }
+
+        static
+        {
+            for (Action clickevent$action : values())
+            {
+                NAME_MAPPING.put(clickevent$action.getCanonicalName(), clickevent$action);
+            }
         }
     }  
 }

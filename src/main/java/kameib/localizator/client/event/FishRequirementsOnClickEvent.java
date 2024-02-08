@@ -1,10 +1,10 @@
 package kameib.localizator.client.event;
 
+import joptsimple.internal.Strings;
 import kameib.localizator.Localizator;
 import kameib.localizator.client.jei.fishingmadebetter.FMBJeiPlugin;
-import kameib.localizator.util.FMB_BetterFishUtil;
 import kameib.localizator.common.text.event.FishRequirementsClickEvent;
-import net.minecraftforge.fml.common.Optional;
+import kameib.localizator.util.FMB_BetterFishUtil;
 import mezz.jei.api.IJeiRuntime;
 import mezz.jei.api.IRecipesGui;
 import mezz.jei.api.recipe.IFocus;
@@ -13,6 +13,7 @@ import net.minecraft.client.gui.GuiNewChat;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
+import net.minecraft.util.text.event.ClickEvent;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +32,9 @@ public class FishRequirementsOnClickEvent {
     @SideOnly(Side.CLIENT)
     @Optional.Method(modid = "fishingmadebetter")
     public void onChatGuiClick(GuiScreenEvent.MouseInputEvent event) {
+        if (event.isCanceled()) {
+            return;
+        }
         if(!(event.getGui() instanceof GuiChat)) {
             return;
         }
@@ -45,20 +49,36 @@ public class FishRequirementsOnClickEvent {
         }
         
         Style style = chatMessage.getStyle();
-        Localizator.LOGGER.info("Chat message: " + chatMessage.getUnformattedComponentText() + " with ClickEvent: " + style);
-        if (!(style.getClickEvent() instanceof FishRequirementsClickEvent)) {
-            // This check fails when connected to a server.
-            // Is FishRequirementsClickEvent null, therefore I receive its super (ClickEvent)?
-            // Do I need to serialize it?
+        if (style.isEmpty()) {
             return;
         }
-        Localizator.LOGGER.info("The chat message " + chatMessage.getUnformattedText() + " contains a valid ClickEvent!");
-        FishRequirementsClickEvent clickEvent = (FishRequirementsClickEvent) style.getClickEvent();
+        if (style.getClickEvent() == null) {
+            return;
+        }
+
+        ClickEvent clickEvent = style.getClickEvent();
+        //Localizator.LOGGER.info("Chat message: " + chatMessage.getUnformattedComponentText() + " with ClickEvent: " + style.getClickEvent().toString());
+        if (!(clickEvent instanceof FishRequirementsClickEvent)) { // When on Multiplayer, we need to recreate the FishRequirementsClickEvent
+            if (clickEvent.getAction() == ClickEvent.Action.SUGGEST_COMMAND
+                    && !Strings.isNullOrEmpty(clickEvent.getValue())
+                    && clickEvent.getValue().startsWith(FishRequirementsClickEvent.Action.FISH_REQUIREMENTS.getCanonicalName())) {
+                String fishId = clickEvent.getValue().replace(FishRequirementsClickEvent.Action.FISH_REQUIREMENTS.getCanonicalName() + " ", "");
+                if (Strings.isNullOrEmpty(fishId)) {
+                    return;
+                }
+                clickEvent = new FishRequirementsClickEvent(FishRequirementsClickEvent.Action.FISH_REQUIREMENTS, fishId);
+            }
+            else {
+                return;
+            }
+        }
+        
+        FishRequirementsClickEvent FRClickEvent = (FishRequirementsClickEvent) clickEvent;
         // Check if the click event is of type FISH_REQUIREMENTS
-        if (clickEvent.getFishRequirementsAction() != FishRequirementsClickEvent.FishRequirementsAction.FISH_REQUIREMENTS) {
+        if (FRClickEvent.getFishRequirementsAction() != FishRequirementsClickEvent.Action.FISH_REQUIREMENTS) {
             return;
         }
-        String fishId = clickEvent.getFishId();
+        String fishId = FRClickEvent.getfishId();
         if (!CustomConfigurationHandler.fishDataMap.containsKey(fishId)) {
             return;
         }
@@ -66,6 +86,7 @@ public class FishRequirementsOnClickEvent {
         if (fishStack != null && !fishStack.isEmpty()) {
             if (Loader.isModLoaded("jei")) {
                 openJEIRecipesGUI(fishStack);
+                event.setCanceled(true);
             }
         }
         
@@ -96,7 +117,6 @@ public class FishRequirementsOnClickEvent {
         };
         try {
             // Trigger the show recipes method for the specified fish
-            Localizator.LOGGER.info("Showing the JEI recipe for " + fishStack.getDisplayName() + "...");
             recipesGui.show(focus);
         } catch (Exception e) {
             Localizator.LOGGER.error("Error showing " + fishStack.getDisplayName() + " recipe in JEI", e);
