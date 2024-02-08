@@ -86,10 +86,9 @@ public class FishRequirementsOnClickEvent {
         if (fishStack != null && !fishStack.isEmpty()) {
             if (Loader.isModLoaded("jei")) {
                 openJEIRecipesGUI(fishStack);
-                event.setCanceled(true);
             }
         }
-        
+        event.setCanceled(true);
     }
 
     @Optional.Method(modid = "jei")
