@@ -1,12 +1,10 @@
 package kameib.localizator;
 
 import fermiumbooter.FermiumRegistryAPI;
-import org.spongepowered.asm.launch.MixinBootstrap;
-import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-
-import kameib.localizator.handlers.ForgeConfigHandler;
 import kameib.localizator.data.ConfigToMixin;
-import kameib.localizator.util.ModListGetter;
+import kameib.localizator.handlers.ForgeConfigHandler;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.spongepowered.asm.launch.MixinBootstrap;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -122,7 +120,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         map.put("ichunutil", ichunutilList);
         // Varied Commodities
         List<ConfigToMixin> variedCommoditiesList = new ArrayList<>();
-        variedCommoditiesList.add(new ConfigToMixin("(VariedComm) Localized Book Mixin", ForgeConfigHandler.getBoolean("(VariedComm) Localized Book Mixin"), "mixins.variedcommodities.book.json"));
+        variedCommoditiesList.add(new ConfigToMixin("(VariedCommodities) Localized Book Mixin", ForgeConfigHandler.getBoolean("(VariedCommodities) Localized Book Mixin"), "mixins.variedcommodities.book.json"));
         map.put("variedcommodities", variedCommoditiesList);
         // Fishing Made Better
         List<ConfigToMixin> FMBList = new ArrayList<>();
@@ -167,15 +165,13 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         }
 
         Localizator.LOGGER.info("[Localizator] Late Enqueue Start!");
-        List<String> activeModList = ModListGetter.getModList();
-        activeModList.add("FML");
+        //List<String> activeModList = ModListGetter.getModList();
+        //activeModList.add("FML");
         for (Map.Entry<String, List<ConfigToMixin>> entry : lateMap.entrySet()) {
-            if (activeModList.contains(entry.getKey())) {
-                for (ConfigToMixin config : entry.getValue()) {
-                    if (config.isEnabled()) {
-                        Localizator.LOGGER.info("[Localizator] Late Enqueue: " + config.getName());
-                        FermiumRegistryAPI.enqueueMixin(true, config.getJson(), config.isEnabled());
-                    }
+            for (ConfigToMixin config : entry.getValue()) {
+                if (config.isEnabled()) {
+                    Localizator.LOGGER.info("[Localizator] Late Enqueue: " + config.getName());
+                    FermiumRegistryAPI.enqueueMixin(true, config.getJson(), config.isEnabled());
                 }
             }
         }
