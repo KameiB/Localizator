@@ -80,8 +80,8 @@ public abstract class FishingEventHandlerMixin {
     // Capture "currentTime"
     // Line 410: long currentTime = player.world.getTotalWorldTime();
     private long FMB_FishingEventHandler_checkForFishInventory_getCurrentTime(World world) {
-        localizator$myCurrentTime = world.getWorldTime();
-        return localizator$myCurrentTime;
+        localizator$myCurrentTime = world.getTotalWorldTime();
+        return world.getTotalWorldTime();
     }
     
     // *********** getTrackingFish ***********
@@ -262,7 +262,7 @@ public abstract class FishingEventHandlerMixin {
             cir.setReturnValue(LocLoreUtil.appendLocLore(newItem, locLoreList, argList));
         }        
     }
-    
+
     @Unique
     long localizator$myCurrentTime;
     @Unique
