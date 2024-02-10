@@ -143,6 +143,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> scalingHealthList = new ArrayList<>();
         scalingHealthList.add(new ConfigToMixin("(ScalingHealth) Localized Keybinds Mixin", ForgeConfigHandler.getBoolean("(ScalingHealth) Localized Keybinds Mixin"), "mixins.scalinghealth.keybinds.json"));
         map.put("scalinghealth", scalingHealthList);
+        // Spartan Weaponry
+        List<ConfigToMixin> spartanWeaponryList = new ArrayList<>();
+        spartanWeaponryList.add(new ConfigToMixin("(SpartanWeaponry) Localized Material Bonus Tooltip Mixin", ForgeConfigHandler.getBoolean("(SpartanWeaponry) Localized Material Bonus Tooltip Mixin"), "mixins.spartanweaponry.tooltip.json"));
+        map.put("spartanweaponry", spartanWeaponryList);
 
         return Collections.unmodifiableMap(map);
     }

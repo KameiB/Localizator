@@ -165,7 +165,7 @@ dependencies {
     implementation fg.deobf("curse.maven:silentlib-${silentlib_version}") // Needed for Scaling Health
     implementation fg.deobf("curse.maven:scalinghealth-${scalinghealth_version}")
 
-    
+    implementation fg.deobf("curse.maven:spartan-weaponry-${spartanweaponry_version}")
 
     //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
     //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")

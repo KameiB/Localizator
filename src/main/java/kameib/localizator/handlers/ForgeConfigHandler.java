@@ -201,6 +201,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.scalingHealthKeybindsMixin")
 		@Config.RequiresMcRestart
 		public boolean scalingHealthKeybindsMixin = !Production.inProduction;
+		@Config.Comment("Localizes Swords tooltip \"Material Bonus:\" text.")
+		@Config.Name("(SpartanWeaponry) Localized Material Bonus Tooltip Mixin")
+		@Config.LangKey("config.localizator.mixins.spartanWeaponrySwordTooltipMixin")
+		@Config.RequiresMcRestart
+		public boolean spartanWeaponrySwordTooltipMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

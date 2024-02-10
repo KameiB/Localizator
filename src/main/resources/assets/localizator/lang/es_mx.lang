@@ -83,6 +83,8 @@ config.localizator.mixins.mobendsKeybindsMixin=(Mo'Bends) Mixin Controles locali
 config.localizator.mixins.mobendsKeybindsMixin.tooltip=Localiza los nombres de los controles de Mo'Bends en la pantalla Opciones de controles.\n 
 config.localizator.mixins.scalingHealthKeybindsMixin=(ScalingHealth) Mixin Controles localizados
 config.localizator.mixins.scalingHealthKeybindsMixin.tooltip=Localiza los nombres de los controles de Scaling Health en la pantalla Opciones de controles.\n 
+config.localizator.mixins.spartanWeaponrySwordTooltipMixin=(SpartanWeaponry) Mixin Bono del material localizado
+config.localizator.mixins.spartanWeaponrySwordTooltipMixin.tooltip=Localiza el texto "Material Bonus:" en la descripción de las espadas.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
