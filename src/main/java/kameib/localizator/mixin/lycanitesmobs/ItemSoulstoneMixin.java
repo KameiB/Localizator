@@ -1,83 +1,114 @@
 package kameib.localizator.mixin.lycanitesmobs;
 
-import com.lycanitesmobs.core.entity.ExtendedPlayer;
-import com.lycanitesmobs.core.entity.TameableCreatureEntity;
 import com.lycanitesmobs.core.info.CreatureInfo;
 import com.lycanitesmobs.core.item.special.ItemSoulstone;
-import com.lycanitesmobs.core.pets.PetEntry;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumParticleTypes;
+import kameib.localizator.data.Production;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ItemSoulstone.class)
 public abstract class ItemSoulstoneMixin {
-    /**
-     * @author KameiB
-     * @reason Translate messages on client side, not server side
-     */
-    @Overwrite(remap = false)
-    public boolean onItemRightClickOnEntity(EntityPlayer player, Entity entity, ItemStack itemStack) {
-        ExtendedPlayer playerExt = ExtendedPlayer.getForPlayer(player);
-        if(playerExt == null)
-            return false;
-        if(!(entity instanceof TameableCreatureEntity)) {
-            if(!player.getEntityWorld().isRemote)
-                player.sendMessage(new TextComponentTranslation("message.soulstone.invalid"));
-            return false;
-        }
-
-        TameableCreatureEntity entityTameable = (TameableCreatureEntity)entity;
-        CreatureInfo creatureInfo = entityTameable.creatureInfo;
-        if(!creatureInfo.isTameable() || entityTameable.getOwner() != player) {
-            if(!player.getEntityWorld().isRemote)
-                player.sendMessage(new TextComponentTranslation("message.soulstone.untamed"));
-            return false;
-        }
-        if(entityTameable.getPetEntry() != null) {
-            if(!player.getEntityWorld().isRemote)
-                player.sendMessage(new TextComponentTranslation("message.soulstone.exists"));
-            return false;
-        }
-
-        // Particle Effect:
-        if(player.getEntityWorld().isRemote) {
-            for(int i = 0; i < 32; ++i) {
-                entity.getEntityWorld().spawnParticle(EnumParticleTypes.VILLAGER_HAPPY,
-                        entity.posX + (4.0F * player.getRNG().nextFloat()) - 2.0F,
-                        entity.posY + (4.0F * player.getRNG().nextFloat()) - 2.0F,
-                        entity.posZ + (4.0F * player.getRNG().nextFloat()) - 2.0F,
-                        0.0D, 0.0D, 0.0D);
-            }
-        }
-
-        // Store Pet:
-        if(!player.getEntityWorld().isRemote) {
-            String petType = "pet";
-            if(entityTameable.creatureInfo.isMountable()) {
-                petType = "mount";
-            }
-
-            String message = "message.soulstone." + petType + ".added_";
-            //message = message.replace("%creature%", creatureInfo.getTitle());
-            player.sendMessage(new TextComponentTranslation(message, new TextComponentTranslation("entity." + creatureInfo.getLocalisationKey() + ".name")));
-            //player.addStat(ObjectManager.getStat("soulstone"), 1);
-
-            // Add Pet Entry:
-            PetEntry petEntry = PetEntry.createFromEntity(player, entityTameable, petType);
-            playerExt.petManager.addEntry(petEntry);
-            playerExt.sendPetEntriesToPlayer(petType);
-            petEntry.assignEntity(entity);
-            entityTameable.setPetEntry(petEntry);
-
-            // Consume Soulstone:
-            if (!player.capabilities.isCreativeMode)
-                itemStack.setCount(Math.max(0, itemStack.getCount() - 1));
-        }
-
-        return true;
+    @Redirect(
+            method = "onItemRightClickOnEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Z",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lcom/lycanitesmobs/client/localisation/LanguageManager;translate(Ljava/lang/String;)Ljava/lang/String;",
+                    remap = false
+            ),
+            remap = false
+    )
+    // Don't translate here
+    // All ocurrences
+    private String Lycanites_ItemSoulstone_dontTranslate(String key) {
+        return key;
     }
+    
+    @ModifyArg(
+            method = "onItemRightClickOnEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Z",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/entity/player/EntityPlayer;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 0,
+                    remap = Production.inProduction
+            ),
+            remap = false
+    )
+    // Replace the TextcomponentString with a TextComponentTranslation
+    // Line 39: player.sendMessage(new TextComponentString(LanguageManager.translate("message.soulstone.invalid")));
+    private ITextComponent Lycanites_ItemSoulstone_onItemRightClickOnEntity_message1(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+
+    @ModifyArg(
+            method = "onItemRightClickOnEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Z",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/entity/player/EntityPlayer;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 1,
+                    remap = Production.inProduction
+            ),
+            remap = false
+    )
+    // Replace the TextcomponentString with a TextComponentTranslation
+    // Line 83: player.sendMessage(new TextComponentString(LanguageManager.translate("message.soulstone.untamed")));
+    private ITextComponent Lycanites_ItemSoulstone_onItemRightClickOnEntity_message2(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+
+    @ModifyArg(
+            method = "onItemRightClickOnEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Z",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/entity/player/EntityPlayer;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 2,
+                    remap = Production.inProduction
+            ),
+            remap = false
+    )
+    // Replace the TextcomponentString with a TextComponentTranslation
+    // Line 49: player.sendMessage(new TextComponentString(LanguageManager.translate("message.soulstone.exists")));
+    private ITextComponent Lycanites_ItemSoulstone_onItemRightClickOnEntity_message3(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    
+    @Redirect(
+            method = "onItemRightClickOnEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Z",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lcom/lycanitesmobs/core/info/CreatureInfo;getTitle()Ljava/lang/String;",
+                    ordinal = 0,
+                    remap = false
+            ),
+            remap = false
+    )
+    // Capture CreatureInfo name
+    // Line 67: message = message.replace("%creature%", creatureInfo.getTitle());
+    private String Lycanites_ItemSoulstone_onItemRightClickOnEntity_captureCreatureName(CreatureInfo instance) {
+        localizator$myPetName = "entity." + instance.getLocalisationKey() + ".name";
+        return instance.getTitle();
+    }
+    @ModifyArg(
+            method = "onItemRightClickOnEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Z",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/entity/player/EntityPlayer;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 3,
+                    remap = Production.inProduction
+            ),
+            remap = false
+    )
+    // Replace the TextcomponentString with a TextComponentTranslation
+    // Line 49: player.sendMessage(new TextComponentString(LanguageManager.translate("message.soulstone.exists")));
+    private ITextComponent Lycanites_ItemSoulstone_onItemRightClickOnEntity_message4(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText() + "_",
+                new TextComponentTranslation(localizator$myPetName));
+    }
+    
+    @Unique
+    private String localizator$myPetName;
 }

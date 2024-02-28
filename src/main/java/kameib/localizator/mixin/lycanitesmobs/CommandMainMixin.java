@@ -1,527 +1,816 @@
 package kameib.localizator.mixin.lycanitesmobs;
 
-import com.lycanitesmobs.ExtendedWorld;
-import com.lycanitesmobs.LycanitesMobs;
 import com.lycanitesmobs.core.command.CommandMain;
-import com.lycanitesmobs.core.config.ConfigBase;
-import com.lycanitesmobs.core.dungeon.DungeonManager;
-import com.lycanitesmobs.core.dungeon.instance.DungeonInstance;
-import com.lycanitesmobs.core.entity.ExtendedPlayer;
-import com.lycanitesmobs.core.info.Beastiary;
-import com.lycanitesmobs.core.info.CreatureInfo;
-import com.lycanitesmobs.core.info.CreatureKnowledge;
-import com.lycanitesmobs.core.info.CreatureManager;
-import com.lycanitesmobs.core.item.equipment.EquipmentPartManager;
 import com.lycanitesmobs.core.mobevent.MobEvent;
-import com.lycanitesmobs.core.mobevent.MobEventListener;
-import com.lycanitesmobs.core.mobevent.MobEventManager;
-import com.lycanitesmobs.core.mobevent.MobEventPlayerServer;
-import com.lycanitesmobs.core.network.MessageSummonSetSelection;
-import com.lycanitesmobs.core.spawner.SpawnerEventListener;
-import com.lycanitesmobs.core.spawner.SpawnerManager;
-import com.lycanitesmobs.core.worldgen.WorldGeneratorDungeon;
 import kameib.localizator.data.Production;
-import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.world.World;
-import net.minecraftforge.common.DimensionManager;
-import org.apache.commons.lang3.math.NumberUtils;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
-
-import java.util.List;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(CommandMain.class)
 public abstract class CommandMainMixin {
-    @Shadow(remap = Production.inProduction)
-    public String getUsage(ICommandSender commandSender) { return "";}
-    /**
-     * @author KameiB
-     * @reason Translate messages on client side, instead of on server side
-     */
-    @Overwrite(remap = Production.inProduction)
-    public void execute(MinecraftServer server, ICommandSender commandSender, String[] args) {
-        String reply = "lyc.command.invalid";
-        if(args.length < 1) {
-            commandSender.sendMessage(new TextComponentTranslation(reply));
-            commandSender.sendMessage(new TextComponentString(this.getUsage(commandSender)));
-            return;
-        }
-
-        // Debug:
-        if("debug".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.debug.invalid";
-            if (args.length < 3) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            String debugValue = args[1];
-            reply = "lyc.command.debug.set_";
-            //reply = reply.replace("%debug%", debugValue);
-            LycanitesMobs.config.setBool("Debug", debugValue, "true".equalsIgnoreCase(args[2]));
-            commandSender.sendMessage(new TextComponentTranslation(reply, debugValue));
-            return;
-        }
-
-        // Spawner:
-        if("spawners".equalsIgnoreCase(args[0]) || "spawner".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.spawners.invalid";
-            if (args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Reload:
-            if("reload".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.spawners.reload";
-                SpawnerManager.getInstance().reload();
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Creative Test:
-            if("creative".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.spawners.creative_";
-                SpawnerEventListener.testOnCreative = !SpawnerEventListener.testOnCreative;
-                //reply = reply.replace("%value%", "" + SpawnerEventListener.testOnCreative);
-                commandSender.sendMessage(new TextComponentTranslation(reply, SpawnerEventListener.testOnCreative));
-                return;
-            }
-
-            // Test:
-            if("test".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.spawners.test";
-                if(!(commandSender instanceof EntityPlayer)) {
-                    return;
-                }
-
-                if(args.length < 3 || !SpawnerManager.getInstance().spawners.containsKey(args[2])) {
-                    reply = "lyc.command.spawner.test.unknown";
-                }
-                String spawnerName = args[2];
-                World world = commandSender.getEntityWorld();
-                EntityPlayer player = (EntityPlayer)commandSender;
-                BlockPos pos = player.getPosition();
-                int level = 1;
-                if(args.length > 3) {
-                    level = Math.max(1, NumberUtils.isCreatable(args[3]) ? Integer.parseInt(args[3]) : 1);
-                }
-
-                SpawnerManager.getInstance().spawners.get(spawnerName).trigger(world, player, null, pos, level, 1, 0);
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-        }
-
-        // Dungeon:
-        if("dungeon".equalsIgnoreCase(args[0]) || "dungeons".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.dungeon.invalid";
-            if (args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Reload:
-            if("reload".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.dungeon.reload";
-                DungeonManager.getInstance().reload();
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Enable:
-            if("enable".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.dungeon.enable";
-                ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "general");
-                config.setBool("Dungeons", "Dungeons Enabled", true);
-                LycanitesMobs.dungeonGenerator.enabled = true;
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Disable:
-            if("disable".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.dungeon.disable";
-                ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "general");
-                config.setBool("Dungeons", "Dungeons Enabled", false);
-                LycanitesMobs.dungeonGenerator.enabled = false;
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Locate:
-            if("locate".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.dungeon.locate";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                World world = commandSender.getEntityWorld();
-                ExtendedWorld extendedWorld = ExtendedWorld.getForWorld(world);
-                List<DungeonInstance> nearbyDungeons = extendedWorld.getNearbyDungeonInstances(new ChunkPos(commandSender.getPosition()), WorldGeneratorDungeon.DUNGEON_DISTANCE * 2);
-                if(nearbyDungeons.isEmpty()) {
-                    commandSender.sendMessage(new TextComponentTranslation("common.none"));
-                    return;
-                }
-                for(DungeonInstance dungeonInstance : nearbyDungeons) {
-                    commandSender.sendMessage(new TextComponentString(dungeonInstance.toString()));
-                }
-                return;
-            }
-        }
-
-        // Player:
-        if("player".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.player.invalidarguments";
-            if (args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-            EntityPlayer player = (EntityPlayer)commandSender;
-            ExtendedPlayer extendedPlayer = ExtendedPlayer.getForPlayer(player);
-
-            // Restore Spirit:
-            if("spirit".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.player.spirit";
-                extendedPlayer.spirit = extendedPlayer.spiritMax;
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Restore Focus:
-            if("focus".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.player.focus";
-                extendedPlayer.summonFocus = extendedPlayer.summonFocusMax;
-                CreatureManager.getInstance().reload();
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-        }
-
-        // Spawner:
-        if("creature".equalsIgnoreCase(args[0]) || "creatures".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.creatures.invalid";
-            if (args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Reload:
-            if("reload".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.creatures.reload";
-                CreatureManager.getInstance().reload();
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-        }
-
-        // Equipment:
-        if("equipment".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.equipment.invalid";
-            if (args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Reload:
-            if("reload".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.equipment.reload";
-                EquipmentPartManager.getInstance().reload();
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-        }
-
-        // Beastiary:
-        if("beastiary".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.beastiary.invalid";
-            if (args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Player Only:
-            if(!(commandSender instanceof EntityPlayer)) {
-                reply = "lyc.command.playeronly";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-            EntityPlayer player = (EntityPlayer)commandSender;
-            ExtendedPlayer extendedPlayer = ExtendedPlayer.getForPlayer(player);
-            Beastiary beastiary = extendedPlayer.getBeastiary();
-            if(extendedPlayer == null || beastiary == null) {
-                return;
-            }
-
-            // Add:
-            if("add".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.beastiary.add.invalid";
-                if (args.length < 3) {
-                    commandSender.sendMessage(new TextComponentTranslation(reply));
-                    return;
-                }
-
-                int rank = 3;
-                if(args.length >= 4) {
-                    rank = NumberUtils.isCreatable(args[3]) ? Integer.parseInt(args[3]) : 3;
-                }
-
-                String creatureName = args[2].toLowerCase();
-                CreatureInfo creatureInfo = CreatureManager.getInstance().getCreature(creatureName);
-                if(creatureInfo == null) {
-                    reply = "lyc.command.beastiary.add.unknown";
-                    commandSender.sendMessage(new TextComponentTranslation(reply));
-                    return;
-                }
-
-                CreatureKnowledge creatureKnowledge = new CreatureKnowledge(beastiary, creatureInfo.getName(), rank, 0);
-                if(beastiary.addCreatureKnowledge(creatureKnowledge, true)) {
-                    beastiary.sendAddedMessage(creatureKnowledge);
-                    beastiary.sendToClient(creatureKnowledge);
-                }
-                else {
-                    beastiary.sendKnownMessage(creatureKnowledge);
-                }
-                return;
-            }
-
-            // Complete:
-            if("complete".equalsIgnoreCase(args[1])) {
-                int rank = 3;
-                if(args.length >= 3) {
-                    rank = NumberUtils.isCreatable(args[2]) ? Integer.parseInt(args[2]) : 3;
-                }
-
-                for(CreatureInfo creatureInfo : CreatureManager.getInstance().creatures.values()) {
-                    beastiary.addCreatureKnowledge(new CreatureKnowledge(beastiary, creatureInfo.getName(), rank, 0), true);
-                }
-                beastiary.sendAllToClient();
-                reply = "lyc.command.beastiary.complete";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Clear:
-            if("clear".equalsIgnoreCase(args[1])) {
-                beastiary.creatureKnowledgeList.clear();
-                beastiary.sendAllToClient();
-                reply = "lyc.command.beastiary.clear";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Packet:
-            if("packet".equalsIgnoreCase(args[1])) {
-                beastiary.sendAllToClient();
-                extendedPlayer.sendAllSummonSetsToPlayer();
-                MessageSummonSetSelection message = new MessageSummonSetSelection(extendedPlayer);
-                LycanitesMobs.packetHandler.sendToPlayer(message, (EntityPlayerMP)player);
-                extendedPlayer.sendPetEntriesToPlayer("");
-                commandSender.sendMessage(new TextComponentTranslation("lyc.command.beastiary.packet"));
-                return;
-            }
-        }
-
-        // Mob Event:
-        if("mobevent".equalsIgnoreCase(args[0]) || "mobevents".equalsIgnoreCase(args[0])) {
-            reply = "lyc.command.mobevent.invalid";
-            if(args.length < 2) {
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Reload:
-            if("reload".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.mobevent.reload";
-                MobEventManager.getInstance().reload();
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Creative Test:
-            if("creative".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.mobevent.creative_";
-                MobEventPlayerServer.testOnCreative = !MobEventPlayerServer.testOnCreative;
-                //reply = reply.replace("%value%", "" + MobEventPlayerServer.testOnCreative);
-                commandSender.sendMessage(new TextComponentTranslation(reply, MobEventPlayerServer.testOnCreative));
-                return;
-            }
-
-            // Start:
-            if("start".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.mobevent.start.invalid";
-                if(args.length < 3) {
-                    commandSender.sendMessage(new TextComponentTranslation(reply));
-                    return;
-                }
-
-                String mobEventName = args[2].toLowerCase();
-                if(MobEventManager.getInstance().mobEvents.containsKey(mobEventName)) {
-
-                    // Get World:
-                    World world = null;
-                    if(args.length >= 4 && NumberUtils.isNumber(args[3])) {
-                        world = DimensionManager.getWorld(Integer.parseInt(args[3]));
-                    }
-                    else {
-                        world = commandSender.getEntityWorld();
-                    }
-
-                    // No World:
-                    if(world == null) {
-                        reply = "lyc.command.mobevent.start.noworld";
-                        commandSender.sendMessage(new TextComponentTranslation(reply));
-                        return;
-                    }
-
-                    ExtendedWorld worldExt = ExtendedWorld.getForWorld(world);
-
-                    // Force Enabled:
-                    if(!MobEventManager.getInstance().mobEventsEnabled) {
-                        reply = "lyc.command.mobevent.enable";
-                        commandSender.sendMessage(new TextComponentTranslation(reply));
-                        MobEventManager.getInstance().mobEventsEnabled = true;
-                        ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "mobevents");
-                        config.setBool("Global", "Mob Events Enabled", true);
-                    }
-
-                    // Get Player:
-                    EntityPlayer player = null;
-                    BlockPos pos = new BlockPos(0, 0, 0);
-                    if(commandSender instanceof EntityPlayer) {
-                        player = (EntityPlayer)commandSender;
-                        pos = player.getPosition();
-                    }
-
-                    // Check Conditions:
-                    boolean forced = false;
-                    if (args.length >= 7) {
-                        forced = Boolean.parseBoolean(args[6]);
-                    }
-                    MobEvent mobEvent = MobEventManager.getInstance().getMobEvent(mobEventName);
-                    if (!forced && !mobEvent.canStart(world, player)) {
-                        reply = "lyc.command.mobevent.start.conditions";
-                        commandSender.sendMessage(new TextComponentTranslation(reply));
-                        return;
-                    }
-
-                    int level = 1;
-                    if(args.length >= 5 && NumberUtils.isNumber(args[4])) {
-                        level = Integer.parseInt(args[4]);
-                    }
-                    int subspecies = -1;
-                    if(args.length >= 6 && NumberUtils.isNumber(args[5])) {
-                        subspecies = Integer.parseInt(args[5]);
-                    }
-                    reply = "lyc.command.mobevent.start";
-                    commandSender.sendMessage(new TextComponentTranslation(reply));
-                    worldExt.startMobEvent(mobEventName, player, pos, level, subspecies);
-                    return;
-                }
-
-                reply = "lyc.command.mobevent.start.unknown";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            // Get World:
-            World world;
-            if(args.length >= 3 && NumberUtils.isNumber(args[2])) {
-                world = DimensionManager.getWorld(Integer.parseInt(args[2]));
-            }
-            else {
-                world = commandSender.getEntityWorld();
-            }
-
-            // No World:
-            if(world == null) {
-                reply = "lyc.command.mobevent.start.noworld";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                return;
-            }
-
-            LycanitesMobs.logDebug("", "Getting Extended World for Dimension: " + world.provider.getDimension() + " World: " + world);
-            ExtendedWorld worldExt = ExtendedWorld.getForWorld(world);
-            LycanitesMobs.logDebug("", "Got Extended World for Dimension: " + worldExt.world.provider.getDimension() + " World: " + worldExt.world);
-            if(worldExt == null) return;
-
-            // Random:
-            if("random".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.mobevent.random";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                worldExt.stopWorldEvent();
-                MobEventListener.getInstance().triggerRandomMobEvent(world, worldExt);
-                return;
-            }
-
-            // Stop:
-            if("stop".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.mobevent.stop";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                worldExt.stopWorldEvent();
-                return;
-            }
-
-            // List:
-            if("list".equalsIgnoreCase(args[1])) {
-                reply = "lyc.command.mobevent.list";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                for(MobEvent mobEvent : MobEventManager.getInstance().mobEvents.values()) {
-                    //String eventName = mobEvent.name + " (" + mobEvent.getTitle() + ")";
-                    commandSender.sendMessage(new TextComponentString(mobEvent.name + " (")
-                            .appendSibling(new TextComponentTranslation("mobevent." + mobEvent.title + ".name"))
-                            .appendText(")"));
-                }
-                return;
-            }
-
-            // Enable:
-            if("enable".equalsIgnoreCase(args[1])) {
-                if(args.length >= 3) {
-                    if("random".equalsIgnoreCase(args[2])) {
-                        reply = "lyc.command.mobevent.enable.random";
-                        commandSender.sendMessage(new TextComponentTranslation(reply));
-                        MobEventManager.getInstance().mobEventsRandom = true;
-                        ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "mobevents");
-                        config.setBool("Global", "Random Mob Events", true);
-                        return;
-                    }
-                }
-                reply = "lyc.command.mobevent.enable";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                MobEventManager.getInstance().mobEventsEnabled = true;
-                ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "mobevents");
-                config.setBool("Global", "Mob Events Enabled", true);
-                return;
-            }
-
-            // Disable:
-            if("disable".equalsIgnoreCase(args[1])) {
-                if(args.length >= 3) {
-                    if("random".equalsIgnoreCase(args[2])) {
-                        reply = "lyc.command.mobevent.disable.random";
-                        commandSender.sendMessage(new TextComponentTranslation(reply));
-                        MobEventManager.getInstance().mobEventsRandom = false;
-                        ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "mobevents");
-                        config.setBool("Global", "Random Mob Events", false);
-                        return;
-                    }
-                }
-                reply = "lyc.command.mobevent.disable";
-                commandSender.sendMessage(new TextComponentTranslation(reply));
-                MobEventManager.getInstance().mobEventsEnabled = false;
-                ConfigBase config = ConfigBase.getConfig(LycanitesMobs.modInfo, "mobevents");
-                config.setBool("Global", "Mob Events Enabled", false);
-                return;
-            }
-        }
-
-        commandSender.sendMessage(new TextComponentTranslation(reply));
-        commandSender.sendMessage(new TextComponentString(this.getUsage(commandSender)));
+    @Redirect(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lcom/lycanitesmobs/client/localisation/LanguageManager;translate(Ljava/lang/String;)Ljava/lang/String;",
+                    ordinal = -1,
+                    remap = false
+            ),
+            remap = Production.inProduction
+    )
+    // Return lang key instead of translating it server-side
+    // All calls
+    private String Lycanites_CommandMain_execute_dontTranslate(String key) {
+        return key;
     }
+    
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 0,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.invalid")
+    // Line 195: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message0(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 2,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.debug.invalid")
+    // Line 202: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message2(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @Redirect(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Ljava/lang/String;replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+                    ordinal = 0,
+                    remap = false
+            ),
+            remap = Production.inProduction
+    )
+    // Capture mobEventName
+    // Line 206: reply = reply.replace("%debug%", mobEventName);
+    private String Lycanites_CommandMain_execute_getMobEventName(String instance, CharSequence debug, CharSequence mobEventName) {
+        localizator$arg1 = (String) mobEventName;
+        return instance;
+    }
+    
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 3,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation (lyc.command.debug.set)
+    // Line 208: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message3(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText() + "_",
+                new TextComponentTranslation(localizator$arg1));
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 4,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.spawners.invalid")
+    // Line 214: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message4(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 5,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.spawners.reload")
+    // Line 221: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message5(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+
+    @Redirect(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Ljava/lang/String;replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+                    ordinal = 1,
+                    remap = false
+            ),
+            remap = Production.inProduction
+    )
+    // Capture mobEventName
+    // Line 228: reply = reply.replace("%value%", "" + SpawnerEventListener.testOnCreative);
+    private String Lycanites_CommandMain_execute_getTestOnCreative(String instance, CharSequence value, CharSequence testOnCreative) {
+        localizator$arg1 = (String) testOnCreative;
+        return instance;
+    }
+
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 6,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.spawners.creative")
+    // Line 208: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message6(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText() + "_",
+                new TextComponentTranslation(localizator$arg1));
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 7,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.spawners.test" || "lyc.command.spawner.test.unknown")
+    // Line 253: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message7(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 8,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.dungeon.invalid")
+    // Line 262: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message8(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 9,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.dungeon.reload")
+    // Line 269: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message9(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 10,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.dungeon.enable")
+    // Line 279: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message10(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 11,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.dungeon.disable")
+    // Line 288: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message11(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 12,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.dungeon.locate")
+    // Line 294: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message12(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 13,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("common.none")
+    // Line 299: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message13(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 14,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation (dungeonInstance.toString())
+    // Line 307: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message14(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 15,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("Invalid command arguments, valid arguments are: spirit, focus")
+    // Line 319: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message15(ITextComponent component) {
+        return new TextComponentTranslation("lyc.command.player.invalidarguments");
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 16,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("Restored Player Spirit.")
+    // Line 328: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message16(ITextComponent component) {
+        return new TextComponentTranslation("lyc.command.player.spirit");
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 17,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("Restored Player Focus.")
+    // Line 336: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message17(ITextComponent component) {
+        return new TextComponentTranslation("lyc.command.player.focus");
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 18,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.creatures.invalid")
+    // Line 342: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message18(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 19,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.creatures.reload")
+    // Line 351: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message19(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 20,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.equipment.invalid")
+    // Line 359: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message20(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 21,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.equipment.reload")
+    // Line 366: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message21(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 22,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.beastiary.invalid")
+    // Line 375: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message22(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 23,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.playeronly")
+    // Line 381: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message23(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 24,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.beastiary.add.invalid")
+    // Line 395: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message24(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 25,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.beastiary.add.unknown")
+    // Line 410: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message25(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 26,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.beastiary.complete")
+    // Line 440: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message26(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 27,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.beastiary.clear")
+    // Line 448: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message27(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 28,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("Force sent a full Beastiary update packet.")
+    // Line 458: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message28(ITextComponent component) {
+        return new TextComponentTranslation("lyc.command.beastiary.packet");
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 29,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.invalid")
+    // Line 466: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message29(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 30,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.reload")
+    // Line 473: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message30(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+
+    @Redirect(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Ljava/lang/String;replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+                    ordinal = 2,
+                    remap = false
+            ),
+            remap = Production.inProduction
+    )
+    // Capture testOnCreative
+    // Line 480: reply = reply.replace("%value%", "" + MobEventPlayerServer.testOnCreative);
+    private String Lycanites_CommandMain_execute_getTestOnCreative2(String instance, CharSequence value, CharSequence testOnCreative) {
+        localizator$arg1 = (String) testOnCreative;
+        return instance;
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 31,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.creative")
+    // Line 481: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message31(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText() + "_",
+                localizator$arg1);
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 32,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.start.invalid")
+    // Line 488: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message32(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 33,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.start.noworld")
+    // Line 509: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message33(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 34,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.enable")
+    // Line 515: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message34(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 35,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.start.conditions")
+    // Line 537: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message35(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 36,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.start")
+    // Line 552: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message36(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 37,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.start.unknown")
+    // Line 495: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message37(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 38,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.start.noworld")
+    // Line 566: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message38(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 39,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.random")
+    // Line 579: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message39(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 40,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.stop")
+    // Line 587: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message40(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 41,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.list")
+    // Line 594: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message41(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    
+    @Redirect(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lcom/lycanitesmobs/core/mobevent/MobEvent;getTitle()Ljava/lang/String;",
+                    remap = false
+            ),
+            remap = Production.inProduction
+    )
+    // Capture mobEvent
+    // Line 599: eventName = mobEvent.name + " (" + mobEvent.getTitle() + ")";
+    private String Lycanites_CommandMain_execute_captureMobEvent(MobEvent instance) {
+        localizator$myMobEvent = instance;
+        return instance.getTitle();
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 42,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Send a translated mobEvent Title
+    // Line 600: commandSender.sendMessage(new TextComponentString(eventName));
+    private ITextComponent Lycanites_CommandMain_event_Message42(ITextComponent component) {
+        return new TextComponentString(localizator$myMobEvent.name + " (")
+                            .appendSibling(new TextComponentTranslation("mobevent." + localizator$myMobEvent.title + ".name"))
+                            .appendText(")");
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 43,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.enable.random")
+    // Line 610: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message43(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 44,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.enable")
+    // Line 618: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message44(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 45,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.disable.random")
+    // Line 628: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message45(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 46,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.mobevent.disable")
+    // Line 636: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message46(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    @ModifyArg(
+            method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/command/ICommandSender;sendMessage(Lnet/minecraft/util/text/ITextComponent;)V",
+                    ordinal = 47,
+                    remap = Production.inProduction
+            ),
+            remap = Production.inProduction
+    )
+    // Replace the TextComponentString with TextComponentTranslation ("lyc.command.invalid" ?)
+    // Line 644: commandSender.sendMessage(new TextComponentString(reply));
+    private ITextComponent Lycanites_CommandMain_execute_Message47(ITextComponent component) {
+        return new TextComponentTranslation(component.getUnformattedComponentText());
+    }
+    
+    @Unique
+    private String localizator$arg1;
+    @Unique
+    private MobEvent localizator$myMobEvent;
 }

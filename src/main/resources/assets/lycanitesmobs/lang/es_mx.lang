@@ -20,7 +20,8 @@ lyc.command.spawners.creative_=Los generadores naturales para el modo creativo e
 lyc.command.beastiary.packet=La Fuerza envió un paquete completo de actualización de Bestiario.
 #
 # Mob Events:
-lyc.command.mobevent.creative_=Los eventos de criaturas para el modo creativo están %value% (true=activados y false=desactivados).
+# %s replaces original %value%
+lyc.command.mobevent.creative_=Los eventos de criaturas para el modo creativo están %s (true=activados y false=desactivados).
 #
 # Player:
 lyc.command.player.invalidarguments=Argumentos de comando inválidos, los argumentos válidos son: spirit, focus
