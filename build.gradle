@@ -167,6 +167,8 @@ dependencies {
 
     implementation fg.deobf("curse.maven:spartan-weaponry-${spartanweaponry_version}")
 
+    implementation files("libs/Trinkets+and+Baubles-32.4.jar")
+
     //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
     //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")
 

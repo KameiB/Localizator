@@ -206,6 +206,16 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.spartanWeaponrySwordTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean spartanWeaponrySwordTooltipMixin = !Production.inProduction;
+		@Config.Comment("Localizes Ender Queen's chat messages when hurt.")
+		@Config.Name("(T&B) Localized Ender Queen messages Mixin")
+		@Config.LangKey("config.localizator.mixins.xatEnderQueenMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean xatEnderQueenMessagesMixin = !Production.inProduction;
+		@Config.Comment("Localizes the armor weight tooltip text when transformed into Faelis race.")
+		@Config.Name("(T&B) Localized Armor Weight Tooltip Mixin")
+		@Config.LangKey("config.localizator.mixins.xatArmorWeightTooltipMixin")
+		@Config.RequiresMcRestart
+		public boolean xatArmorWeightTooltipMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

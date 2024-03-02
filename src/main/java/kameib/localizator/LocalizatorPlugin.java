@@ -147,6 +147,11 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> spartanWeaponryList = new ArrayList<>();
         spartanWeaponryList.add(new ConfigToMixin("(SpartanWeaponry) Localized Material Bonus Tooltip Mixin", ForgeConfigHandler.getBoolean("(SpartanWeaponry) Localized Material Bonus Tooltip Mixin"), "mixins.spartanweaponry.tooltip.json"));
         map.put("spartanweaponry", spartanWeaponryList);
+        // Trinkes & Baubles
+        List<ConfigToMixin> trinketsList = new ArrayList<>();
+        trinketsList.add(new ConfigToMixin("(T&B) Localized Ender Queen messages Mixin", ForgeConfigHandler.getBoolean("(T&B) Localized Ender Queen messages Mixin"), "mixins.xat.messages.json"));
+        trinketsList.add(new ConfigToMixin("(T&B) Localized Armor Weight Tooltip Mixin", ForgeConfigHandler.getBoolean("(T&B) Localized Armor Weight Tooltip Mixin"), "mixins.xat.weighttooltip.json"));
+        map.put("xat", trinketsList);
 
         return Collections.unmodifiableMap(map);
     }
