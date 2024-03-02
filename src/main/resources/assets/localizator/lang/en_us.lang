@@ -85,6 +85,10 @@ config.localizator.mixins.scalingHealthKeybindsMixin=(ScalingHealth) Localized K
 config.localizator.mixins.scalingHealthKeybindsMixin.tooltip=Localizes Scaling Health Keybinds texts on Settings screen.\n 
 config.localizator.mixins.spartanWeaponrySwordTooltipMixin=(SpartanWeaponry) Localized Material Bonus Tooltip Mixin
 config.localizator.mixins.spartanWeaponrySwordTooltipMixin.tooltip=Localizes Swords tooltip "Material Bonus:" text.\n 
+config.localizator.mixins.xatEnderQueenMessagesMixin=(T&B) Localized Ender Queen messages Mixin
+config.localizator.mixins.xatEnderQueenMessagesMixin.tooltip=Localizes Ender Queen's chat messages when hurt.\n 
+config.localizator.mixins.xatArmorWeightTooltipMixin=(T&B) Localized Armor Weight Tooltip Mixin
+config.localizator.mixins.xatArmorWeightTooltipMixin.tooltip=Localizes the armor weight tooltip text when transformed into Faelis race.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin

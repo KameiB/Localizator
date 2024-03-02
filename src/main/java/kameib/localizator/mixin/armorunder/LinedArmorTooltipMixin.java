@@ -22,6 +22,7 @@ public abstract class LinedArmorTooltipMixin {
             ),            
             remap = false
     )
+    @SuppressWarnings("deprecation")
     // Line 31: tip = Strings.translateFormatted("tooltip.auw.xlining.ozzy", new Object[]{what});
     private String localizator_LinedArmorTooltip_addPlainLinedArmorTooltip(String key, Object[] format) {
         // This 'if' is in case the mod's author applies this fix.

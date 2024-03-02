@@ -106,7 +106,6 @@ public abstract class ArtifactMixin implements IArtifactMixin {
         return list.get(random.nextInt(list.size()));
     }
 
-    @Shadow(remap = false) private static List<String> objectTypes;
     @Shadow(remap = false) private static List<String> traits;
     @Shadow(remap = false) private static List<String> powers;
     @Shadow(remap = false) private String objectType;

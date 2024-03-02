@@ -41,7 +41,6 @@ public abstract class ItemRingFlywheelMixin extends AGenericItemBauble {
             String color = energy == 0 ? "" + TextFormatting.DARK_RED : (energy < max / 4 ? "" + TextFormatting.RED : (energy < max / 2 ? "" + TextFormatting.YELLOW : "" + TextFormatting.GREEN));
             tooltip.add(color + String.valueOf(energy) + "/" + max + " RF");
         }
-
     }
     
     @Shadow(remap = false)

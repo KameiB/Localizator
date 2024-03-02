@@ -85,6 +85,10 @@ config.localizator.mixins.scalingHealthKeybindsMixin=(ScalingHealth) Mixin Contr
 config.localizator.mixins.scalingHealthKeybindsMixin.tooltip=Localiza los nombres de los controles de Scaling Health en la pantalla Opciones de controles.\n 
 config.localizator.mixins.spartanWeaponrySwordTooltipMixin=(SpartanWeaponry) Mixin Bono del material localizado
 config.localizator.mixins.spartanWeaponrySwordTooltipMixin.tooltip=Localiza el texto "Material Bonus:" en la descripción de las espadas.\n 
+config.localizator.mixins.xatEnderQueenMessagesMixin=(T&B) Mixin Mensajes de Reina Ender localizados
+config.localizator.mixins.xatEnderQueenMessagesMixin.tooltip=Localiza los mensajes de chat cuando la Reina Ender recibe daño.\n 
+config.localizator.mixins.xatArmorWeightTooltipMixin=(T&B) Mixin Descripción de peso armadura localizado
+config.localizator.mixins.xatArmorWeightTooltipMixin.tooltip=Localiza el texto de Peso de armadura en su descripción, cuando se está transformado en la raza Felino.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
