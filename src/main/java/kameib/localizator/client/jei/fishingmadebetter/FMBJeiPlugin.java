@@ -15,9 +15,9 @@ public class FMBJeiPlugin implements IModPlugin {
     private static IJeiRuntime runtime;
     
     @Override
-    public void registerCategories(IRecipeCategoryRegistration registry) {
-        fishReq = new FishRequirementsRecipeCategory(registry.getJeiHelpers().getGuiHelper());
+    public void registerCategories(@Nonnull IRecipeCategoryRegistration registry) {
         if (Loader.isModLoaded("fishingmadebetter")) {
+            fishReq = new FishRequirementsRecipeCategory(registry.getJeiHelpers().getGuiHelper());
             registry.addRecipeCategories(fishReq);
         }
     }
