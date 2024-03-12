@@ -1,9 +1,10 @@
 package kameib.localizator.mixin.fishingmadebetter;
 
+import com.google.common.base.Strings;
+import kameib.localizator.common.text.event.FishRequirementsClickEvent;
 import kameib.localizator.data.Production;
 import kameib.localizator.util.FMB_BetterFishUtil;
 import kameib.localizator.util.LocLoreUtil;
-import kameib.localizator.common.text.event.FishRequirementsClickEvent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -65,7 +66,9 @@ public abstract class FishingEventHandlerMixin {
                 "tooltip.fishingmadebetter.fish.alive");
         argList.add("");
         
-        return LocLoreUtil.appendLocLore(itemStack, locLoreList, argList);
+        return LocLoreUtil.appendLocLore(
+                !Strings.isNullOrEmpty(FMB_BetterFishUtil.getFishCustomLangKey(itemStack)) ? itemStack.setTranslatableName(FMB_BetterFishUtil.getFishCustomLangKey(itemStack)) : itemStack,
+                locLoreList, argList);
     }
     
     @Redirect(
