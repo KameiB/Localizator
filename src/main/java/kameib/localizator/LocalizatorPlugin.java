@@ -163,14 +163,14 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
                     Localizator.LOGGER.info("[Localizator] Early Enqueue: " + config.getName());
-                    FermiumRegistryAPI.enqueueMixin(false, config.getJson(), config.isEnabled());
+                    FermiumRegistryAPI.enqueueMixin(false, config.getJson());
                 }
             }
         }
         if (ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Charm Web Immune Mixin") 
                 || ForgeConfigHandler.getBoolean("(BountifulBaubles) Ankh Shield Web Immune Mixin")) {
             Localizator.LOGGER.info("[Localizator] Early Enqueue: " + "(Minecraft) Entity.isInWeb Accessor for BountifulBaubles Mixins");
-            FermiumRegistryAPI.enqueueMixin(false, "mixins.core.entityaccessor.json", true);
+            FermiumRegistryAPI.enqueueMixin(false, "mixins.core.entityaccessor.json");
         }
 
         Localizator.LOGGER.info("[Localizator] Late Enqueue Start!");
@@ -180,7 +180,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
                     Localizator.LOGGER.info("[Localizator] Late Enqueue: " + config.getName());
-                    FermiumRegistryAPI.enqueueMixin(true, config.getJson(), config.isEnabled());
+                    FermiumRegistryAPI.enqueueMixin(true, config.getJson());
                 }
             }
         }
