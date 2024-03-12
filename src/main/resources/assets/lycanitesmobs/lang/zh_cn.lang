@@ -1,4 +1,6 @@
+## If you see '%s', '%1$s', '%2$s', please don't translate or delete them!
 # ========================================================================
+# %s replaces original %event%
 event.started_=%s正在发生！
 event.extended_=%s被延长！
 event.finished_=%s已经结束了！
@@ -7,30 +9,38 @@ event.boss.extended_=%s正在降临！
 event.boss.finished_=%s解除了！
 #
 # Soulstone:
+# %s replaces original %creature%
 message.soulstone.pet.added_=你的%s已经被绑定，你可以在你的宠物管理栏里找到它。
 message.soulstone.mount.added_=你的%s已经被绑定，你可以在你的坐骑管理栏中找到它。
 #
 # ========== Commands ==========
+# %s replaces original %debug%
 lyc.command.debug.set_=更新 %s。
 #
 # Spawners:
+# %s replaces original %value%
 lyc.command.spawners.creative_=为创造模式玩家切换生物事件触发。
 #
 # Mob Events:
 lyc.command.mobevent.creative_=为创造模式玩家切换生物事件。
 #
-# ========== System ========== 
+# ========== System ==========
+# %1$s replaces original {current} | %2$s replaces original {latest}
 lyc.version.newer_=你目前正在使用的恐怖生物版本是 %1$s 但现在发现有新版本 %2$s， 建议你通过更新来获得更好的体验！
 #
 # ========== Messages ==========
 # Beastiary:
+# %1$s replaces original %creature% | %2$s replaces original %rank%
 message.beastiary.new_=你获得了 %2$s 点%1$s的知识点数！请查看生物图鉴！
 message.beastiary.rank_=你获得了 %2$s 点%1$s的知识点数！请查看生物图鉴！
+# %s replaces original %creature%
 message.beastiary.summonable_=你现在能够召唤%s了！不过，在此之前你还需要准备好召唤的物品。
 message.beastiary.summonable.colors_=你现在可以召唤%s的亚种（颜色变化）了！
 message.beastiary.summonable.skins_=你现在可以召唤%s的亚种（皮肤变化）了！
+# %1$s replaces original %rank% | %2$s replaces original %creature%
 message.beastiary.known_=你已经拥有了 %1$s 点%2$s的知识点数。
 # Pet:
+# %s replaces original %creature%
 message.pet.tamed_=%s和你的关系似乎变亲近了！
 message.pet.tamefail_=%s想要更多！
 message.pet.mount.baby_=这只%s太年轻了，不能背动你！

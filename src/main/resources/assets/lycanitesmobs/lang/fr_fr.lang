@@ -1,5 +1,6 @@
 # ========================================================================
 #
 # Pet:
+# %s replaces original %creature%
 message.pet.tamed_=Le/la %s semble beaucoup vous aimer à présent !
 #

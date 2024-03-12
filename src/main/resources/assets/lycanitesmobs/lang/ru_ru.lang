@@ -1,8 +1,11 @@
+## If you see '%s', '%1$s', '%2$s', please don't translate or delete them!
 # ========================================================================
+# %s replaces original %event%
 event.started_=%s началось!
 event.finished_=%s закончилось!
 #
 # Pet:
+# %s replaces original %creature%
 message.pet.tamed_=%s теперь приручен вами!
 message.pet.tamefail_=%s хочет больше!
 message.pet.mount.baby_=%s может нести вас, только когда вырастет!

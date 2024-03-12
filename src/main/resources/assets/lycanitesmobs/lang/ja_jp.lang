@@ -1,4 +1,6 @@
-﻿# ========================================================================
+﻿## If you see '%s', '%1$s', '%2$s', please don't translate or delete them!
+# ========================================================================
+# %s replaces original %event%
 event.started_=%s が発生しています！
 event.extended_=%s が拡張されました！
 event.finished_=%s は終了しました！
@@ -7,31 +9,45 @@ event.boss.extended_=%s が近づいています！
 event.boss.finished_=%s は登場しました！
 #
 # Soulstone:
+# %s replaces original %creature%
 message.soulstone.pet.added_=あなたの %s はバインドされています。ペット管理バーで見つけることができます。チャージを食べさせます！
 message.soulstone.mount.added_=%s はバインドされています。マウント管理バーで見つけることができます。チャージを食べさせます！
 #
 # ========== Commands ==========
+# %s replaces original %debug%
 lyc.command.debug.set_=%s が更新されました.
 #
 # Spawners:
+# %s replaces original %value%
 lyc.command.spawners.creative_=クリエイティブモードでのスポーナーが %s に設定されました。（true = 有効、false = 無効）。
 #
 # Mob Events:
-lyc.command.mobevent.creative_=Los eventos de criaturas para el modo creativo están %value% (true=activados y false=desactivados).
+# %s replaces original %value%
+lyc.command.mobevent.creative_=クリエイティブモードでのイベントが %s に確定されました。（true = 有効、false = 無効）。
 #
-# ========== System ========== 
+# Player:
+lyc.command.player.invalidarguments=コマンドの入力が間違っています。正解は: spirit, focus
+lyc.command.player.spirit=プレイヤーのスピリッツが回復されました。
+lyc.command.player.focus=プレイヤーのマナが回復されました。
+#
+# ========== System ==========
+# %1$s replaces original {current} | %2$s replaces original {latest}
 lyc.version.newer_=現在使用しているホラークリーチャーのバージョンは %1$s ですが、新しいバージョン %2$s が見つかりました。より良いエクスペリエンスを得るために更新することをお勧めします！
 #
 # ========== Messages ==========
 # Beastiary:
+# %1$s replaces original %creature% | %2$s replaces original %rank%
 message.beastiary.new_=%1$s を発見しましたので、生物の本に情報が記入されました！
 message.beastiary.rank_=%1$s について知識を高めましたので知識ランクがレベル %2$s になりました！
+# %s replaces original %creature%
 message.beastiary.tameable_=%s を飼いならせるようになりました！
 message.beastiary.summonable_=%s を召喚できるようになりました！ただし、この前に、召喚するアイテムを準備する必要があります。
 message.beastiary.summonable.colors_=%s の色違いを召喚できるようになりました！
 message.beastiary.summonable.skins_=%s の亜種を召喚できるようになりました！
+# %1$s replaces original %rank% | %2$s replaces original %creature%
 message.beastiary.known_=あなたはすでに %2$s の知識ランクレベル %1$s を持っています。
 # Pet:
+# %s replaces original %creature%
 message.pet.tamed_=%s はあなたが好きになってペットになりました！魂の石でソールバインドを忘れずに！
 message.pet.tamefail_=%s はもっと欲しい！
 message.pet.tamefail.knowledge_=%s にエサをやることで知識を高めています。レベル２に上がったら飼いならす事が出来ます！
@@ -42,7 +58,7 @@ message.pet.mount.baby_=%s は若すぎて騎乘できません！
 Flowersaur=フラワーサウルス
 Gooderness=善良さ
 Satan Claws=サンタ殺ーす
-Krampus=Krampus
+Krampus=クランパス
 Twisted Ent=ツイストエント
 Salty Tree=滅びの木
 Vampire Bat=吸血コウモリ
@@ -169,3 +185,6 @@ Russet Amalgalich  Lvl 2 (Phase 3)=赤茶色 アマルガリッチ  レベル２
 Russet Amalgalich  Lvl 3 (Phase 1)=赤茶色 アマルガリッチ  レベル３ （フェーズ１）
 Russet Amalgalich  Lvl 3 (Phase 2)=赤茶色 アマルガリッチ  レベル３ （フェーズ２）
 Russet Amalgalich  Lvl 3 (Phase 3)=赤茶色 アマルガリッチ  レベル３ （フェーズ３）
+#
+# Damage sources
+cold_fire=コールドファイヤー
