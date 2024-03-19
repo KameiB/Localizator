@@ -3,6 +3,7 @@ package kameib.localizator;
 import fermiumbooter.FermiumRegistryAPI;
 import kameib.localizator.data.ConfigToMixin;
 import kameib.localizator.handlers.ForgeConfigHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
 
@@ -174,13 +175,11 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         }
 
         Localizator.LOGGER.info("[Localizator] Late Enqueue Start!");
-        //List<String> activeModList = ModListGetter.getModList();
-        //activeModList.add("FML");
         for (Map.Entry<String, List<ConfigToMixin>> entry : lateMap.entrySet()) {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
                     Localizator.LOGGER.info("[Localizator] Late Enqueue: " + config.getName());
-                    FermiumRegistryAPI.enqueueMixin(true, config.getJson());
+                    FermiumRegistryAPI.enqueueMixin(true, config.getJson(), () -> Loader.isModLoaded(entry.getKey()));
                 }
             }
         }
