@@ -1,15 +1,21 @@
 package kameib.localizator.data;
 
+import kameib.localizator.handlers.ForgeConfigHandler;
 
 public class ConfigToMixin {
-    // "Localized Custom Names Mixin (Neat)", neatLocCustomNamesMixin, "mixins.neat.healthbar.json"
     private final String name;
     private final boolean enabled;
     private final String json;
 
-    public ConfigToMixin(String mixinName, boolean configKey, String associatedJson) {
+    public ConfigToMixin(String mixinName, String associatedJson) {
         name = mixinName;
-        enabled = configKey;
+        enabled = ForgeConfigHandler.getBoolean(mixinName);
+        json = associatedJson;
+    }
+
+    public ConfigToMixin(String mixinName, String associatedJson, boolean enableMixin) {
+        name = mixinName;
+        enabled = enableMixin;
         json = associatedJson;
     }
 
