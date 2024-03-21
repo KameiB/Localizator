@@ -6,7 +6,8 @@
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "client": [
-    "spartanweaponry.ItemSwordBaseMixin"
+    "spartanweaponry.ItemSwordBaseMixin",
+    "spartanweaponry.ItemThrowingWeaponMixin"
   ],
   "injectors": {
     "maxShiftBy": 10
