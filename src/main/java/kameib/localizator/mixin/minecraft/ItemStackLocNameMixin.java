@@ -5,7 +5,6 @@ import kameib.localizator.handlers.ForgeConfigHandler;
 import kameib.localizator.util.LocNameArguments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.util.Constants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -51,9 +50,9 @@ public abstract class ItemStackLocNameMixin
                 if (nbtTagCompound.hasKey("LocName", Constants.NBT.TAG_STRING)) {
                     List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack) ((Object) this));
                     if (argsList.isEmpty()) {
-                        cir.setReturnValue(TextFormatting.RESET + net.minecraft.util.text.translation.I18n.translateToLocal(nbtTagCompound.getString("LocName")));
+                        cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocal(nbtTagCompound.getString("LocName")));
                     } else {
-                        cir.setReturnValue(TextFormatting.RESET + net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
+                        cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
                                 nbtTagCompound.getString("LocName"),
                                 argsList.toArray()));
                     }
@@ -84,12 +83,31 @@ public abstract class ItemStackLocNameMixin
         List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack)((Object)this));
         if (!argsList.isEmpty()) {
             NBTTagCompound nbtTagCompound = getSubCompound("display");
-            cir.setReturnValue(TextFormatting.RESET + net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
+            cir.setReturnValue(net.minecraft.util.text.translation.I18n.translateToLocalFormatted(
                     nbtTagCompound.getString("LocName"),
                     argsList.toArray()));
         }
     }
 
+    @Inject(
+            method = "hasDisplayName()Z",
+            at = @At("HEAD"),
+            cancellable = true,
+            remap = Production.inProduction
+    )
+    // If LocName over Name config option is true, and if LocName exists, return false.
+    // By doing this, the LocName won't be ITALIC formatted.
+    // Therefore, Textformatting.RESET won't be needed on other parts of this class.
+    // Line 652: public boolean hasDisplayName()
+    private void Minecraft_ItemStack_hasDisplayName_LocName(CallbackInfoReturnable<Boolean> cir) {
+        if (ForgeConfigHandler.serverConfig.minecraftLocNameOverName) {
+            NBTTagCompound nbttagcompound = this.getSubCompound("display");
+            if(nbttagcompound != null && nbttagcompound.hasKey("LocName", Constants.NBT.TAG_STRING)){
+                cir.setReturnValue(false);
+            }
+        }
+    }
+    
     /**
      * <br>Just after return, clear the LocName and LocNameArgs tags (if present).</br>
      * <br>This is meant to be called when the player renames an item that also has the LocName tag.</br>
