@@ -143,6 +143,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         // Scaling Health
         List<ConfigToMixin> scalingHealthList = new ArrayList<>();
         scalingHealthList.add(new ConfigToMixin("(ScalingHealth) Localized Keybinds Mixin","mixins.scalinghealth.keybinds.json"));
+        scalingHealthList.add(new ConfigToMixin("(ScalingHealth) Localized Messages Mixin","mixins.scalinghealth.messages.json"));
         map.put("scalinghealth", scalingHealthList);
         // Spartan Weaponry
         List<ConfigToMixin> spartanWeaponryList = new ArrayList<>();

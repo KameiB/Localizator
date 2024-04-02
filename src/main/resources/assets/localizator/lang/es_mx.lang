@@ -89,6 +89,8 @@ config.localizator.mixins.xatEnderQueenMessagesMixin=(T&B) Mixin Mensajes de Rei
 config.localizator.mixins.xatEnderQueenMessagesMixin.tooltip=Localiza los mensajes de chat cuando la Reina Ender recibe daño.\n 
 config.localizator.mixins.xatArmorWeightTooltipMixin=(T&B) Mixin Descripción de peso armadura localizado
 config.localizator.mixins.xatArmorWeightTooltipMixin.tooltip=Localiza el texto de Peso de armadura en su descripción, cuando se está transformado en la raza Felino.\n 
+config.localizator.mixins.scalingHealthMessagesMixin=(ScalingHealth) Mixin mensajes localizados
+config.localizator.mixins.scalingHealthMessagesMixin.tooltip=Localiza los mensajes relacionados con la fecha.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones

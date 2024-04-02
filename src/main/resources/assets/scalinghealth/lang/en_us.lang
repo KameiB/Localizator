@@ -1,3 +1,8 @@
 # Keybinds
 key.scalinghealth.difficulty_meter=Difficulty Meter - Show
 key.scalinghealth.show_always=Difficulty Meter - Show Always
+
+# Misc
+misc.scalinghealth.difficultyReset=[Scaling Health] Your difficulty has been reset.
+misc.scalinghealth.healthReset=[Scaling Health] Your health has been reset.
+misc.scalinghealth.AprilFoolTime=[Scaling Health] It's April Fool's time... hehehe.

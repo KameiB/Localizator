@@ -1,3 +1,8 @@
 # Keybinds
 key.scalinghealth.difficulty_meter=Barra de dificultad - Mostrar
 key.scalinghealth.show_always=Barra de dificultad - Siempre visible
+
+# Misc
+misc.scalinghealth.difficultyReset=[Scaling Health] Tu dificultad se ha restablecido.
+misc.scalinghealth.healthReset=[Scaling Health] Tu salud se ha restablecido.
+misc.scalinghealth.AprilFoolTime=[Scaling Health] Hoy es Día de los inocentes... jejeje.

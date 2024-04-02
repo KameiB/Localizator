@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Config(modid = Localizator.MODID)
+@SuppressWarnings("unused")
 public class ForgeConfigHandler {
 	@Config.Comment("Enable/Disable Localization Mixins (Tweaks)")
 	@Config.Name("Localizing_Mixins")
@@ -216,6 +217,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.xatArmorWeightTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean xatArmorWeightTooltipMixin = !Production.inProduction;
+		@Config.Comment("Localizes Scaling Health messages related to the date.")
+		@Config.Name("(ScalingHealth) Localized Messages Mixin")
+		@Config.LangKey("config.localizator.mixins.scalingHealthMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean scalingHealthMessagesMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {
@@ -332,11 +338,10 @@ public class ForgeConfigHandler {
 	}
 
 	/**
-	 * Reads the config file before loading my mixins, because ConfigManager won't do it until later.
-	 * Code based on original MIT Licensed code:
-	 * https://github.com/fonnymunkey/RLMixins/blob/main/src/main/java/rlmixins/handlers/ForgeConfigHandler.java
-	 * TODO: Try to implement a Custom Config Manager.
-	*/
+     * Reads the config file before loading my mixins, because ConfigManager won't do it until later.
+     * Code based on original MIT Licensed code:
+     * <a href="https://github.com/fonnymunkey/RLMixins/blob/main/src/main/java/rlmixins/handlers/ForgeConfigHandler.java">ForgeConfigHandler.java</a>
+     */
 	//This is jank, but easier than setting up a whole custom GUI config
 	private static File configFile;
 	private static String configBooleanString = "";
