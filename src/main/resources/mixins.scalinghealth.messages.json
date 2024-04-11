@@ -6,7 +6,8 @@
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "mixins": [
-    "scalinghealth.ScalingHealthCommonEventsMixin"
+    "scalinghealth.ScalingHealthCommonEventsMixin",
+    "scalinghealth.BlightHandlerMixin"
   ],
   "injectors": {
     "maxShiftBy": 10
