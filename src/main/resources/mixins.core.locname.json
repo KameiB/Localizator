@@ -8,6 +8,10 @@
   "mixins": [
     "minecraft.ItemStackLocNameMixin"
   ],
+  "client": [
+    "minecraft.GuiIngameMixin",
+    "minecraft.GuiIngameForgeMixin"
+  ],
   "injectors": {
     "maxShiftBy": 10
   }

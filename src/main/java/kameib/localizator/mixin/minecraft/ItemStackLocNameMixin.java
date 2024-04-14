@@ -5,11 +5,14 @@ import kameib.localizator.handlers.ForgeConfigHandler;
 import kameib.localizator.util.LocNameArguments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.util.Constants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -43,6 +46,7 @@ public abstract class ItemStackLocNameMixin
     )
     // Inject just before checking if item has the "Name" NBT tag
     // Line 606: if (nbttagcompound.hasKey("Name", 8))
+    @SuppressWarnings("deprecation")
     private void Minecraft_ItemStack_getDisplayName_LocNameWithArgs(CallbackInfoReturnable<String> cir) {
         if (ForgeConfigHandler.serverConfig.minecraftLocNameOverName) {
             NBTTagCompound nbtTagCompound = getSubCompound("display");
@@ -78,6 +82,7 @@ public abstract class ItemStackLocNameMixin
             remap = Production.inProduction
     )
     // Line 613: return I18n.translateToLocal(nbttagcompound.getString("LocName"));
+    @SuppressWarnings("deprecation")
     private void Minecraft_ItemStack_LocNameWithArgs(CallbackInfoReturnable<String> cir) {
         // All the safety checks must've been run earlier
         List<String> argsList = LocNameArguments.getLocNameArgs((ItemStack)((Object)this));
@@ -88,26 +93,7 @@ public abstract class ItemStackLocNameMixin
                     argsList.toArray()));
         }
     }
-
-    @Inject(
-            method = "hasDisplayName()Z",
-            at = @At("HEAD"),
-            cancellable = true,
-            remap = Production.inProduction
-    )
-    // If LocName over Name config option is true, and if LocName exists, return false.
-    // By doing this, the LocName won't be ITALIC formatted.
-    // Therefore, Textformatting.RESET won't be needed on other parts of this class.
-    // Line 652: public boolean hasDisplayName()
-    private void Minecraft_ItemStack_hasDisplayName_LocName(CallbackInfoReturnable<Boolean> cir) {
-        if (ForgeConfigHandler.serverConfig.minecraftLocNameOverName) {
-            NBTTagCompound nbttagcompound = this.getSubCompound("display");
-            if(nbttagcompound != null && nbttagcompound.hasKey("LocName", Constants.NBT.TAG_STRING)){
-                cir.setReturnValue(false);
-            }
-        }
-    }
-    
+        
     /**
      * <br>Just after return, clear the LocName and LocNameArgs tags (if present).</br>
      * <br>This is meant to be called when the player renames an item that also has the LocName tag.</br>
@@ -144,4 +130,30 @@ public abstract class ItemStackLocNameMixin
             nbtTagCompound.removeTag("LocName");
         }
     }
+    
+    @ModifyVariable(
+            method = "getTooltip(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/client/util/ITooltipFlag;)Ljava/util/List;",
+            name = "s",
+            at = @At(
+                    value = "STORE",
+                    ordinal = 1
+            ),
+            remap = Production.inProduction
+    )
+    // Only apply TextFormatting.ITALIC if the item has no LocName NBT tag
+    // Line 666: s = TextFormatting.ITALIC + s;
+    private String Minecraft_getTooltip_handleItalicName(String s) {
+        if (localizator$hasTranslatableName() && ForgeConfigHandler.serverConfig.minecraftLocNameOverName) {
+            if (s.startsWith(String.valueOf(TextFormatting.ITALIC))) {
+                return s.replaceFirst(String.valueOf(TextFormatting.ITALIC), "");
+            }
+        }
+        return s;
+    }
+    
+    @Unique
+    public boolean localizator$hasTranslatableName() {
+        NBTTagCompound nbttagcompound = this.getSubCompound("display");
+        return nbttagcompound != null && nbttagcompound.hasKey("LocName", Constants.NBT.TAG_STRING);
+    } 
 }
