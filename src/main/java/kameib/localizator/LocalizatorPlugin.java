@@ -76,6 +76,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         charmList.add(new ConfigToMixin("(Charm) Localized Cake Name Mixin","mixins.charm.cakename.json"));
         charmList.add(new ConfigToMixin("(Charm) Localized Composter JEI Mixin","mixins.charm.compostergui.json"));
         charmList.add(new ConfigToMixin("(Charm) Localized Container Name Mixin","mixins.charm.containername.json"));
+        charmList.add(new ConfigToMixin("(Charm) Localized World Crates Name Mixin","mixins.charm.worldcratesname.json"));
         map.put("charm", charmList);
         // Dynamic Trees
         List<ConfigToMixin> dynamictreesList = new ArrayList<>();

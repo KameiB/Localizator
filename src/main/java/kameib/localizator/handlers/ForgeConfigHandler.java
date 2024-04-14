@@ -132,6 +132,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.charmContainerNameMixin")
 		@Config.RequiresMcRestart
 		public boolean charmContainerNameMixin = !Production.inProduction;
+		@Config.Comment("Localizes the names of Charm Crates generated in the world.")
+		@Config.Name("(Charm) Localized World Crates Name Mixin")
+		@Config.LangKey("config.localizator.mixins.charmWorldCratesNameMixin")
+		@Config.RequiresMcRestart
+		public boolean charmWorldCratesNameMixin = !Production.inProduction;
 		@Config.Comment("Enables support for Language Keys in Entity's CustomName tag.")
 		@Config.Name("(WAILA) Entity Name Mixin")
 		@Config.LangKey("config.localizator.mixins.wailaEntityNameMixin")
