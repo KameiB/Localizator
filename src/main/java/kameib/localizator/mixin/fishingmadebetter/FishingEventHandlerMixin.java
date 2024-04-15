@@ -1,6 +1,5 @@
 package kameib.localizator.mixin.fishingmadebetter;
 
-import com.google.common.base.Strings;
 import kameib.localizator.common.text.event.FishRequirementsClickEvent;
 import kameib.localizator.data.Production;
 import kameib.localizator.util.FMB_BetterFishUtil;
@@ -66,9 +65,10 @@ public abstract class FishingEventHandlerMixin {
                 "tooltip.fishingmadebetter.fish.alive");
         argList.add("");
         
-        return LocLoreUtil.appendLocLore(
+        /*return LocLoreUtil.appendLocLore(
                 !Strings.isNullOrEmpty(FMB_BetterFishUtil.getFishCustomLangKey(itemStack)) ? itemStack.setTranslatableName(FMB_BetterFishUtil.getFishCustomLangKey(itemStack)) : itemStack,
-                locLoreList, argList);
+                locLoreList, argList);*/
+        return LocLoreUtil.appendLocLore(itemStack, locLoreList, argList);
     }
     
     @Redirect(
@@ -249,6 +249,7 @@ public abstract class FishingEventHandlerMixin {
         }
         else {
             ItemStack newItem = cir.getReturnValue();
+            newItem.clearCustomName(); // Remove Name, to add LocName
             newItem.setTranslatableName(FMB_BetterFishUtil.getFishCaughtDataUnlocalizedName(fishCaughtData));
             
             List<String> locLoreList = new ArrayList<>();
