@@ -35,6 +35,8 @@ translation.infernalmobs:entity.defiledlands.host=Anfitrion
 translation.infernalmobs:entity.defiledlands.slime_defiled=Slime corrupto
 translation.infernalmobs:entity.defiledlands.the_destroyer=La Destructora
 translation.infernalmobs:entity.defiledlands.the_mourner=El Doliente
+# Ice and Fire
+translation.infernalmobs:entity.cyclops=Cíclope
 # Quark
 translation.infernalmobs:entity.quark:pirate=Pirata
 # SRParasites

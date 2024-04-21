@@ -35,6 +35,8 @@ translation.infernalmobs:entity.defiledlands.host=Host
 translation.infernalmobs:entity.defiledlands.slime_defiled=Defiled Slime
 translation.infernalmobs:entity.defiledlands.the_destroyer=The Destroyer
 translation.infernalmobs:entity.defiledlands.the_mourner=The Mourner
+# Ice and Fire
+translation.infernalmobs:entity.cyclops=Cyclops
 # Quark
 translation.infernalmobs:entity.quark:pirate=Pirate
 # SRParasites
