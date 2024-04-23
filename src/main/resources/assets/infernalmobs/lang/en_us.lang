@@ -36,7 +36,17 @@ translation.infernalmobs:entity.defiledlands.slime_defiled=Defiled Slime
 translation.infernalmobs:entity.defiledlands.the_destroyer=The Destroyer
 translation.infernalmobs:entity.defiledlands.the_mourner=The Mourner
 # Ice and Fire
+translation.infernalmobs:entity.gorgon=Gorgon
 translation.infernalmobs:entity.cyclops=Cyclops
+translation.infernalmobs:entity.troll=Troll
+translation.infernalmobs:entity.dread_thrall=Dread Thrall
+translation.infernalmobs:entity.dread_ghoul=Dread Ghoul
+translation.infernalmobs:entity.dread_beast=Dread Beast
+translation.infernalmobs:entity.dread_scuttler=Dread Scuttler
+translation.infernalmobs:entity.dread_lich=Dread Lich
+translation.infernalmobs:entity.dread_lich_skull=Dread Lich Skull
+translation.infernalmobs:entity.dread_knight=Dread Knight
+translation.infernalmobs:entity.dread_horse=Dread Knight Horse
 # Quark
 translation.infernalmobs:entity.quark:pirate=Pirate
 # SRParasites

@@ -36,7 +36,17 @@ translation.infernalmobs:entity.defiledlands.slime_defiled=Slime corrupto
 translation.infernalmobs:entity.defiledlands.the_destroyer=La Destructora
 translation.infernalmobs:entity.defiledlands.the_mourner=El Doliente
 # Ice and Fire
+translation.infernalmobs:entity.gorgon=Gorgona
 translation.infernalmobs:entity.cyclops=Cíclope
+translation.infernalmobs:entity.troll=Troll
+translation.infernalmobs:entity.dread_thrall=Thrall del horror
+translation.infernalmobs:entity.dread_ghoul=Necrofago del horror
+translation.infernalmobs:entity.dread_beast=Bestia del horror
+translation.infernalmobs:entity.dread_scuttler=Espantapajaros del horror
+translation.infernalmobs:entity.dread_lich=Liche del horror
+translation.infernalmobs:entity.dread_lich_skull=Craneo de Liche del horror
+translation.infernalmobs:entity.dread_knight=Caballero del horror
+translation.infernalmobs:entity.dread_horse=Caballo del Caballero del horror
 # Quark
 translation.infernalmobs:entity.quark:pirate=Pirata
 # SRParasites
