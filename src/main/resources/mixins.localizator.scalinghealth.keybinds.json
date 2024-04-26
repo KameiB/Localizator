@@ -6,7 +6,8 @@
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "client": [
-    "scalinghealth.KeyTrackerSHMixin"
+    "scalinghealth.KeyTrackerSHMixin",
+    "scalinghealth.KeyTrackerSLMixin"
   ],
   "injectors": {
     "maxShiftBy": 10
