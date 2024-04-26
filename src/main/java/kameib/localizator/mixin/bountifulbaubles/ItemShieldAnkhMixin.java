@@ -32,7 +32,6 @@ public abstract class ItemShieldAnkhMixin extends ItemShieldObsidian {
     @Inject(
             method = "onWornTick(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityLivingBase;)V",
             at = @At("HEAD"),
-            cancellable = false,
             remap = false
     )
     // Adds Cobweb immunity because it makes sense to me >:c

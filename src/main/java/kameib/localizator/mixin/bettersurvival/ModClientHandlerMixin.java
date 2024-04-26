@@ -20,12 +20,9 @@ public abstract class ModClientHandlerMixin {
             remap = false
     )
     @SideOnly(Side.CLIENT)
+    // Make "hits remaining" text translatable
     // Line 112: event.getToolTip().add(h + "/" + ForgeConfigHandler.potions.maximumPotionHits + " hits remaining");
     private Object localizator_BetterSurvival_ModClientHandler_onTooltipRender_addHitsRemaining(Object hitsRemainingObj) {
-        if (hitsRemainingObj instanceof String) {
-            String hitsRemaining = ((String)hitsRemainingObj).replace("hits remaining", I18n.format("mujmajnkraftsbettersurvival.imbuedweapon.hitsRemaining"));
-            hitsRemainingObj = hitsRemaining;
-        }
-        return hitsRemainingObj;
+            return ((String)hitsRemainingObj).replace("hits remaining", I18n.format("mujmajnkraftsbettersurvival.imbuedweapon.hitsRemaining"));
     }
 }

@@ -136,15 +136,16 @@ public abstract class ModFertilityMixin {
     )
     // Line 112
     private static void localizator_SereneSeasons_ModFertility_initSeasonCrops(String[] seeds, HashSet<String> cropSet, int bitmask, CallbackInfo ci) {
-        Item item;
         if (Loader.isModLoaded("rustic")) {
+            Item item;
+            int seasons;
             for (String seed : seeds) {
                 item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(seed));
                 if (item instanceof ItemStakeCropSeed) {
                     if (bitmask != 0) {
                         // Their plants are already added to allListedPlants, so no need to add those here
                         if (seedSeasons.containsKey(seed)) {
-                            int seasons = seedSeasons.get(seed);
+                            seasons = seedSeasons.get(seed);
                             seedSeasons.put(seed, seasons | bitmask);
                         } else {
                             seedSeasons.put(seed, bitmask);

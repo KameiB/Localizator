@@ -17,7 +17,7 @@ public abstract class GuiModListMixin {
     @Shadow(remap = false) private ModContainer selectedMod;    
         
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;initGui()V",
+            method = "initGui()V",
             at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 1),
             remap = Production.inProduction
     )
@@ -29,7 +29,7 @@ public abstract class GuiModListMixin {
     }
     
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;initGui()V",
+            method = "initGui()V",
             at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 2),
             remap = Production.inProduction
     )
@@ -41,7 +41,7 @@ public abstract class GuiModListMixin {
     }
         
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;drawScreen(IIF)V",
+            method = "drawScreen(IIF)V",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraftforge/fml/client/GuiModList;drawCenteredString(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V"
@@ -56,7 +56,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -70,7 +70,7 @@ public abstract class GuiModListMixin {
         return TextFormatting.AQUA + (String)e;
     }
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -85,7 +85,7 @@ public abstract class GuiModListMixin {
     }
     
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -102,7 +102,7 @@ public abstract class GuiModListMixin {
     }    
     
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -120,7 +120,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -136,7 +136,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -151,7 +151,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -167,7 +167,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -187,7 +187,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -204,7 +204,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -220,7 +220,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -236,7 +236,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -256,7 +256,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -271,7 +271,7 @@ public abstract class GuiModListMixin {
     }
     
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
@@ -286,7 +286,7 @@ public abstract class GuiModListMixin {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiModList;updateCache()V",
+            method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",

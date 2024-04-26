@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(GuiSlotModList.class)
 public abstract class GuiSlotModListMixin {
     @ModifyArg(
-            method = "Lnet/minecraftforge/fml/client/GuiSlotModList;drawSlot(IIIILnet/minecraft/client/renderer/Tessellator;)V",
+            method = "drawSlot(IIIILnet/minecraft/client/renderer/Tessellator;)V",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/gui/FontRenderer;trimStringToWidth(Ljava/lang/String;I)Ljava/lang/String;",

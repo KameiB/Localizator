@@ -42,7 +42,7 @@ public abstract class BossOverlayMixin {
                 else { // getFormattedText default behaviour
                     stringbuilder.append(s);
                 }
-                stringbuilder.append((Object) TextFormatting.RESET);
+                stringbuilder.append(TextFormatting.RESET);
             }
         }
         return stringbuilder.toString();
