@@ -21,6 +21,7 @@ public abstract class BaubleAttributeModifierHandlerMixin {
             cancellable = true,
             remap = false
     )
+    // Line 137: event.getToolTip().add(BountifulBaubles.proxy.translate("bountifulbaubles.modifier." + mod + ".info"));
     @SideOnly(Side.CLIENT)
     private static void localizator_BountifulBaubles_AttributeModifierHandler_onItemTooltip_noModifierAtName(CallbackInfo ci) {
         if (ForgeConfigHandler.clientConfig.bountifulbaublesRemoveModifierFromName) {

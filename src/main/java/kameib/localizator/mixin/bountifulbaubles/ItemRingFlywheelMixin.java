@@ -32,6 +32,7 @@ public abstract class ItemRingFlywheelMixin extends AGenericItemBauble {
      */
     @SideOnly(Side.CLIENT)
     @Overwrite(remap = Production.inProduction)
+    // Line 64: public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
         IEnergyStorage e = (IEnergyStorage)stack.getCapability(ENERGY_STORAGE_CAPABILITY, (EnumFacing)null);

@@ -23,6 +23,7 @@ public abstract class WeaponToolArmorBaseMixin {
             remap = false
     )
     @SideOnly(Side.CLIENT)
+    // Make "Current Adaptation:" text translatable
     // Line 105: tooltip.add(TextFormatting.DARK_PURPLE + "Current Adaptation:");
     private boolean localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipAdaptation(List<String> tooltip, Object e) {
         return tooltip.add(TextFormatting.DARK_PURPLE + I18n.format("tooltip.srparasites.armor.adaptation"));
@@ -34,6 +35,7 @@ public abstract class WeaponToolArmorBaseMixin {
             remap = false
     )
     @SideOnly(Side.CLIENT)
+    // Make resistances texts translatable
     // Line 113: tooltip.add(TextFormatting.YELLOW + "-> " + (String)resistanceS.get(i));
     private Object localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipResistance(Object resistanceObj) {
         if (ForgeConfigHandler.clientConfig.srparasitesResistances) {
@@ -65,8 +67,9 @@ public abstract class WeaponToolArmorBaseMixin {
             remap = false
     )
     @SideOnly(Side.CLIENT)
+    // Make " reduction: " text translatable
     // Line 114: tooltip.add(TextFormatting.YELLOW + " reduction: " + formatResult + "%");
     private Object localizator_SRParasites_WeaponToolArmorBase_addInformation_tooltipReduction(Object reductionObj) {
-        return ((String)reductionObj).replace(" reduction:", I18n.format("tooltip.srparasites.armor.reduction"));        
+        return ((String)reductionObj).replace(" reduction:", TextFormatting.GREEN + I18n.format("tooltip.srparasites.armor.reduction"));        
     }
 }
