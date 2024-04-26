@@ -1,3 +1,6 @@
+# Entity names
+entity.ItemFrame.name=Item Frame
+
 # Biome names
 biome.minecraft:ocean.name=Ocean
 biome.minecraft:plains.name=Plains

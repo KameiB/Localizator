@@ -1,3 +1,6 @@
+# Entity names
+entity.ItemFrame.name=Marco
+
 # Biome names
 biome.minecraft:ocean.name=Océano
 biome.minecraft:plains.name=Llanuras
