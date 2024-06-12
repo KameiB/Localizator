@@ -3,3 +3,50 @@ tooltip.srparasites.armor.reduction=§a  Reduction:
 
 # Biomes names
 biome.srparasites:biome_parasite.name=Parasite Biome
+
+# Command messages
+message.srparasites.phasedecreased=Phase decreased
+message.srparasites.invalidargument=Invalid argument
+message.srparasites.conjuring=Conjuring: [%s]
+message.srparasites.entitynotfound=Entity not found
+
+message.srparasites.phasesnotactive=Evolution phases is not active
+message.srparasites.toggle_evolutionloss=Current srpevolutionloss is now %s
+message.srparasites.toggle_evolutiongaining=Current srpevolutiongaining is now %s
+message.srparasites.getphase= ======> \n -> Current Evolution Phase: %1$s \n -> Total points: %2$s \n -> Points required for the next phase: %3$s \n -> Progress: %4$s%%  \n -> Phase cooldown: %5$s second(s) remaining \n -> srpevolutiongaining: %6$s (can gain points) \n -> srpevolutionloss: %7$s (cannot lose points) \n -> Number of current parasites: %8$s
+message.srparasites.evolutionlock_reset=The list has been reset
+message.srparasites.evolutionlock_getlist=Current list: %s
+message.srparasites.invalidarg=Invalid arg
+message.srparasites.addpoints_2=Current phase -2, cannot add points
+message.srparasites.addpoints_cannotgain=Current dimension cannot gain points
+message.srparasites.addpoints_cannotlose=Current dimension cannot lose points
+message.srparasites.addpoints_cooldown=Current phase is in cooldown, cannot add points
+message.srparasites.addedpoint=Added %s point
+message.srparasites.addedpoints=Added %s points
+message.srparasites.setcooldown_negative=Cooldown value must be positive or 0
+message.srparasites.setcooldown=The cooldown was set to %s second(s)
+message.srparasites.setphase_high=Invalid argument: phase too high
+message.srparasites.setphase_low=Invalid argument: phase too low
+message.srparasites.setphase_success=Changed Evolution Phase for Parasites to %s
+message.srparasites.invalidcommand=Invalid command
+
+message.srparasites.readconfigurationfile_success=Configutarion files were read successfully \n NOTE: Does not work for all options, such as registry or client-side options
+message.srparasites.readconfigurationfile_error=There was a problem while reading configuration file, check inputs \n NOTE: Does not work for all options, such as registry or client-side options
+message.srparasites.toggle_dotiledrops=Current doTileDrop value is %s
+message.srparasites.toggle_domobevolution=Current doMobEvolution value is %s
+message.srparasites.getbeckonlimit=Current number of Beckons in this dimension spawned by RS: %s
+message.srparasites.resetdatafile=Data file of this dimension has been reset
+message.srparasites.setbeckonlimit=Current number of Beckons in this dimension spawned by RS was set to %s
+
+# Replaced CFG warning messages with these lang keys
+message.srparasites.phase_0_warning=ZERO
+message.srparasites.phase_1_warning=One
+message.srparasites.phase_2_warning=Two
+message.srparasites.phase_3_warning=Three
+message.srparasites.phase_4_warning=Four
+message.srparasites.phase_5_warning=Five
+message.srparasites.phase_6_warning=Six
+message.srparasites.phase_7_warning=Seven
+message.srparasites.phase_8_warning=Eight
+message.srparasites.node_warning=Node
+message.srparasites.colony_warning=Colony

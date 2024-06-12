@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "kameib.localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "srparasites.ParasiteEventEntityMixin",
+    "srparasites.SRPCommandEvolutionMixin",
+    "srparasites.SRPCommandMixin",
+    "srparasites.SRPCommandRootMixin",
+    "srparasites.SRPWorldDataMixin",
+    "srparasites.ParasiteEventWorldMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

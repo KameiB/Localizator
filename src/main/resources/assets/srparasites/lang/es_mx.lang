@@ -2,4 +2,51 @@ tooltip.srparasites.armor.adaptation=Adaptación actual:
 tooltip.srparasites.armor.reduction=§a  Reducción:
 
 # Biomes names
-biome.srparasites:biome_parasite.name=Bioma parásito
+biome.srparasites:biome_parasite.name=Bioma parasitario
+
+# Command messages
+message.srparasites.phasedecreased=Fase reducida
+message.srparasites.invalidargument=Argumento inválido
+message.srparasites.conjuring=Conjurando: [%s]
+message.srparasites.entitynotfound=Entidad no encontrada
+
+message.srparasites.phasesnotactive=Las fases de evolución no están activas
+message.srparasites.toggle_evolutionloss=La pérdida de evolución (srpevolutionloss) ahora es %s
+message.srparasites.toggle_evolutiongaining=La ganancia de evolución (srpevolutiongaining) ahora es %s
+message.srparasites.getphase= ======> \n -> Fase de evolución actual: %1$s \n -> Puntos totales: %2$s \n -> Puntos necesarios para la sig. fase: %3$s \n -> Progreso: %4$s%%  \n -> Enfriamiento de fase: %5$s segundo(s) faltante(s) \n -> srpevolutiongaining: %6$s (pueden ganar puntos) \n -> srpevolutionloss: %7$s (no pueden perder puntos) \n -> Cantidad actual de parásitos: %8$s
+message.srparasites.evolutionlock_reset=La lista se ha reseteado
+message.srparasites.evolutionlock_getlist=Lista actual: %s
+message.srparasites.invalidarg=Arg inválido
+message.srparasites.addpoints_2=Fase actual -2, no se pueden agregar puntos
+message.srparasites.addpoints_cannotgain=La dimensión actual no puede ganar puntos
+message.srparasites.addpoints_cannotlose=La dimensión actual no puede perder puntos
+message.srparasites.addpoints_cooldown=La fase actual está en enfriamiento, no se pueden agregar puntos
+message.srparasites.addedpoint=Se agregó %s punto
+message.srparasites.addedpoints=Se agregaron %s puntos
+message.srparasites.setcooldown_negative=El valor de enfriamiento debe ser positivo o 0
+message.srparasites.setcooldown=El enfriamiento se asignó en %s segundo(s)
+message.srparasites.setphase_high=Argumento inválido: Fase muy alta
+message.srparasites.setphase_low=Argumento inválido: Fase muy baja
+message.srparasites.setphase_success=Se cambió la fase de evolución para los parásitos a %s
+message.srparasites.invalidcommand=Comando inválido
+
+message.srparasites.readconfigurationfile_success=Los archivos de configuración fueron leídos satisfactoriamente \n NOTA: No aplica para todas las opciones, como opciones de registro o de lado cliente
+message.srparasites.readconfigurationfile_error=Hubo un problema al leer el archivo de configuración, revisa las entradas \n NOTA: No aplica para todas las opciones, como opciones de registro o de lado cliente
+message.srparasites.toggle_dotiledrops=El valor actual de doTileDrop es %s
+message.srparasites.toggle_domobevolution=El valor actual de doMobEvolution es %s
+message.srparasites.getbeckonlimit=Cantidad actual de Beckons generados por RS en esta dimensión: %s
+message.srparasites.resetdatafile=El archivo de datos de esta dimensión ha sido reseteado
+message.srparasites.setbeckonlimit=La cantidad actual de Beckons generados por RS en esta dimensión ha sido asignado a %s
+
+# Replaced CFG warning messages with these lang keys
+message.srparasites.phase_0_warning=CERO
+message.srparasites.phase_1_warning=Uno
+message.srparasites.phase_2_warning=Dos
+message.srparasites.phase_3_warning=Tres
+message.srparasites.phase_4_warning=Cuatro
+message.srparasites.phase_5_warning=Cinco
+message.srparasites.phase_6_warning=Seis
+message.srparasites.phase_7_warning=Siete
+message.srparasites.phase_8_warning=Ocho
+message.srparasites.node_warning=Nodo
+message.srparasites.colony_warning=Colonia
