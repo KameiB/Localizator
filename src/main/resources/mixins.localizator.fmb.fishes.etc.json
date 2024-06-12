@@ -14,7 +14,9 @@
     "fishingmadebetter.ItemFishBucketMixin",
     "fishingmadebetter.ItemFishSliceMixin",
     "fishingmadebetter.TileEntityBaitBoxMixin",
-    "fishingmadebetter.ItemBaitBucketMixin"
+    "fishingmadebetter.ItemBaitBucketMixin",
+    "fishingmadebetter.ItemBobberBasicMixin",
+    "fishingmadebetter.ItemReelBasicMixin"
   ],
   "injectors": {
     "maxShiftBy": 10
