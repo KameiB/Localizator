@@ -58,10 +58,8 @@ public abstract class ItemShieldAnkhMixin extends ItemShieldObsidian {
             tooltip.add(I18n.format("bountifulbaubles.broken"));
         }
 
-        tooltip.add(I18n.format(this.getTranslationKey() + ".tooltip.0"));
+        tooltip.add(I18n.format(this.getTranslationKey() + ".tooltip.0_cobweb"));
         
-        // Add cobweb immunity to its tooltip
-        tooltip.add(I18n.format("item.bountifulbaubles.addedCobwebImmunity.tooltip"));
         
         if (GuiScreen.isShiftKeyDown()) {
             tooltip.add(I18n.format(this.getTranslationKey() + ".tooltip.1"));
