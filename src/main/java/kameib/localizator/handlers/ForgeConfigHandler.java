@@ -227,6 +227,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.scalingHealthMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean scalingHealthMessagesMixin = !Production.inProduction;
+		@Config.Comment("Localizes SRParasites messages.")
+		@Config.Name("(SRParasites) Localized Messages Mixin")
+		@Config.LangKey("config.localizator.mixins.srparasitesMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean srparasitesMessagesMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {
@@ -270,6 +275,11 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin")
 		@Config.RequiresMcRestart
 		public boolean fishingmadebetterMinigameHelpTextMixin = !Production.inProduction;
+		@Config.Comment("Enables the user-defined Name list for the parasite Adventurers/Thralls.\nRequires \"Mod Easter Eggs\" option in SRParasites cfg to be enabled.")
+		@Config.Name("(SRParasites) Custom Adventurer Names Mixin")
+		@Config.LangKey("config.localizator.mixins.srparasitesCustomAdventurerNames")
+		@Config.RequiresMcRestart
+		public boolean srparasitesCustomAdventurerNames = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
@@ -330,6 +340,10 @@ public class ForgeConfigHandler {
 		@Config.Name("(Minecraft) Show LocName instead of Name")
 		@Config.LangKey("config.localizator.server.minecraftLocNameOverName")
 		public boolean minecraftLocNameOverName = !Production.inProduction;
+		@Config.Comment("This list is added to the original SRParasites Name lists. \nRequired Mixin: \n- (SRParasites) Custom Adventurer Names Mixin")
+		@Config.Name("(SRParasites) Custom Parasite Name list")
+		@Config.LangKey("config.localizator.server.srparasitesCustomNamesList")
+		public String[] srparasitesCustomNamesList = {"Collin"};
 	}
 
 	@Mod.EventBusSubscriber(modid = Localizator.MODID)

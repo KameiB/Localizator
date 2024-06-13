@@ -93,6 +93,8 @@ config.localizator.mixins.xatArmorWeightTooltipMixin=(T&B) Localized Armor Weigh
 config.localizator.mixins.xatArmorWeightTooltipMixin.tooltip=Localizes the armor weight tooltip text when transformed into Faelis race.\n 
 config.localizator.mixins.scalingHealthMessagesMixin=(ScalingHealth) Localized Messages Mixin
 config.localizator.mixins.scalingHealthMessagesMixin.tooltip=Localizes messages related to the date and Blight deaths.\n 
+config.localizator.mixins.srparasitesMessagesMixin=(SRParasites) Localized Messages Mixin
+config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localizes SRParasites messages.\n
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
@@ -111,10 +113,14 @@ config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubl
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Adds cobweb immunity to the Ankh Shield. \nIf it makes sense to you as well c: \n 
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBetter) Instructions on Minigame Mixin
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Enables the Client config:\n\n- §b(FishingMadeBetter) Instructions on Minigame.\n 
+config.localizator.mixins.srparasitesCustomAdventurerNames=(SRParasites) Custom Adventurer Names Mixin
+config.localizator.mixins.srparasitesCustomAdventurerNames.tooltip=Enables the user-defined Name list for the parasite Adventurers/Thralls.\nRequires "Mod Easter Eggs" option in SRParasites cfg to be enabled.\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name
 config.localizator.server.minecraftLocNameOverName.tooltip=If an item has both LocName and Name display NBT tags, show LocName instead of Name. \nThis is useful for Mixins that localize mods like Recurrent Complex, \nwhich assign custom hardcoded names to items on generation. \n\n§cRequired Mixin:\n- §d(Minecraft) Better Localized Name Mixin\n 
+config.localizator.server.srparasitesCustomNamesList=(SRParasites) Custom Parasite Name list
+config.localizator.server.srparasitesCustomNamesList.tooltip=This list is added to the original SRParasites Name lists. \n\n§cRequired Mixin:\n- §d(SRParasites) Custom Adventurer Names Mixin\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names

@@ -52,6 +52,8 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         // SRParasites
         List<ConfigToMixin> srparasitesList = new ArrayList<>();
         srparasitesList.add(new ConfigToMixin("(SRParasites) Armor Tooltips Mixin", "mixins.localizator.srparasites.armortooltip.json"));
+        srparasitesList.add(new ConfigToMixin("(SRParasites) Localized Messages Mixin", "mixins.localizator.srparasites.messages.json"));
+        srparasitesList.add(new ConfigToMixin("(SRParasites) Custom Adventurer Names Mixin", "mixins.localizator.srparasites.adventurernames.json"));
         map.put("srparasites", srparasitesList);
         // Better Survival
         List<ConfigToMixin> bettersurvivalList = new ArrayList<>();

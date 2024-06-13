@@ -93,6 +93,8 @@ config.localizator.mixins.xatArmorWeightTooltipMixin=(T&B) Mixin Descripción de
 config.localizator.mixins.xatArmorWeightTooltipMixin.tooltip=Localiza el texto de Peso de armadura en su descripción, cuando se está transformado en la raza Felino.\n 
 config.localizator.mixins.scalingHealthMessagesMixin=(ScalingHealth) Mixin mensajes localizados
 config.localizator.mixins.scalingHealthMessagesMixin.tooltip=Localiza los mensajes relacionados con la fecha y muertes de mobs Brillantes.\n 
+config.localizator.mixins.srparasitesMessagesMixin=(SRParasites) Mixin mensajes localizados
+config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localiza los mensajes de SRParasites.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
@@ -111,10 +113,14 @@ config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity=(BountifulBaubl
 config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity.tooltip=Agrega inmunidad a telarañas al Escudo Ankh. \nSi también tiene sentido para tí c: \n 
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBetter) Mixin Instrucciones en Minijuego
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Habilita la opción Cliente:\n- §b(FishingMadeBetter) Instrucciones en Minijuego.\n 
+config.localizator.mixins.srparasitesCustomAdventurerNames=(SRParasites) Mixin Nombres personalizados de aventureros
+config.localizator.mixins.srparasitesCustomAdventurerNames.tooltip=Habilita la Lista de nombres definidos por el usuario, para los Aventureros/Thralls parásitos.\nRequiere que la opción "Mod Easter Eggs" en el archivo de configuración de SRParasites esté habilitada.\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Mostrar LocName en lugar de Name
 config.localizator.server.minecraftLocNameOverName.tooltip=Si un item tiene ambas etiquetas NBT LocName y Name, \n§emostrar el contenido de LocName en lugar de Name. \nEsto es útil para Mixins que localizan mods como \nRecurrent Complex, el cual asigna nombres \nhardcodeados a items durante la generación. \n\n§cMixin necesario:\n- §d(Minecraft) Mixin Nombre localizado mejorado\n  
+config.localizator.server.srparasitesCustomNamesList=(SRParasites) Lista de nombres personalizados de parásitos
+config.localizator.server.srparasitesCustomNamesList.tooltip=Esta lista se agrega a las listas originales de nombres de SRParasites. \n\n§cMixin necesario: \n- §d(SRParasites) Mixin Nombres personalizados de aventureros\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
