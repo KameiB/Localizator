@@ -60,9 +60,9 @@ public abstract class ItemHealMixin extends Item {
         if (GuiScreen.isShiftKeyDown() || ForgeConfigHandler.clientConfig.roughtweaksTooltip) {
             float hearts = this.healAmount / 2.0F;
             if ((double)hearts % 1.0 == 0.0) {
-                tooltip.add(TextFormatting.BLUE + I18n.format("tooltip.roughtweaks.itemheal.heal_amount") + " " + (int)hearts + " " + I18n.format("tooltip.roughtweaks.itemheal.hearts"));
+                tooltip.add(TextFormatting.BLUE + I18n.format("tooltip.roughtweaks.itemheal.heal_amount", (int)hearts));
             } else {
-                tooltip.add(TextFormatting.BLUE + I18n.format("tooltip.roughtweaks.itemheal.heal_amount") + " " + hearts + " " + I18n.format("tooltip.roughtweaks.itemheal.hearts"));
+                tooltip.add(TextFormatting.BLUE + I18n.format("tooltip.roughtweaks.itemheal.heal_amount", hearts));
             }
         }        
         /*else {

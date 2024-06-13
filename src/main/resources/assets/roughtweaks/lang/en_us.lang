@@ -4,6 +4,8 @@ item.roughtweaks.bandage.name=Bandage
 item.roughtweaks.medikit.name=Medikit
 item.roughtweaks.medikitEnchanted.name=Enchanted Medikit
 
-tooltip.roughtweaks.itemheal.heal_amount=Heal Amount:
-tooltip.roughtweaks.itemheal.hearts=Hearts
+tooltip.roughtweaks.itemheal.heal_amount=Heal Amount: %s heart(s) per use
 tooltip.roughtweaks.itemheal.shift=Press §6Shift§7 for more info
+
+# Deprecated
+tooltip.roughtweaks.itemheal.hearts=Hearts
