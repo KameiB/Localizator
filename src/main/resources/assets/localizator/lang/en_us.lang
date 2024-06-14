@@ -156,10 +156,10 @@ message.localizator.newconfig.5=[§6§nClick here to open your old cfg file§r]
 message.localizator.newconfig.hovertext=Click to open %s
 
 # JEI Plugin
-jei.fishingmadebetter.category.fish_requirements=Fish Requirements
+jei.fishingmadebetter.category.fish_requirements=Fishing
 jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip=Time: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Rain: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Thunderstorm: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip=Light Level: %s
-jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Requires:
+jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Conditions:
 jei.fishingmadebetter.category.fish_requirements.height.title=Y range

@@ -82,7 +82,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         }
         inputs.add(Collections.singletonList(new ItemStack(baitBucketItem)));
         // ---------------      Baits     ------------------
-        Item bait = null;
+        Item bait;
         for (String baitName : fishData.baitItemMap.keySet()) {
             for (int baitMetadata : fishData.baitItemMap.get(baitName)) {
                 bait = Item.getByNameOrId(baitName);
@@ -91,7 +91,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                 }
             }
         }
-        if (bait == null) {
+        while (inputs.size() < (4 + 16)) {
             inputs.add(Collections.singletonList(new ItemStack(Items.AIR)));
         }
         // OUTPUT
