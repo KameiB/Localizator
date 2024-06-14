@@ -158,5 +158,8 @@ message.localizator.newconfig.hovertext=Click to open %s
 # JEI Plugin
 jei.fishingmadebetter.category.fish_requirements=Fish Requirements
 jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip=Time: %s
-jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Requires Rain: %s
-jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Requires Thunderstorm: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Rain: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Thunderstorm: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip=Light Level: %s
+jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Requires:
+jei.fishingmadebetter.category.fish_requirements.height.title=Y range

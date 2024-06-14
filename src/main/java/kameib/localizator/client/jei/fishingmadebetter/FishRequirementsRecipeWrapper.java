@@ -134,9 +134,14 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
         if ((mouseX >= MINIGAME_X_START && mouseX < MINIGAME_X_START + DRAWING_OUTLINE.width)
                 && (mouseY >= MINIGAME_Y_START && mouseY < MINIGAME_Y_START + DRAWING_OUTLINE.height)) {
+            // Title
+            tooltip.add(TextFormatting.GOLD + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.title"));
             // Time to fish
             tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip",
                     TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.time." + fishRequirementData.timeToFish)));
+            // Max light level
+            tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip",
+                    TextFormatting.WHITE + "0" + TextFormatting.GRAY + " - " + TextFormatting.WHITE + fishRequirementData.maxLightLevel));
             // Requires rain?
             tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip",
                     TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.rain." + fishRequirementData.rainRequired)));

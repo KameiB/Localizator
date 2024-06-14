@@ -169,6 +169,9 @@ dependencies {
 
     implementation files("libs/Trinkets+and+Baubles-32.4.jar")
 
+    implementation fg.deobf("curse.maven:mantle-${mantle_version}") // Needed for Inspirations
+    implementation fg.deobf("curse.maven:inspirations-${inspirations_version}")
+
     //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
     //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")
 

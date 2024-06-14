@@ -15,6 +15,7 @@ public class FishRequirementData {
     public List<String> biomeTagList;
     public FishData.TimeToFish timeToFish;
     public String fishId;
+    public int maxLightLevel;
     
     public FishRequirementData(FishData fishData) {
         fishId = fishData.fishId;
@@ -24,6 +25,7 @@ public class FishRequirementData {
         timeToFish = fishData.time;
         rainRequired = fishData.rainRequired;
         thunderRequired = fishData.thunderRequired;
+        maxLightLevel = fishData.maxLightLevel;
         
         dimensionList = new ArrayList<>();
         if (!fishData.dimensionBlacklist) {
