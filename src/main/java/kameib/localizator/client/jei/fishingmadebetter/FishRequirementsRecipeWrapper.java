@@ -18,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.Loader;
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
 import net.theawesomegem.fishingmadebetter.common.item.ItemManager;
 
@@ -31,6 +32,8 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
     public List<BiomeDimensionOverlay> overlayList = new ArrayList<>();
     private final FishRequirementData fishRequirementData;
+    public List<DrawableResource> photometerList = new ArrayList<>();
+    public List<DrawableResource> lightLevelList = new ArrayList<>();
     
     public FishRequirementsRecipeWrapper(FishData fishData) {
         fishRequirementData = new FishRequirementData(fishData);
@@ -94,6 +97,8 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         while (inputs.size() < (4 + 16)) {
             inputs.add(Collections.singletonList(new ItemStack(Items.AIR)));
         }
+
+        
         // OUTPUT
         this.output = FMB_BetterFishUtil.fishIdToItemStack(fishData.fishId);
         
@@ -113,6 +118,39 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         if (overlayList.isEmpty()) {
             overlayList.add(new BiomeDimensionOverlay(fishRequirementData.minYLevel, fishRequirementData.maxYLevel));
         }
+        
+        // LIGHT LEVELS
+        for (short i = 0; i <= fishRequirementData.maxLightLevel && i < 16; i++) {
+            lightLevelList.add(new DrawableResource(
+                    new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", i) + ".png"),
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+        }
+        if (lightLevelList.isEmpty()) {
+            lightLevelList.add(new DrawableResource(
+                    new ResourceLocation("minecraft", "textures/items/barrier.png"),
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+        }
+        
+        if (Loader.isModLoaded("inspirations")) {
+            for (short i = 0; i <= fishRequirementData.maxLightLevel && i < 16; i++) {
+                photometerList.add(new DrawableResource(
+                        new ResourceLocation("inspirations", "textures/items/photometer/" + String.format("%02d", i) + ".png"),
+                        0,0, 16, 16, 0, 0, 0, 0, 16, 16));
+            }
+        }
+        else {
+            for (short i = 0; i <= fishRequirementData.maxLightLevel && i < 16; i++) {
+                photometerList.add(new DrawableResource(
+                        new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", i) + ".png"),
+                        0,0, 16, 16, 0, 0, 0, 0, 16, 16));
+            }
+            if (photometerList.isEmpty()) {
+                photometerList.add(new DrawableResource(
+                        new ResourceLocation("minecraft", "textures/items/barrier.png"),
+                        0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+            }
+        }
+        
     }
     
     @Override
@@ -138,16 +176,21 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             tooltip.add(TextFormatting.GOLD + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.title"));
             // Time to fish
             tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip",
-                    TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.time." + fishRequirementData.timeToFish)));
-            // Max light level
-            tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip",
-                    TextFormatting.WHITE + "0" + TextFormatting.GRAY + " - " + TextFormatting.WHITE + fishRequirementData.maxLightLevel));
+                    TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.time." + fishRequirementData.timeToFish)));            
             // Requires rain?
             tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip",
                     TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.rain." + fishRequirementData.rainRequired)));
             // Requires thunderstorm?
             tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip",
                     TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.thunder." + fishRequirementData.thunderRequired)));
+            return tooltip;
+        }
+        
+        if ((mouseX >= LIGHTLEVEL_X && mouseX < LIGHTLEVEL_X + 18)
+                && (mouseY >= LIGHTLEVEL_Y && mouseY < LIGHTLEVEL_Y + 18)) {
+            // Light level
+            tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip",
+                    TextFormatting.WHITE + "0" + TextFormatting.GRAY + " - " + TextFormatting.WHITE + fishRequirementData.maxLightLevel));
             return tooltip;
         }
 
@@ -161,12 +204,20 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
     public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         int biomeDisplay = minecraft.player.ticksExisted % (overlayList.size() * 20);
+        int photometerDisplay = minecraft.player.ticksExisted % (photometerList.size() * 20);
         beginRenderingTransparency();
         {
             // MINIGAME OVERLAY
             overlayList.get(biomeDisplay / 20).drawMiniGame(minecraft, MINIGAME_X_START, MINIGAME_Y_START);
             // Y METER OVERLAY
             overlayList.get(biomeDisplay / 20).drawYmeter(minecraft, YMETER_X_START, YMETER_Y_START);
+            // PHOTOMETER
+            if (ForgeConfigHandler.clientConfig.fishingmadebetterPhotometer) {
+                photometerList.get(photometerDisplay / 20).draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
+            }
+            else {
+                lightLevelList.get(photometerDisplay / 20).draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
+            }
         }
         finishRenderingTransparency();
     }
@@ -429,6 +480,8 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     private static final int YMETER_RANGE_TOP_OFFSET = 1;
     private static final int YMETER_LEVEL_LEFT_OFFSET = -1;
     private static final short MAX_Y_LEVEL = 28;
+    private static final int LIGHTLEVEL_X = 65 + X_OFFSET;
+    private static final int LIGHTLEVEL_Y = 56 + Y_OFFSET;
     
 
     public static final Texture TEXTURE_MINIGAME_OUTLINE = new Texture(new ResourceLocation("fishingmadebetter", "textures/gui/reeling_hud_outline.png"), 256, 256);

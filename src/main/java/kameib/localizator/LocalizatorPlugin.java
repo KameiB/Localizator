@@ -168,7 +168,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         for (Map.Entry<String, List<ConfigToMixin>> entry : earlyMap.entrySet()) {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
-                    Localizator.LOGGER.info("[Localizator] Early Enqueue: " + config.getName());
+                    Localizator.LOGGER.info("[Localizator] Early Enqueue: {}", config.getName());
                     FermiumRegistryAPI.enqueueMixin(false, config.getJson());
                 }
             }
@@ -184,7 +184,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         for (Map.Entry<String, List<ConfigToMixin>> entry : lateMap.entrySet()) {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
-                    Localizator.LOGGER.info("[Localizator] Late Enqueue: " + config.getName());
+                    Localizator.LOGGER.info("[Localizator] Late Enqueue: {}", config.getName());
                     FermiumRegistryAPI.enqueueMixin(true, config.getJson(), () -> Loader.isModLoaded(entry.getKey()));
                 }
             }

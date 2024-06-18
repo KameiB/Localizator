@@ -65,25 +65,25 @@ public class FishRequirementsRecipeCategory implements IRecipeCategory<IRecipeWr
         
         // Fishing rods
         guiItemStacks.init(SLOT_FISHING_ROD, true, 14 + X_OFFSET, 83 + Y_OFFSET);
-        if (ingredients.getInputs(VanillaTypes.ITEM).size() > 0) {
+        if (ingredients.getInputs(VanillaTypes.ITEM).size() >= SLOT_FISHING_ROD) {
             guiItemStacks.set(SLOT_FISHING_ROD, ingredients.getInputs(VanillaTypes.ITEM).get(SLOT_FISHING_ROD-1));
         }
 
         // Reels
         guiItemStacks.init(SLOT_REEL, true, 32 + X_OFFSET, 83 + Y_OFFSET);
-        if (ingredients.getInputs(VanillaTypes.ITEM).size() > 1) {
+        if (ingredients.getInputs(VanillaTypes.ITEM).size() >= SLOT_REEL) {
             guiItemStacks.set(SLOT_REEL, ingredients.getInputs(VanillaTypes.ITEM).get(SLOT_REEL-1));
         }
 
         // Bobber
         guiItemStacks.init(SLOT_BOBBER, true, 14 + X_OFFSET, 101 + Y_OFFSET);
-        if (ingredients.getInputs(VanillaTypes.ITEM).size() > 2) {
+        if (ingredients.getInputs(VanillaTypes.ITEM).size() >= SLOT_BOBBER) {
             guiItemStacks.set(SLOT_BOBBER, ingredients.getInputs(VanillaTypes.ITEM).get(SLOT_BOBBER-1));
         }
 
         // Bait Bucket
         guiItemStacks.init(SLOT_BAIT_BUCKET, true, 64 + X_OFFSET, 101 + Y_OFFSET);
-        if (ingredients.getInputs(VanillaTypes.ITEM).size() > 3) {
+        if (ingredients.getInputs(VanillaTypes.ITEM).size() >= SLOT_BAIT_BUCKET) {
             guiItemStacks.set(SLOT_BAIT_BUCKET, ingredients.getInputs(VanillaTypes.ITEM).get(SLOT_BAIT_BUCKET-1));
         }
 
@@ -94,6 +94,7 @@ public class FishRequirementsRecipeCategory implements IRecipeCategory<IRecipeWr
                 guiItemStacks.set(slot, ingredients.getInputs(VanillaTypes.ITEM).get((slot - 1)));
             }
         }
+        
     }
 
     private static final short SLOT_FISH = 0;

@@ -132,8 +132,8 @@ dependencies {
     compileOnly fg.deobf("curse.maven:serene-seasons-${sereneseasons_version}")
     compileOnly fg.deobf("curse.maven:rustic-${rustic_version}")
 
-    implementation fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
-    implementation fg.deobf("curse.maven:charm-${charm_version}")
+    compileOnly fg.deobf("curse.maven:JEI-${jei_version}") // Needed for ComposterCategoryMixin, ComposterRecipeMixin
+    compileOnly fg.deobf("curse.maven:charm-${charm_version}")
 
     compileOnly fg.deobf("curse.maven:dynamictrees-${dynamictrees_version}")
 
@@ -155,19 +155,19 @@ dependencies {
     compileOnly fg.deobf("curse.maven:varied-commodities-${variedcommodities_version}")
 
     implementation fg.deobf("curse.maven:fishing-made-better-${fishingmadebetter_version}")
-    
-    implementation fg.deobf("curse.maven:FBP-${fbp_version}")
-    
-    implementation fg.deobf("curse.maven:levelup2-${levelup2_version}")
 
-    implementation fg.deobf("curse.maven:mo-bends-${mobends_version}")
+    compileOnly fg.deobf("curse.maven:FBP-${fbp_version}")
+
+    compileOnly fg.deobf("curse.maven:levelup2-${levelup2_version}")
+
+    compileOnly fg.deobf("curse.maven:mo-bends-${mobends_version}")
     
     implementation fg.deobf("curse.maven:silentlib-${silentlib_version}") // Needed for Scaling Health
     implementation fg.deobf("curse.maven:scalinghealth-${scalinghealth_version}")
 
-    implementation fg.deobf("curse.maven:spartan-weaponry-${spartanweaponry_version}")
+    compileOnly fg.deobf("curse.maven:spartan-weaponry-${spartanweaponry_version}")
 
-    implementation files("libs/Trinkets+and+Baubles-32.4.jar")
+    compileOnly files("libs/Trinkets+and+Baubles-32.4.jar")
 
     implementation fg.deobf("curse.maven:mantle-${mantle_version}") // Needed for Inspirations
     implementation fg.deobf("curse.maven:inspirations-${inspirations_version}")

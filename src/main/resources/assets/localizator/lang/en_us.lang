@@ -145,6 +145,8 @@ config.localizator.client.fishingmadebetterYmeterLavaLevelText=(FMB/JEI) Y Meter
 config.localizator.client.fishingmadebetterYmeterLavaLevelText.tooltip=The Nether §cLava Ocean§e Level line shown over the Fish Requirements JEI Plugin\n 
 config.localizator.client.fishingmadebetterYmeterVoidLevelText=(FMB/JEI) Y Meter. The End Void Level
 config.localizator.client.fishingmadebetterYmeterVoidLevelText.tooltip=The End §dVoid§e Level line shown over the Fish Requirements JEI Plugin.\nIt's set to 5 just for visuals.\n 
+config.localizator.client.fishingmadebetterPhotometer=(FMB/JEI) Use Photometer icon for light levels
+config.localizator.client.fishingmadebetterPhotometer.tooltip=Represent fish light levels with the Photometer icon (if Inspirations mod is present).\nIf Inspirations is not present or this option is false, the Minecraft light icon is used.
 
 # Messages
 message.localizator.newconfig.0=[Localizator] Hello there! It's %s!

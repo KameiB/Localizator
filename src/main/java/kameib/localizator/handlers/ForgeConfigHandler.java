@@ -280,6 +280,7 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.srparasitesCustomAdventurerNames")
 		@Config.RequiresMcRestart
 		public boolean srparasitesCustomAdventurerNames = !Production.inProduction;
+		
 	}
 
 	public static class ClientConfig {
@@ -333,6 +334,10 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterVoidLevelText")
 		@Config.RequiresMcRestart
 		public int fishingmadebetterYmeterVoidLevel = 5;
+		@Config.Comment("Represent fish light levels with the Photometer icon (if Inspirations mod is present)\nIf Inspirations is not present or this option is false, the Minecraft light icon is used.")
+		@Config.Name("(FMB/JEI) Use Photometer icon for light levels")
+		@Config.LangKey("config.localizator.client.fishingmadebetterPhotometer")
+		public boolean fishingmadebetterPhotometer = true;
 	}
 	
 	public static class ServerConfig {

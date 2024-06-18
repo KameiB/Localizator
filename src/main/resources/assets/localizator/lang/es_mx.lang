@@ -145,6 +145,8 @@ config.localizator.client.fishingmadebetterYmeterLavaLevelText=(FMB/JEI) Medidor
 config.localizator.client.fishingmadebetterYmeterLavaLevelText.tooltip=La línea que se dibuja sobre el medidor Y, indicando la altura del §cocéano de lava§e en el Nether, en la interfase de Requisitos de pez\n 
 config.localizator.client.fishingmadebetterYmeterVoidLevelText=(FMB/JEI) Medidor Y. Nivel del vacío (El End)
 config.localizator.client.fishingmadebetterYmeterVoidLevelText.tooltip=La línea que se dibuja sobre el medidor Y, indicando la altura del §dvacío§e en el End, en la interfase de Requisitos de pez\nEstá en 5 sólo por estética.\n 
+config.localizator.client.fishingmadebetterPhotometer=(FMB/JEI) Usar ícono del Fotómetro para niveles de luz
+config.localizator.client.fishingmadebetterPhotometer.tooltip=Representar los niveles de luz del pez con el ícono del Fotómetro (si el mod Inspirations está presente).\nSi Inspirations no está presente o esta opción es false, se usará el ícono de luz de Minecraft.\n 
 
 # Messages
 message.localizator.newconfig.0=[Localizator] Hola hola! Soy %s!
