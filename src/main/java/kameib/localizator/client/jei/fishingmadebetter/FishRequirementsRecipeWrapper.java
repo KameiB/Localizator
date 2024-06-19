@@ -120,33 +120,26 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         }
         
         // LIGHT LEVELS
-        for (short i = 0; i <= fishRequirementData.maxLightLevel && i < 16; i++) {
-            lightLevelList.add(new DrawableResource(
-                    new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", i) + ".png"),
-                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
-        }
-        if (lightLevelList.isEmpty()) {
+        if (fishRequirementData.maxLightLevel < 0) {
             lightLevelList.add(new DrawableResource(
                     new ResourceLocation("minecraft", "textures/items/barrier.png"),
                     0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
-        }
-        
-        if (Loader.isModLoaded("inspirations")) {
-            for (short i = 0; i <= fishRequirementData.maxLightLevel && i < 16; i++) {
-                photometerList.add(new DrawableResource(
-                        new ResourceLocation("inspirations", "textures/items/photometer/" + String.format("%02d", i) + ".png"),
-                        0,0, 16, 16, 0, 0, 0, 0, 16, 16));
-            }
+            photometerList.add(new DrawableResource(
+                    new ResourceLocation("minecraft", "textures/items/barrier.png"),
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
         }
         else {
-            for (short i = 0; i <= fishRequirementData.maxLightLevel && i < 16; i++) {
+            lightLevelList.add(new DrawableResource(
+                    new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", Math.min(fishRequirementData.maxLightLevel, 15)) + ".png"),
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+            if (Loader.isModLoaded("inspirations")) {
                 photometerList.add(new DrawableResource(
-                        new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", i) + ".png"),
-                        0,0, 16, 16, 0, 0, 0, 0, 16, 16));
+                        new ResourceLocation("inspirations", "textures/items/photometer/" + String.format("%02d", Math.min(fishRequirementData.maxLightLevel, 15)) + ".png"),
+                        0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
             }
-            if (photometerList.isEmpty()) {
+            else {
                 photometerList.add(new DrawableResource(
-                        new ResourceLocation("minecraft", "textures/items/barrier.png"),
+                        new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", Math.min(fishRequirementData.maxLightLevel, 15)) + ".png"),
                         0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
             }
         }
