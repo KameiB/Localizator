@@ -32,8 +32,8 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
     public List<BiomeDimensionOverlay> overlayList = new ArrayList<>();
     private final FishRequirementData fishRequirementData;
-    public List<DrawableResource> photometerList = new ArrayList<>();
-    public List<DrawableResource> lightLevelList = new ArrayList<>();
+    public DrawableResource photometerIcon;
+    public DrawableResource lightLevelIcon;
     
     public FishRequirementsRecipeWrapper(FishData fishData) {
         fishRequirementData = new FishRequirementData(fishData);
@@ -121,26 +121,26 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         
         // LIGHT LEVELS
         if (fishRequirementData.maxLightLevel < 0) {
-            lightLevelList.add(new DrawableResource(
+            lightLevelIcon = new DrawableResource(
                     new ResourceLocation("minecraft", "textures/items/barrier.png"),
-                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
-            photometerList.add(new DrawableResource(
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16);
+            photometerIcon = new DrawableResource(
                     new ResourceLocation("minecraft", "textures/items/barrier.png"),
-                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16);
         }
         else {
-            lightLevelList.add(new DrawableResource(
+            lightLevelIcon = new DrawableResource(
                     new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", Math.min(fishRequirementData.maxLightLevel, 15)) + ".png"),
-                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+                    0, 0, 16, 16, 0, 0, 0, 0, 16, 16);
             if (Loader.isModLoaded("inspirations")) {
-                photometerList.add(new DrawableResource(
+                photometerIcon = new DrawableResource(
                         new ResourceLocation("inspirations", "textures/items/photometer/" + String.format("%02d", Math.min(fishRequirementData.maxLightLevel, 15)) + ".png"),
-                        0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+                        0, 0, 16, 16, 0, 0, 0, 0, 16, 16);
             }
             else {
-                photometerList.add(new DrawableResource(
+                photometerIcon = new DrawableResource(
                         new ResourceLocation("minecraft", "textures/light/" + String.format("%02d", Math.min(fishRequirementData.maxLightLevel, 15)) + ".png"),
-                        0, 0, 16, 16, 0, 0, 0, 0, 16, 16));
+                        0, 0, 16, 16, 0, 0, 0, 0, 16, 16);
             }
         }
         
@@ -197,7 +197,6 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
 
     public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         int biomeDisplay = minecraft.player.ticksExisted % (overlayList.size() * 20);
-        int photometerDisplay = minecraft.player.ticksExisted % (photometerList.size() * 20);
         beginRenderingTransparency();
         {
             // MINIGAME OVERLAY
@@ -206,10 +205,10 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             overlayList.get(biomeDisplay / 20).drawYmeter(minecraft, YMETER_X_START, YMETER_Y_START);
             // PHOTOMETER
             if (ForgeConfigHandler.clientConfig.fishingmadebetterPhotometer) {
-                photometerList.get(photometerDisplay / 20).draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
+                photometerIcon.draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
             }
             else {
-                lightLevelList.get(photometerDisplay / 20).draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
+                lightLevelIcon.draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
             }
         }
         finishRenderingTransparency();
