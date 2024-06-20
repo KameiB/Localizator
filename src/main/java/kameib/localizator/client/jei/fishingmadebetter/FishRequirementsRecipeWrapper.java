@@ -34,6 +34,8 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     private final FishRequirementData fishRequirementData;
     public DrawableResource photometerIcon;
     public DrawableResource lightLevelIcon;
+    public List<String> biomeTypeList = new ArrayList<>();
+    private int biomeDisplay = 0;
     
     public FishRequirementsRecipeWrapper(FishData fishData) {
         fishRequirementData = new FishRequirementData(fishData);
@@ -106,21 +108,25 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         for (Integer dimension : fishRequirementData.dimensionList) {
             if (dimension == -1) {
                 overlayList.add(new BiomeDimensionOverlay(fishRequirementData, dimension, null));
+                biomeTypeList.add("NETHER");
             } else if (dimension == 1) {
                 overlayList.add(new BiomeDimensionOverlay(fishRequirementData, dimension, null));
+                biomeTypeList.add("END");
             } else {
                 for (String biome : fishRequirementData.biomeTagList) {
                     overlayList.add(new BiomeDimensionOverlay(fishRequirementData, dimension, biome));
+                    biomeTypeList.add(biome);
                 }
             }
         }
         // If fish can't be caught in any dimension/biome, initialize the overlays with an empty texture
         if (overlayList.isEmpty()) {
             overlayList.add(new BiomeDimensionOverlay(fishRequirementData.minYLevel, fishRequirementData.maxYLevel));
+            biomeTypeList.add("UNKNOWN");
         }
         
         // LIGHT LEVELS
-        if (fishRequirementData.maxLightLevel < 0) {
+        if (fishRequirementData.maxLightLevel < 0) { // If light level is invalid, the fish is uncatchable. Display the Barrier icon.
             lightLevelIcon = new DrawableResource(
                     new ResourceLocation("minecraft", "textures/items/barrier.png"),
                     0, 0, 16, 16, 0, 0, 0, 0, 16, 16);
@@ -167,6 +173,9 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
                 && (mouseY >= MINIGAME_Y_START && mouseY < MINIGAME_Y_START + DRAWING_OUTLINE.height)) {
             // Title
             tooltip.add(TextFormatting.GOLD + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.title"));
+            // BiomeType
+            tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.biometype", 
+                    TextFormatting.WHITE + I18n.format("biometype." + biomeTypeList.get(biomeDisplay/20))));
             // Time to fish
             tooltip.add(TextFormatting.GRAY + I18n.format("jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip",
                     TextFormatting.WHITE + I18n.format("notif.fishingmadebetter.fish_tracker.creative.time." + fishRequirementData.timeToFish)));            
@@ -196,14 +205,14 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
     }
 
     public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
-        int biomeDisplay = minecraft.player.ticksExisted % (overlayList.size() * 20);
+        biomeDisplay = minecraft.player.ticksExisted % (overlayList.size() * 20);
         beginRenderingTransparency();
         {
             // MINIGAME OVERLAY
             overlayList.get(biomeDisplay / 20).drawMiniGame(minecraft, MINIGAME_X_START, MINIGAME_Y_START);
             // Y METER OVERLAY
             overlayList.get(biomeDisplay / 20).drawYmeter(minecraft, YMETER_X_START, YMETER_Y_START);
-            // PHOTOMETER
+            // LIGHT LEVEL
             if (ForgeConfigHandler.clientConfig.fishingmadebetterPhotometer) {
                 photometerIcon.draw(minecraft, LIGHTLEVEL_X, LIGHTLEVEL_Y);
             }

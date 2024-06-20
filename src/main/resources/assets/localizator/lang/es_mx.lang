@@ -164,4 +164,4 @@ jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Lluvia: %
 jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Tormenta eléctrica: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip=Luz alrededor: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Condiciones:
-jei.fishingmadebetter.category.fish_requirements.height.title=Rango en Y
+jei.fishingmadebetter.category.fish_requirements.minigame.biometype=Tipo de bioma: %s

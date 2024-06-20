@@ -164,4 +164,4 @@ jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Rain: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Thunderstorm: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip=Light Level: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Conditions:
-jei.fishingmadebetter.category.fish_requirements.height.title=Y range
+jei.fishingmadebetter.category.fish_requirements.minigame.biometype=Biome Type: %s
