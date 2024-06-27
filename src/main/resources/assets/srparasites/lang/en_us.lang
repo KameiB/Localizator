@@ -50,3 +50,10 @@ message.srparasites.phase_7_warning=Seven
 message.srparasites.phase_8_warning=Eight
 message.srparasites.node_warning=Node
 message.srparasites.colony_warning=Colony
+
+# Boss names
+Assimilated Ender Dragon=Assimilated Ender Dragon
+Ancient Dreadnaut=Ancient Dreadnaut
+Ancient Overlord=Ancient Overlord
+Beckon Stage IV=Beckon Stage IV
+Beckon Stage V=Beckon Stage V
