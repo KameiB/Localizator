@@ -1,4 +1,24 @@
-# Entity names
+# Shield Banner patterns
+item.banner.base.white=Base blanca
+item.banner.base.orange=Base naranja
+item.banner.base.magenta=Base magenta
+item.banner.base.light_blue=Base azul claro
+item.banner.base.yellow=Base amarilla
+item.banner.base.lime=Base verde lima
+item.banner.base.pink=Base rosa
+item.banner.base.gray=Base gris
+item.banner.base.silver=Base gris claro
+item.banner.base.cyan=Base cian
+item.banner.base.purple=Base morada
+item.banner.base.blue=Base azul
+item.banner.base.brown=Base cafe
+item.banner.base.green=Base verde
+item.banner.base.red=Base roja
+item.banner.base.black=Base negra
+
+# Entities
+entity.SpectralArrow.name=Flecha espectral
+entity.TippedArrow.name=Flecha con efecto
 entity.ItemFrame.name=Marco
 
 # Biome names
