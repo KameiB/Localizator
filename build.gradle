@@ -172,12 +172,6 @@ dependencies {
     implementation fg.deobf("curse.maven:mantle-${mantle_version}") // Needed for Inspirations
     implementation fg.deobf("curse.maven:inspirations-${inspirations_version}")
 
-    //implementation fg.deobf("curse.maven:orelib-${orelib_version}") // Required for Dynamic Surroundings HUDs
-    //implementation fg.deobf("curse.maven:dynamic-surroundings-huds-${dynsurroundingshuds_version}")
-
-    //implementation fg.deobf("curse.maven:quark-243121:2924091")
-
-    //implementation fg.deobf("curse.maven:enhancedvisuals-255389:3507523")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
