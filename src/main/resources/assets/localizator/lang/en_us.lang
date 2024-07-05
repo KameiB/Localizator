@@ -121,6 +121,10 @@ config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName inst
 config.localizator.server.minecraftLocNameOverName.tooltip=If an item has both LocName and Name display NBT tags, show LocName instead of Name. \nThis is useful for Mixins that localize mods like Recurrent Complex, \nwhich assign custom hardcoded names to items on generation. \n\n§cRequired Mixin:\n- §d(Minecraft) Better Localized Name Mixin\n 
 config.localizator.server.srparasitesCustomNamesList=(SRParasites) Custom Parasite Name list
 config.localizator.server.srparasitesCustomNamesList.tooltip=This list is added to the original SRParasites Name lists. \n\n§cRequired Mixin:\n- §d(SRParasites) Custom Adventurer Names Mixin\n 
+config.localizator.server.fishingmadebetterLavaFishBucket=(FishingMadeBetter) Lava Fish Bucket
+config.localizator.server.fishingmadebetterLavaFishBucket.tooltip=Enable the Lava Fish Bucket recipe?\nThis item will be registered only if Fishing Made Better is loaded\n 
+config.localizator.server.fishingmadebetterVoidFishBucket=(FishingMadeBetter) Void Fish Bucket
+config.localizator.server.fishingmadebetterVoidFishBucket.tooltip=Enable the Void Bucket and Void Fish Bucket recipes?\nThese items will be registered only if Fishing Made Better is loaded\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names

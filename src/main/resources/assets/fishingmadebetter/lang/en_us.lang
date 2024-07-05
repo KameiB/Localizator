@@ -227,3 +227,13 @@ item.fmb.advanced-fishing:fish:42.desc=§7§oa rare transulscent fish, speculate
 notif.fishingmadebetter.command.reload_success=Config files reloaded for Fishing Made Better.
 notif.fishingmadebetter.command.reload_fail=Config files could not be loaded because the folder for the fishes data does not exist.
 
+# New Fish Buckets
+item.fishingmadebetter.fish_bucket.name=Water Fish Bucket
+item.fishingmadebetter.lava_fish_bucket.name=Lava Fish Bucket
+notif.fishingmadebetter.lava_fish_bucket.only_lava=This fish can only be placed in lava.
+notif.fishingmadebetter.lava_fish_bucket.small_lava=This body of lava is too small for this fish.
+item.fishingmadebetter.void_bucket.name=Void Bucket
+item.fishingmadebetter.void_bucket.tooltip.1=For holding void fishes
+item.fishingmadebetter.void_bucket.tooltip.2=Only used for crafting!
+item.fishingmadebetter.void_fish_bucket.name=Void Fish Bucket
+notif.fishingmadebetter.void_fish_bucket.only_void=This fish can only be placed in The End's void.

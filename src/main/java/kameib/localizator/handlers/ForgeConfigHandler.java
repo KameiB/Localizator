@@ -240,41 +240,49 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.bountifulbaublesTooltipFixesMixin")
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesTooltipFixesMixin = !Production.inProduction;
+		
 		@Config.Comment("If you hate those weird \"Â\" symbols in the Staff tooltip as much as me, enable this Mixin.")
 		@Config.Name("(DyamicTrees) Staff Mixin")
 		@Config.LangKey("config.localizator.mixins.dynamictreesStaffMixin")
 		@Config.RequiresMcRestart
 		public boolean dynamictreesStaffMixin = !Production.inProduction;
+		
 		@Config.Comment("If an item is not THAT errored, retrieve its name and display it. \nWorks with ArmorUnderwear's Ozzy Liners and other items!")
 		@Config.Name("(ItemPhysic) ERRORED patch Mixin")
 		@Config.LangKey("config.localizator.mixins.itemphysicErroredMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicErroredMixin = !Production.inProduction;
+		
 		@Config.Comment("Reverse the order of a dropped item description, so it shows the same as on its tooltip.")
 		@Config.Name("(ItemPhysic) Reverse Description Mixin")
 		@Config.LangKey("config.localizator.mixins.itemphysicReverseDescriptionMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicReverseDescriptionMixin = !Production.inProduction;
+		
 		@Config.Comment("Point Patrons and Version calls to valid repo URLs, to prevent java.io.FileNotFoundException.")
 		@Config.Name("(iChunUtil) Fix Patrons and Version URL Mixin")
 		@Config.LangKey("config.localizator.mixins.ichunutilFixURLs")
 		@Config.RequiresMcRestart
 		public boolean ichunutilFixURLs = !Production.inProduction;
+		
 		@Config.Comment("Adds cobweb immunity to the Ankh Charm. \nIf it makes sense to you as well c:")
 		@Config.Name("(BountifulBaubles) Ankh Charm Web Immune Mixin")
 		@Config.LangKey("config.localizator.mixins.bountifulbaublesAnkhCharmWebImmunity")
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesAnkhCharmWebImmunity = !Production.inProduction;
+		
 		@Config.Comment("Adds cobweb immunity to the Ankh Shield. \nIf it makes sense to you as well c:")
 		@Config.Name("(BountifulBaubles) Ankh Shield Web Immune Mixin")
 		@Config.LangKey("config.localizator.mixins.bountifulbaublesAnkhShieldmWebImmunity")
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesAnkhShieldmWebImmunity = !Production.inProduction;
+		
 		@Config.Comment("Enables the Client config:\n- (FishingMadeBetter) Instructions on Minigame")
 		@Config.Name("(FishingMadeBetter) Instructions on Minigame Mixin")
 		@Config.LangKey("config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin")
 		@Config.RequiresMcRestart
 		public boolean fishingmadebetterMinigameHelpTextMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables the user-defined Name list for the parasite Adventurers/Thralls.\nRequires \"Mod Easter Eggs\" option in SRParasites cfg to be enabled.")
 		@Config.Name("(SRParasites) Custom Adventurer Names Mixin")
 		@Config.LangKey("config.localizator.mixins.srparasitesCustomAdventurerNames")
@@ -287,35 +295,35 @@ public class ForgeConfigHandler {
 		@Config.Comment("If an entity has a custom name (CustomName tag with a language key in it), translate it. \nRequired Mixin:\n- (Minecraft) Mob Custom Names Mixin")
 		@Config.Name("(Minecraft) Translate Mob Custom Names")
 		@Config.LangKey("config.localizator.client.minecraftMobLocCustomNames")
-		public boolean minecraftMobLocCustomNames = !Production.inProduction;
+		public boolean minecraftMobLocCustomNames = true;
 		@Config.Comment("If a Boss has a custom Name (CustomName tag with a language key in it), translate it on client side. \nThe corresponding language key must exist! \nRequired Mixin:\n- (Minecraft) Boss Custom Names Mixin")
 		@Config.Name("(Minecraft) Translate Boss Custom Names")
 		@Config.LangKey("config.localizator.client.minecraftBossLocCustomNames")
-		public boolean minecraftBossLocCustomNames = !Production.inProduction;
+		public boolean minecraftBossLocCustomNames = true;
 		@Config.Comment("If an item has both \"Lore\" and \"LocLore\" NBT tags, LocLore contents will override Lore contents. \nIf it has only one of the lore tags, it will be displayed normally. \nRequired Mixin: \n- (Minecraft) Localized Lore Mixin")
 		@Config.Name("(Minecraft) Hide Lore if LocLore exists")
 		@Config.LangKey("config.localizator.client.minecraftHideLore")
-		public boolean minecraftHideLore = !Production.inProduction;
+		public boolean minecraftHideLore = true;
 		@Config.Comment("If an entity has a custom name (CustomName tag with a language key), translate it. nRequired Mixin:\n- (Neat) Health Bar Mixin")
 		@Config.Name("(Neat) Translate Names In Health Bar")
 		@Config.LangKey("config.localizator.client.neatLocHealthBar")
-		public boolean neatLocHealthBar = !Production.inProduction;
+		public boolean neatLocHealthBar = true;
 		@Config.Comment("In SRP armor tooltip, translate resisted damage sources names. \nEntity names are taken from Forge's registry (automatic). \nNon-entity names are taken from a lang file. \nRequired Mixin: \n- (SRParasites) Armor Tooltips Mixin \nDisable this option if it impacts performance.")
 		@Config.Name("(SRParasites) Translate Resisted Damage Sources")
 		@Config.LangKey("config.localizator.client.srparasitesResistances")
-		public boolean srparasitesResistances = !Production.inProduction;
+		public boolean srparasitesResistances = true;
 		@Config.Comment("Prevents a Bauble's Modifier from displaying at Bauble Name\nRequired Mixin: \n- (BountifulBaubles) No Modifier at Name Mixin")
 		@Config.Name("(BountifulBaubles) Remove Modifier from Bauble Name")
 		@Config.LangKey("config.localizator.client.bountifulbaublesRemoveModifierFromName")
-		public boolean bountifulbaublesRemoveModifierFromName = !Production.inProduction;
+		public boolean bountifulbaublesRemoveModifierFromName = true;
 		@Config.Comment("Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \nRequired Mixin: \n- (RoughTweaks) Localized Names and Better Tooltip Mixin")
 		@Config.Name("(RoughTweaks) Show Heal Amount")
 		@Config.LangKey("config.localizator.client.roughtweaksTooltip")		
-		public boolean roughtweaksTooltip = !Production.inProduction;
+		public boolean roughtweaksTooltip = true;
 		@Config.Comment("Adds a little help for players that don't know how to fish. \n \"Press [LEFT] / [RIGHT]\". \nRequired Mixin: \n- (FishingMadeBetter) Instructions on Minigame Mixin")
 		@Config.Name("(FishingMadeBetter) Instructions on Minigame")
 		@Config.LangKey("config.localizator.client.fishingmadebetterMinigameHelpText")
-		public boolean fishingmadebetterMinigameHelpText = !Production.inProduction;
+		public boolean fishingmadebetterMinigameHelpText = true;
 		@Config.Comment("The Overworld Sea Level line shown over the Fish Requirements JEI Plugin")
 		@Config.Name("(FMB/JEI) Y Meter. Overworld Sea Level")
 		@Config.RangeInt(min = 0, max = 140)
@@ -344,11 +352,24 @@ public class ForgeConfigHandler {
 		@Config.Comment("If an item has both LocName and Name display NBT tags, show LocName instead of Name. \nThis is useful for Mixins that localize mods like Recurrent Complex, \nwhich assign custom hardcoded names to items on generation. \nRequired Mixin: \n- (Minecraft) Better Localized Name Mixin")
 		@Config.Name("(Minecraft) Show LocName instead of Name")
 		@Config.LangKey("config.localizator.server.minecraftLocNameOverName")
-		public boolean minecraftLocNameOverName = !Production.inProduction;
+		public boolean minecraftLocNameOverName = true;
+		
 		@Config.Comment("This list is added to the original SRParasites Name lists. \nRequired Mixin: \n- (SRParasites) Custom Adventurer Names Mixin")
 		@Config.Name("(SRParasites) Custom Parasite Name list")
 		@Config.LangKey("config.localizator.server.srparasitesCustomNamesList")
 		public String[] srparasitesCustomNamesList = {"Collin"};
+
+		@Config.Comment("Enable the Lava Fish Bucket recipe?\nThis item will be registered only if Fishing Made Better is loaded")
+		@Config.Name("(FishingMadeBetter) Lava Fish Bucket")
+		@Config.LangKey("config.localizator.server.fishingmadebetterLavaFishBucket")
+		@Config.RequiresMcRestart
+		public boolean fishingmadebetterLavaFishBucket = true;
+
+		@Config.Comment("Enable the Void Bucket and Void Fish Bucket recipes?\nThese items will be registered only if Fishing Made Better is loaded")
+		@Config.Name("(FishingMadeBetter) Void Fish Bucket")
+		@Config.LangKey("config.localizator.server.fishingmadebetterVoidFishBucket")
+		@Config.RequiresMcRestart
+		public boolean fishingmadebetterVoidFishBucket = true;
 	}
 
 	@Mod.EventBusSubscriber(modid = Localizator.MODID)

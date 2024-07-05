@@ -1,6 +1,5 @@
 package kameib.localizator.proxy;
 
-
 import kameib.localizator.client.event.NewConfigEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -18,5 +17,4 @@ public class CommonProxy {
     protected void registerEvents() {
         MinecraftForge.EVENT_BUS.register(new NewConfigEvent());
     }
-
 }

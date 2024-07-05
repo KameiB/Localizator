@@ -226,3 +226,14 @@ item.fmb.advanced-fishing:fish:42.desc=§7§oun pez raro y traslucido, se especu
 
 notif.fishingmadebetter.command.reload_success=Archivos de configuración recargados para Fishing Made Better.
 notif.fishingmadebetter.command.reload_fail=Los archivos de configuración no pudieron cargarse porque no existe el directorio con los datos de los peces.
+
+# New Fish Buckets
+item.fishingmadebetter.fish_bucket.name=Cubeta con pez de agua
+item.fishingmadebetter.lava_fish_bucket.name=Cubeta con pez de lava
+notif.fishingmadebetter.lava_fish_bucket.only_lava=Este pez solo puede ponerse en lava.
+notif.fishingmadebetter.lava_fish_bucket.small_lava=Este cuerpo de lava es muy pequeño para este pez.
+item.fishingmadebetter.void_bucket.name=Cubeta con vacio
+item.fishingmadebetter.void_bucket.tooltip.1=Para contener peces del vacío
+item.fishingmadebetter.void_bucket.tooltip.2=Solo es un componente de crafteo!
+item.fishingmadebetter.void_fish_bucket.name=Cubeta con pez del vacio
+notif.fishingmadebetter.void_fish_bucket.only_void=Este pez solo puede ponerse en el vacío del End.
