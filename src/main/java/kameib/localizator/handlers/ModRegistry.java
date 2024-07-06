@@ -44,12 +44,15 @@ public class ModRegistry {
                         // VOID FISH BUCKET
                         if (ForgeConfigHandler.serverConfig.fishingmadebetterVoidFishBucket) {
                                 // VOID BUCKET
-                                RebornCraftingHelper.addShapedRecipe(new ItemStack(FMBItemManager.VOID_BUCKET, 1), " P ", "PBP", " P ", 'P', Items.ENDER_PEARL, 'B', Items.BUCKET);
-                                RebornCraftingHelper.addShapelessRecipe(new ItemStack(Items.BUCKET), FMBItemManager.VOID_BUCKET);
+                                RebornCraftingHelper.addShapedRecipe(new ItemStack(FMBItemManager.VOID_BUCKET), 
+                                        " P ", "PBP", " P ", 'P', Items.ENDER_PEARL, 'B', Items.BUCKET);
+                                RebornCraftingHelper.addShapelessRecipe(new ItemStack(Items.BUCKET), 
+                                        FMBItemManager.VOID_BUCKET);
                                 if (Loader.isModLoaded("advanced-fishing")) {
                                         RebornCraftingHelper.addShapelessRecipe(
                                                 new ItemStack(FMBItemManager.VOID_BUCKET),
-                                                new ItemStack(Item.getByNameOrId("advanced-fishing:fish"), 1, 14), Items.BUCKET);
+                                                new ItemStack(Item.getByNameOrId("advanced-fishing:fish"), 1, 14), // Pearlfish
+                                                Items.BUCKET);
                                 }
 
                                 // VOID FISH BUCKET

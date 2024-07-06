@@ -32,7 +32,7 @@ public class FMBJeiPlugin implements IModPlugin {
             
             // New fish buckets
             if (ForgeConfigHandler.serverConfig.fishingmadebetterLavaFishBucket) {
-                registry.addRecipes(LavaFishBucketRecipeMaker.getFishLavaBucketRecipes(), VanillaRecipeCategoryUid.CRAFTING);
+                registry.addRecipes(LavaFishBucketRecipeMaker.getLavaFishBucketRecipes(), VanillaRecipeCategoryUid.CRAFTING);
             }
             if (ForgeConfigHandler.serverConfig.fishingmadebetterVoidFishBucket) {
                 registry.addRecipes(VoidFishBucketRecipeMaker.getVoidFishBucketRecipes(), VanillaRecipeCategoryUid.CRAFTING);
