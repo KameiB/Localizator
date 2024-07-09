@@ -1,17 +1,29 @@
 ## If you see '%s', '%1$s', '%2$s', please don't translate or delete them!
 # ========================================================================
-# %s replaces original %event%
-event.started_=%s has begun!
-event.extended_=%s has been extended!
-event.finished_=%s is no longer spawning mobs!
-event.boss.started_=%s has been called!
-event.boss.extended_=%s is coming!
-event.boss.finished_=%s is unleashed!
+# ========== Messages ==========
+# Beastiary:
+# %1$s replaces original %creature% | %2$s replaces original %rank%
+message.beastiary.new_=You discover the %1$s and begin to add notes to your Beastiary!
+message.beastiary.rank_=You learn more of the %1$s unlocking Knowledge Rank %2$s!
+# %s replaces original %creature%
+message.beastiary.tameable_=You are now able to tame the %s.
+message.beastiary.summonable_=You are now able to summon the %s as a temporary minion! You will need a Summoning Item to summon it.
+message.beastiary.summonable.colors_=You can now summon variations of the %s!
+message.beastiary.summonable.skins_=You can now summon subspecies of the %s!
+# %1$s replaces original %rank% | %2$s replaces original %creature%
+message.beastiary.known_=You have already have Knowledge Rank %1$s of the %2$s.
 #
 # Soulstone:
 # %s replaces original %creature%
 message.soulstone.pet.added_=Your %s has been bound, you will now find it in your Pet Manager.
 message.soulstone.mount.added_=Your %s has been bound, you will now find it in your Mount Manager.
+#
+# Pet:
+# %s replaces original %creature%
+message.pet.tamed_=The %s seems to love you now!
+message.pet.tamefail_=The %s wants more!
+message.pet.tamefail.knowledge_=You gained knowledge by feeding the %s. At Rank 2 you may tame it!
+message.pet.mount.baby_=The %s is too young to carry you!
 #
 # ========== Commands ==========
 # %s replaces original %debug%
@@ -37,24 +49,13 @@ lyc.command.player.focus=Restored Player Focus.
 # %1$s replaces original {current} | %2$s replaces original {latest}
 lyc.version.newer_=You are currently using Lycanites Mobs %1$s but a newer version %2$s is now available, it is recommended to stay up to date!
 #
-# ========== Messages ==========
-# Beastiary:
-# %1$s replaces original %creature% | %2$s replaces original %rank%
-message.beastiary.new_=You discover the %1$s and begin to add notes to your Beastiary!
-message.beastiary.rank_=You learn more of the %1$s unlocking Knowledge Rank %2$s!
-# %s replaces original %creature%
-message.beastiary.tameable_=You are now able to tame the %s.
-message.beastiary.summonable_=You are now able to summon the %s as a temporary minion! You will need a Summoning Item to summon it.
-message.beastiary.summonable.colors_=You can now summon variations of the %s!
-message.beastiary.summonable.skins_=You can now summon subspecies of the %s!
-# %1$s replaces original %rank% | %2$s replaces original %creature%
-message.beastiary.known_=You have already have Knowledge Rank %1$s of the %2$s.
-# Pet:
-# %s replaces original %creature%
-message.pet.tamed_=The %s seems to love you now!
-message.pet.tamefail_=The %s wants more!
-message.pet.tamefail.knowledge_=You gained knowledge by feeding the %s. At Rank 2 you may tame it!
-message.pet.mount.baby_=The %s is too young to carry you!
+# %s replaces original %event%
+event.started_=%s has begun!
+event.extended_=%s has been extended!
+event.finished_=%s is no longer spawning mobs!
+event.boss.started_=%s has been called!
+event.boss.extended_=%s is coming!
+event.boss.finished_=%s is unleashed!
 #
 # Damage sources
 cold_fire=Cold Fire

@@ -1,17 +1,29 @@
 ## If you see '%s', '%1$s', '%2$s', please don't translate or delete them!
 # ========================================================================
-# %s replaces original %event%
-event.started_=¡El evento %s ha comenzado!
-event.extended_=¡El evento %s ha sido extendido!
-event.finished_=¡El evento %s ha acabado y ya no genera criaturas!
-event.boss.started_=¡%s ha sido llamado!
-event.boss.extended_=¡%s está viniendo!
-event.boss.finished_=¡%s ha llegado!
+# ========== Messages ==========
+# Beastiary:
+# %1$s replaces original %creature% | %2$s replaces original %rank%
+message.beastiary.new_=¡Descubriste a %1$s y ahora aparece en tu bestiario!
+message.beastiary.rank_=¡Aprendiste mucho sobre %1$s y ahora tienes el rango de conocimiento nivel %2$s!
+# %s replaces original %creature%
+message.beastiary.tameable_=¡Ahora eres capaz de domesticar a %s!
+message.beastiary.summonable_=¡Ahora puedes invocar a %s como un súbdito temporal con una vara de invocación!
+message.beastiary.summonable.colors_=¡Ahora tienes variaciones de %s para invocar!
+message.beastiary.summonable.skins_=¡Ahora tienes subespecies de %s para invocar!
+# %1$s replaces original %rank% | %2$s replaces original %creature%
+message.beastiary.known_=Conocimiento de nivel %1$s de %2$s ya obtenido.
 #
 # Soulstone:
 # %s replaces original %creature%
 message.soulstone.pet.added_=Tu %s se ha unido a tu alma, ¡ve al administrador de mascotas! ¡Recuerda que puedes subir de nivel a tu mascota con cargas!
 message.soulstone.mount.added_=Tu %s se ha unido a tu alma, ¡ve al administrador de monturas! ¡Recuerda que puedes subir de nivel a tu montura con cargas!
+#
+# Pet:
+# %s replaces original %creature%
+message.pet.tamed_=¡Ahora %s te quiere y es tu mascota! ¡Crea una piedra del alma para unir tu mascota a tu alma!
+message.pet.tamefail_=¡No es suficiente y %s quiere más!
+message.pet.tamefail.knowledge_=¡Ganaste conocimiento alimentando a %s y si llegas al nivel 2 será domesticable!
+message.pet.mount.baby_=¡Parece que %s es demasiado pequeño para llevarte!
 #
 # ========== Commands ==========
 # %s replaces original %debug%
@@ -37,26 +49,15 @@ lyc.command.player.focus=Se restauró el maná del jugador.
 # %1$s replaces original {current} | %2$s replaces original {latest}
 lyc.version.newer_=Estás usando Lycanite's Mobs %1$s, pero hay una nueva versión %2$s disponible. ¡Se recomienda actualizar!
 #
-# ========== Messages ==========
-# Beastiary:
-# %1$s replaces original %creature% | %2$s replaces original %rank%
-message.beastiary.new_=¡Descubriste a %1$s y ahora aparece en tu bestiario!
-message.beastiary.rank_=¡Aprendiste mucho sobre %1$s y ahora tienes el rango de conocimiento nivel %2$s!
-# %s replaces original %creature%
-message.beastiary.tameable_=¡Ahora eres capaz de domesticar a %s!
-message.beastiary.summonable_=¡Ahora puedes invocar a %s como un súbdito temporal con una vara de invocación!
-message.beastiary.summonable.colors_=¡Ahora tienes variaciones de %s para invocar!
-message.beastiary.summonable.skins_=¡Ahora tienes subespecies de %s para invocar!
-# %1$s replaces original %rank% | %2$s replaces original %creature%
-message.beastiary.known_=Conocimiento de nivel %1$s de %2$s ya obtenido.
-# Pet:
-# %s replaces original %creature%
-message.pet.tamed_=¡Ahora %s te quiere y es tu mascota! ¡Crea una piedra del alma para unir tu mascota a tu alma!
-message.pet.tamefail_=¡No es suficiente y %s quiere más!
-message.pet.tamefail.knowledge_=¡Ganaste conocimiento alimentando a %s y si llegas al nivel 2 será domesticable!
-message.pet.mount.baby_=¡Parece que %s es demasiado pequeño para llevarte!
+# %s replaces original %event%
+event.started_=¡El evento %s ha comenzado!
+event.extended_=¡El evento %s ha sido extendido!
+event.finished_=¡El evento %s ha acabado y ya no genera criaturas!
+event.boss.started_=¡%s ha sido llamado!
+event.boss.extended_=¡%s está viniendo!
+event.boss.finished_=¡%s ha llegado!
 #
-# ========== Event creatures ==========
+# ========== Special creatures ==========
 # Names for creatures with special skin (I know this looks disgusting, but trust me, it's better like this)
 Flowersaur=Florisaurio
 Gooderness=Bondad
