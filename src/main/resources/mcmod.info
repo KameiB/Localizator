@@ -11,6 +11,6 @@
     "credits": "fonnymunkey",
     "logoFile": "logo.png",
     "screenshots": [],
-    "dependencies": []
+    "dependencies": ["fermiumbooter"]
   }
 ]
