@@ -1,6 +1,7 @@
 fml.button.config=Configurar
 fml.button.disable=Deshabilitar
 fml.menu.mods.modlist=Lista de Mods
+fml.menu.mods.search=Buscar:
 fml.mod.details.version=Versión: %1$s (%2$s)
 fml.mod.details.modid=ID del Mod: '%1$s'. Estado del Mod: %2$s
 fml.mod.details.credits=Créditos: %s
@@ -16,3 +17,13 @@ fml.mod.details.updatechanges=Cambios:
 fml.mod.metadata.notfound=Sin Metadatos
 fml.mod.metadata.child=mod hijo
 fml.mod.metadata.childs=mods hijos
+# Mod status (mod list screen)
+Unloaded=No cargado
+Loaded=Cargado
+Constructed=Construido
+Pre-initialized=Pre-inicializado
+Initialized=Inicializado
+Post-Initialized=Post-inicializado
+Available=Disponible
+Disabled=Deshabilitado
+Errored=Con error

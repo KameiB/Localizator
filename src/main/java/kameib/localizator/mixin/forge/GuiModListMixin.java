@@ -98,7 +98,7 @@ public abstract class GuiModListMixin {
     private Object localizator_Forge_GuiModList_updateCache_modID(Object e) {
         return I18n.format("fml.mod.details.modid", 
                 TextFormatting.AQUA + selectedMod.getModId() + TextFormatting.WHITE,
-                TextFormatting.AQUA + Loader.instance().getModState(selectedMod).toString() + TextFormatting.WHITE);
+                TextFormatting.AQUA + I18n.format(Loader.instance().getModState(selectedMod).toString()) + TextFormatting.WHITE);
     }    
     
     @ModifyArg(

@@ -16,3 +16,13 @@ fml.mod.details.updatechanges=Changes:
 fml.mod.metadata.notfound=Metadata not found
 fml.mod.metadata.child=child mod
 fml.mod.metadata.childs=child mods
+# Mod status (mod list screen)
+Unloaded=Unloaded
+Loaded=Loaded
+Constructed=Constructed
+Pre-initialized=Pre-initialized
+Initialized=Initialized
+Post-Initialized=Post-Initialized
+Available=Available
+Disabled=Disabled
+Errored=Errored
