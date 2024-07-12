@@ -5,12 +5,14 @@
     "description": "${mod_description}",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "https://www.curseforge.com/minecraft/mc-mods/localizator",
+    "url": "https://www.curseforge.com/members/kameib/projects",
     "updateUrl": "",
     "authorList": ["KameiB"],
-    "credits": "fonnymunkey",
+    "credits": "${mod_credits}",
     "logoFile": "logo.png",
     "screenshots": [],
-    "dependencies": ["fermiumbooter"]
+    "requiredMods": ["fermiumbooter"],
+    "dependencies": ["fermiumbooter"],
+    "useDependencyInformation": true
   }
 ]
