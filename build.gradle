@@ -204,6 +204,7 @@ processResources {
     filesMatching('mcmod.info') {
         expand 'mod_id': mod_id, 'mod_name': mod_name, 'version': project.version,
                 'mcversion': minecraft_version, 'mod_description': mod_description,
+                'mod_credits': mod_credits,
                 'mod_author': 'KameiB'
     }
 }

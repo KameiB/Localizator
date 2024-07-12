@@ -1,4 +1,5 @@
 #PARSE_ESCAPES
+localizator.credits=\n     - §6fonnymunkey§r:§7 Sin RLMixins y su guía, Localizator no hubiera sido posible.\n     - §6Kotlin§e y la comunidad de RLCraft§r:§7 Por su gran amabilidad y apoyo.\n     - §eMis §6patrones §ey§6 suscriptores§r:§7 Por creer en mí y en mi misión.
 localizator.description=No más textos hardcodeados. Los localizaré!
 entity.localizator.KameiB.name=§2El §a§lKame
 book.localizator.Example.title=§b§oCuando me muera
@@ -167,5 +168,5 @@ jei.fishingmadebetter.category.fish_requirements.minigame.time.tooltip=Hora: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.rain.tooltip=Lluvia: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.thunder.tooltip=Tormenta eléctrica: %s
 jei.fishingmadebetter.category.fish_requirements.minigame.light.tooltip=Luz alrededor: %s
-jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Condiciones:
+jei.fishingmadebetter.category.fish_requirements.minigame.title=§6Condiciones
 jei.fishingmadebetter.category.fish_requirements.minigame.biometype=Tipo de bioma: %s
