@@ -5,4 +5,4 @@
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/C8whEj9o?style=for-the-badge&logo=modrinth&logoColor=%230CDC73&label=modrinth&labelColor=2d2d2d)](https://modrinth.com/mod/localizator)
 
 
-A Minecraft mod that uses Mixins to replace hardcoded texts with lang keys, so they become translatable.
+A Minecraft mod that uses Mixins to replace hardcoded texts in many mods with lang keys, so they become translatable.
