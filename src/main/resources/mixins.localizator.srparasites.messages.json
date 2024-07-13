@@ -10,7 +10,7 @@
     "srparasites.SRPCommandEvolutionMixin",
     "srparasites.SRPCommandMixin",
     "srparasites.SRPCommandRootMixin",
-    "srparasites.SRPWorldDataMixin",
+    "srparasites.SRPSaveDataMixin",
     "srparasites.ParasiteEventWorldMixin"
   ],
   "injectors": {

@@ -19,7 +19,7 @@ public abstract class ParasiteEventWorldMixin {
             remap = false
     )
     // Replace config "Node Warning Message" with a lang key
-    // Line 179: ParasiteEventEntity.alertAllPlayerDim(worldIn, SRPConfigWorld.nodeWarning, 10);
+    // Line 183: ParasiteEventEntity.alertAllPlayerDim(worldIn, SRPConfigWorld.nodeWarning, 100);
     private static String SRParasites_ParasiteEventWorld_placeHeartInWorld_alertAllPlayerDim(String message) {
         return "message.srparasites.node_warning";
     }
@@ -36,7 +36,7 @@ public abstract class ParasiteEventWorldMixin {
             remap = false
     )
     // Replace config "Colonies Warning Message" with a lang key
-    // Line 672: ParasiteEventEntity.alertAllPlayerDim(worldIn, SRPConfigWorld.colonyWarning, 11);
+    // Line 705: ParasiteEventEntity.alertAllPlayerDim(worldIn, SRPConfigWorld.colonyWarning, 101);
     private static String SRParasites_ParasiteEventWorld_placeColonyInWorld_alertAllPlayerDim(String message) {
         return "message.srparasites.colony_warning";
     }

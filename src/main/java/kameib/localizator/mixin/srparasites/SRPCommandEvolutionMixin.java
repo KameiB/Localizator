@@ -40,27 +40,31 @@ public abstract class SRPCommandEvolutionMixin {
             return new TextComponentTranslation("message.srparasites.toggle_evolutiongaining", strMessage.replace("Current srpevolutiongaining is now ", ""));
         }
         
-        if (strMessage.startsWith(" ======> \n -> Current Evolution Phase: ")) {
-            String strEvolutionPhase, strTotalKills, strNeededPoints, strProgress, strCooldown, strCanGain, strCanLoss, strOption;
-            strMessage = strMessage.replace(" ======> \n -> Current Evolution Phase: ", "");
-            strEvolutionPhase = strMessage.substring(0,strMessage.indexOf(" \n") - 1);
-            strMessage = strMessage.replace(strEvolutionPhase + " \n -> Total points: ", "");
-            strTotalKills = strMessage.substring(0,strMessage.indexOf(" \n") - 1);
-            strMessage = strMessage.replace(strTotalKills + " \n -> Points required for the next phase: ", "");
-            strNeededPoints = strMessage.substring(0,strMessage.indexOf(" \n") - 1);
-            strMessage = strMessage.replace(strNeededPoints + " \n -> Progress: ", "");
-            strProgress = strMessage.substring(0,strMessage.indexOf("%") - 1);
-            strMessage = strMessage.replace(strProgress + "%  \n -> Phase cooldown: ", "");
-            strCooldown = strMessage.substring(0,strMessage.indexOf(" second(s)") - 1);
+        if (strMessage.startsWith(" ======> \n -> Current Dimension: ")) {
+            String strDimension, strEvolutionPhase, strTotalKills, strNeededPoints, strProgress, strCooldown, strCanGain, strCanLoss, strOption, strWorldMobCap;
+            strMessage = strMessage.replace(" ======> \n -> Current Dimension: ", ""); // OK
+            strDimension = strMessage.substring(0,strMessage.indexOf(" \n")); // 11 (?)
+            strMessage = strMessage.replace(strDimension + " \n -> Current Evolution Phase: ", ""); // OK
+            strEvolutionPhase = strMessage.substring(0,strMessage.indexOf(" \n")); // OK
+            strMessage = strMessage.replace(strEvolutionPhase + " \n -> Total points: ", ""); // OK
+            strTotalKills = strMessage.substring(0,strMessage.indexOf(" \n")); // OK? 
+            strMessage = strMessage.replace(strTotalKills + " \n -> Points required for the next phase: ", ""); // --
+            strNeededPoints = strMessage.substring(0,strMessage.indexOf(" \n"));
+            strMessage = strMessage.replace(strNeededPoints + " \n -> Progress: ", ""); // ---
+            strProgress = strMessage.substring(0,strMessage.indexOf("%"));
+            strMessage = strMessage.replace(strProgress + "%  \n -> Phase cooldown: ", ""); // OK
+            strCooldown = strMessage.substring(0,strMessage.indexOf(" second(s)"));
             strMessage = strMessage.replace(strCooldown + " second(s) remaining \n -> srpevolutiongaining: ", "");
-            strCanGain = strMessage.substring(0,strMessage.indexOf(" (can gain") - 1);
+            strCanGain = strMessage.substring(0,strMessage.indexOf(" (can gain"));
             strMessage = strMessage.replace(strCanGain + " (can gain points) \n -> srpevolutionloss: ", "");
-            strCanLoss = strMessage.substring(0,strMessage.indexOf(" (cannot lose") - 1);
-            strMessage = strMessage.replace(strCanLoss + " (cannot lose points) \n -> Number of current parasites: ", "");
+            strCanLoss = strMessage.substring(0,strMessage.indexOf(" (cannot lose"));
+            strMessage = strMessage.replace(strCanLoss + " (cannot lose points) \n -> Current Parasite Mob Cap: ", "");
+            strWorldMobCap = strMessage.substring(0,strMessage.indexOf(" \n"));
+            strMessage = strMessage.replace(strWorldMobCap + " \n -> Number of current parasites: ", "");
             strOption = strMessage;
             
             return new TextComponentTranslation("message.srparasites.getphase",
-                    strEvolutionPhase, strTotalKills, strNeededPoints, strProgress, strCooldown, strCanGain, strCanLoss, strOption);
+                    strDimension, strEvolutionPhase, strTotalKills, strNeededPoints, strProgress, strCooldown, strCanGain, strCanLoss, strWorldMobCap, strOption);
         }
         
         if (strMessage.contentEquals("The list has been reset")) {
@@ -88,18 +92,18 @@ public abstract class SRPCommandEvolutionMixin {
             return new TextComponentTranslation("message.srparasites.addpoints_cannotlose");
         }
 
-        if (strMessage.contentEquals("Current phase is in cooldown, cannot add points")) {
+        if (strMessage.contentEquals("Current phase is in cooldown, cannot add/remove points")) {
             return new TextComponentTranslation("message.srparasites.addpoints_cooldown");
         }
 
         if (strMessage.startsWith("Added ")) {
             String strPoints = strMessage.replace("Added ", "");
-            strPoints = strPoints.substring(0, strPoints.indexOf(" point") - 1);
+            strPoints = strPoints.substring(0, strPoints.indexOf(" point"));
             int nPoints;
             
             try {
                 nPoints = Integer.parseInt(strPoints);
-                return new TextComponentTranslation((nPoints > 1 ? "message.srparasites.addedpoint" : "message.srparasites.addedpoints"), strPoints);
+                return new TextComponentTranslation((nPoints > 1 ? "message.srparasites.addedpoints" : "message.srparasites.addedpoint"), strPoints);
             } catch (NumberFormatException e) {
                 return new TextComponentTranslation("message.srparasites.addedpoints", strPoints);
             }
@@ -111,7 +115,7 @@ public abstract class SRPCommandEvolutionMixin {
         
         if (strMessage.startsWith("The cooldown was set to ")) {
             String strCooldown = strMessage.replace("The cooldown was set to ", "");
-            strCooldown = strCooldown.substring(0, strCooldown.indexOf(" second(s)") - 1);
+            strCooldown = strCooldown.substring(0, strCooldown.indexOf(" second(s)"));
             
             return new TextComponentTranslation("message.srparasites.setcooldown", strCooldown);
         }

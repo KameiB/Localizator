@@ -116,7 +116,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:TschippLib-${tschipplib_version}") // Needed for ForgottenItems
     compileOnly fg.deobf("curse.maven:ForgottenItems-${forgottenitems_version}")
 
-    compileOnly files("libs/SRParasites-1.12.2v1.9.11.jar")
+    implementation files("libs/SRParasites-1.12.2v1.9.21.jar")
 
     compileOnly fg.deobf("curse.maven:reach-fix-${reachfix_version}") // Needed when running BetterSurvival
     compileOnly fg.deobf("curse.maven:better-survival-mod-${bettersurvival_version}")

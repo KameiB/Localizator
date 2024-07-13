@@ -1,3 +1,4 @@
+#PARSE_ESCAPES
 tooltip.srparasites.armor.adaptation=Current Adaptation:
 tooltip.srparasites.armor.reduction=§a  Reduction:
 
@@ -13,14 +14,14 @@ message.srparasites.entitynotfound=Entity not found
 message.srparasites.phasesnotactive=Evolution phases is not active
 message.srparasites.toggle_evolutionloss=Current srpevolutionloss is now %s
 message.srparasites.toggle_evolutiongaining=Current srpevolutiongaining is now %s
-message.srparasites.getphase= ======> \n -> Current Evolution Phase: %1$s \n -> Total points: %2$s \n -> Points required for the next phase: %3$s \n -> Progress: %4$s%%  \n -> Phase cooldown: %5$s second(s) remaining \n -> srpevolutiongaining: %6$s (can gain points) \n -> srpevolutionloss: %7$s (cannot lose points) \n -> Number of current parasites: %8$s
+message.srparasites.getphase= ======> \n -> Current Dimension: %1$s \n -> Current Evolution Phase: %2$s \n -> Total points: %3$s \n -> Points required for the next phase: %4$s \n -> Progress: %5$s%%  \n -> Phase cooldown: %6$s second(s) remaining \n -> srpevolutiongaining: %7$s (can gain points) \n -> srpevolutionloss: %8$s (cannot lose points) \n -> Current Parasite Mob Cap: %9$s \n -> Number of current parasites: %10$s
 message.srparasites.evolutionlock_reset=The list has been reset
 message.srparasites.evolutionlock_getlist=Current list: %s
 message.srparasites.invalidarg=Invalid arg
 message.srparasites.addpoints_2=Current phase -2, cannot add points
 message.srparasites.addpoints_cannotgain=Current dimension cannot gain points
 message.srparasites.addpoints_cannotlose=Current dimension cannot lose points
-message.srparasites.addpoints_cooldown=Current phase is in cooldown, cannot add points
+message.srparasites.addpoints_cooldown=Current phase is in cooldown, cannot add/remove points
 message.srparasites.addedpoint=Added %s point
 message.srparasites.addedpoints=Added %s points
 message.srparasites.setcooldown_negative=Cooldown value must be positive or 0
@@ -48,6 +49,8 @@ message.srparasites.phase_5_warning=Five
 message.srparasites.phase_6_warning=Six
 message.srparasites.phase_7_warning=Seven
 message.srparasites.phase_8_warning=Eight
+message.srparasites.phase_9_warning=Nine
+message.srparasites.phase_10_warning=Ten
 message.srparasites.node_warning=Node
 message.srparasites.colony_warning=Colony
 
