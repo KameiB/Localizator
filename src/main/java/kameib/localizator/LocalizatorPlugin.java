@@ -157,6 +157,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         trinketsList.add(new ConfigToMixin("(T&B) Localized Ender Queen messages Mixin", "mixins.localizator.xat.messages.json"));
         trinketsList.add(new ConfigToMixin("(T&B) Localized Armor Weight Tooltip Mixin", "mixins.localizator.xat.weighttooltip.json"));
         map.put("xat", trinketsList);
+        // Dynamic Raw Ores
+        List<ConfigToMixin> dynaoresList = new ArrayList<>();
+        dynaoresList.add(new ConfigToMixin("(DynaOres) Correctly Localized Ore Names", "mixins.localizator.dynaores.orenames.json"));
+        map.put("dynaores", dynaoresList);
 
         return Collections.unmodifiableMap(map);
     }

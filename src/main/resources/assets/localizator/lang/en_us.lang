@@ -95,7 +95,9 @@ config.localizator.mixins.xatArmorWeightTooltipMixin.tooltip=Localizes the armor
 config.localizator.mixins.scalingHealthMessagesMixin=(ScalingHealth) Localized Messages Mixin
 config.localizator.mixins.scalingHealthMessagesMixin.tooltip=Localizes messages related to the date and Blight deaths.\n 
 config.localizator.mixins.srparasitesMessagesMixin=(SRParasites) Localized Messages Mixin
-config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localizes SRParasites messages.\n
+config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localizes SRParasites messages.\n 
+config.localizator.mixins.dynaoresNameMixin=(DynaOres) Correctly Localized Ore Names
+config.localizator.mixins.dynaoresNameMixin.tooltip=Localizes Raw ores names to behave correctly on languages other than English.\nIt took the ore ingot name and stripped "Ingot" from it, which works only for English.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin

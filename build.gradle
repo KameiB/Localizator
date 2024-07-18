@@ -116,16 +116,16 @@ dependencies {
     compileOnly fg.deobf("curse.maven:TschippLib-${tschipplib_version}") // Needed for ForgottenItems
     compileOnly fg.deobf("curse.maven:ForgottenItems-${forgottenitems_version}")
 
-    implementation files("libs/SRParasites-1.12.2v1.9.21.jar")
+    compileOnly files("libs/SRParasites-1.12.2v1.9.21.jar")
 
     compileOnly fg.deobf("curse.maven:reach-fix-${reachfix_version}") // Needed when running BetterSurvival
     compileOnly fg.deobf("curse.maven:better-survival-mod-${bettersurvival_version}")
 
     compileOnly fg.deobf("curse.maven:creativecore-${creativecore_version}") // Needed for ItemPhysic_Full
     compileOnly fg.deobf("curse.maven:itemphysic-${itemphysic_version}")
-    
-    implementation fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
-    implementation fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
+
+    compileOnly fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
+    compileOnly fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
 
     compileOnly fg.deobf("curse.maven:RoughTweaks-${roughtweaks_version}")
 
@@ -154,23 +154,25 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:varied-commodities-${variedcommodities_version}")
 
-    implementation fg.deobf("curse.maven:fishing-made-better-${fishingmadebetter_version}")
+    compileOnly fg.deobf("curse.maven:fishing-made-better-${fishingmadebetter_version}")
 
     compileOnly fg.deobf("curse.maven:FBP-${fbp_version}")
 
     compileOnly fg.deobf("curse.maven:levelup2-${levelup2_version}")
 
     compileOnly fg.deobf("curse.maven:mo-bends-${mobends_version}")
-    
-    implementation fg.deobf("curse.maven:silentlib-${silentlib_version}") // Needed for Scaling Health
-    implementation fg.deobf("curse.maven:scalinghealth-${scalinghealth_version}")
+
+    compileOnly fg.deobf("curse.maven:silentlib-${silentlib_version}") // Needed for Scaling Health
+    compileOnly fg.deobf("curse.maven:scalinghealth-${scalinghealth_version}")
 
     compileOnly fg.deobf("curse.maven:spartan-weaponry-${spartanweaponry_version}")
 
     compileOnly files("libs/Trinkets+and+Baubles-32.4.jar")
 
-    implementation fg.deobf("curse.maven:mantle-${mantle_version}") // Needed for Inspirations
-    implementation fg.deobf("curse.maven:inspirations-${inspirations_version}")
+    compileOnly fg.deobf("curse.maven:mantle-${mantle_version}") // Needed for Inspirations
+    compileOnly fg.deobf("curse.maven:inspirations-${inspirations_version}")
+
+    compileOnly fg.deobf("curse.maven:dynaores-${dynamores_version}")
 
 
     // You may put jars on which you depend on in ./libs or you may define them like so..

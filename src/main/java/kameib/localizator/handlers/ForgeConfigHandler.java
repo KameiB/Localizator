@@ -232,6 +232,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.srparasitesMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean srparasitesMessagesMixin = !Production.inProduction;
+
+		@Config.Comment("Localizes Raw ores names to behave correctly on languages other than English.\nIt took the ore ingot name and stripped \"Ingot\" from it, which works only for English.")
+		@Config.Name("(DynaOres) Correctly Localized Ore Names")
+		@Config.LangKey("config.localizator.mixins.dynaoresNameMixin")
+		@Config.RequiresMcRestart
+		public boolean dynaoresNameMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

@@ -1,0 +1,13 @@
+## Individual raw ores
+# Iron
+item.dynaores.RawIron.name=Raw Iron
+tile.dynaores.RawIronBlock.name=Block of Raw Iron
+# Gold
+item.dynaores.RawGold.name=Raw Gold
+tile.dynaores.RawGoldBlock.name=Block of Raw Gold
+# Umbrium
+item.dynaores.RawUmbrium.name=Raw Umbrium
+tile.dynaores.RawUmbriumBlock.name=Block of Raw Umbrium
+# Silver
+item.dynaores.RawSilver.name=Raw Silver
+tile.dynaores.RawSilverBlock.name=Block of Raw Silver

@@ -96,6 +96,8 @@ config.localizator.mixins.scalingHealthMessagesMixin=(ScalingHealth) Mixin mensa
 config.localizator.mixins.scalingHealthMessagesMixin.tooltip=Localiza los mensajes relacionados con la fecha y muertes de mobs Brillantes.\n 
 config.localizator.mixins.srparasitesMessagesMixin=(SRParasites) Mixin mensajes localizados
 config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localiza los mensajes de SRParasites.\n 
+config.localizator.mixins.dynaoresNameMixin=(DynaOres) Mixin Nombres localizados correctamente
+config.localizator.mixins.dynaoresNameMixin.tooltip=Localiza el nombre de los minerales crudos para que se comporten correctamente en idiomas diferentes del Inglés.\nTomaba el nombre del lingote y le quitaba "Ingot", lo cual sólo funciona en Inglés.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
