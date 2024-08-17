@@ -94,8 +94,8 @@ dependencies {
     //minecraft 'net.forge:forge:1.12.2-14.23.5.2859'
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation "org.spongepowered:mixin:0.8.5"
-    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+    implementation "org.spongepowered:mixin:0.8.7"
+    annotationProcessor "org.spongepowered:mixin:0.8.7:processor"
 
     implementation fg.deobf("curse.maven:fermiumbooter-${fermiumbooter_version}")
 
@@ -173,6 +173,9 @@ dependencies {
     compileOnly fg.deobf("curse.maven:inspirations-${inspirations_version}")
 
     compileOnly fg.deobf("curse.maven:dynaores-${dynamores_version}")
+
+    //implementation fg.deobf("curse.maven:fnars-roguelike-dungeons-${roguelike_version}")
+    compileOnly files("libs/RoguelikeDungeonsFnarEdition-1.12.2-2.4.5_indev.jar")
 
 
     // You may put jars on which you depend on in ./libs or you may define them like so..

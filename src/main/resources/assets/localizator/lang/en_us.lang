@@ -118,6 +118,12 @@ config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBet
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Enables the Client config:\n\n- §b(FishingMadeBetter) Instructions on Minigame.\n 
 config.localizator.mixins.srparasitesCustomAdventurerNames=(SRParasites) Custom Adventurer Names Mixin
 config.localizator.mixins.srparasitesCustomAdventurerNames.tooltip=Enables the user-defined Name list for the parasite Adventurers/Thralls.\nRequires "Mod Easter Eggs" option in SRParasites cfg to be enabled.\n 
+config.localizator.mixins.rldEternalNovelties=(RLD) Unbreakable Novelties Mixin
+config.localizator.mixins.rldEternalNovelties.tooltip=Makes some Roguelike Dungeons Novelties generate with the "Unbreakable" NBT tag.\nIndividual Novelty items can be configured in the Server config section.\n 
+config.localizator.mixins.rldExtendedNovelties=(RLD) Extended Novelty Pool Mixin
+config.localizator.mixins.rldExtendedNovelties.tooltip=Originally, some zombies and skeletons rarely spawned with 1 of these 3 Novelty items:\n- Ashlea's Otameal Cookie\n- Rleahian battle sub\n- Valandrah's Kiss\n§eThis Mixin will enable more mob types to spawn holding or wearing other novelties.\n§eAlso, room-specific novelties will have a chance to generate in containers, making all novelties obtainable!\n 
+config.localizator.mixins.rldSpawnJohnny=(RLD) Spawn Johnny Mixin
+config.localizator.mixins.rldSpawnJohnny.tooltip=Enables the Server config:\n- (RLD) Johnny spawning chance\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name
@@ -128,6 +134,38 @@ config.localizator.server.fishingmadebetterLavaFishBucket=(FishingMadeBetter) La
 config.localizator.server.fishingmadebetterLavaFishBucket.tooltip=Enable the Lava Fish Bucket recipe?\nThis item will be registered only if Fishing Made Better is loaded\n 
 config.localizator.server.fishingmadebetterVoidFishBucket=(FishingMadeBetter) Void Fish Bucket
 config.localizator.server.fishingmadebetterVoidFishBucket.tooltip=Enable the Void Bucket and Void Fish Bucket recipes?\nThese items will be registered only if Fishing Made Better is loaded\n 
+config.localizator.server.rldEternalNebrisCrown=(RLD) Eternal "Nebris Crown"
+config.localizator.server.rldEternalNebrisCrown.tooltip=Should the "Nebris Crown" (Golden Helmet) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalNullPointer=(RLD) Eternal "Null Pointer"
+config.localizator.server.rldEternalNullPointer.tooltip=Should the "Null Pointer" (Diamond Sword) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalManPants=(RLD) Eternal "Man Pants"
+config.localizator.server.rldEternalManPants.tooltip=Should the "Man Pants" (Leather Leggings) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalFarlandTravelers=(RLD) Eternal "Farland Travelers"
+config.localizator.server.rldEternalFarlandTravelers.tooltip=Should the "Farland Travelers" (Leather Boots) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalLascerator=(RLD) Eternal "Lascerator"
+config.localizator.server.rldEternalLascerator.tooltip=Should the "Lascerator" (Shears) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalPinkSweater=(RLD) Eternal "Pink Sweater"
+config.localizator.server.rldEternalPinkSweater.tooltip=Should the "Pink Sweater" (Leather Chestplate) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalDigJob=(RLD) Eternal "Dig Job"
+config.localizator.server.rldEternalDigJob.tooltip=Should the "Dig Job" (Diamond Shovel) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalYourMum=(RLD) Eternal "Your Mum"
+config.localizator.server.rldEternalYourMum.tooltip=Should the "Your Mum" (Wooden Pickaxe) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalEnikoStringTheory=(RLD) Eternal "Eniko's String Theory"
+config.localizator.server.rldEternalEnikoStringTheory.tooltip=Should the "Eniko's String Theory" (Bow) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalEnikoEarring=(RLD) Eternal "Eniko's Earring"
+config.localizator.server.rldEternalEnikoEarring.tooltip=Should the "Eniko's Earring" (Diamond Sword) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalBajLastResort=(RLD) Eternal "Baj's Last Resort"
+config.localizator.server.rldEternalBajLastResort.tooltip=Should the "Baj's Last Resort" (Golden Hoe) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalRodOfCommand=(RLD) Eternal "Rod of Command"
+config.localizator.server.rldEternalRodOfCommand.tooltip=Should the "Rod of Command" (Fishing Rod) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldEternalValandrahKiss=(RLD) Eternal "Valandrah's Kiss"
+config.localizator.server.rldEternalValandrahKiss.tooltip=Should the "Valandrah's Kiss" (Iron Sword) Novelty generate with the "Unbreakable" NBT tag?\n\n§cRequired Mixin: \n- §d(RLD) Unbreakable Novelties Mixin\n 
+config.localizator.server.rldCustomSpawnerHusk=(RLD) Custom Spawner - Husk
+config.localizator.server.rldCustomSpawnerHusk.tooltip=Do you have any custom dungeon with Husk Spawners?\nThis option will balance this mobs Novelty generation chance acordingly.\n\n§cRequired Mixin: \n- §d(RLD) Extended Novelty Pool Mixin\n 
+config.localizator.server.rldCustomSpawnerZombieVillager=(RLD) Custom Spawner - Zombie Villager
+config.localizator.server.rldCustomSpawnerZombieVillager.tooltip=Do you have any custom dungeon with Zombie Villager Spawners?\nThis option will balance this mobs Novelty generation chance acordingly.\n\n§cRequired Mixin: \n- §d(RLD) Extended Novelty Pool Mixin\n 
+config.localizator.server.rldJohnnySpawnChance=(RLD) Johnny spawning chance
+config.localizator.server.rldJohnnySpawnChance.tooltip=If you have any custom dungeon with Vindicator Spawners, Johnny will have a chance to spawn from them.\n0.0 = 0%% Spawn chance\n1.0 = 100%% Spawn chance\n\n§cRequired Mixin: \n- §d(RLD) Spawn Johnny Mixin\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names

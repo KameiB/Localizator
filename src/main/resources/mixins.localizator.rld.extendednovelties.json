@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "kameib.localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "roguelike.ProfilePigZombieMixin",
+    "roguelike.ProfileHuskMixin",
+    "roguelike.ProfileWitherSkeletonMixin",
+    "roguelike.ProfileZombieVillagerMixin",
+    "roguelike.ProfilePoisonArcherMixin",
+    "roguelike.ProfileMagicArcherMixin",
+    "roguelike.ProfileArcherMixin",
+    "roguelike.FireworkRoomMixin",
+    "roguelike.DungeonsSpiderNestMixin",
+    "roguelike.DungeonsCreeperDenMixin",
+    "roguelike.DungeonsSmithyMixin",
+    "roguelike.DungeonsMusicMixin",
+    "roguelike.PyramidTombRoomMixin",
+    "roguelike.ProfileJohnnyMixin",
+    "roguelike.BlazeRoomMixin",
+    "roguelike.DungeonsEnchantMixin",
+    "roguelike.ProfileSwordsmanMixin",
+    "roguelike.ProfileAshleaMixin",
+    "roguelike.ProfileRleahyMixin",
+    "roguelike.ProfileBabyMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

@@ -161,6 +161,12 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> dynaoresList = new ArrayList<>();
         dynaoresList.add(new ConfigToMixin("(DynaOres) Correctly Localized Ore Names", "mixins.localizator.dynaores.orenames.json"));
         map.put("dynaores", dynaoresList);
+        // Roguelike Dungeons
+        List<ConfigToMixin> rldList = new ArrayList<>();
+        rldList.add(new ConfigToMixin("(RLD) Unbreakable Novelties Mixin", "mixins.localizator.rld.eternalnovelties.json"));
+        rldList.add(new ConfigToMixin("(RLD) Extended Novelty Pool Mixin", "mixins.localizator.rld.extendednovelties.json"));
+        rldList.add(new ConfigToMixin("(RLD) Spawn Johnny Mixin", "mixins.localizator.rld.enablejohnny.json"));
+        map.put("roguelike", rldList);
 
         return Collections.unmodifiableMap(map);
     }

@@ -294,7 +294,24 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.srparasitesCustomAdventurerNames")
 		@Config.RequiresMcRestart
 		public boolean srparasitesCustomAdventurerNames = !Production.inProduction;
-		
+
+		@Config.Comment("Makes some Roguelike Dungeons Novelties generate with the \"Unbreakable\" NBT tag.\nIndividual Novelty items can be configured in the Server config section.")
+		@Config.Name("(RLD) Unbreakable Novelties Mixin")
+		@Config.LangKey("config.localizator.mixins.rldEternalNovelties")
+		@Config.RequiresMcRestart
+		public boolean rldEternalNovelties = !Production.inProduction;
+
+		@Config.Comment("Originally, some zombies and skeletons rarely spawned with 1 of these 3 Novelty items:\n- Ashlea's Otameal Cookie\n- Rleahian battle sub\n- Valandrah's Kiss\nThis Mixin will enable more mob types to spawn holding or wearing other novelties.\nAlso, room-specific novelties will have a chance to generate in containers, making all novelties obtainable!")
+		@Config.Name("(RLD) Extended Novelty Pool Mixin")
+		@Config.LangKey("config.localizator.mixins.rldExtendedNovelties")
+		@Config.RequiresMcRestart
+		public boolean rldExtendedNovelties = !Production.inProduction;
+
+		@Config.Comment("Enables the Server config:\n- (RLD) Johnny spawning chance")
+		@Config.Name("(RLD) Spawn Johnny Mixin")
+		@Config.LangKey("config.localizator.mixins.rldSpawnJohnny")
+		@Config.RequiresMcRestart
+		public boolean rldSpawnJohnny = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
@@ -376,6 +393,87 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.server.fishingmadebetterVoidFishBucket")
 		@Config.RequiresMcRestart
 		public boolean fishingmadebetterVoidFishBucket = true;
+
+		@Config.Comment("Should the \"Nebris Crown\" (Golden Helmet) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Nebris Crown")
+		@Config.LangKey("config.localizator.server.rldEternalNebrisCrown")
+		public boolean rldEternalNebrisCrown = true;
+		
+		@Config.Comment("Should the \"Null Pointer\" (Diamond Sword) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Null Pointer")
+		@Config.LangKey("config.localizator.server.rldEternalNullPointer")
+		public boolean rldEternalNullPointer = true;
+
+		@Config.Comment("Should the \"Man Pants\" (Leather Leggings) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Man Pants")
+		@Config.LangKey("config.localizator.server.rldEternalManPants")
+		public boolean rldEternalManPants = true;
+
+		@Config.Comment("Should the \"Farland Travelers\" (Leather Boots) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Farland Travelers")
+		@Config.LangKey("config.localizator.server.rldEternalFarlandTravelers")
+		public boolean rldEternalFarlandTravelers = true;
+
+		@Config.Comment("Should the \"Lascerator\" (Shears) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Lascerator")
+		@Config.LangKey("config.localizator.server.rldEternalLascerator")
+		public boolean rldEternalLascerator = true;
+
+		@Config.Comment("Should the \"Pink Sweater\" (Leather Chestplate) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Pink Sweater")
+		@Config.LangKey("config.localizator.server.rldEternalPinkSweater")
+		public boolean rldEternalPinkSweater = true;
+
+		@Config.Comment("Should the \"Dig Job\" (Diamond Shovel) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Dig Job")
+		@Config.LangKey("config.localizator.server.rldEternalDigJob")
+		public boolean rldEternalDigJob = true;
+
+		@Config.Comment("Should the \"Your Mum\" (Wooden Pickaxe) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Your Mum")
+		@Config.LangKey("config.localizator.server.rldEternalYourMum")
+		public boolean rldEternalYourMum = true;
+		
+		@Config.Comment("Should the \"Enikos String Theory\" (Bow) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Enikos String Theory")
+		@Config.LangKey("config.localizator.server.rldEternalEnikoStringTheory")
+		public boolean rldEternalEnikoStringTheory = true;
+
+		@Config.Comment("Should the \"Enikos Earring\" (Diamond Sword) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Enikos Earring")
+		@Config.LangKey("config.localizator.server.rldEternalEnikoEarring")
+		public boolean rldEternalEnikoEarring = true;
+
+		@Config.Comment("Should the \"Bajs Last Resort\" (Golden Hoe) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Bajs Last Resort")
+		@Config.LangKey("config.localizator.server.rldEternalBajLastResort")
+		public boolean rldEternalBajLastResort = true;
+
+		@Config.Comment("Should the \"Rod of Command\" (Fishing Rod) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Rod of Command")
+		@Config.LangKey("config.localizator.server.rldEternalRodOfCommand")
+		public boolean rldEternalRodOfCommand = true;
+
+		@Config.Comment("Should the \"Valandrahs Kiss\" (Iron Sword) Novelty generate with the \"Unbreakable\" NBT tag?\nRequired Mixin: \n- (RLD) Unbreakable Novelties Mixin")
+		@Config.Name("(RLD) Eternal Valandrahs Kiss")
+		@Config.LangKey("config.localizator.server.rldEternalValandrahKiss")
+		public boolean rldEternalValandrahKiss = true;
+
+		@Config.Comment("Do you have any custom dungeon with Husk Spawners?\nThis option will balance this mobs Novelty generation chance acordingly.\nRequired Mixin: \n- (RLD) Extended Novelty Pool Mixin")
+		@Config.Name("(RLD) Custom Spawner - Husk")
+		@Config.LangKey("config.localizator.server.rldCustomSpawnerHusk")
+		public boolean rldCustomSpawnerHusk = false;
+		
+		@Config.Comment("Do you have any custom dungeon with Zombie Villager Spawners?\nThis option will balance this mobs Novelty generation chance acordingly.\nRequired Mixin: \n- (RLD) Extended Novelty Pool Mixin")
+		@Config.Name("(RLD) Custom Spawner - Zombie Villager")
+		@Config.LangKey("config.localizator.server.rldCustomSpawnerZombieVillager")
+		public boolean rldCustomSpawnerZombieVillager = false;
+
+		@Config.Comment("If you have any custom dungeon with Vindicator Spawners, Johnny will have a chance to spawn from them.\n0.00 = 0% Spawn chance\n1.0 = 100% Spawn chance\nRequired Mixin: \n- (RLD) Spawn Johnny Mixin")
+		@Config.Name("(RLD) Johnny spawning chance")
+		@Config.RangeDouble(min = 0.00, max = 1.0)
+		@Config.LangKey("config.localizator.server.rldJohnnySpawnChance")
+		public double rldJohnnySpawnChance = 0.00;
 	}
 
 	@Mod.EventBusSubscriber(modid = Localizator.MODID)
@@ -411,15 +509,15 @@ public class ForgeConfigHandler {
 				Production.migratedCfg = !(configCurrentVersion.contains("Enable/Disable Localization Mixins (Tweaks)"));
 				if (Production.migratedCfg) {
 					String oldCfgName = Localizator.MODID + "_old.cfg";
-					Localizator.LOGGER.warn("[Localizator] Found an old-version config file. Renaming it to \"" + oldCfgName + "\" and creating a new one...");
+                    Localizator.LOGGER.warn("[Localizator] Found an old-version config file. Renaming it to \"{}\" and creating a new one...", oldCfgName);
 					// Migrate from old cfg version to current one
 					try {
 						Files.deleteIfExists(new File("config", oldCfgName).toPath());
 					} catch (Exception e) {
-						Localizator.LOGGER.error("Failed to delete old config file: " + oldCfgName + ". " + e);
+                        Localizator.LOGGER.error("Failed to delete old config file: {}. {}", oldCfgName, e);
 					}
 					if (!(configFile.renameTo(new File("config", oldCfgName)))) {
-						Localizator.LOGGER.error("Failed to rename config file to: " + oldCfgName);
+                        Localizator.LOGGER.error("Failed to rename config file to: {}", oldCfgName);
 					}
 					Localizator.LOGGER.info("[Localizator] Please re-enable all your desired Mixins and configurations. Sorry for the inconvenience!");
 					configFile = null;

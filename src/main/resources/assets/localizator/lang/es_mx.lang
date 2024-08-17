@@ -118,6 +118,12 @@ config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin=(FishingMadeBet
 config.localizator.mixins.fishingmadebetterMinigameHelpTextMixin.tooltip=Habilita la opción Cliente:\n- §b(FishingMadeBetter) Instrucciones en Minijuego.\n 
 config.localizator.mixins.srparasitesCustomAdventurerNames=(SRParasites) Mixin Nombres personalizados de aventureros
 config.localizator.mixins.srparasitesCustomAdventurerNames.tooltip=Habilita la Lista de nombres definidos por el usuario, para los Aventureros/Thralls parásitos.\nRequiere que la opción "Mod Easter Eggs" en el archivo de configuración de SRParasites esté habilitada.\n 
+config.localizator.mixins.rldEternalNovelties=(RLD) Mixin Souvenires Irrompibles
+config.localizator.mixins.rldEternalNovelties.tooltip=Hace que algunos souvenires de Roguelike Dungeons se generen con el tag NBT "Unbreakable".\nCada souvenir puede configurarse en la sección de configuraciones de Servidor.\n 
+config.localizator.mixins.rldExtendedNovelties=(RLD) Mixin Todos los souvenires
+config.localizator.mixins.rldExtendedNovelties.tooltip=Originalmente, algunos zombies y esqueletos spawneaban raramente son alguno de estos 3 souvenires:\n- Galleta de avena de Ashlea\n- Lonche de batalla rleahiano\n- Beso de Valandrah\n§eEste Mixin permitirá a más tipos de mob spawnear sosteniendo o portando otros souvenires.\n§eAdemás, souvenires exclusivos a ciertos cuartos tendrán una probabilidad de generarse en contenedores, haciendo que todos los souvenires puedan obtenerse!\n 
+config.localizator.mixins.rldSpawnJohnny=(RLD) Mixin Generar Johnny
+config.localizator.mixins.rldSpawnJohnny.tooltip=Habilita la opción Servidor:\n- (RLD) Johnny spawning chance\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Mostrar LocName en lugar de Name
@@ -128,6 +134,38 @@ config.localizator.server.fishingmadebetterLavaFishBucket=(FishingMadeBetter) Cu
 config.localizator.server.fishingmadebetterLavaFishBucket.tooltip=Habilitar la receta de la Cubeta con pez de lava?\nEste item sólo se registrará si Fishing Made Better está cargado.\n 
 config.localizator.server.fishingmadebetterVoidFishBucket=(FishingMadeBetter) Cubeta con pez del vacío
 config.localizator.server.fishingmadebetterVoidFishBucket.tooltip=Habilitar las recetas de la Cubeta con vacío y la Cubeta con pez del vacío?\nEstos items sólo se registrarán si Fishing Made Better está cargado.\n 
+config.localizator.server.rldEternalNebrisCrown=(RLD) "Corona nébrida de justicia" eterna
+config.localizator.server.rldEternalNebrisCrown.tooltip=¿Debería el souvenir "Corona nébrida de justicia" (Casco de oro) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalNullPointer=(RLD) "Puntero a null" eterno
+config.localizator.server.rldEternalNullPointer.tooltip=¿Debería el souvenir "Puntero a null" (Espada de diamante) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalManPants=(RLD) "Pantalones de hombre" eternos
+config.localizator.server.rldEternalManPants.tooltip=¿Debería el souvenir "Pantalones de hombre" (Pantalones de cuero) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalFarlandTravelers=(RLD) "Viajeros de las Tierras lejanas" eternos
+config.localizator.server.rldEternalFarlandTravelers.tooltip=¿Debería el souvenir "Viajeros de las Tierras lejanas" (Botas de cuero) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalLascerator=(RLD) "Lascerador" eterno
+config.localizator.server.rldEternalLascerator.tooltip=¿Debería el souvenir "Lascerador" (Tijeras) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalPinkSweater=(RLD) "Suéter rosa" eterno
+config.localizator.server.rldEternalPinkSweater.tooltip=¿Debería el souvenir "Suéter rosa" (Pechera de cuero) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalDigJob=(RLD) "Trabajo de excavación" eterno
+config.localizator.server.rldEternalDigJob.tooltip=¿Debería el souvenir "Trabajo de excavación" (Pala de diamante) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalYourMum=(RLD) "Tu mamá" eterna
+config.localizator.server.rldEternalYourMum.tooltip=¿Debería el souvenir "Tu mamá" (Pico de madera) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalEnikoStringTheory=(RLD) "Teoría de cuerdas de Eniko" eterna
+config.localizator.server.rldEternalEnikoStringTheory.tooltip=¿Debería el souvenir "Teoría de cuerdas de Eniko" (Arco) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalEnikoEarring=(RLD) "Arete de Eniko" eterno
+config.localizator.server.rldEternalEnikoEarring.tooltip=¿Debería el souvenir "Arete de Eniko" (Espada de diamante) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalBajLastResort=(RLD) "El último recurso de Baj" eterno
+config.localizator.server.rldEternalBajLastResort.tooltip=¿Debería el souvenir "El último recurso de Baj" (Azada de oro) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalRodOfCommand=(RLD) "Caña de comando" eterna
+config.localizator.server.rldEternalRodOfCommand.tooltip=¿Debería el souvenir "Caña de comando" (Caña de pescar) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldEternalValandrahKiss=(RLD) "Beso de Valandrah" eterno
+config.localizator.server.rldEternalValandrahKiss.tooltip=¿Debería el souvenir "Beso de Valandrah" (Espada de hierro) generarse con el tag NBT "Unbreakable"?\n\n§cMixin necesario: \n- §d(RLD) Mixin Souvenires Irrompibles\n 
+config.localizator.server.rldCustomSpawnerHusk=(RLD) Generador custom - Zombi momificado
+config.localizator.server.rldCustomSpawnerHusk.tooltip=¿Tienes algún calabozo personalizado con Generadores de Zombi momificado?\nEsta opción balanceará apropiadamente la probabilidad de que este mob se genere con un Souvenir.\n\n§cMixin necesario: \n- §d(RLD) Mixin Todos los souvenires\n 
+config.localizator.server.rldCustomSpawnerZombieVillager=(RLD) Generador custom - Aldeano Zombi
+config.localizator.server.rldCustomSpawnerZombieVillager.tooltip=¿Tienes algún calabozo personalizado con Generadores de Aldeano Zombi?\nEsta opción balanceará apropiadamente la probabilidad de que este mob se genere con un Souvenir.\n\n§cMixin necesario: \n- §d(RLD) Mixin Todos los souvenires\n 
+config.localizator.server.rldJohnnySpawnChance=(RLD) Probabilidad de generar a Johnny
+config.localizator.server.rldJohnnySpawnChance.tooltip=Si tienes algún calabozo personalizado con Generadores de Defensor, Johnny tendrá una probabilidad de aparecer de dichos Generadores.\n0.0 = 0%% Prob. de generarse\n1.0 = 100%% Prob. de generarse\n\n§cMixin necesario: \n- §d(RLD) Mixin Generar Johnny\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
