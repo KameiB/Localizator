@@ -1,5 +1,6 @@
 package kameib.localizator.mixin.roguelike;
 
+import com.github.fnar.minecraft.Difficulty;
 import com.github.fnar.minecraft.entity.Slot;
 import com.github.fnar.minecraft.item.ArmourType;
 import com.github.fnar.minecraft.item.RldItemStack;
@@ -65,7 +66,7 @@ public abstract class ProfileHuskMixin {
 
     @Unique
     private void localizator$profileNebris(Mob mob, int level, int difficulty, Random random) {
-        RLD_MobUtil.supponpon(mob).equipMainhand(ItemNovelty.nebrisCrown());
+        RLD_MobUtil.supponpon(mob).equipSword(random, level, Difficulty.fromInt(difficulty));
 
         // Skin: https://namemc.com/profile/Nebris.1
         // White boots (Alto)
@@ -81,8 +82,8 @@ public abstract class ProfileHuskMixin {
         mob.equip(Slot.CHEST, chestplate);
 
         // Brown hair (Brown Pod)
-        RldItemStack helmet = ArmourType.HELMET.asItem().leather().withColor(RLD_ExtraColor.BROWN_POD).asStack();
-        mob.equip(Slot.HEAD, helmet);
+        //RldItemStack helmet = ArmourType.HELMET.asItem().leather().withColor(RLD_ExtraColor.BROWN_POD).asStack();
+        mob.equip(Slot.HEAD, ItemNovelty.nebrisCrown());
     }
     
     @Unique
