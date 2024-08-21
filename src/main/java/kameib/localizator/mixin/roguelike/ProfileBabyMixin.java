@@ -35,13 +35,9 @@ public abstract class ProfileBabyMixin {
     @Unique
     private void localizator$profileKameiB(Mob mob, int level, int difficulty, Random random) {
         RLD_MobUtil.supponpon(mob);
-        if (random.nextBoolean()) {
-            RldItemStack rod = ToolType.FISHING_ROD.asItem().plzEnchantAtLevel(level).asStack();
-            mob.equipMainhand(rod);
-        }
-        else {
-            mob.equipMainhand(getTequila(random));
-        }
+        RldItemStack rod = ToolType.FISHING_ROD.asItem().plzEnchantAtLevel(level).asStack();
+        mob.equipMainhand(rod);
+        
 
         // Skin: https://namemc.com/profile/KameiB.1
         // Green boots (Fern Green)
