@@ -12,6 +12,7 @@ import net.theawesomegem.fishingmadebetter.common.data.FishData.FishingLiquid;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -28,16 +29,19 @@ public class VoidFishBucketRecipeWrapper implements ICraftingRecipeWrapper {
 		ItemStack voidBucket = new ItemStack(FMBItemManager.VOID_BUCKET);
 		ItemStack voidFishBucket = new ItemStack(FMBItemManager.VOID_FISH_BUCKET);
 		List<ItemStack> fishStackList = new ArrayList<>();
+		Item fishItem;
 		
 		for(FishData fishData : CustomConfigurationHandler.fishDataMap.values()) {
 			if(!fishData.liquid.equals(FishingLiquid.VOID)) continue;
+			fishItem = Item.getByNameOrId(fishData.itemId);
+			if (fishItem == null) continue;
 			
-			ItemStack fishStack = new ItemStack(Item.getByNameOrId(fishData.itemId), 1, fishData.itemMetaData);
+			ItemStack fishStack = new ItemStack( fishItem, 1, fishData.itemMetaData);
 			fishStackList.add(fishStack);
 		}
 		
 
-		this.inputs = Arrays.asList(Arrays.asList(voidBucket), fishStackList);
+		this.inputs = Arrays.asList(Collections.singletonList(voidBucket), fishStackList);
 		this.output = voidFishBucket;
 	}
 

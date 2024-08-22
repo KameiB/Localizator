@@ -64,10 +64,7 @@ public abstract class ItemHealMixin extends Item {
             } else {
                 tooltip.add(TextFormatting.BLUE + I18n.format("tooltip.roughtweaks.itemheal.heal_amount", hearts));
             }
-        }        
-        /*else {
-            tooltip.add(I18n.format("tooltip.roughtweaks.itemheal.shift"));
-        }*/
+        }
         ci.cancel();
     }
 }

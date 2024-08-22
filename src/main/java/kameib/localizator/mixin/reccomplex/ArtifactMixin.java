@@ -27,8 +27,6 @@ public abstract class ArtifactMixin implements IArtifactMixin {
     public static Artifact randomArtifact(Random random, String objectType_) {
         String trait_ = random.nextFloat() < 0.2f ? getRandomElementFrom(traits, random) : null;
         // if "power" is set as a chaoticName, save that into its corresponding string.
-        // String power = random.nextFloat() < 0.1F ? Person.chaoticName(random, random.nextBoolean()) : 
-        //      (random.nextFloat() < 0.8F ? (String)getRandomElementFrom(powers, random) : null);
         String power_;
         String name2 = "";
         if (random.nextFloat() < 0.1f) {
@@ -36,7 +34,7 @@ public abstract class ArtifactMixin implements IArtifactMixin {
             name2 = Person.chaoticName(random, random.nextBoolean());
         }
         else {
-            power_ = (random.nextFloat() < 0.8F ? (String)getRandomElementFrom(powers, random) : null);            
+            power_ = (random.nextFloat() < 0.8F ? getRandomElementFrom(powers, random) : null);            
         }
 
         String uniqueName_;
@@ -52,8 +50,8 @@ public abstract class ArtifactMixin implements IArtifactMixin {
         }
         
         Artifact artifact = new Artifact(objectType_, trait_, power_, uniqueName_);        
-        ((IArtifactMixin) artifact).setPreName(name1);
-        ((IArtifactMixin) artifact).setPostName(name2);
+        ((IArtifactMixin) artifact).localizator$setPreName(name1);
+        ((IArtifactMixin) artifact).localizator$setPostName(name2);
         
         return artifact;
     }
@@ -63,7 +61,7 @@ public abstract class ArtifactMixin implements IArtifactMixin {
      * @return Return full name in the form of a lang key
      */
     @Override
-    public String getFullLocName() {
+    public String localizator$getFullLocName() {
         StringBuilder builder = new StringBuilder();
         builder.append("item.reccomplex.");
         if (uniqueName != null) {
@@ -85,19 +83,19 @@ public abstract class ArtifactMixin implements IArtifactMixin {
     }
 
     @Override
-    public String getPreName() {
+    public String localizator$getPreName() {
         return localizator$preName;
     }
     @Override
-    public String getPostName() {
+    public String localizator$getPostName() {
         return localizator$postName;
     }
     @Override
-    public void setPreName(String preName) {
+    public void localizator$setPreName(String preName) {
         this.localizator$preName = preName;
     }
     @Override
-    public void setPostName(String postName) {
+    public void localizator$setPostName(String postName) {
         this.localizator$postName = postName;
     }
     

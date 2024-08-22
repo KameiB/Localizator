@@ -31,7 +31,7 @@ public abstract class GuiScreenBookMixin extends GuiScreen {
     private void Minecraft_GuiScreenBook_constructor_readLocPages(EntityPlayer player, ItemStack book, boolean isUnsigned, CallbackInfo ci) {
         if (book.hasTagCompound() && isUnsigned) {
             NBTTagCompound nbtTagCompound = book.getTagCompound();
-            if (nbtTagCompound.getTagId("locPages") == Constants.NBT.TAG_LIST &&
+            if (Constants.NBT.TAG_LIST == nbtTagCompound.getTagId("locPages") &&
                 nbtTagCompound.getTagId("pages") == Constants.NBT.TAG_LIST) {
                 NBTTagList pagesList = nbtTagCompound.getTagList("pages", Constants.NBT.TAG_STRING);
                 NBTTagList locPagesList = nbtTagCompound.getTagList("locPages", Constants.NBT.TAG_STRING).copy();

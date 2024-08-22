@@ -65,9 +65,6 @@ public abstract class FishingEventHandlerMixin {
                 "tooltip.fishingmadebetter.fish.alive");
         argList.add("");
         
-        /*return LocLoreUtil.appendLocLore(
-                !Strings.isNullOrEmpty(FMB_BetterFishUtil.getFishCustomLangKey(itemStack)) ? itemStack.setTranslatableName(FMB_BetterFishUtil.getFishCustomLangKey(itemStack)) : itemStack,
-                locLoreList, argList);*/
         return LocLoreUtil.appendLocLore(itemStack, locLoreList, argList);
     }
     

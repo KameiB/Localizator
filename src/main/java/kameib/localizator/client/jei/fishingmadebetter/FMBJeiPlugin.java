@@ -9,7 +9,7 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import mezz.jei.api.recipe.VanillaRecipeCategoryUid;
 import net.minecraftforge.fml.common.Loader;
 
-import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 @JEIPlugin
 public class FMBJeiPlugin implements IModPlugin {
@@ -17,7 +17,8 @@ public class FMBJeiPlugin implements IModPlugin {
     private static IJeiRuntime runtime;
     
     @Override
-    public void registerCategories(@Nonnull IRecipeCategoryRegistration registry) {
+    @ParametersAreNonnullByDefault
+    public void registerCategories(IRecipeCategoryRegistration registry) {
         if (Loader.isModLoaded("fishingmadebetter")) {
             fishReq = new FishRequirementsRecipeCategory(registry.getJeiHelpers().getGuiHelper());
             registry.addRecipeCategories(fishReq);
@@ -25,7 +26,8 @@ public class FMBJeiPlugin implements IModPlugin {
     }
     
     @Override
-    public void register(@Nonnull IModRegistry registry) { 
+    @ParametersAreNonnullByDefault
+    public void register(IModRegistry registry) { 
         if (Loader.isModLoaded("fishingmadebetter")) {
             // Fish Requirements
             registry.addRecipes(FishRequirementsRecipeMaker.getFishRequirementsRecipes(), fishReq.getUid());
@@ -40,7 +42,8 @@ public class FMBJeiPlugin implements IModPlugin {
         }
     }
 
-    public void onRuntimeAvailable(@Nonnull IJeiRuntime jeiRuntime) {
+    @ParametersAreNonnullByDefault
+    public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
         runtime = jeiRuntime;
     }
     

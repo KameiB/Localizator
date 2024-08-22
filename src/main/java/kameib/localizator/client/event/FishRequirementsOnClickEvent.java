@@ -118,7 +118,7 @@ public class FishRequirementsOnClickEvent {
             // Trigger the show recipes method for the specified fish
             recipesGui.show(focus);
         } catch (Exception e) {
-            Localizator.LOGGER.error("Error showing " + fishStack.getDisplayName() + " recipe in JEI", e);
+            Localizator.LOGGER.error("Error showing {} recipe in JEI", fishStack.getDisplayName(), e);
         }
     }
 }

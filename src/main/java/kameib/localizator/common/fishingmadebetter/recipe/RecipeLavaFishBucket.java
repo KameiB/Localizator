@@ -11,6 +11,7 @@ import net.theawesomegem.fishingmadebetter.common.configuration.CustomConfigurat
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
 import kameib.localizator.common.fishingmadebetter.item.ItemLavaFishBucket;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class RecipeLavaFishBucket extends net.minecraftforge.registries.IForgeRe
 
     @Override
     @ParametersAreNonnullByDefault
+    @Nonnull
     public ItemStack getCraftingResult(InventoryCrafting inv) {
     	Integer[] slots = validInput(inv);
     	if(slots==null) return ItemStack.EMPTY;
@@ -51,11 +53,13 @@ public class RecipeLavaFishBucket extends net.minecraftforge.registries.IForgeRe
     }
 
     @Override
+    @Nonnull
     public ItemStack getRecipeOutput() {
         return ItemStack.EMPTY;
     }
     
     @Override
+    @Nonnull
     public NonNullList<ItemStack> getRemainingItems(InventoryCrafting inv) {
         return NonNullList.withSize(inv.getSizeInventory(), ItemStack.EMPTY);
     }

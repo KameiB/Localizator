@@ -1,7 +1,6 @@
 package kameib.localizator.common.text.event;
 
 import com.google.common.collect.Maps;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 
 import javax.annotation.Nonnull;
@@ -37,10 +36,10 @@ public class FishRequirementsClickEvent extends ClickEvent {
         return "FishRequirementsClickEvent{action=" + action + ", value='" + this.value + "'" + '}';
     }
    
-    public static enum Action {
+    public enum Action {
         FISH_REQUIREMENTS("fish_requirements", true);
 
-        private static final Map<String, Action> NAME_MAPPING = Maps.<String, Action>newHashMap();
+        private static final Map<String, Action> NAME_MAPPING = Maps.newHashMap();
         private final boolean allowedInChat;
         private final String canonicalName;
         

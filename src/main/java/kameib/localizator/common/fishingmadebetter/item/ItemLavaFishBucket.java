@@ -1,7 +1,6 @@
 package kameib.localizator.common.fishingmadebetter.item;
 
 import kameib.localizator.util.FMB_BetterFishUtil;
-import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.block.state.IBlockState;
@@ -35,6 +34,7 @@ import net.theawesomegem.fishingmadebetter.common.configuration.CustomConfigurat
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
 import net.theawesomegem.fishingmadebetter.common.registry.FMBCreativeTab;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
@@ -58,7 +58,7 @@ public class ItemLavaFishBucket extends Item {
 
     @Override
     @ParametersAreNonnullByDefault
-    @MethodsReturnNonnullByDefault
+    @Nonnull
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
         ItemStack itemstack = playerIn.getHeldItem(handIn);

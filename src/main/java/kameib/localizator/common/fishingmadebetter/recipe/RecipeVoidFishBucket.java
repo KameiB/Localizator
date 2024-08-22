@@ -12,7 +12,9 @@ import net.theawesomegem.fishingmadebetter.common.configuration.CustomConfigurat
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
 
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class RecipeVoidFishBucket extends net.minecraftforge.registries.IForgeRe
     private long worldTime;
 
     @Override
+    @ParametersAreNonnullByDefault
     public boolean matches(InventoryCrafting inv, World worldIn) {
     	if(worldIn == null) return false;
     	
@@ -34,6 +37,8 @@ public class RecipeVoidFishBucket extends net.minecraftforge.registries.IForgeRe
     }
 
     @Override
+    @Nonnull
+    @ParametersAreNonnullByDefault
     public ItemStack getCraftingResult(InventoryCrafting inv) {
     	Integer[] slots = validInput(inv);
     	if(slots==null) return ItemStack.EMPTY;
@@ -49,11 +54,13 @@ public class RecipeVoidFishBucket extends net.minecraftforge.registries.IForgeRe
     }
 
     @Override
+    @Nonnull
     public ItemStack getRecipeOutput() {
         return ItemStack.EMPTY;
     }
     
     @Override
+    @Nonnull
     public NonNullList<ItemStack> getRemainingItems(InventoryCrafting inv) {
         return NonNullList.withSize(inv.getSizeInventory(), ItemStack.EMPTY);
     }

@@ -1,6 +1,5 @@
 package kameib.localizator.client.jei.fishingmadebetter;
 
-import com.sun.istack.internal.NotNull;
 import kameib.localizator.data.Drawing;
 import kameib.localizator.data.Texture;
 import kameib.localizator.data.fishingmadebetter.FishRequirementData;
@@ -204,7 +203,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
         return new ResourceLocation( fishRequirementData.fishId.toLowerCase(Locale.ENGLISH).replace(" ", "_") + "_requirements");
     }
 
-    public void drawInfo(@Nonnull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+    public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
         biomeDisplay = minecraft.player.ticksExisted % (overlayList.size() * 20);
         beginRenderingTransparency();
         {
@@ -440,7 +439,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             }
         }
         
-        public void drawMiniGame(@NotNull Minecraft minecraft, int x, int y) {
+        public void drawMiniGame(Minecraft minecraft, int x, int y) {
             minigameInner[0].draw(minecraft, x, y); // Liquid
             minigameInner[1].draw(minecraft, x, y); // Time (sky)
             minigameInner[2].draw(minecraft, x, y); // Surroundings
@@ -450,7 +449,7 @@ public class FishRequirementsRecipeWrapper implements ICraftingRecipeWrapper {
             minigameBorder.draw(minecraft, x, y); // Border
         }
         
-        public void drawYmeter(@NotNull Minecraft minecraft, int x, int y) {
+        public void drawYmeter(Minecraft minecraft, int x, int y) {
             // Background
             yMeter[0].draw(minecraft, x, y);
             // Range

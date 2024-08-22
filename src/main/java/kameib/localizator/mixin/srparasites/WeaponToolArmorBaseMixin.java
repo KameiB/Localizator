@@ -41,7 +41,7 @@ public abstract class WeaponToolArmorBaseMixin {
         if (ForgeConfigHandler.clientConfig.srparasitesResistances) {
             String resistanceFull = ((String)resistanceObj);
             String resistanceRaw = resistanceFull.substring(resistanceFull.indexOf("-> ") + 3);            
-            String resistanceTranslated = "";
+            String resistanceTranslated;
             if (I18n.hasKey(resistanceRaw)) { // Non-entity damage
                 resistanceTranslated = I18n.format(resistanceRaw);
             }

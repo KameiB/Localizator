@@ -49,12 +49,12 @@ public abstract class ArtifactItemMixin {
         artifactStack.setStackDisplayName(name);
         // Then, set the LocName. Localizator shows LocName (if exists) instead of DisplayName.
         // I use both DisplayName and LocName, so if the player removes Localizator, Minecraft shows DisplayName instead of LocName.
-        artifactStack.setTranslatableName(((IArtifactMixin)localizator$tempArtifact).getFullLocName());
+        artifactStack.setTranslatableName(((IArtifactMixin)localizator$tempArtifact).localizator$getFullLocName());
         
         // Finally, append LocNameArgs.
         // This method creates a copy of the ItemStack it receives and returns the copy, instead of modifying the original ItemStack.
         return LocNameArguments.appendLocNameArgs(artifactStack,
-                Arrays.asList(((IArtifactMixin) localizator$tempArtifact).getPreName(), 
-                                     ((IArtifactMixin) localizator$tempArtifact).getPostName()));
+                Arrays.asList(((IArtifactMixin) localizator$tempArtifact).localizator$getPreName(), 
+                                     ((IArtifactMixin) localizator$tempArtifact).localizator$getPostName()));
     }
 }

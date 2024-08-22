@@ -22,6 +22,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 @Mixin(ItemBetterFishingRod.class)
@@ -34,6 +35,8 @@ public abstract class ItemBetterFishingRodMixin extends ItemFishingRod  {
      */
     @SideOnly(Side.CLIENT)
     @Overwrite(remap = Production.inProduction)
+    @ParametersAreNonnullByDefault
+    @SuppressWarnings("deprecation")
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         ItemReel reel = getReelItem(stack);
         ItemBobber bobber = getBobberItem(stack);

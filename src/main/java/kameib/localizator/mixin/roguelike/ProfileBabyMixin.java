@@ -15,8 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Random;
 
-import static greymerk.roguelike.treasure.loot.PotionMixture.getTequila;
-
 @Mixin(ProfileBaby.class)
 public abstract class ProfileBabyMixin {
     @Inject(

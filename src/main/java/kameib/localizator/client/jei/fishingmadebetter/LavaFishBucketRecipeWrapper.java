@@ -13,6 +13,7 @@ import net.theawesomegem.fishingmadebetter.common.data.FishData.FishingLiquid;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,15 +30,18 @@ public class LavaFishBucketRecipeWrapper implements ICraftingRecipeWrapper {
 		ItemStack lavaBucket = new ItemStack(Items.LAVA_BUCKET);
 		ItemStack lavaFishBucket = new ItemStack(FMBItemManager.LAVA_FISH_BUCKET);
 		List<ItemStack> fishStackList = new ArrayList<>();
+		Item fishItem;
 		
 		for(FishData fishData : CustomConfigurationHandler.fishDataMap.values()) {
 			if(!fishData.liquid.equals(FishingLiquid.LAVA)) continue;
+			fishItem = Item.getByNameOrId(fishData.itemId);
+			if (fishItem == null) continue;
 			
-			ItemStack fishStack = new ItemStack(Item.getByNameOrId(fishData.itemId), 1, fishData.itemMetaData);
+			ItemStack fishStack = new ItemStack(fishItem, 1, fishData.itemMetaData);
 			fishStackList.add(fishStack);
 		}
 		
-		this.inputs = Arrays.asList(Arrays.asList(lavaBucket), fishStackList);
+		this.inputs = Arrays.asList(Collections.singletonList(lavaBucket), fishStackList);
 		this.output = lavaFishBucket;
 	}
 

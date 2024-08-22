@@ -43,6 +43,7 @@ public abstract class ItemTrinketAnkhMixin extends ItemTrinketPotionCharm implem
         String base = this.getTranslationKey() + ".tooltip.";
         String shift = "";
         if (I18n.hasKey(base + "0")) {
+            // Add cobweb immunity to its tooltip.
             if (I18n.hasKey(base + "0_cobweb")) {
                 shift = "_cobweb";
             }
@@ -54,9 +55,6 @@ public abstract class ItemTrinketAnkhMixin extends ItemTrinketPotionCharm implem
                 tooltip.add(I18n.format(base + i + shift));
             }
         }
-        
-        // Add cobweb immunity to its tooltip
-        //tooltip.add(I18n.format("item.bountifulbaubles.addedCobwebImmunity.tooltip"));
         
         // From AGenericItemBauble
         if (stack.getItem() instanceof IPhantomInkable && ((IPhantomInkable)stack.getItem()).hasPhantomInk(stack)) {

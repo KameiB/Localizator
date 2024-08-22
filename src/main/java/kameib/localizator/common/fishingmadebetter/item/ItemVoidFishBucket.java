@@ -1,8 +1,6 @@
 package kameib.localizator.common.fishingmadebetter.item;
 
 import kameib.localizator.util.FMB_BetterFishUtil;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -33,9 +31,12 @@ import net.theawesomegem.fishingmadebetter.common.configuration.CustomConfigurat
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
 import net.theawesomegem.fishingmadebetter.common.registry.FMBCreativeTab;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Item for holding void fishes.
@@ -53,6 +54,8 @@ public class ItemVoidFishBucket extends Item {
         this.setTranslationKey(ModInfo.MOD_ID + ".void_fish_bucket");
     }
 
+    @Nonnull
+    @ParametersAreNonnullByDefault
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
         ItemStack itemstack = playerIn.getHeldItem(handIn);
@@ -60,7 +63,7 @@ public class ItemVoidFishBucket extends Item {
 
         if(worldIn.isRemote) return new ActionResult<>(EnumActionResult.FAIL, itemstack);
 
-        // Trying to avoid placing a void fish in a dimension different than The End,
+        // Trying to avoid placing a void fish in a dimension different from The End,
         // because the Void Tracker doesn't detect fishes on other dimensions.
         // We can place the void fish in the Overworld and fish it, but the Tracker doesn't detect it.
         if(playerIn.dimension != 1) // 1 = The End
@@ -78,16 +81,16 @@ public class ItemVoidFishBucket extends Item {
         IChunkFishingData chunkFishingData = getChunkFishingData(worldIn.getChunk(blockpos));
         if(chunkFishingData == null) return new ActionResult<>(EnumActionResult.FAIL, itemstack);
 
-        IBlockState blockState = worldIn.getBlockState(blockpos);
-        Material material = blockState.getMaterial();
+        //IBlockState blockState = worldIn.getBlockState(blockpos);
+        //Material material = blockState.getMaterial();
 
         //if(material != MaterialLiquid.STRUCTURE_VOID) {
-        /*if(blockpos.getY() > 3) {
+        /* if(blockpos.getY() > 3) {
             playerIn.sendMessage(new TextComponentTranslation("notif.fishingmadebetter.void_fish_bucket.only_void"));
             return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         }*/
 
-        /*int voidCount = 0;
+        /* int voidCount = 0;
         for(BlockPos pos : BlockPos.getAllInBox(blockpos.getX()-2, blockpos.getY()-3, blockpos.getZ()-2, blockpos.getX()+2, blockpos.getY(), blockpos.getZ()+2)) {
             Material mat = worldIn.getBlockState(pos).getMaterial();
             if(mat == MaterialLiquid.STRUCTURE_VOID) voidCount++;
@@ -123,7 +126,7 @@ public class ItemVoidFishBucket extends Item {
 
     @SideOnly(Side.CLIENT)
     public void registerItemModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(this.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(Objects.requireNonNull(this.getRegistryName()), "inventory"));
     }
 
     public static ItemStack getItemStack(String fishId) {
@@ -135,8 +138,10 @@ public class ItemVoidFishBucket extends Item {
 
         return itemStack;
     }
+    
     @SideOnly(Side.CLIENT)
     @Override
+    @ParametersAreNonnullByDefault
     public void addInformation(ItemStack itemStack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         String fishId = getFishId(itemStack);
         //String fishId = getFishDisplayName(itemStack);
@@ -156,6 +161,7 @@ public class ItemVoidFishBucket extends Item {
 
         NBTTagCompound tagCompound = itemStack.getTagCompound();
 
+        assert tagCompound != null;
         return tagCompound.hasKey("FishId") ? tagCompound.getString("FishId") : null;
     }
     

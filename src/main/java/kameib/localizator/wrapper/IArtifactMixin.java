@@ -1,9 +1,9 @@
 package kameib.localizator.wrapper;
 
 public interface IArtifactMixin {
-    public String getPreName();
-    public String getPostName();
-    public void setPreName(String preName);
-    public void setPostName(String postName);
-    public String getFullLocName();
+    String localizator$getPreName();
+    String localizator$getPostName();
+    void localizator$setPreName(String preName);
+    void localizator$setPostName(String postName);
+    String localizator$getFullLocName();
 }

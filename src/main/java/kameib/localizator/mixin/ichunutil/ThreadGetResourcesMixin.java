@@ -28,7 +28,7 @@ public abstract class ThreadGetResourcesMixin {
     // Replace patrons URL to a valid one
     // Line 34: fileIn = new InputStreamReader((new URL("https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/patrons.json")).openStream());
     private InputStream IChunUtil_ThreadGetResources_run_patrons(URL instance) throws IOException {
-        Localizator.LOGGER.info("Redirecting patrons call to the valid URL: " + patronList);
+        Localizator.LOGGER.info("Redirecting patrons call to the valid URL: {}", patronList);
         return (new URL("https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/patrons.json")).openStream();
     }
 
@@ -45,7 +45,7 @@ public abstract class ThreadGetResourcesMixin {
     // Replace versions URL to a valid one
     // Line 59: fileIn = new InputStreamReader((new URL("https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/versions.json")).openStream());
     private InputStream IChunUtil_ThreadGetResources_run_version(URL instance) throws IOException {
-        Localizator.LOGGER.info("Redirecting versions call to the valid URL: " + versionList);
+        Localizator.LOGGER.info("Redirecting versions call to the valid URL: {}", versionList);
         return (new URL("https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/versions.json")).openStream();
     }
     

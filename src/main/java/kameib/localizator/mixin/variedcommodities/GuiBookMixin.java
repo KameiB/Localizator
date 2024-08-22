@@ -30,7 +30,7 @@ public abstract class GuiBookMixin {
     private void VariedCommodities_GuiBook_constructor_readLocPages(EntityPlayer par1EntityPlayer, ItemStack item, int x, int y, int z, CallbackInfo ci) {
         if (bookObj.hasTagCompound() && bookIsUnsigned) {
             NBTTagCompound nbtTagCompound = bookObj.getTagCompound();
-            if (nbtTagCompound.getTagId("locPages") == Constants.NBT.TAG_LIST &&
+            if (Constants.NBT.TAG_LIST == nbtTagCompound.getTagId("locPages") &&
                     nbtTagCompound.getTagId("pages") == Constants.NBT.TAG_LIST) {
                 NBTTagList pagesList = nbtTagCompound.getTagList("pages", Constants.NBT.TAG_STRING);
                 NBTTagList locPagesList = nbtTagCompound.getTagList("locPages", Constants.NBT.TAG_STRING).copy();

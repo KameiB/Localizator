@@ -504,7 +504,7 @@ public class ForgeConfigHandler {
 				try	(Stream<String> streamOld = Files.lines(configFile.toPath())) {
 					configCurrentVersion = streamOld.filter(s -> s.trim().contains("Enable/Disable Localization Mixins (Tweaks)")).collect(Collectors.joining());
 				} catch (Exception e) {
-					Localizator.LOGGER.error("Failed to parse LocEntityNameMixin config: " + e);
+                    Localizator.LOGGER.error("Failed to open LocEntityNameMixin config: {}", String.valueOf(e));
 				}
 				Production.migratedCfg = !(configCurrentVersion.contains("Enable/Disable Localization Mixins (Tweaks)"));
 				if (Production.migratedCfg) {
@@ -529,7 +529,7 @@ public class ForgeConfigHandler {
 				try (Stream<String> stream = Files.lines(configFile.toPath())) {
 					configBooleanString = stream.filter(s -> s.trim().startsWith("B:")).collect(Collectors.joining());
 				} catch (Exception ex) {
-					Localizator.LOGGER.error("Failed to parse LocEntityNameMixin config: " + ex);
+                    Localizator.LOGGER.error("Failed to parse LocEntityNameMixin config: {}", String.valueOf(ex));
 				}
 			} else {
 				isFirstBoot = !Production.inProduction; // (For DEBUG purposes) If the config file doesn't exist yet, assume all mixins are enabled.
