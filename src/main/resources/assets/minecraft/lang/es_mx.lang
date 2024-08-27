@@ -15,6 +15,7 @@ item.banner.base.brown=Base cafe
 item.banner.base.green=Base verde
 item.banner.base.red=Base roja
 item.banner.base.black=Base negra
+entity.monsterPlacer.name=Huevo de generacion
 
 # Entities
 entity.SpectralArrow.name=Flecha espectral
