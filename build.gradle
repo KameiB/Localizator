@@ -176,6 +176,8 @@ dependencies {
     //implementation fg.deobf("curse.maven:fnars-roguelike-dungeons-${roguelike_version}")
     compileOnly files("libs/RoguelikeDungeonsFnarEdition-1.12.2-2.4.5_indev.jar")
 
+    implementation fg.deobf("curse.maven:morpheus-${morpheus_version}")
+
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

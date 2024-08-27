@@ -42,191 +42,229 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.minecraftMobLocCustomNamesMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftMobLocCustomNamesMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables the Client config: \n- (Minecraft) Translate Boss Custom Names")
 		@Config.Name("(Minecraft) Boss Custom Names Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftBossLocCustomNamesMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftBossLocCustomNamesMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables Localized Lore \"LocLore\" NBT tag support.\nFor items with translatable \"lore\".")
 		@Config.Name("(Minecraft) Localized Lore Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftLocLoreMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocLoreMixin = !Production.inProduction;
+		
 		@Config.Comment("Makes the \"LocName\" NBT tag, support language keys that accept parameters.\nAlso, enables the Server config: \n- (Minecraft) Show LocName instead of Name")
 		@Config.Name("(Minecraft) Better Localized Name Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftLocNameMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocNameMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack")
 		@Config.Name("(Minecraft) Localized Biome Name Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftBiomeMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftBiomeMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables \"locTitle\" and \"locAuthor\" NBT tags support.\nFor Written Books with localized author and title.")
 		@Config.Name("(Minecraft) Localized Written Book Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftLocWrittenBookMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocWrittenBookMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables \"locPages\" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.")
 		@Config.Name("(Minecraft) Localized Writable Book Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftLocWritableBookMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocWritableBookMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes a Container (TileEntityLockable) CustomName.")
 		@Config.Name("(Minecraft) Localized Container Name Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftLocContainerNameMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocContainerNameMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables the Client config: \n- (Neat) Translate Names In Health Bar")
 		@Config.Name("(Neat) Health Bar Mixin")
 		@Config.LangKey("config.localizator.mixins.neatLocHealthBarMixin")
 		@Config.RequiresMcRestart
 		public boolean neatLocHealthBarMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the MILD/COOL/WARM hardcoded texts when applying an Ozzy liner to a piece of armor.")
 		@Config.Name("(ArmorUnder) Ozzy Liner text Mixin")
 		@Config.LangKey("config.localizator.mixins.armorunderOzzyLinerMixin")
 		@Config.RequiresMcRestart
 		public boolean armorunderOzzyLinerMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables support for Language keys in Set and Bonus names (config file).")
 		@Config.Name("(SetBonus) Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.setbonusTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean setbonusTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes all Forgotten Items' item descriptions.")
 		@Config.Name("(ForgottenItems) Tooltips Mixin")
 		@Config.LangKey("config.localizator.mixins.forgottenitemsTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean forgottenitemsTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the \"Current Adaptation:\" and \"reduction:\" hardcoded texts on parasite armor tooltip. \nAlso the damage source!\nFor damage sources, enable the Client config: \n- (SRParasites) Translate Resisted Damage Sources")
 		@Config.Name("(SRParasites) Armor Tooltips Mixin")
 		@Config.LangKey("config.localizator.mixins.srparasitesArmorTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean srparasitesArmorTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the \"hits remaining\" hardcoded text added to a weapon's tooltip when it has been imbued with a potion in a cauldron.")
 		@Config.Name("(BetterSurvival) Potion-Imbued Weapons Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.bettersurvivalTooltipMixin")
 		@Config.RequiresMcRestart
-		public boolean bettersurvivalTooltipMixin = !Production.inProduction;		
+		public boolean bettersurvivalTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Modifies the lang keys of Rough Tweaks items, so they don't collide with FirstAid. \nAlso, Enables the Client config: \n- (RoughTweaks) Show Heal Amount")
 		@Config.Name("(RoughTweaks) Localized Names and Better Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.roughtweaksNamesAndTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean roughtweaksNamesAndTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the \"Fertile Seasons:\", and seasons hardcoded texts at crop tooltip. \nAlso adds support to the following Rustic seeds: \n- Tomato Seeds \n- Chili seeds.")
 		@Config.Name("(SereneSeasons) Localized Crop Fertility Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.sereneseasonsTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean sereneseasonsTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes special Cakes hardcoded Names.")
 		@Config.Name("(Charm) Localized Cake Name Mixin")
 		@Config.LangKey("config.localizator.mixins.charmCakeNameMixin")
 		@Config.RequiresMcRestart
 		public boolean charmCakeNameMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the Composter JEI Recipe Integration GUI.")
 		@Config.Name("(Charm) Localized Composter JEI Mixin")
 		@Config.LangKey("config.localizator.mixins.charmComposterRecipeMixin")
 		@Config.RequiresMcRestart
 		public boolean charmComposterRecipeMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes all Charm Containers Custom Name on GUI.")
 		@Config.Name("(Charm) Localized Container Name Mixin")
 		@Config.LangKey("config.localizator.mixins.charmContainerNameMixin")
 		@Config.RequiresMcRestart
 		public boolean charmContainerNameMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the names of Charm Crates generated in the world.")
 		@Config.Name("(Charm) Localized World Crates Name Mixin")
 		@Config.LangKey("config.localizator.mixins.charmWorldCratesNameMixin")
 		@Config.RequiresMcRestart
 		public boolean charmWorldCratesNameMixin = !Production.inProduction;
+		
 		@Config.Comment("Enables support for Language Keys in Entity's CustomName tag.")
 		@Config.Name("(WAILA) Entity Name Mixin")
 		@Config.LangKey("config.localizator.mixins.wailaEntityNameMixin")
 		@Config.RequiresMcRestart
 		public boolean wailaEntityNameMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the Grave Scroll description hardcoded text.")
 		@Config.Name("(CorpseComplex) Grave Scroll Description Mixin")
 		@Config.LangKey("config.localizator.mixins.corpsecomplexScrollMixin")
 		@Config.RequiresMcRestart
-		public boolean corpsecomplexScrollMixin = !Production.inProduction;		
+		public boolean corpsecomplexScrollMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes hardcoded texts in Forge's Mod List screen.\nAlso highlights the important information at the Mod details screen.")
 		@Config.Name("(FML) Localized Mod List GUI Mixin")
 		@Config.LangKey("config.localizator.mixins.forgeModListMixin")
 		@Config.RequiresMcRestart
 		public boolean forgeModListMixin = !Production.inProduction;
+		
 		@Config.Comment("The messages received from the server will be translated on client side to match their locale.")
 		@Config.Name("(Lycanites) Client-side Translated Messages Mixin")
 		@Config.LangKey("config.localizator.mixins.lycanitesMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean lycanitesMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the message sent when the Battle Tower Golem is defeated.")
 		@Config.Name("(BattleTowers) Golem Defeated Message Mixin")
 		@Config.LangKey("config.localizator.mixins.battletowersMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean battletowersMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes all horse-related messages sent from the server.")
 		@Config.Name("(Callable Horses) Horse Messages Mixin")
 		@Config.LangKey("config.localizator.mixins.callableHorsesMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean callableHorsesMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the \"Power: \" status message when throwing an item.")
 		@Config.Name("(ItemPhysic) Power: Status Message Mixin")
 		@Config.LangKey("config.localizator.mixins.itemphysicMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean itemphysicMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Artifacts custom names.")
 		@Config.Name("(RecComplex) Artifact Names Mixin")
 		@Config.LangKey("config.localizator.mixins.reccomplexLocArtifacts")
 		@Config.RequiresMcRestart
 		public boolean reccomplexLocArtifacts = !Production.inProduction;
+		
 		@Config.Comment("Enables \"locPages\" NBT List tag support.\nFor Command-Generated Writable Books with localized pages.")
 		@Config.Name("(VariedCommodities) Localized Book Mixin")
 		@Config.LangKey("config.localizator.mixins.variedCommoditiesLocBookMixin")
 		@Config.RequiresMcRestart
 		public boolean variedcommoditiesLocBookMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes caught fishes information (Name, Weight, Scale, Alive)\nAlso localizes:\n- Fish Bucket\n- Fish Slice\n- Bobber\n- Command and Bait Bucket messages messages.")
 		@Config.Name("(FishingMadeBetter) Localized Fishes Mixin")
 		@Config.LangKey("config.localizator.mixins.fishingmadebetterLocFishesEtcMixin")
 		@Config.RequiresMcRestart
 		public boolean fishingmadebetterLocFishesEtcMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Fancy Block Particles Keybinds texts on Settings screen.")
 		@Config.Name("(FBP) Localized Keybinds Mixin")
 		@Config.LangKey("config.localizator.mixins.fbpKeyBindsMixin")
 		@Config.RequiresMcRestart
 		public boolean fbpKeybindsMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes LevelUp Reloaded Keybinds texts on Settings screen.")
 		@Config.Name("(LevelUp2) Localized Keybinds Mixin")
 		@Config.LangKey("config.localizator.mixins.levelup2KeybindsMixin")
 		@Config.RequiresMcRestart
 		public boolean levelup2KeybindsMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Mo'Bends Keybinds texts on Settings screen.")
 		@Config.Name("(Mo'Bends) Localized Keybinds Mixin")
 		@Config.LangKey("config.localizator.mixins.mobendsKeybindsMixin")
 		@Config.RequiresMcRestart
 		public boolean mobendsKeybindsMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Scaling Health Keybinds texts on Settings screen.")
 		@Config.Name("(ScalingHealth) Localized Keybinds Mixin")
 		@Config.LangKey("config.localizator.mixins.scalingHealthKeybindsMixin")
 		@Config.RequiresMcRestart
 		public boolean scalingHealthKeybindsMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Swords tooltip \"Material Bonus:\" text.")
 		@Config.Name("(SpartanWeaponry) Localized Material Bonus Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.spartanWeaponrySwordTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean spartanWeaponrySwordTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Ender Queen's chat messages when hurt.")
 		@Config.Name("(T&B) Localized Ender Queen messages Mixin")
 		@Config.LangKey("config.localizator.mixins.xatEnderQueenMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean xatEnderQueenMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes the armor weight tooltip text when transformed into Faelis race.")
 		@Config.Name("(T&B) Localized Armor Weight Tooltip Mixin")
 		@Config.LangKey("config.localizator.mixins.xatArmorWeightTooltipMixin")
 		@Config.RequiresMcRestart
 		public boolean xatArmorWeightTooltipMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes Scaling Health messages related to the date.")
 		@Config.Name("(ScalingHealth) Localized Messages Mixin")
 		@Config.LangKey("config.localizator.mixins.scalingHealthMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean scalingHealthMessagesMixin = !Production.inProduction;
+		
 		@Config.Comment("Localizes SRParasites messages.")
 		@Config.Name("(SRParasites) Localized Messages Mixin")
 		@Config.LangKey("config.localizator.mixins.srparasitesMessagesMixin")
@@ -238,6 +276,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.dynaoresNameMixin")
 		@Config.RequiresMcRestart
 		public boolean dynaoresNameMixin = !Production.inProduction;
+
+		@Config.Comment("Messages will be taken from lang keys and translated client-side instead of being hardcoded from the config file.")
+		@Config.Name("(Morpheus) Localized Messages Mixin")
+		@Config.LangKey("config.localizator.mixins.morpheusMessages")
+		@Config.RequiresMcRestart
+		public boolean morpheusMessages = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {
@@ -312,6 +356,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.rldSpawnJohnny")
 		@Config.RequiresMcRestart
 		public boolean rldSpawnJohnny = !Production.inProduction;
+
+		@Config.Comment("When using the /kill command, item entities will show their correct name instead of item.item.the_item.")
+		@Config.Name("(Minecraft) Item Names on Kill Command Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftLocItemEntityNameMixin")
+		@Config.RequiresMcRestart
+		public boolean minecraftLocItemEntityNameMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
@@ -319,52 +369,63 @@ public class ForgeConfigHandler {
 		@Config.Name("(Minecraft) Translate Mob Custom Names")
 		@Config.LangKey("config.localizator.client.minecraftMobLocCustomNames")
 		public boolean minecraftMobLocCustomNames = true;
+		
 		@Config.Comment("If a Boss has a custom Name (CustomName tag with a language key in it), translate it on client side. \nThe corresponding language key must exist! \nRequired Mixin:\n- (Minecraft) Boss Custom Names Mixin")
 		@Config.Name("(Minecraft) Translate Boss Custom Names")
 		@Config.LangKey("config.localizator.client.minecraftBossLocCustomNames")
 		public boolean minecraftBossLocCustomNames = true;
+		
 		@Config.Comment("If an item has both \"Lore\" and \"LocLore\" NBT tags, LocLore contents will override Lore contents. \nIf it has only one of the lore tags, it will be displayed normally. \nRequired Mixin: \n- (Minecraft) Localized Lore Mixin")
 		@Config.Name("(Minecraft) Hide Lore if LocLore exists")
 		@Config.LangKey("config.localizator.client.minecraftHideLore")
 		public boolean minecraftHideLore = true;
+		
 		@Config.Comment("If an entity has a custom name (CustomName tag with a language key), translate it. nRequired Mixin:\n- (Neat) Health Bar Mixin")
 		@Config.Name("(Neat) Translate Names In Health Bar")
 		@Config.LangKey("config.localizator.client.neatLocHealthBar")
 		public boolean neatLocHealthBar = true;
+		
 		@Config.Comment("In SRP armor tooltip, translate resisted damage sources names. \nEntity names are taken from Forge's registry (automatic). \nNon-entity names are taken from a lang file. \nRequired Mixin: \n- (SRParasites) Armor Tooltips Mixin \nDisable this option if it impacts performance.")
 		@Config.Name("(SRParasites) Translate Resisted Damage Sources")
 		@Config.LangKey("config.localizator.client.srparasitesResistances")
 		public boolean srparasitesResistances = true;
+		
 		@Config.Comment("Prevents a Bauble's Modifier from displaying at Bauble Name\nRequired Mixin: \n- (BountifulBaubles) No Modifier at Name Mixin")
 		@Config.Name("(BountifulBaubles) Remove Modifier from Bauble Name")
 		@Config.LangKey("config.localizator.client.bountifulbaublesRemoveModifierFromName")
 		public boolean bountifulbaublesRemoveModifierFromName = true;
+		
 		@Config.Comment("Removes the need of pressing Shift on RoughTweaks Items Tooltip to show the Heal Amount. \nRequired Mixin: \n- (RoughTweaks) Localized Names and Better Tooltip Mixin")
 		@Config.Name("(RoughTweaks) Show Heal Amount")
 		@Config.LangKey("config.localizator.client.roughtweaksTooltip")		
 		public boolean roughtweaksTooltip = true;
+		
 		@Config.Comment("Adds a little help for players that don't know how to fish. \n \"Press [LEFT] / [RIGHT]\". \nRequired Mixin: \n- (FishingMadeBetter) Instructions on Minigame Mixin")
 		@Config.Name("(FishingMadeBetter) Instructions on Minigame")
 		@Config.LangKey("config.localizator.client.fishingmadebetterMinigameHelpText")
 		public boolean fishingmadebetterMinigameHelpText = true;
+		
 		@Config.Comment("The Overworld Sea Level line shown over the Fish Requirements JEI Plugin")
 		@Config.Name("(FMB/JEI) Y Meter. Overworld Sea Level")
 		@Config.RangeInt(min = 0, max = 140)
 		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterSeaLevelText")
 		@Config.RequiresMcRestart
 		public int fishingmadebetterYmeterSeaLevel = 62;
+		
 		@Config.Comment("The Nether Lava Ocean Level line shown over the Fish Requirements JEI Plugin")
 		@Config.Name("(FMB/JEI) Y Meter. Nether Lava Ocean Level")
 		@Config.RangeInt(min = 0, max = 140)
 		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterLavaLevelText")
 		@Config.RequiresMcRestart
 		public int fishingmadebetterYmeterLavaLevel = 31;
+		
 		@Config.Comment("The End Void Level line shown over the Fish Requirements JEI Plugin.\nIt's set to 5 just for visuals.")
 		@Config.Name("(FMB/JEI) Y Meter. The End Void Level")
 		@Config.RangeInt(min = 0, max = 140)
 		@Config.LangKey("config.localizator.client.fishingmadebetterYmeterVoidLevelText")
 		@Config.RequiresMcRestart
 		public int fishingmadebetterYmeterVoidLevel = 5;
+		
 		@Config.Comment("Represent fish light levels with the Photometer icon (if Inspirations mod is present)\nIf Inspirations is not present or this option is false, the Minecraft light icon is used.")
 		@Config.Name("(FMB/JEI) Use Photometer icon for light levels")
 		@Config.LangKey("config.localizator.client.fishingmadebetterPhotometer")

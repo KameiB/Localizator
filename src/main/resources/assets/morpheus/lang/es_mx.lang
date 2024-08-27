@@ -1,0 +1,29 @@
+# Hardcoded texts
+notif.morpheus.SpawnSet=Nuevo punto de regeneración establecido!
+notif.morpheus.XmasText=§c¡Buenos días a todos! ¡FELIZ NAVIDAD!
+notif.morpheus.NewYearText=§6¡Buenos días a todos! ¡FELIZ AÑO NUEVO!
+notif.morpheus.StPatricksText=§2¡Buenos días a todos! ¡FELIZ DÍA DE SAN PATRICIO!
+notif.morpheus.HalloweenText=§5¡Buenos días a todos! ¡FELIZ SAMHAIN!
+
+# Commands
+# Only translate <percentage> and <dimension number> !
+command.morpheus.Example=/morpheus <alert : version> | /morpheus percent <porcentaje> | /morpheus disable <No. dimensión>
+command.morpheus.AlertsOff=Alertas de texto §7OFF
+command.morpheus.AlertsOn=Alertas de texto §eON
+command.morpheus.OP.PercentSet=Porcentaje de votación para dormir asignado a %d%%
+command.morpheus.OP.PercentInvalid=Valor de porcentaje no válido, sólo números enteros entre 0 y 100 son aceptables.
+command.morpheus.OP.DisableSet=Se deshabilitó el chequeo de votación para dormir en la dimensión No. %d
+command.morpheus.OP.DisableAlready=El chequeo de votación para dormir ya estaba deshabilitado para la dimensión No. %d
+command.morpheus.notOP.Percent=Necesitas permisos de OP para asignar el porcentaje de votación para dormir.
+command.morpheus.notOP.Disable=Necesitas permisos de OP para deshabilitar dimensiones.
+# Only translate "Usage:" and <percentage> !
+command.morpheus.usage.Percent=Uso: /morpheus percent <porcentaje>
+# Only translate "Usage:" and <dimension number> !
+command.morpheus.usage.Disable=Uso: /morpheus disable <No. dimensión>
+command.morpheus.Usage=Uso: %s
+
+# Config texts
+# %1$s = username  |  %2$s = Player sleep status
+notif.morpheus.OnSleepText=§f%1$s §6está durmiendo. %2$s
+notif.morpheus.OnWakeText=§f%1$s §6dejó su cama. %2$s
+notif.morpheus.onMorningText=§6Levántense y brillen... ¡Buenos días a todos!

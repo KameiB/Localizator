@@ -98,6 +98,10 @@ config.localizator.mixins.srparasitesMessagesMixin=(SRParasites) Mixin mensajes 
 config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localiza los mensajes de SRParasites.\n 
 config.localizator.mixins.dynaoresNameMixin=(DynaOres) Mixin Nombres localizados correctamente
 config.localizator.mixins.dynaoresNameMixin.tooltip=Localiza el nombre de los minerales crudos para que se comporten correctamente en idiomas diferentes del Inglés.\nTomaba el nombre del lingote y le quitaba "Ingot", lo cual sólo funciona en Inglés.\n 
+config.localizator.mixins.morpheusMessages=(Morpheus) Mixin Mensajes localizados
+config.localizator.mixins.morpheusMessages.tooltip=Los mensajes serán tomados de claves de idioma y traducidos por el cliente, en lugar de ser textos fijos tomados desde el archivo de configuración.\n 
+config.localizator.mixins.minecraftLocItemEntityNameMixin=(Minecraft) Mixin Nombres de Items por commando kill
+config.localizator.mixins.minecraftLocItemEntityNameMixin.tooltip=Al usar el comando /kill, las entidades de items mostrarán su nombre correcto en lugar de item.item.el_item.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
@@ -123,7 +127,7 @@ config.localizator.mixins.rldEternalNovelties.tooltip=Hace que algunos souvenire
 config.localizator.mixins.rldExtendedNovelties=(RLD) Mixin Todos los souvenires
 config.localizator.mixins.rldExtendedNovelties.tooltip=Originalmente, algunos zombies y esqueletos spawneaban raramente son alguno de estos 3 souvenires:\n- Galleta de avena de Ashlea\n- Lonche de batalla rleahiano\n- Beso de Valandrah\n§eEste Mixin permitirá a más tipos de mob spawnear sosteniendo o portando otros souvenires.\n§eAdemás, souvenires exclusivos a ciertos cuartos tendrán una probabilidad de generarse en contenedores, haciendo que todos los souvenires puedan obtenerse!\n 
 config.localizator.mixins.rldSpawnJohnny=(RLD) Mixin Generar Johnny
-config.localizator.mixins.rldSpawnJohnny.tooltip=Habilita la opción Servidor:\n- (RLD) Johnny spawning chance\n 
+config.localizator.mixins.rldSpawnJohnny.tooltip=Habilita la opción Servidor:\n- (RLD) Probabilidad de generar a Johnny\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Mostrar LocName en lugar de Name

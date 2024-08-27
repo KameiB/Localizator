@@ -25,6 +25,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         list.add(new ConfigToMixin("(Minecraft) Localized Biome Name Mixin", "mixins.localizator.core.biomename.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Writable Book Mixin", "mixins.localizator.core.writablebooks.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Container Name Mixin", "mixins.localizator.core.containername.json"));
+        list.add(new ConfigToMixin("(Minecraft) Item Names on Kill Command Mixin", "mixins.localizator.core.itementitykill.json"));
         map.put("minecraft", list);
 
         return Collections.unmodifiableMap(map);
@@ -167,6 +168,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         rldList.add(new ConfigToMixin("(RLD) Extended Novelty Pool Mixin", "mixins.localizator.rld.extendednovelties.json"));
         rldList.add(new ConfigToMixin("(RLD) Spawn Johnny Mixin", "mixins.localizator.rld.enablejohnny.json"));
         map.put("roguelike", rldList);
+        // Morpheus
+        List<ConfigToMixin> morpheusList = new ArrayList<>();
+        morpheusList.add(new ConfigToMixin("(Morpheus) Localized Messages Mixin", "mixins.localizator.morpheus.messages.json"));
+        map.put("morpheus", morpheusList);
 
         return Collections.unmodifiableMap(map);
     }

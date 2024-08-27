@@ -1,0 +1,29 @@
+# Hardcoded texts
+notif.morpheus.SpawnSet=New spawnpoint has been set!
+notif.morpheus.XmasText=§cGood morning everyone! HAPPY CHRISTMAS!
+notif.morpheus.NewYearText=§6Good morning everyone! HAPPY NEW YEAR!
+notif.morpheus.StPatricksText=§2Good morning everyone! HAPPY ST PATRICKS DAY!
+notif.morpheus.HalloweenText=§5Good morning everyone! HAPPY SAMHAIN!
+
+# Commands
+# Only translate <percentage> and <dimension number> !
+command.morpheus.Example=/morpheus <alert : version> | /morpheus percent <percentage> | /morpheus disable <dimension number>
+command.morpheus.AlertsOff=Text alerts turned §7OFF
+command.morpheus.AlertsOn=Text alerts turned §eON
+command.morpheus.OP.PercentSet=Sleep vote percentage set to %d%%
+command.morpheus.OP.PercentInvalid=Invalid percentage value, round numbers between 0 and 100 are acceptable.
+command.morpheus.OP.DisableSet=Disabled sleep vote checks in dimension %d
+command.morpheus.OP.DisableAlready=Sleep vote checks are already disabled in dimension %d
+command.morpheus.notOP.Percent=You must be opped to set the sleep vote percentage.
+command.morpheus.notOP.Disable=You must be opped to disable dimensions.
+# Only translate "Usage:" and <percentage> !
+command.morpheus.usage.Percent=Usage: /morpheus percent <percentage>
+# Only translate "Usage:" and <dimension number> !
+command.morpheus.usage.Disable=Usage: /morpheus disable <dimension number>
+command.morpheus.Usage=Usage: %s
+
+# Config texts
+# %1$s = username  |  %2$s = Player sleep status
+notif.morpheus.OnSleepText=§f%1$s §6is now sleeping. %2$s
+notif.morpheus.OnWakeText=§f%1$s §6has left their bed. %2$s
+notif.morpheus.onMorningText=§6Wakey, wakey, rise and shine... Good Morning everyone!

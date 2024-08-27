@@ -98,6 +98,10 @@ config.localizator.mixins.srparasitesMessagesMixin=(SRParasites) Localized Messa
 config.localizator.mixins.srparasitesMessagesMixin.tooltip=Localizes SRParasites messages.\n 
 config.localizator.mixins.dynaoresNameMixin=(DynaOres) Correctly Localized Ore Names
 config.localizator.mixins.dynaoresNameMixin.tooltip=Localizes Raw ores names to behave correctly on languages other than English.\nIt took the ore ingot name and stripped "Ingot" from it, which works only for English.\n 
+config.localizator.mixins.morpheusMessages=(Morpheus) Localized Messages Mixin
+config.localizator.mixins.morpheusMessages.tooltip=Messages will be taken from lang keys and translated client-side instead of being hardcoded from the config file.\n 
+config.localizator.mixins.minecraftLocItemEntityNameMixin=(Minecraft) Item Names on Kill Command Mixin
+config.localizator.mixins.minecraftLocItemEntityNameMixin.tooltip=When using the /kill command, item entities will show their correct name instead of item.item.the_item.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
