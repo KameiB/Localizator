@@ -2,6 +2,7 @@ package kameib.localizator.mixin.roguelike;
 
 import com.github.fnar.minecraft.entity.Slot;
 import com.github.fnar.minecraft.item.*;
+import com.github.fnar.roguelike.Roguelike;
 import greymerk.roguelike.monster.Mob;
 import greymerk.roguelike.monster.profiles.ProfileBaby;
 import greymerk.roguelike.treasure.loot.provider.ItemNovelty;
@@ -32,24 +33,33 @@ public abstract class ProfileBabyMixin {
     
     @Unique
     private void localizator$profileKameiB(Mob mob, int level, int difficulty, Random random) {
-        RLD_MobUtil.supponpon(mob);
-        RldItemStack rod = ToolType.FISHING_ROD.asItem().plzEnchantAtLevel(level).asStack();
-        mob.equipMainhand(rod);
-        
+        try {
+            RLD_MobUtil.supponpon(mob);
+            RldItemStack rod = ToolType.FISHING_ROD.asItem().plzEnchantAtLevel(level).asStack();
+            mob.equipMainhand(rod);
 
-        // Skin: https://namemc.com/profile/KameiB.1
-        // Green boots (Fern Green)
-        RldItemStack boots = ArmourType.BOOTS.asItem().leather().withColor(RLD_ExtraColor.FERN_GREEN).asStack();
-        mob.equip(Slot.FEET, boots);
 
-        // White Leggings (Mercury)
-        RldItemStack leggings = ArmourType.LEGGINGS.asItem().leather().withColor(RLD_ExtraColor.MERCURY).asStack();
-        mob.equip(Slot.LEGS, leggings);
+            // Skin: https://namemc.com/profile/KameiB.1
+            // Green boots (Fern Green)
+            RldItemStack boots = ArmourType.BOOTS.asItem().leather().withColor(RLD_ExtraColor.FERN_GREEN).asStack();
+            mob.equip(Slot.FEET, boots);
 
-        // Green chest (Fruit Salad)
-        RldItemStack chestplate = ArmourType.CHESTPLATE.asItem().leather().withColor(RLD_ExtraColor.FRUIT_SALAD).asStack();
-        mob.equip(Slot.CHEST, chestplate);
+            // White Leggings (Mercury)
+            RldItemStack leggings = ArmourType.LEGGINGS.asItem().leather().withColor(RLD_ExtraColor.MERCURY).asStack();
+            mob.equip(Slot.LEGS, leggings);
 
-        mob.equip(Slot.HEAD, ItemNovelty.kameibShell());
+            // Green chest (Fruit Salad)
+            RldItemStack chestplate = ArmourType.CHESTPLATE.asItem().leather().withColor(RLD_ExtraColor.FRUIT_SALAD).asStack();
+            mob.equip(Slot.CHEST, chestplate);
+
+            mob.equip(Slot.HEAD, ItemNovelty.kameibShell());
+        } catch (NoSuchMethodError e) {
+            Roguelike.LOGGER.error("The KameiB RLD monster profile could not be loaded because Roguelike Dungeons -- Fnar's Edition version 2.4.5 or older is installed. Install 2.4.6 or newer to fix this error.");
+            // Diamond helmet
+            RldItemStack helmet = ArmourType.CHESTPLATE.asItem().diamond().asStack();
+            mob.equip(Slot.HEAD, helmet);
+            
+            //mob.setName("KameiB");
+        }
     }
 }
