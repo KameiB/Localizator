@@ -100,8 +100,6 @@ config.localizator.mixins.dynaoresNameMixin=(DynaOres) Correctly Localized Ore N
 config.localizator.mixins.dynaoresNameMixin.tooltip=Localizes Raw ores names to behave correctly on languages other than English.\nIt took the ore ingot name and stripped "Ingot" from it, which works only for English.\n 
 config.localizator.mixins.morpheusMessages=(Morpheus) Localized Messages Mixin
 config.localizator.mixins.morpheusMessages.tooltip=Messages will be taken from lang keys and translated client-side instead of being hardcoded from the config file.\n 
-config.localizator.mixins.minecraftLocItemEntityNameMixin=(Minecraft) Item Names on Kill Command Mixin
-config.localizator.mixins.minecraftLocItemEntityNameMixin.tooltip=When using the /kill command, item entities will show their correct name instead of item.item.the_item.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
@@ -128,6 +126,8 @@ config.localizator.mixins.rldExtendedNovelties=(RLD) Extended Novelty Pool Mixin
 config.localizator.mixins.rldExtendedNovelties.tooltip=Originally, some zombies and skeletons rarely spawned with 1 of these 3 Novelty items:\n- Ashlea's Otameal Cookie\n- Rleahian battle sub\n- Valandrah's Kiss\n§eThis Mixin will enable more mob types to spawn holding or wearing other novelties.\n§eAlso, room-specific novelties will have a chance to generate in containers, making all novelties obtainable!\n 
 config.localizator.mixins.rldSpawnJohnny=(RLD) Spawn Johnny Mixin
 config.localizator.mixins.rldSpawnJohnny.tooltip=Enables the Server config:\n- (RLD) Johnny spawning chance\n 
+config.localizator.mixins.minecraftLocItemEntityNameMixin=(Minecraft) Item Names on Kill Command Mixin
+config.localizator.mixins.minecraftLocItemEntityNameMixin.tooltip=When using the /kill command, item entities will show their correct name instead of item.item.the_item.\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name

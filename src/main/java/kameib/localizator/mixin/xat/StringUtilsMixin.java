@@ -1,5 +1,6 @@
 package kameib.localizator.mixin.xat;
 
+import kameib.localizator.data.Production;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.translation.I18n;
@@ -15,9 +16,9 @@ public abstract class StringUtilsMixin {
             method = "sendMessageToPlayer(Lnet/minecraft/entity/Entity;Ljava/lang/String;Z)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/player/EntityPlayer;func_146105_b(Lnet/minecraft/util/text/ITextComponent;Z)V",
+                    target = "Lnet/minecraft/entity/player/EntityPlayer;sendStatusMessage(Lnet/minecraft/util/text/ITextComponent;Z)V",
                     ordinal = 0,
-                    remap = false
+                    remap = Production.inProduction
             ),
             index = 0,
             remap = false

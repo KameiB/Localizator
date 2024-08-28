@@ -52,14 +52,13 @@ public abstract class ProfileBabyMixin {
             RldItemStack chestplate = ArmourType.CHESTPLATE.asItem().leather().withColor(RLD_ExtraColor.FRUIT_SALAD).asStack();
             mob.equip(Slot.CHEST, chestplate);
 
+            // New RLD version item!
             mob.equip(Slot.HEAD, ItemNovelty.kameibShell());
         } catch (NoSuchMethodError e) {
             Roguelike.LOGGER.error("The KameiB RLD monster profile could not be loaded because Roguelike Dungeons -- Fnar's Edition version 2.4.5 or older is installed. Install 2.4.6 or newer to fix this error.");
-            // Diamond helmet
-            RldItemStack helmet = ArmourType.CHESTPLATE.asItem().diamond().asStack();
+            // Green helmet (Fruit Salad)
+            RldItemStack helmet = ArmourType.HELMET.asItem().leather().withColor(RLD_ExtraColor.FRUIT_SALAD).asStack();
             mob.equip(Slot.HEAD, helmet);
-            
-            //mob.setName("KameiB");
         }
     }
 }
