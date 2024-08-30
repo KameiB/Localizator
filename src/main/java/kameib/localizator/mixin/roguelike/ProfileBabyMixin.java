@@ -33,11 +33,9 @@ public abstract class ProfileBabyMixin {
     
     @Unique
     private void localizator$profileKameiB(Mob mob, int level, int difficulty, Random random) {
-        try {
             RLD_MobUtil.supponpon(mob);
             RldItemStack rod = ToolType.FISHING_ROD.asItem().plzEnchantAtLevel(level).asStack();
             mob.equipMainhand(rod);
-
 
             // Skin: https://namemc.com/profile/KameiB.1
             // Green boots (Fern Green)
@@ -51,7 +49,7 @@ public abstract class ProfileBabyMixin {
             // Green chest (Fruit Salad)
             RldItemStack chestplate = ArmourType.CHESTPLATE.asItem().leather().withColor(RLD_ExtraColor.FRUIT_SALAD).asStack();
             mob.equip(Slot.CHEST, chestplate);
-
+        try {
             // New RLD version item!
             mob.equip(Slot.HEAD, ItemNovelty.kameibShell());
         } catch (NoSuchMethodError e) {
