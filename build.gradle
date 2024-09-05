@@ -166,7 +166,6 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:spartan-weaponry-${spartanweaponry_version}")
 
-    //compileOnly files("libs/Trinkets+and+Baubles-32.4.jar")
     implementation fg.deobf("curse.maven:trinkets-and-baubles-${trinkets_version}")
 
     compileOnly fg.deobf("curse.maven:mantle-${mantle_version}") // Needed for Inspirations
@@ -174,8 +173,7 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:dynaores-${dynamores_version}")
 
-    //implementation fg.deobf("curse.maven:fnars-roguelike-dungeons-${roguelike_version}")
-    compileOnly files("libs/RoguelikeDungeonsFnarEdition-1.12.2-2.4.5_indev.jar")
+    implementation fg.deobf("curse.maven:fnars-roguelike-dungeons-${roguelike_version}")
 
     implementation fg.deobf("curse.maven:morpheus-${morpheus_version}")
 
