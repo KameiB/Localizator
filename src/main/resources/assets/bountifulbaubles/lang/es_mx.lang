@@ -1,2 +1,19 @@
 item.bountifulbaubles.trinketAnkhCharm.tooltip.0_cobweb=§9Da inmunidad a muchos efectos negativos Vanilla, y te permite moverte libremente por las telarañas
 item.bountifulbaubles.shieldAnkh.tooltip.0_cobweb=§9Da resistencia parcial al fuego, inmunidad a empujes y a muchos efectos negativos vanilla, además te permite moverte libremente por las telarañas cuando se lleva puesto
+message.bountifulbaubles.wormhole.makeReq=Solicitud de teletransportación enviada a %s
+message.bountifulbaubles.wormhole.reqToExpired=Tu solicitud de teletransportación hacia %s expiró.
+message.bountifulbaubles.wormhole.reqFromExpired=La solicitud de teletransporte de %s expiró.
+message.bountifulbaubles.wormhole.reqFromRejected=Rechazaste la solicitud de teletransporte de %s.
+message.bountifulbaubles.wormhole.reqToRejected=%s rechazó tu solicitud de teletransporte.
+message.bountifulbaubles.wormhole.reqFromAccepted=Aceptaste la solicitud de teletransporte de %s.
+message.bountifulbaubles.wormhole.reqToAccepted=%s aceptó tu solicitud de teletransporte.
+message.bountifulbaubles.wormhole.reqToFailAsleep=La teletransportación falló porque %s está dormido(a).
+message.bountifulbaubles.wormhole.reqFromFailAsleep=No puedes teletransportarte porque tú estás dormido(a).
+message.bountifulbaubles.wormhole.reqToFailMounted=La teletransportación falló porque %s está montando un vehículo.
+message.bountifulbaubles.wormhole.reqFromFailMounted=No puedes teletransportarte porque estás montando un vehículo.
+message.bountifulbaubles.wormhole.reqToFailNoWormhole=La teletransportación falló porque %s no tiene Poción o Espejo de agujero de gusano.
+message.bountifulbaubles.wormhole.reqFromFailWormhole=No puedes teletransportarte porque no tienes Poción o Espejo de agujero de gusano.
+# %1$s = Player's name  |  %2$s = the [ACCEPT] button  |  %3$s = the [REJECT] button
+message.bountifulbaubles.wormhole.receivedReq=%1$s solicitó teletransportarte a tí. Usa §5/wormhole§r, o haz clic en: %2$s %3$s
+message.bountifulbaubles.wormhole.acceptButton=[ACEPTAR]
+message.bountifulbaubles.wormhole.rejectButton=[RECHAZAR]

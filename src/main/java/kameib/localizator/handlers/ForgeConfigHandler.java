@@ -279,9 +279,15 @@ public class ForgeConfigHandler {
 
 		@Config.Comment("Messages will be taken from lang keys and translated client-side instead of being hardcoded from the config file.")
 		@Config.Name("(Morpheus) Localized Messages Mixin")
-		@Config.LangKey("config.localizator.mixins.morpheusMessages")
+		@Config.LangKey("config.localizator.mixins.morpheusMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean morpheusMessages = !Production.inProduction;
+
+		@Config.Comment("Localizes messages related to Wormhole teleport items.")
+		@Config.Name("(BountifulBaubles) Localized Wormhole Messages Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesWormholeMessagesMixin")
+		@Config.RequiresMcRestart
+		public boolean bountifulbaublesWormholeMessages = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

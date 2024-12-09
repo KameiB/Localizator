@@ -123,8 +123,8 @@ dependencies {
     compileOnly fg.deobf("curse.maven:creativecore-${creativecore_version}") // Needed for ItemPhysic_Full
     compileOnly fg.deobf("curse.maven:itemphysic-${itemphysic_version}")
 
-    compileOnly fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
-    compileOnly fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
+    implementation fg.deobf("curse.maven:Baubles-${baubles_version}") // Needed for Bountiful Baubles
+    implementation fg.deobf("curse.maven:bountifulbaubles-${bountifulbaubles_version}")
 
     compileOnly fg.deobf("curse.maven:RoughTweaks-${roughtweaks_version}")
 

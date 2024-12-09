@@ -1,2 +1,19 @@
 item.bountifulbaubles.trinketAnkhCharm.tooltip.0_cobweb=§9Grants immunity to most negative status effects, and allows free movement through cobwebs.
 item.bountifulbaubles.shieldAnkh.tooltip.0_cobweb=§9Grants partial fire resistance and immunity to knockback and most negative status effects, and allows free movement through cobwebs when held or equipped in bauble slot.
+message.bountifulbaubles.wormhole.makeReq=Teleport request sent to %s
+message.bountifulbaubles.wormhole.reqToExpired=Teleport request to %s has expired.
+message.bountifulbaubles.wormhole.reqFromExpired=Teleport request from %s has expired.
+message.bountifulbaubles.wormhole.reqFromRejected=Rejected teleport request from %s.
+message.bountifulbaubles.wormhole.reqToRejected=Teleport request to %s was rejected.
+message.bountifulbaubles.wormhole.reqFromAccepted=Accepted teleport request from %s.
+message.bountifulbaubles.wormhole.reqToAccepted=Teleport request to %s was accepted.
+message.bountifulbaubles.wormhole.reqToFailAsleep=Teleport failed as %s is asleep.
+message.bountifulbaubles.wormhole.reqFromFailAsleep=Teleport failed as you are asleep.
+message.bountifulbaubles.wormhole.reqToFailMounted=Teleport failed as %s is mounted.
+message.bountifulbaubles.wormhole.reqFromFailMounted=Teleport failed as you are mounted.
+message.bountifulbaubles.wormhole.reqToFailNoWormhole=Teleport failed as %s has no wormhole potions or mirror.
+message.bountifulbaubles.wormhole.reqFromFailWormhole=Teleport failed as you have no wormhole potions or mirror.
+# %1$s = Player's name  |  %2$s = the [ACCEPT] button  |  %3$s = the [REJECT] button
+message.bountifulbaubles.wormhole.receivedReq=%1$s has requested to teleport to you. Use §5/wormhole§r, or click: %2$s %3$s
+message.bountifulbaubles.wormhole.acceptButton=[ACCEPT]
+message.bountifulbaubles.wormhole.rejectButton=[REJECT]
