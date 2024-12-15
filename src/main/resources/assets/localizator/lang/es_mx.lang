@@ -198,6 +198,10 @@ config.localizator.client.fishingmadebetterYmeterVoidLevelText=(FMB/JEI) Medidor
 config.localizator.client.fishingmadebetterYmeterVoidLevelText.tooltip=La línea que se dibuja sobre el medidor Y, indicando la altura del §dvacío§e en el End, en la interfase de Requisitos de pez\nEstá en 5 sólo por estética.\n 
 config.localizator.client.fishingmadebetterPhotometer=(FMB/JEI) Usar ícono del Fotómetro para niveles de luz
 config.localizator.client.fishingmadebetterPhotometer.tooltip=Representar los niveles de luz del pez con el ícono del Fotómetro (si el mod Inspirations está presente).\nSi Inspirations no está presente o esta opción es false, se usará el ícono de luz de Minecraft.\n 
+config.localizator.client.minecraftDefaultLocLoreColor=(Minecraft) LocLore Color predeterminado de texto
+config.localizator.client.minecraftDefaultLocLoreColor.tooltip=Minecraft muestra el Lore de un item en texto de color §5dark_purple§e.\n§eLocalizator muestra el LocLore en color §fwhite§e.\nPuedes elegir el color predeterminado para los textos de LocLore aquí.\n§6Si su clave de idioma no tiene ningún código de color, el texto se mostrará en este color.\n\nColores válidos:\n §fblack§r, §1dark_blue§r, §2dark_green§r, §3dark_aqua§r, §4dark_red§r, §5dark_purple§r, §6gold§r, §7gray§r, §8dark_gray§r, §9blue§r, §agreen§r, §baqua§r, §cred§r, §dlight_purple§r, §eyellow§r, §fwhite
+config.localizator.client.minecraftDefaultLocLoreFormat=(Minecraft) LocLore Formato predeterminado de texto
+config.localizator.client.minecraftDefaultLocLoreFormat.tooltip=Minecraft muestra el Lore de un item en texto con formato §oitalic§r§e.\n§eLocalizator muestra el LocLore sin formato.\nPuedes elegir el formato predeterminado para los textos de LocLore aquí.\n§6Si su clave de idioma no tiene ningún código de formato, el texto se mostrará con este formato.\n\nFormatos válidos:\n obfuscated §7->§f §kejemplo§r\n bold §7->§f §lejemplo§r\n strikethrough §7->§f §mejemplo§r\n underline §7->§f §nejemplo§r\n italic §7->§f §oejemplo§r\n none §7->§f ejemplo
 
 # Messages
 message.localizator.newconfig.0=[Localizator] Hola hola! Soy %s!

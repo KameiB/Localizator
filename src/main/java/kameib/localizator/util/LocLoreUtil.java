@@ -1,9 +1,11 @@
 package kameib.localizator.util;
 
+import kameib.localizator.handlers.ForgeConfigHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.util.Constants;
 
 import javax.annotation.Nullable;
@@ -108,5 +110,43 @@ public class LocLoreUtil {
         }
 
         return locLoreArgList;
+    }
+
+    //private static String[] validTextColors = {"black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple",
+     //       "gold", "gray", "dark_ray", "blue", "green", "aqua", "red", "light_purple", "yellow", "white"};
+    
+    public static TextFormatting getCustomColor() {
+        switch (ForgeConfigHandler.clientConfig.minecraftDefaultLocLoreColor) {
+            case "white": return TextFormatting.WHITE;
+            case "black": return TextFormatting.BLACK;
+            case "dark_blue": return TextFormatting.DARK_BLUE;
+            case "dark_green": return TextFormatting.DARK_GREEN;
+            case "dark_aqua": return TextFormatting.DARK_AQUA;
+            case "dark_red": return TextFormatting.DARK_RED;
+            case "dark_purple": return TextFormatting.DARK_PURPLE;
+            case "gold": return TextFormatting.GOLD;
+            case "gray": return TextFormatting.GRAY;
+            case "dark_gray": return TextFormatting.DARK_GRAY;
+            case "blue": return TextFormatting.BLUE;
+            case "green": return TextFormatting.GREEN;
+            case "aqua": return TextFormatting.AQUA;
+            case "red": return TextFormatting.RED;
+            case "light_purple": return TextFormatting.LIGHT_PURPLE;
+            case "yellow": return TextFormatting.YELLOW;
+        }
+        return TextFormatting.WHITE;
+    }
+
+    //private static String[] validFormatColors = {"obfuscated", "bold", "strikethrough", "underline", "italic", "none"};
+    public static String getCustomFormat() {
+        switch (ForgeConfigHandler.clientConfig.minecraftDefaultLocLoreFormat) {
+            case "none": return "";
+            case "obfuscated": return TextFormatting.OBFUSCATED.toString();
+            case "bold": return TextFormatting.BOLD.toString();
+            case "strikethrough": return TextFormatting.STRIKETHROUGH.toString();
+            case "underline": return TextFormatting.UNDERLINE.toString();
+            case "italic": return TextFormatting.ITALIC.toString();
+        }
+        return "";
     }
 }

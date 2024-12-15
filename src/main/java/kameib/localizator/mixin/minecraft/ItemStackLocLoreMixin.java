@@ -2,13 +2,13 @@ package kameib.localizator.mixin.minecraft;
 
 import kameib.localizator.data.Production;
 import kameib.localizator.handlers.ForgeConfigHandler;
+import kameib.localizator.util.LocLoreUtil;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.util.text.TextFormatting;
 
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
@@ -78,20 +78,20 @@ public abstract class ItemStackLocLoreMixin
                         for (int l1 = 0; l1 < locloreList.tagCount(); ++l1) {
                             // Add the "LocLore" with the corresponding argument (String) for the lang key.
                             // Lang key needs to have 1 and only 1 %s in it to show as expected! 
-                            localizator$tooltip.add(TextFormatting.WHITE + I18n.format(locloreList.getStringTagAt(l1),locloreArgList.getStringTagAt(l1)));
+                            localizator$tooltip.add(LocLoreUtil.getCustomColor() + LocLoreUtil.getCustomFormat() + I18n.format(locloreList.getStringTagAt(l1),locloreArgList.getStringTagAt(l1)));
                         }
                     }
                     else {
                         for (int l1 = 0; l1 < locloreList.tagCount(); ++l1) {
                             // Add the "LocLore" translated contents to the tooltip's current position
-                            localizator$tooltip.add(TextFormatting.WHITE + I18n.format(locloreList.getStringTagAt(l1)));
+                            localizator$tooltip.add(LocLoreUtil.getCustomColor() + LocLoreUtil.getCustomFormat() + I18n.format(locloreList.getStringTagAt(l1)));
                         }
                     }
                 }
                 else {
                     for (int l1 = 0; l1 < locloreList.tagCount(); ++l1) {
                         // Add the "LocLore" translated contents to the tooltip's current position
-                        localizator$tooltip.add(TextFormatting.WHITE + I18n.format(locloreList.getStringTagAt(l1)));
+                        localizator$tooltip.add(LocLoreUtil.getCustomColor() + LocLoreUtil.getCustomFormat() + I18n.format(locloreList.getStringTagAt(l1)));
                     }
                 }
             }

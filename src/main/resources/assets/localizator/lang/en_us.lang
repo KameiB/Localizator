@@ -198,6 +198,10 @@ config.localizator.client.fishingmadebetterYmeterVoidLevelText=(FMB/JEI) Y Meter
 config.localizator.client.fishingmadebetterYmeterVoidLevelText.tooltip=The End §dVoid§e Level line shown over the Fish Requirements JEI Plugin.\nIt's set to 5 just for visuals.\n 
 config.localizator.client.fishingmadebetterPhotometer=(FMB/JEI) Use Photometer icon for light levels
 config.localizator.client.fishingmadebetterPhotometer.tooltip=Represent fish light levels with the Photometer icon (if Inspirations mod is present).\nIf Inspirations is not present or this option is false, the Minecraft light icon is used.
+config.localizator.client.minecraftDefaultLocLoreColor=(Minecraft) LocLore Default Text Color
+config.localizator.client.minecraftDefaultLocLoreColor.tooltip=Minecraft shows an item's Lore with §5dark_purple§e color.\n§eLocalizator shows LocLore with §fwhite§e color.\nYou can choose the default text color for LocLore texts here.\n§6If your lang key doesn't have any color codes, its text will be shown with this color setting.\n\nValid colors:\n §fblack§r, §1dark_blue§r, §2dark_green§r, §3dark_aqua§r, §4dark_red§r, §5dark_purple§r, §6gold§r, §7gray§r, §8dark_gray§r, §9blue§r, §agreen§r, §baqua§r, §cred§r, §dlight_purple§r, §eyellow§r, white
+config.localizator.client.minecraftDefaultLocLoreFormat=(Minecraft) LocLore Default Text Format
+config.localizator.client.minecraftDefaultLocLoreFormat.tooltip=Minecraft shows an item's Lore with §oitalic§r§e format.\n§eLocalizator shows LocLore with no formatting code.\nYou can choose the default text formatting for LocLore texts here.\n§6If your lang key doesn't have any formatting codes, its text will be shown with this formatting setting.\n\nValid formats:\n obfuscated §7->§f §kexample§r\n bold §7->§f §lexample§r\n strikethrough §7->§f §mexample§r\n underline §7->§f §nexample§r\n italic §7->§f §oexample§r\n none §7->§f example
 
 # Messages
 message.localizator.newconfig.0=[Localizator] Hello there! It's %s!

@@ -436,6 +436,16 @@ public class ForgeConfigHandler {
 		@Config.Name("(FMB/JEI) Use Photometer icon for light levels")
 		@Config.LangKey("config.localizator.client.fishingmadebetterPhotometer")
 		public boolean fishingmadebetterPhotometer = true;
+
+		@Config.Comment("Minecraft shows an item's Lore with dark_purple color.\nLocalizator shows LocLore with white color.\nYou can choose the default text color for LocLore texts here.\nIf your lang key doesn't have any formatting codes, its text will be shown with this color setting.\n\nValid colors:\n black, dark_blue, dark_green, dark_aqua, dark_red, dark_purple, gold, gray, dark_gray, blue, green, aqua, red, light_purple, yellow, white")
+		@Config.Name("(Minecraft) LocLore Default Text Color")
+		@Config.LangKey("config.localizator.client.minecraftDefaultLocLoreColor")
+		public String minecraftDefaultLocLoreColor = "white";
+		
+		@Config.Comment("Minecraft shows an item's Lore with italic format.\nLocalizator shows LocLore with no formatting code.\nYou can choose the default text formatting for LocLore texts here.\nIf your lang key doesn't have any formatting codes, its text will be shown with this formatting setting.\n\nValid formats:\n obfuscated -> example\n bold -> example\n strikethrough -> example\n underline -> example\n italic -> example\n none -> example")
+		@Config.Name("(Minecraft) LocLore Default Text Format")
+		@Config.LangKey("config.localizator.client.minecraftDefaultLocLoreFormat")
+		public String minecraftDefaultLocLoreFormat = "none";
 	}
 	
 	public static class ServerConfig {
