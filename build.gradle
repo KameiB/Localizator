@@ -147,7 +147,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:callable-horses-${callablehorses_version}")
     
     compileOnly fg.deobf("curse.maven:IvToolkit-${ivtoolkit_version}")
-    compileOnly fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
+    implementation fg.deobf("curse.maven:recurrent-complex-${recurrentcomplex_version}")
 
     compileOnly fg.deobf("curse.maven:ichunutil-${ichunutil_version}")
 

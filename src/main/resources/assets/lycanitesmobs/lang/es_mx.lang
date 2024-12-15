@@ -195,3 +195,72 @@ Russet Amalgalich  Lvl 3 (Phase 3)=Amalgalich Marron  Nivel 3 (Fase 3)
 # Damage sources
 cold_fire=Fuego frío
 ooze=Agua helada
+#
+#
+# Missing lang keys ===================================
+# Charges entities
+entity.lycanitesmobs:ember.name=Ascuas
+entity.lycanitesmobs:whirlwind.name=Torbellino
+entity.lycanitesmobs:lightball.name=Bola de luz
+entity.lycanitesmobs:mudshot.name=Bola de lodo
+entity.lycanitesmobs:crystalshard.name=Fragmento de cristal
+entity.lycanitesmobs:magma.name=Magma
+entity.lycanitesmobs:frostbolt.name=Piedra de escarcha
+entity.lycanitesmobs:tundra.name=Tundra
+entity.lycanitesmobs:spectralbolt.name=Rayo espectral
+entity.lycanitesmobs:venomshot.name=Disparo venenoso
+entity.lycanitesmobs:boulderblast.name=Roca explosiva
+entity.lycanitesmobs:icefireball.name=Bola de fuego helado
+entity.lycanitesmobs:hellfireball.name=Bola de fuego infernal
+entity.lycanitesmobs:quill.name=Pua
+entity.lycanitesmobs:scorchfireball.name=Bola de fuego abrasador
+entity.lycanitesmobs:throwingscythe.name=Cuchilla lanzable
+entity.lycanitesmobs:tricksterflare.name=Llamarada engañosa
+entity.lycanitesmobs:demonicblast.name=Explosion demoniaca
+entity.lycanitesmobs:demonicspark.name=Chispa demoniaca
+entity.lycanitesmobs:bloodleech.name=Sanguijuela de sangre
+entity.lycanitesmobs:acidsplash.name=Salpicadura acida
+entity.lycanitesmobs:acidglob.name=Globo de acido
+entity.lycanitesmobs:lobdarklings.name=Globo darkling
+entity.lycanitesmobs:faebolt.name=Esencia de hada
+entity.lycanitesmobs:frostweb.name=Telaraña gelida
+entity.lycanitesmobs:chaosorb.name=Orbe de caos
+entity.lycanitesmobs:poisonray.name=Rayo venenoso
+entity.lycanitesmobs:blizzard.name=Ventisca
+entity.lycanitesmobs:doomfireball.name=Bola de fuego de la muerte
+entity.lycanitesmobs:waterjet.name=Chorro de agua
+entity.lycanitesmobs:poop.name=Popo
+entity.lycanitesmobs:lifedrain.name=Roba vida
+entity.lycanitesmobs:devilstar.name=Estrella malvada
+entity.lycanitesmobs:aquapulse.name=Pulso de agua
+entity.lycanitesmobs:arcanelaserstorm.name=Tormenta laser arcana
+entity.lycanitesmobs:aetherwave.name=Onda celeste
+entity.lycanitesmobs:summoningseed.name=Semilla invocadora
+entity.lycanitesmobs:smitefireball.name=Bola de fuego solar
+entity.lycanitesmobs:primeember.name=Llama primordial
+entity.lycanitesmobs:fireball.name=Bola de fuego
+#
+# ========== Fluids ==========
+tile.moglava.name=Lava pura
+tile.moglava.description=§aLava que fluye mas rapido y es renovable como el agua. No genera criaturas.
+#
+tile.ooze.name=Agua helada
+tile.ooze.description=§aLiquido super frio que daña y aplica Lentitud. Puede generar criaturas.
+#
+tile.rabbitooze.name=Agua helada pura
+tile.rabbitooze.description=§aLiquido super frio que daña y aplica Lentitud. No genera criaturas.
+#
+tile.poison.name=Veneno
+tile.poison.description=§aLiquido dañino que aplica Plaga.
+#
+tile.acid.name=Acido
+tile.acid.description=§aLiquido toxico y letal que aplica Penetracion.
+#
+tile.sharacid.name=Acido puro
+tile.sharacid.description=§aAcido renovable como el agua. No genera criaturas y no destruye los objetos.
+#
+tile.vesspoison.name=Veneno puro
+tile.vesspoison.description=§aVeneno renovable como el agua. No genera criaturas.
+#
+tile.veshoney.name=Miel de avispa
+tile.veshoney.description=§aLiquido dulce y extremadamente pegajoso que se encuentra en las colmenas de las avispas.

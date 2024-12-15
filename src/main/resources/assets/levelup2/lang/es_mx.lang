@@ -1,2 +1,5 @@
 # Keybinds
 key.levelup2.gui=Interfase LevelUp2
+
+# Missing lang keys
+key.categories.gui=LevelUp2

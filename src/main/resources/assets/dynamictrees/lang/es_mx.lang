@@ -1,2 +1,11 @@
 # Damage sources
 fallingtree=Árbol cayendo
+
+# Missing lang keys =================================
+tile.dynamictrees:oakbranchx.name=Rama de roble
+tile.dynamictrees:sprucebranchx.name=Rama de abeto
+tile.dynamictrees:junglebranchx.name=Rama de arbol de selva
+tile.dynamictrees:darkoakbranchx.name=Rama de roble oscuro
+tile.rustic:ironwoodbranchx.name=Rama de argan
+species.rustic:ironwood.name=Argan
+species.rustic:olive.name=Olivo

@@ -1,2 +1,5 @@
 # Keybinds
 key.levelup2.gui=LevelUpGUI
+
+# Missing lang keys
+key.categories.gui=LevelUp2

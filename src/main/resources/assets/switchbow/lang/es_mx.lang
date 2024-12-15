@@ -1,0 +1,46 @@
+## Missing langkeys ====================================
+# Enchantment descriptions
+enchantment.switchbow.pullspeed.desc=Aumenta la velocidad de apertura del Cambia-arco
+enchantment.switchbow.activescope.desc=Agrega una mira de francotirador a los arcos y algunas ballestas
+enchantment.switchbow.cooldownreduce.desc=Reduce el tiempo de carga de la Cambia-ballesta
+
+# Arrow entities
+entity.ArrowLightningBolt.name=Flecha de rayo
+entity.ArrowTNT.name=Flecha de TNT
+entity.ArrowFrost.name=Flecha gelida
+entity.ArrowAir.name=Flecha de aire
+entity.ArrowEnderperle.name=Flecha de ender
+entity.ArrowVampier.name=Flecha de vampiro
+entity.ArrowWither.name=Flecha de wither
+entity.ArrowTorch.name=Flecha antorcha
+entity.ArrowSplit.name=Flecha de fragilidad
+entity.ArrowUnderwater.name=Flecha submarina
+entity.ArrowDiamond.name=Flecha reforzada
+entity.ArrowLove.name=Flecha de amor
+entity.ArrowFire.name=Flecha de fuego
+entity.ArrowBone.name=Flecha de hueso
+entity.ArrowFirework.name=Flecha de cohete
+entity.ArrowSplitLove.name=Flecha de amor (Area)
+entity.ArrowLuck.name=Flecha de saqueo
+entity.ArrowRedstone.name=Flecha de redstone
+entity.ArrowBurial.name=Flecha de entierro
+entity.ArrowChorus.name=Flecha de chorus
+entity.ArrowSprinkler.name=Flecha de regadera
+entity.ArrowDragonBreath.name=Flecha de aliento de dragon
+entity.ArrowTriple.name=Flecha triple
+entity.ArrowProtector.name=Flecha protectora
+entity.ArrowKnockback.name=Flecha de empuje
+entity.ArrowBouncy.name=Flecha rebotadora
+entity.ArrowoftheSearcher.name=Flecha buscadora
+entity.ArrowPiercing.name=Flecha penetrante
+entity.LittleIronGolem.name=Mini Golem de hierro
+
+entity.ArrowLightningBoltStorm.name=Flecha de tormenta
+entity.ArrowBoneAOE.name=Flecha de hueso (Area)
+entity.ArrowSplitUpgrade.name=Flecha transformada de fragilidad
+entity.ArrowBurialAOE.name=Flecha de entierro (Area)
+entity.ArrowFireUpgrade.name=Flecha de tormenta de fuego
+entity.ArrowLuckUpgrade.name=Flecha transformada de saqueo
+entity.ArrowAirUpgrade.name=Flecha de aire (Area)
+entity.ArrowSplitLoveUpgrade.name=Flecha transformada de amor (Area)
+

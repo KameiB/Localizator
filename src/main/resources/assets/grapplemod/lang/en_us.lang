@@ -1,0 +1,5 @@
+enchantment.grapplemod.wallrunenchantment.desc=Lets you run on walls.
+enchantment.grapplemod.doublejumpenchantment.desc=Gives double jump ability.
+enchantment.grapplemod.slidingenchantment.desc=Lets you slide by holding crouch. Preserves momentum.
+
+grapplemod.subtitle.double.jump=Double Jump
