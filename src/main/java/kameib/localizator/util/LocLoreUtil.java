@@ -10,6 +10,7 @@ import net.minecraftforge.common.util.Constants;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LocLoreUtil {
@@ -112,9 +113,6 @@ public class LocLoreUtil {
         return locLoreArgList;
     }
 
-    //private static String[] validTextColors = {"black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple",
-     //       "gold", "gray", "dark_ray", "blue", "green", "aqua", "red", "light_purple", "yellow", "white"};
-    
     public static TextFormatting getCustomColor() {
         switch (ForgeConfigHandler.clientConfig.minecraftDefaultLocLoreColor) {
             case "white": return TextFormatting.WHITE;
@@ -137,7 +135,6 @@ public class LocLoreUtil {
         return TextFormatting.WHITE;
     }
 
-    //private static String[] validFormatColors = {"obfuscated", "bold", "strikethrough", "underline", "italic", "none"};
     public static String getCustomFormat() {
         switch (ForgeConfigHandler.clientConfig.minecraftDefaultLocLoreFormat) {
             case "none": return "";
@@ -149,4 +146,13 @@ public class LocLoreUtil {
         }
         return "";
     }
+    
+    public static final List<String> validConfigColors = Arrays.asList(
+            "white", "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple", "gold",
+            "gray", "dark_gray", "blue", "green", "aqua", "red", "light_purple", "yellow"
+    );
+
+    public static final List<String> validConfigFormats = Arrays.asList(
+            "none", "obfuscated", "bold", "strikethrough", "underline", "italic"
+    );
 }

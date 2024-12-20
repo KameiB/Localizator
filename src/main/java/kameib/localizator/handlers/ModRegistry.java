@@ -9,8 +9,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -22,7 +20,7 @@ import net.theawesomegem.fishingmadebetter.util.RebornCraftingHelper;
 public class ModRegistry {
         
         public static void init() {
-                ConfigManager.sync(Localizator.MODID, Config.Type.INSTANCE);
+                
         }
         
         @SubscribeEvent
