@@ -2,14 +2,19 @@ package kameib.localizator.handlers;
 
 import kameib.localizator.Localizator;
 import kameib.localizator.data.Production;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.HashSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -35,6 +40,8 @@ public class ForgeConfigHandler {
 	@Config.Name("Client")
 	@Config.LangKey("config.localizator.client")
 	public static final ClientConfig clientConfig = new ClientConfig();
+	
+	private static HashSet<Block> noveltyBlocksWhitelist = null;
 
 	public static class LocalizingMixinsConfig {
 		@Config.Comment("Enables the Client config: \n- (Minecraft) Translate Mob Custom Names")
@@ -368,6 +375,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.minecraftLocItemEntityNameMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocItemEntityNameMixin = !Production.inProduction;
+
+		@Config.Comment("Prevents players from placing Novelty Items in the world by mistake.\nItems with Name and Lore (or their localized versions) NBT tags are considered as Novelties.\nThis applies to:\n- Paintings\n- Signs\n- Skulls\n- Any other Block Item that has no custom action when placing it.")
+		@Config.Name("(Minecraft) Prevent Novelties Placement Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftPreventNoveltyPlacementMixin")
+		@Config.RequiresMcRestart
+		public boolean minecraftPreventNoveltyPlacementMixin = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
@@ -442,7 +455,7 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.client.minecraftDefaultLocLoreColor")
 		public String minecraftDefaultLocLoreColor = "white";
 		
-		@Config.Comment("Minecraft shows an item's Lore with italic format.\nLocalizator shows LocLore with no formatting code.\nYou can choose the default text formatting for LocLore texts here.\nIf your lang key doesn't have any formatting codes, its text will be shown with this formatting setting.\n\nValid formats:\n obfuscated -> example\n bold -> example\n strikethrough -> example\n underline -> example\n italic -> example\n none -> example")
+		@Config.Comment("Minecraft shows an item's Lore with italic format.\nLocalizator shows LocLore with no formatting code.\nYou can choose the default text formatting for LocLore texts here.\nIf your lang key doesn't have any formatting codes, its text will be shown with this formatting setting.\n\nValid formats:\n obfuscated, bold, strikethrough, underline, italic, none")
 		@Config.Name("(Minecraft) LocLore Default Text Format")
 		@Config.LangKey("config.localizator.client.minecraftDefaultLocLoreFormat")
 		public String minecraftDefaultLocLoreFormat = "none";
@@ -551,13 +564,62 @@ public class ForgeConfigHandler {
 		@Config.RangeDouble(min = 0.00, max = 1.0)
 		@Config.LangKey("config.localizator.server.rldJohnnySpawnChance")
 		public double rldJohnnySpawnChance = 0.00;
-	}
 
+		@Config.Comment("Prevent players from placing Novelty Paintings in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\nRequired Mixin: \n- (Minecraft) Prevent Novelties Placement Mixin")
+		@Config.Name("(Minecraft) Prevent Novelty Paintings Placement")
+		@Config.LangKey("config.localizator.server.minecraftPreventNoveltyPaintingsPlacement")
+		public boolean minecraftPreventNoveltyPaintingsPlacement = true;
+
+		@Config.Comment("Prevent players from placing Novelty Signs in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\nRequired Mixin: \n- (Minecraft) Prevent Novelties Placement Mixin")
+		@Config.Name("(Minecraft) Prevent Novelty Signs Placement")
+		@Config.LangKey("config.localizator.server.minecraftPreventNoveltySignsPlacement")
+		public boolean minecraftPreventNoveltySignsPlacement = true;
+
+		@Config.Comment("Prevent players from placing Novelty Skulls in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\nRequired Mixin: \n- (Minecraft) Prevent Novelties Placement Mixin")
+		@Config.Name("(Minecraft) Prevent Novelty Skulls Placement")
+		@Config.LangKey("config.localizator.server.minecraftPreventNoveltySkullsPlacement")
+		public boolean minecraftPreventNoveltySkullsPlacement = true;
+
+		@Config.Comment("Prevent players from placing Novelty Blocks in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\nRequired Mixin: \n- (Minecraft) Prevent Novelties Placement Mixin")
+		@Config.Name("(Minecraft) Prevent Novelty Blocks Placement")
+		@Config.LangKey("config.localizator.server.minecraftPreventNoveltyBlocksPlacement")
+		public boolean minecraftPreventNoveltyBlocksPlacement = true;
+
+		@Config.Comment("Block ID Whitelist to enable players to place the designated Novelty Blocks in the world.\nExample ID: minecraft:dirt\n\nKeep in mind, when a Block is placed in the world, its NBT tags are deleted, turning a Novelty into a normal Block! (Vanilla behaviour)\nRequired Server Config: \n- (Minecraft) Prevent Novelty Blocks Placement")
+		@Config.Name("(Minecraft) Prevent Novelty Blocks Placement Whitelist")
+		@Config.LangKey("config.localizator.server.minecraftPreventNoveltyBlocksPlacementWhitelist")
+		public String[] minecraftPreventNoveltyBlocksPlacementWhitelist = {""};
+	}
+	
+	// ====================== Hash stuff initializing ==================================================================================
+	
+	public static HashSet<Block> getNoveltyBlocksWhitelist() {
+		if (ForgeConfigHandler.noveltyBlocksWhitelist == null) {
+			ForgeConfigHandler.noveltyBlocksWhitelist = new HashSet<>();
+			Block block;
+			if (ForgeConfigHandler.serverConfig.minecraftPreventNoveltyBlocksPlacementWhitelist == null) {
+				ForgeConfigHandler.serverConfig.minecraftPreventNoveltyBlocksPlacementWhitelist = new String[]{""};
+			}
+			for (String name : ForgeConfigHandler.serverConfig.minecraftPreventNoveltyBlocksPlacementWhitelist) {
+				block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(name));
+				if (block == null || block == Blocks.AIR) {
+					Localizator.LOGGER.warn("Localizator Novelty Blocks Whitelist. Invalid block: {}, ignoring...", name);
+					continue;
+				}
+				ForgeConfigHandler.noveltyBlocksWhitelist.add(block);
+			}
+		}
+		return ForgeConfigHandler.noveltyBlocksWhitelist;
+	}
+	
+	// ====================== Config file handling =====================================================================================
 	@Mod.EventBusSubscriber(modid = Localizator.MODID)
 	private static class EventHandler{
 		@SubscribeEvent
 		public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
 			if(event.getModID().equals(Localizator.MODID)) {
+				ForgeConfigHandler.noveltyBlocksWhitelist = null;
+				
 				ConfigManager.sync(Localizator.MODID, Config.Type.INSTANCE);
 			}
 		}

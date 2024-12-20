@@ -130,6 +130,8 @@ config.localizator.mixins.rldSpawnJohnny=(RLD) Spawn Johnny Mixin
 config.localizator.mixins.rldSpawnJohnny.tooltip=Enables the Server config:\n- (RLD) Johnny spawning chance\n 
 config.localizator.mixins.minecraftLocItemEntityNameMixin=(Minecraft) Item Names on Kill Command Mixin
 config.localizator.mixins.minecraftLocItemEntityNameMixin.tooltip=When using the /kill command, item entities will show their correct name instead of item.item.the_item.\n 
+config.localizator.mixins.minecraftPreventNoveltyPlacementMixin=(Minecraft) Prevent Novelties Placement Mixin
+config.localizator.mixins.minecraftPreventNoveltyPlacementMixin.tooltip=Prevents players from placing Novelty Items in the world by mistake.\nItems with Name and Lore (or their localized versions) NBT tags are considered as Novelties.\n\nThis applies to:\n- Paintings\n- Signs\n- Skulls\n- Any other Block Item that has no custom action when placing it.\n\n§9This enables more specific options in the Server config section.\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Show LocName instead of Name
@@ -172,6 +174,16 @@ config.localizator.server.rldCustomSpawnerZombieVillager=(RLD) Custom Spawner - 
 config.localizator.server.rldCustomSpawnerZombieVillager.tooltip=Do you have any custom dungeon with Zombie Villager Spawners?\nThis option will balance this mobs Novelty generation chance acordingly.\n\n§cRequired Mixin: \n- §d(RLD) Extended Novelty Pool Mixin\n 
 config.localizator.server.rldJohnnySpawnChance=(RLD) Johnny spawning chance
 config.localizator.server.rldJohnnySpawnChance.tooltip=If you have any custom dungeon with Vindicator Spawners, Johnny will have a chance to spawn from them.\n0.0 = 0%% Spawn chance\n1.0 = 100%% Spawn chance\n\n§cRequired Mixin: \n- §d(RLD) Spawn Johnny Mixin\n 
+config.localizator.server.minecraftPreventNoveltyPaintingsPlacement=(Minecraft) Prevent Novelty Paintings Placement
+config.localizator.server.minecraftPreventNoveltyPaintingsPlacement.tooltip=Prevent players from placing Novelty Paintings in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\n\n§cRequired Mixin: \n- §d(Minecraft) Prevent Novelties Placement Mixin\n 
+config.localizator.server.minecraftPreventNoveltySignsPlacement=(Minecraft) Prevent Novelty Signs Placement
+config.localizator.server.minecraftPreventNoveltySignsPlacement.tooltip=Prevent players from placing Novelty Signs in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\n\n§cRequired Mixin:\n- §d(Minecraft) Prevent Novelties Placement Mixin\n 
+config.localizator.server.minecraftPreventNoveltySkullsPlacement=(Minecraft) Prevent Novelty Skulls Placement
+config.localizator.server.minecraftPreventNoveltySkullsPlacement.tooltip=Prevent players from placing Novelty Skulls in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\n\n§cRequired Mixin: \n- §d(Minecraft) Prevent Novelties Placement Mixin\n 
+config.localizator.server.minecraftPreventNoveltyBlocksPlacement=(Minecraft) Prevent Novelty Blocks Placement
+config.localizator.server.minecraftPreventNoveltyBlocksPlacement.tooltip=Prevent players from placing Novelty Blocks in the world by mistake, losing them.\nThe player will receive a message explaining why it can't be placed.\n\n§cRequired Mixin: \n- §d(Minecraft) Prevent Novelties Placement Mixin\n 
+config.localizator.server.minecraftPreventNoveltyBlocksPlacementWhitelist=(Minecraft) Prevent Novelty Blocks Placement Whitelist
+config.localizator.server.minecraftPreventNoveltyBlocksPlacementWhitelist.tooltip=Block ID Whitelist to enable players to place the designated Novelty Blocks in the world.\n§7Example ID: §fminecraft:dirt\n\n§eKeep in mind, when a Block is placed in the world, its NBT tags are deleted, turning a Novelty into a normal Block! (Vanilla behaviour)\n\n§cRequired Server Config:\n- §9(Minecraft) Prevent Novelty Blocks Placement\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Translate Mob Custom Names
@@ -211,6 +223,10 @@ message.localizator.newconfig.3=§ePlease open Localizator Configuration screen 
 message.localizator.newconfig.4=Sorry for the inconvenience!
 message.localizator.newconfig.5=[§6§nClick here to open your old cfg file§r]
 message.localizator.newconfig.hovertext=Click to open %s
+message.localizator.dont_place_novelty.block=This one is too valuable to just place it
+message.localizator.dont_place_novelty.painting=Let's place this valuable painting on an Item Frame instead
+message.localizator.dont_place_novelty.sign=This sign is too valuable to just place it
+message.localizator.dont_place_novelty.skull=This head is too valuable to just place it
 
 # JEI Plugin
 jei.fishingmadebetter.category.fish_requirements=Fishing

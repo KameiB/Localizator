@@ -25,7 +25,8 @@
     "roguelike.ProfileSwordsmanMixin",
     "roguelike.ProfileAshleaMixin",
     "roguelike.ProfileRleahyMixin",
-    "roguelike.ProfileBabyMixin"
+    "roguelike.ProfileBabyMixin",
+    "roguelike.LabRoomMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

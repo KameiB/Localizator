@@ -130,6 +130,8 @@ config.localizator.mixins.rldSpawnJohnny=(RLD) Mixin Generar Johnny
 config.localizator.mixins.rldSpawnJohnny.tooltip=Habilita la opción Servidor:\n- (RLD) Probabilidad de generar a Johnny\n 
 config.localizator.mixins.minecraftLocItemEntityNameMixin=(Minecraft) Mixin Nombres de Items por commando kill
 config.localizator.mixins.minecraftLocItemEntityNameMixin.tooltip=Al usar el comando /kill, las entidades de items mostrarán su nombre correcto en lugar de item.item.el_item.\n 
+config.localizator.mixins.minecraftPreventNoveltyPlacementMixin=(Minecraft) Mixin Prevenir colocar souvenires
+config.localizator.mixins.minecraftPreventNoveltyPlacementMixin.tooltip=Evita que los jugadores coloquen Souvenires en el mundo por error.\nLos items con las etiquetas NBT Name y Lore (o sus versiones traducibles) son considerados Souvenires.\n\nEsto aplica a:\n- Pinturas\n- Letreros\n- Cabezas\n- Cualquier otro bloque que no tenga una acción personalizada al colocarlo.\n\n§9Esto habilita opciones más específicas en la Configuración de Servidor.\n 
 
 # Server config
 config.localizator.server.minecraftLocNameOverName=(Minecraft) Mostrar LocName en lugar de Name
@@ -172,6 +174,16 @@ config.localizator.server.rldCustomSpawnerZombieVillager=(RLD) Generador custom 
 config.localizator.server.rldCustomSpawnerZombieVillager.tooltip=¿Tienes algún calabozo personalizado con Generadores de Aldeano Zombi?\nEsta opción balanceará apropiadamente la probabilidad de que este mob se genere con un Souvenir.\n\n§cMixin necesario: \n- §d(RLD) Mixin Todos los souvenires\n 
 config.localizator.server.rldJohnnySpawnChance=(RLD) Probabilidad de generar a Johnny
 config.localizator.server.rldJohnnySpawnChance.tooltip=Si tienes algún calabozo personalizado con Generadores de Defensor, Johnny tendrá una probabilidad de aparecer de dichos Generadores.\n0.0 = 0%% Prob. de generarse\n1.0 = 100%% Prob. de generarse\n\n§cMixin necesario: \n- §d(RLD) Mixin Generar Johnny\n 
+config.localizator.server.minecraftPreventNoveltyPaintingsPlacement=(Minecraft) Prevenir colocar Pinturas souvenires
+config.localizator.server.minecraftPreventNoveltyPaintingsPlacement.tooltip=Evita que los jugadores coloquen Pinturas souvenires en el mundo por error, perdiéndolas.\nEl jugador recibirá un mensaje explicando por qué no puede ser colocada.\n\n§cMixin necesario: \n- §d(Minecraft) Mixin Prevenir colocar souvenires\n 
+config.localizator.server.minecraftPreventNoveltySignsPlacement=(Minecraft) Prevenir colocar Letreros souvenires
+config.localizator.server.minecraftPreventNoveltySignsPlacement.tooltip=Evita que los jugadores coloquen Letreros souvenires en el mundo por error, perdiéndolos.\nEl jugador recibirá un mensaje explicando por qué no puede ser colocado.\n\n§cMixin necesario:\n- §d(Minecraft) Mixin Prevenir colocar souvenires\n 
+config.localizator.server.minecraftPreventNoveltySkullsPlacement=(Minecraft) Prevenir colocar Cabezas souvenires
+config.localizator.server.minecraftPreventNoveltySkullsPlacement.tooltip=Evita que los jugadores coloquen Cabezas souvenires en el mundo por error, perdiéndolas.\nEl jugador recibirá un mensaje explicando por qué no puede ser colocada.\n\n§cMixin necesario: \n- §d(Minecraft) Mixin Prevenir colocar souvenires\n 
+config.localizator.server.minecraftPreventNoveltyBlocksPlacement=(Minecraft) Prevenir colocar Bloques souvenires
+config.localizator.server.minecraftPreventNoveltyBlocksPlacement.tooltip=Evita que los jugadores coloquen Bloques souvenires en el mundo por error, perdiéndolos.\nEl jugador recibirá un mensaje explicando por qué no puede ser colocado.\n\n§cMixin necesario: \n- §d(Minecraft) Mixin Prevenir colocar souvenires\n 
+config.localizator.server.minecraftPreventNoveltyBlocksPlacementWhitelist=(Minecraft) Prevenir colocar Bloques souvenires Lista blanca
+config.localizator.server.minecraftPreventNoveltyBlocksPlacementWhitelist.tooltip=Lista blanca de Ids de Bloques, para permitir que los jugadores coloquen en el mundo los Bloques souvenires especificados.\n§7Id de ejemplo: §fminecraft:dirt\n\n§eTen en cuenta que cuando un Bloque es colocado en el mundo, sus etiquetas NBT son eliminadas, ¡volviendo un Souvenir en un Bloque normal! (Comportamiento Vanilla)\n\n§cConfig. de Servidor requerida:\n- §9(Minecraft) Prevenir colocar Bloques souvenires\n 
 
 # Client config
 config.localizator.client.minecraftMobLocCustomNames=(Minecraft) Traducir nombres de mobs
@@ -211,6 +223,10 @@ message.localizator.newconfig.3=§ePor favor abre la pantalla de configuración 
 message.localizator.newconfig.4=Disculpa las molestias!
 message.localizator.newconfig.5=[§6§nHaz clic aquí para abrir tu viejo archivo cfg§r]
 message.localizator.newconfig.hovertext=Clic para abrir %s
+message.localizator.dont_place_novelty.block=Esto es demasiado valioso para simplemente colocarlo
+message.localizator.dont_place_novelty.painting=Mejor pongamos esta valiosa pintura en un marco
+message.localizator.dont_place_novelty.sign=Este letrero es demasiado valioso para simplemente colocarlo
+message.localizator.dont_place_novelty.skull=Esta cabeza es demasiado valiosa para simplemente colocarla
 
 # JEI Plugin
 jei.fishingmadebetter.category.fish_requirements=Pesca

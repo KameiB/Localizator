@@ -44,7 +44,7 @@ public abstract class ProfileZombieVillagerMixin {
         
         // From ProfileZombie -> ProfileBaby (1/40) -> Baby Zombie Villager (1/40 * 1/2 = 1/80)
         if (mob.isChild()) {
-            if (level == 0 && random.nextInt(2) == 0) { // 2 = 1/160
+            if (level == 0) { // 1/80 because very few spawners in level 0
                 localizator$profileFourles(mob, level, difficulty, random);
                 return;
             }
