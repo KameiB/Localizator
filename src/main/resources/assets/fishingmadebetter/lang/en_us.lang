@@ -35,11 +35,11 @@ notif.fishingmadebetter.fish_tracker.quantity_light_=§elight quantity
 notif.fishingmadebetter.fish_tracker.quantity_sparse_=§6sparse quantity
 notif.fishingmadebetter.fish_tracker.quantity_meager_=§cmeager quantity
 
-tooltip.fishingmadebetter.fish.weight=§7Weight: %s
-tooltip.fishingmadebetter.fish.scale_attached=§7Scale: §lAttached
-tooltip.fishingmadebetter.fish.scale_detached=§7Scale: Detached
-tooltip.fishingmadebetter.fish.dead=§9§lDead
-tooltip.fishingmadebetter.fish.alive=§9§lAlive
+tooltip.fishingmadebetter.fish.weight=§r§7Weight: %s
+tooltip.fishingmadebetter.fish.scale_attached=§r§7Scale: §lAttached
+tooltip.fishingmadebetter.fish.scale_detached=§r§7Scale: Detached
+tooltip.fishingmadebetter.fish.dead=§r§9§lDead
+tooltip.fishingmadebetter.fish.alive=§r§9§lAlive
 
 # %s = Fish Name
 tooltip.fishingmadebetter.fish_slice_raw=Sliced %s
