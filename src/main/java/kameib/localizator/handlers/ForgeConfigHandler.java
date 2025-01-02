@@ -288,7 +288,7 @@ public class ForgeConfigHandler {
 		@Config.Name("(Morpheus) Localized Messages Mixin")
 		@Config.LangKey("config.localizator.mixins.morpheusMessagesMixin")
 		@Config.RequiresMcRestart
-		public boolean morpheusMessages = !Production.inProduction;
+		public boolean morpheusMessagesMixin = !Production.inProduction;
 
 		@Config.Comment("Localizes messages related to Wormhole teleport items.")
 		@Config.Name("(BountifulBaubles) Localized Wormhole Messages Mixin")
