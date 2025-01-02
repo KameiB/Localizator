@@ -295,6 +295,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.bountifulbaublesWormholeMessagesMixin")
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesWormholeMessages = !Production.inProduction;
+
+		@Config.Comment("Adds the capability to interpret the \"lang\" Tag into the \"InGame Info XML\"'s XML Parser.")
+		@Config.Name("(IGI) Add lang Tag in XML Mixin")
+		@Config.LangKey("config.localizator.mixins.IGIlangTagMixin")
+		@Config.RequiresMcRestart
+		public boolean IGIlangTagMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

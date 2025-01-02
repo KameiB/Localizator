@@ -174,6 +174,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> morpheusList = new ArrayList<>();
         morpheusList.add(new ConfigToMixin("(Morpheus) Localized Messages Mixin", "mixins.localizator.morpheus.messages.json"));
         map.put("morpheus", morpheusList);
+        // InGame Info XML
+        List<ConfigToMixin> igiList = new ArrayList<>();
+        igiList.add(new ConfigToMixin("(IGI) Add lang Tag in XML Mixin", "mixins.localizator.igi.xml_langkey.json"));
+        map.put("ingameinfoxml", igiList);
 
         return Collections.unmodifiableMap(map);
     }

@@ -102,6 +102,8 @@ config.localizator.mixins.morpheusMessagesMixin=(Morpheus) Mixin Mensajes locali
 config.localizator.mixins.morpheusMessagesMixin.tooltip=Los mensajes serán tomados de claves de idioma y traducidos por el cliente, en lugar de ser textos fijos tomados desde el archivo de configuración.\n 
 config.localizator.mixins.bountifulbaublesWormholeMessagesMixin=(BountifulBaubles) Mixin Mensajes de Agujero de gusano localizados
 config.localizator.mixins.bountifulbaublesWormholeMessagesMixin.tooltip=Localiza los mensajes relacionados a los items de Agujero de gusano.\n 
+config.localizator.mixins.IGIlangTagMixin=(IGI) Mixin Agregar tag "lang" en XML
+config.localizator.mixins.IGIlangTagMixin.tooltip=Agrega la capacidad de interpretar la etiqueta "lang" en el parseador de XML del mod "InGame Info XML".\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones

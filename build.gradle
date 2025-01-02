@@ -175,8 +175,9 @@ dependencies {
 
     implementation fg.deobf("curse.maven:fnars-roguelike-dungeons-${roguelike_version}")
 
-    implementation fg.deobf("curse.maven:morpheus-${morpheus_version}")
+    compileOnly fg.deobf("curse.maven:morpheus-${morpheus_version}")
 
+    compileOnly fg.deobf("curse.maven:ingameinfoxml-${ingameinfoxml_version}")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
