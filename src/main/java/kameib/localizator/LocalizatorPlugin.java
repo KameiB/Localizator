@@ -22,7 +22,6 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         list.add(new ConfigToMixin("(Minecraft) Localized Lore Mixin", "mixins.localizator.core.loclore.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Written Book Mixin", "mixins.localizator.core.writtenbooks.json"));
         list.add(new ConfigToMixin("(Minecraft) Better Localized Name Mixin", "mixins.localizator.core.locname.json"));
-        list.add(new ConfigToMixin("(Minecraft) Localized Biome Name Mixin", "mixins.localizator.core.biomename.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Writable Book Mixin", "mixins.localizator.core.writablebooks.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Container Name Mixin", "mixins.localizator.core.containername.json"));
         list.add(new ConfigToMixin("(Minecraft) Item Names on Kill Command Mixin", "mixins.localizator.core.itementitykill.json"));
@@ -178,6 +177,14 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> igiList = new ArrayList<>();
         igiList.add(new ConfigToMixin("(IGI) Add lang Tag in XML Mixin", "mixins.localizator.igi.xml_langkey.json"));
         map.put("ingameinfoxml", igiList);
+        // Minecraft Comes Alive
+        List<ConfigToMixin> mcaList = new ArrayList<>();
+        mcaList.add(new ConfigToMixin("(MCA) Localized Texts Mixin", "mixins.localizator.mca.localized.json"));
+        map.put("mca", mcaList);
+        // Dynamic Surroundings HUD
+        List<ConfigToMixin> dshudsList = new ArrayList<>();
+        dshudsList.add(new ConfigToMixin("(DSHUDs) Localized Biome Name Mixin", "mixins.localizator.dshuds.biomename.json"));
+        map.put("dshuds", dshudsList);
 
         return Collections.unmodifiableMap(map);
     }

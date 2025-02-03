@@ -3,7 +3,7 @@ tooltip.srparasites.armor.adaptation=Adaptación actual:
 tooltip.srparasites.armor.reduction=§a  Reducción:
 
 # Biomes names
-biome.srparasites:biome_parasite.name=Bioma parasitario
+Parasite Biome=Bioma parasitario
 
 # Command messages
 message.srparasites.phasedecreased=Fase reducida

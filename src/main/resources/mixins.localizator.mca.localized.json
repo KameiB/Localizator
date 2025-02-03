@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "kameib.localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "mca.CommandAdminMCAMixin",
+    "mca.CommandMCAMixin",
+    "mca.EntityVillagerMCAMixin",
+    "mca.EnumAgeStateMixin",
+    "mca.EventHooksMixin",
+    "mca.ItemsMCAMixin",
+    "mca.NetMCA_SetProfessionHandlerMixin",
+    "mca.BlocksMCAMixin",
+    "mca.LocalizerMixin"
+  ],
+  "client": [
+    "mca.GuiButtonExMixin",
+    "mca.GuiInteractMixin",
+    "mca.GuiStaffOfLifeMixin",
+    "mca.GuiVillagerEditorMixin",
+    "mca.GuiWhistleMixin",
+    "mca.ItemEngagementRingMixin",
+    "mca.ItemStaffOfLifeMixin",
+    "mca.ItemWhistleMixin",
+    "mca.RenderVillagerMCAMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

@@ -1,0 +1,772 @@
+#PARSE_ESCAPES
+##############################
+# Items & Blocks
+##############################
+item.mca.wedding_ring.name=Wedding Ring
+item.mca.wedding_ring_rg.name=Rose Gold Wedding Ring
+item.mca.engagement_ring.name=Engagement Ring
+item.mca.engagement_ring.desc=Halves the hearts required to marry someone.
+item.mca.engagement_ring_rg.name=Rose Gold Engagement Ring
+item.mca.matchmakers_ring.name=Matchmaker's Ring
+item.mca.baby_boy.name=Baby Boy
+item.mca.baby_girl.name=Baby Girl
+item.mca.egg_male.name=Spawn Male Villager
+item.mca.egg_female.name=Spawn Female Villager
+item.mca.divorce_papers.name=Divorce Papers
+item.mca.rose_gold_ingot.name=Rose Gold Ingot
+item.mca.new_outfit.name=New Outfit
+item.mca.tombstone.name=Tombstone
+item.mca.rose_gold_dust.name=Rose Gold Dust
+item.mca.gold_dust.name=Gold Dust
+item.mca.whistle.name=Whistle
+item.mca.whistle.desc=Allows you to call your family to your current location.
+item.mca.villager_editor.name=Villager Editor
+item.mca.egg_grim_reaper.name=Spawn Grim Reaper
+item.mca.staff_of_life.name=Staff of Life
+item.mca.staff_of_life.usesLeft=Uses left: %d
+item.mca.staff_of_life.shift=Hold §eSHIFT§7 for info.
+item.mca.staff_of_life.desc.1=§9Use to revive a previously dead
+item.mca.staff_of_life.desc.2=§9villager, but all of their memories
+item.mca.staff_of_life.desc.3=§9will be forgotten.
+item.mca.book_death.name=Death, and How to Cure It!
+item.mca.book_romance.name=Relationships and You
+item.mca.book_family.name=Managing Your Family Vol. XI
+item.mca.book_rose_gold.name=On Rose Gold
+item.mca.book_infection.name=Beware the Infection!
+tile.mca.villager_spawner.name=Villager Spawner
+tile.mca.rose_gold_block.name=Rose Gold Block
+tile.mca.rose_gold_ore.name=Rose Gold Ore
+
+item.mca.book.book_death.title=Death, and How to Cure It!
+item.mca.book.book_death.author=Ozzie the Warrior
+item.mca.book.book_death.page.1="I couldn't count how many times my family has been blown to pieces by creepers.\n\nHow are they still around, you may ask?\n\nEasy! I, dear reader, have discovered a CURE for death itself! And through this book, I can share it with you."
+item.mca.book.book_death.page.2=§lStaff Of Life\n§rThe Staff is a powerful item that can revive up to 5 people. Wave the staff around and speak the name of the villager you wish to revive. Within moments, your loved one will be fully revived!\n\n
+item.mca.book.book_death.page.3=§lSummoning Grim\n§rUnfortunately, you must obtain the Staff from the Grim Reaper himself.\n\nTo summon him, you must build an altar consisting of 3 obsidian columns that are at least 2 blocks high. They may be higher if you like.
+item.mca.book.book_death.page.4=§lSummoning Grim pt. 2\n\n§r     # # # X # # #\n     # # # # # # #\n     # # # # # # #\n     X # # E # # X\n\nX = Obsidian Column\nE = Emerald\n# = Empty
+item.mca.book.book_death.page.5=§lSummoning Grim pt. 3\n§rAfter building the altar, wait until night and light all 3 columns.\n\nWhen you're ready to fight, light the emerald block and run!
+item.mca.book.book_death.page.6=§lFighting Grim\n§rGrim is tough. Use full diamond armor, lots of potions, and lots of enchantments.\n\nHe can:\n- Fly\n- Block attacks\n- Blind you\n- Move your items\n- Teleport\n
+item.mca.book.book_death.page.7=§lFighting Grim pt. 2\n\n§rIf you hit Grim while he's blocking, he will teleport behind you and strike.\n\nDo not try to use arrows or poison, he is immune!\n\n
+item.mca.book.book_death.page.8=§lFighting Grim pt. 3\n\n§rWhen Grim is at §lhalf health§r he will teleport into the air and begin healing.\n\nWhile healing, he will summon his minions from the underworld to fight you.
+item.mca.book.book_death.page.9=§lFighting Grim pt. 4\n§rWhen Grim is healed, he will continue attacking you, but he won't be able to heal again for 3 minutes and 30 seconds.\n\nEach time Grim heals, he will not be able to restore as much health has he did previously.
+
+item.mca.book.book_romance.title=Relationships and You
+item.mca.book.book_romance.author=Gerry the Librarian
+item.mca.book.book_romance.page.1=§lIntroduction\n§rInteraction is key to building relationships and finding the love of your life.\n  I've happily written this book in order to share my knowledge of interaction, love, and, unfortunately, divorce, to anyone who may need a little push in the right direction.
+item.mca.book.book_romance.page.2=§lInteracting\n§rChoose wisely when interacting with a villager!\n\nIf choosing a romantic interaction, be sure that the villager you are talking to likes you a lot.
+item.mca.book.book_romance.page.3=§lInteracting pt. 2\n§rDon't be annoying! Talking to someone for too long will bore them, and your interactions may stop succeeding.\n\nIf this happens, simply wait a few minutes before trying to talk to them again.
+item.mca.book.book_romance.page.4=§lMarriage\n§rTo get married, simply gift a villager a wedding ring once you feel you have reached the highest relationship level.\n\nOnce you're married, you can then procreate and have children of your own!
+
+item.mca.book.book_family.title=Managing Your Family Vol. XI
+item.mca.book.book_family.author=Leanne the Cleric
+item.mca.book.book_family.page.1=Children are our future! Make sure to have as many as you possibly can.\n\nNot only do you get to experience the joy of raising a child, but once they are past the baby stage, put them to work!
+item.mca.book.book_family.page.2=§lBabies\n§rWhen you are married, simply approach your spouse and offer to 'Procreate'.\n\nAfter a short dance, you'll be the proud owner of a new baby boy or girl (or maybe even both)!
+item.mca.book.book_family.page.3=§lGrowth\n§rBabies take time to grow, make sure to hold them until they are ready, or give them to your spouse to take care of.\n\nOnce a baby is ready to grow, you may place it on the ground and it will grow into a child!
+item.mca.book.book_family.page.4=§lAdolescence\n§rChildren will grow slowly from a baby to a teen.\n\nHowever, the magical properties of Golden Apples are said to accelerate any child's growth. I have yet to try this myself.
+item.mca.book.book_family.page.5=§lChores\n§rAny child can harvest, chop wood, prospect, hunt, and fish. You'll need to provide them with the tools they need to do so.\n  If a tool breaks and the child doesn't have another, they will have no choice but to stop working.
+item.mca.book.book_family.page.6=§lAdulthood\n§rAs sad as it may be, children will eventually grow into adults.\n\nAdults can be married off by using Matchmaker's Rings, or they will eventually get married on their own.
+
+item.mca.book.book_rose_gold.title=On Rose Gold
+item.mca.book.book_rose_gold.author=William the Miner
+item.mca.book.book_rose_gold.page.1=§lWarning!\nTOP SECRET\n\n§rThis manual is the property of William Mining Co.\n\nIf you are not a William Mining Co. employee, please refrain from reading this manual and return promptly to William the Miner.
+item.mca.book.book_rose_gold.page.2=Ah, rose gold - a lovely combination of silver, copper, and gold that smelts into a pinkish orange metal.\n  Most use it as an alternative to gold for crafting rings as it is much less expensive.\n  However, it has some interesting qualities that are easy to miss.
+item.mca.book.book_rose_gold.page.3=§lCreating Dust\n§rRose gold, once smelted, can be crushed into a fine dust.\n\nLook closely at rose gold dust in bright light, and you'll see shiny flecks of pure gold!\n\n
+item.mca.book.book_rose_gold.page.4=§lWashing Dust\n§rWith a little work, we can actually extract the gold from the dust and create pure gold ingots. Simply mix dust with a bucket of water.\n  The lighter silver and copper components will wash away, leaving you with about 6 smaller piles of gold dust.
+item.mca.book.book_rose_gold.page.5=§lExtracting Gold\n§rArrange 9 piles of dust on your crafting table, and if you're lucky, you'll find a gold nugget in one of them!\n\nAnd of course, once you have 9 gold nuggets, you'll be able to craft them into a solid gold ingot.
+
+item.mca.book.book_infection.title=Beware the Infection!
+item.mca.book.book_infection.author=Richard the Zombie
+item.mca.book.book_infection.page.1=Good day, readers! I've written this book so that you may not end up suffering the same fate as I.\n\nAlthough I caught the infection, I was luckily able to keep all of my mental faculties.
+item.mca.book.book_infection.page.2=§lWhat is the Infection?\n§rI discovered long ago that the zombies that appear at night are actually villagers in the late stages of infection!\n  Newly infected villagers turn green, are unable to speak, and occasionally try to bite!
+item.mca.book.book_infection.page.3=§lCuring\n§rContrary to popular belief, the infection can be cured if caught in time.\n\nYou must first weaken the villager or zombie with a potion.\n\nThen, immediately feed them a golden apple.
+item.mca.book.book_infection.page.4=§lCuring pt. 2\n§rZombies that can be cured often have enlarged heads and noses.\n\nAny other zombies you see unfortunately are too far gone, and cannot be cured.
+item.mca.book.book_infection.page.5=§lCuring pt. 3\n§rZombies will take a couple of minutes to be fully cured.\n\nVillagers who were recently infected, though, and haven't had time to degrade into a full zombie, will be cured instantly!
+item.mca.book.book_infection.page.6=§lWarnings\n§rVillagers are highly susceptible to infection, and children even more so!\n\nIf you carry a baby with you while fighting zombies, there is a chance it can become infected.
+
+##########################
+# Reactions
+##########################
+reaction.onhit1_=Ow! That hurt!
+reaction.onhit2_=I'll get you for that!
+reaction.onhit3_=Ouch! Why did you hit me?
+reaction.onhit4_=That hurts, stop it!
+reaction.onhit5_=Agh! That really hurt!
+reaction.onhit6_=Hey! What do you think you're doing?!
+reaction.onhit7_=*Oof*! That better have been an accident!
+
+reaction.ranaway1_=That's right, you'd better run!
+reaction.ranaway2_=If you come back, I'm calling the guards!
+reaction.ranaway3_=Come back and fight like a man!
+reaction.ranaway4_=If I see you again, I'm going to punch you!
+reaction.ranaway5_=I knew you were afraid of me!
+reaction.ranaway6_=Why are you running? Get back here so I can hit you!
+reaction.ranaway7_=I'm going to hit you if I see you again!
+reaction.ranaway8_=I'll get my friends and beat you up!
+
+reaction.drawnweapon1_=No! Please don't hurt me!
+reaction.drawnweapon2_=Stop! No!
+reaction.drawnweapon3_=Someone help me!
+reaction.drawnweapon4_=They're going to kill me! Someone help!
+reaction.drawnweapon5_=You can take whatever you want, just please don't hurt me!
+reaction.drawnweapon6_=I don't want to die! Stay away!
+reaction.drawnweapon7_=Mother Notch, please help me!
+
+#########################
+# Messages for chores
+#########################
+mining.search.none_=There's no %1$s nearby.
+mining.search.nearby_=There's some %1$s nearby...
+mining.search.value_=There's some %1$s %2$d blocks away.
+
+farming.nohoe_=I'll need to have a hoe in order to farm.
+
+fishing.norod_=I don't have a fishing rod!
+fishing.nowater_=I don't see any water nearby...
+fishing.finished_=I've finished fishing.
+
+cooking.nofood_=I don't have any food to cook.
+cooking.nofuel_=I don't have any fuel.
+cooking.nofurnace_=There's no furnace nearby.
+
+#################
+# GUI
+################################
+gui.button.debug.startraid=Start Raid
+gui.button.debug.spawnguards=Spawn Guards
+gui.button.debug.selectnearestvillager=Get Nearest Villager
+gui.button.debug.startmining=Start Mining
+gui.button.debug.startfishing=Start Fishing
+gui.button.debug.startchopping=Start Chopping
+gui.button.debug.starthunting=Start Hunting
+gui.button.debug.startharvesting=Start Harvest
+gui.button.debug.unzombify=Unzombify
+gui.button.debug.zombify=Zombify
+gui.button.debug.marrytoplayer=Marry to Player
+gui.button.debug.rebuildvillage=Rebuild Village
+gui.button.debug.openinventory=Open Inventory
+gui.button.yes=Yes
+gui.button.no=No
+gui.button.ok=Ok
+gui.button.done=Done
+gui.button.random=Random
+gui.button.interact=Interact
+gui.button.follow=Follow Me
+gui.button.stay=Stay Here
+gui.button.move=Move Freely
+gui.button.trade=Trade
+gui.button.sethome=Home
+gui.button.gohome=Go Home
+gui.button.setworkplace=Workplace
+gui.button.sethangout=Hangout
+gui.button.location=Locations
+gui.button.ridehorse=Ride Horse
+gui.button.special=Special
+gui.button.procreate=Procreate
+gui.button.work=Work
+gui.button.inventory=Inventory
+gui.button.chat=Chat
+gui.button.joke=Joke
+gui.button.gift=Gift
+gui.button.shakehand=Shake Hand
+gui.button.tellstory=Tell Story
+gui.button.flirt=Flirt
+gui.button.hug=Hug
+gui.button.kiss=Kiss
+gui.button.prospecting=Prospecting
+gui.button.hunting=Hunting
+gui.button.cooking=Cooking
+gui.button.fishing=Fishing
+gui.button.chopping=Chopping
+gui.button.harvesting=Harvesting
+gui.button.start=Start
+gui.button.stop=Stop
+gui.button.havebaby=Have Baby
+gui.button.divorce=Divorce
+gui.button.asktomarry=Ask to Marry
+gui.button.hire=Hire
+gui.button.hired=Hired
+gui.button.accept=Accept
+gui.button.combat=Combat
+gui.button.extend=Extend
+gui.button.dismiss=Dismiss
+gui.button.divorcespouse=Divorce Spouse
+gui.button.resetbaby=Reset Baby
+gui.button.exit=Exit
+gui.button.back=Back
+gui.button.backarrow=<<
+gui.button.adoptbaby=Adopt Baby
+gui.button.revive=Revive
+gui.button.infected=Change Infection
+gui.button.gender=Change Gender
+gui.button.texture.set=Set Skin
+gui.button.texture.randomize=Randomize
+gui.button.profession.set=Set Career
+gui.button.profession.randomize=Randomize
+gui.button.stopworking=Stop Work
+gui.button.copyuuid=Copy UUID
+gui.button.call=Call
+gui.title.namebaby.male=It's a boy!
+gui.title.namebaby.female=It's a girl!
+gui.title.namebaby=Name your baby:
+gui.title.tombstone=Enter tombstone text:
+gui.title.editor=Villager Editor
+gui.title.whistle=Call Family Member
+gui.title.staffoflife=Select a Villager to Revive
+
+gui.label.you=You
+gui.label.readytogrow=Ready to grow!
+gui.label.owner=Owner
+gui.label.infected=Infected!
+gui.label.name=Name:
+gui.label.age=Age:
+gui.label.unnamed=Unnamed
+gui.label.rightclicktoname=Right-click to name
+gui.label.minute=Minute
+gui.label.minutes=Minutes
+gui.label.parent=Parent:
+gui.label.male=Male
+gui.label.female=Female
+gui.label.prospecting=Prospecting
+gui.label.harvesting=Harvesting
+gui.label.chopping=Chopping
+gui.label.hunting=Hunting
+gui.label.fishing=Fishing
+gui.label.staying=Staying
+gui.label.following=Following
+
+gui.info.gift.line1=Gift Available
+gui.info.gift.line2=(Click to take)
+gui.mca.interact.label.hearts=%d hearts
+
+gui.staffoflife.noVillagersFound=No villagers found.
+
+gui.mca.villager.name=Name:
+gui.mca.whistle.loading=Loading
+gui.mca.whistle.noFamilyFound=No family members could be found in the area.
+
+spouse.chore.mining.orenotify_=There's some %2$s nearby...
+spouse.chore.mining.nopick_=I forgot my pickaxe, dear, did you bring an extra one?
+spouse.chore.chopping.noaxe_=Oh, I thought we were going for a picnic. I didn't bring an axe...
+spouse.chore.fishing.norod_=I'd love to! But, I can't find my fishing rod.
+spouse.chore.hunting.nosword_=I broke my sword yesterday. Do you have another one?
+spouse.chore.harvesting.nohoe_=Do you have an extra hoe I could use?
+
+childp.chore.mining.orenotify_=I think there's some %2$s nearby...
+childp.chore.mining.nopick_=I can't do that without a pickaxe!
+childp.chore.chopping.noaxe_=I can't chop wood without an axe...
+childp.chore.fishing.norod_=I can't fish without a fishing rod!
+childp.chore.hunting.nosword_=Can you give me a sword first?
+childp.chore.harvesting.nohoe_=I don't have a hoe to harvest with.
+
+child.chore.mining.orenotify_=I think there's some %2$s nearby...
+child.chore.mining.nopick_=I can't do that without a pickaxe!
+child.chore.chopping.noaxe_=I can't chop wood without an axe...
+child.chore.fishing.norod_=I can't fish without a fishing rod!
+child.chore.hunting.nosword_=Can you give me a sword first?
+child.chore.harvesting.nohoe_=I don't have a hoe to harvest with.
+
+adult.chore.mining.orenotify_=Found something! There's some %2$s nearby.
+adult.chore.mining.nopick_=I don't have a pickaxe anymore.
+adult.chore.chopping.noaxe_=I don't have an axe anymore.
+adult.chore.fishing.norod_=I don't have a fishing rod anymore.
+adult.chore.hunting.nosword_=I lost my sword! Do you have another?
+adult.chore.harvesting.nohoe_=I don't have a hoe to harvest with.
+
+gui.interact.label.married_=Married to %1$s
+gui.interact.label.engaged_=Engaged to %1$s
+gui.interact.label.notmarried_=Not married
+gui.interact.label.parents_=Parents: %1$s and %2$s
+gui.interact.label.gift_=Gift available. Click to claim.
+
+spouse.interaction.marry.fail.marriedtogiver1_=It's a pretty ring, but I am already married to you, silly.
+spouse.interaction.marry.fail.marriedtogiver2_=We are already married. Did you forget?
+
+adult.interaction.marry.fail.marriedtoother1_=I'm sorry, no...I'm already married.
+adult.interaction.marry.fail.marriedtoother2_=Oh, I thought you knew...I'm already married to someone.
+adult.interaction.marry.fail.marriedtoother3_=What?! I'm already married!
+
+adult.interaction.marry.fail.playermarried1_=Uh...I see that ring on your finger. You're already married!
+adult.interaction.marry.fail.playermarried2_=Just what are you trying to do? You're already married!
+adult.interaction.marry.fail.playermarried3_=What? Really? I think you're married to someone else, aren't you?
+adult.interaction.marry.fail.playermarried4_=I'm appalled! You already have a spouse.
+
+adult.interaction.marry.fail.lowhearts1_=What? No! I don't like you!
+adult.interaction.marry.fail.lowhearts2_=Oh, pretty ring! Oh wait...it's for me? Um...no.
+adult.interaction.marry.fail.lowhearts3_=Is that for me? Sorry, I just don't know you enough.
+adult.interaction.marry.fail.lowhearts4_=I'm flattered, but I don't really know you.
+
+spouse.interaction.engage.success1_=Yes! I will marry you! I love you!
+spouse.interaction.engage.success2_=Of course I'll marry you!
+spouse.interaction.engage.success3_=About time...just kidding! Love you!
+spouse.interaction.engage.success4_=Is...is this real? I mean, this moment, not the ring. But the ring is real, right?
+
+spouse.interaction.marry.success1_=It's a dream come true! I'll love you forever!
+spouse.interaction.marry.success2_=We're finally married! Now what?
+spouse.interaction.marry.success3_=I'm happy to be married to you, %1$s.
+spouse.interaction.marry.success4_=I can't wait to start our life together!
+
+adult.interaction.matchmaker.fail.married1_=I am already married to someone.
+adult.interaction.matchmaker.fail.married2_=I'm happily married, I do not want another spouse.
+adult.interaction.matchmaker.fail.married3_=I don't want that - I'm already married.
+
+adult.interaction.matchmaker.fail.engaged1_=I am engaged to someone already, I can't take that ring.
+adult.interaction.matchmaker.fail.engaged2_=I've promised to marry someone else.
+adult.interaction.matchmaker.fail.engaged3_=Oh, thanks but I think I'm okay. I'm already engaged to someone.
+
+adult.interaction.matchmaker.fail.needtwo1_=Don't you need two rings to arrange a marriage?
+adult.interaction.matchmaker.fail.needtwo2_=Oh, okay! But you need two rings first.
+adult.interaction.matchmaker.fail.needtwo3_=My spouse and I will both need a ring, but you only have one.
+
+adult.interaction.matchmaker.fail.novillagers1_=I don't see anyone close by. Who did you want me to marry?
+adult.interaction.matchmaker.fail.novillagers2_=I just don't know...move me closer to the one you think is right for me.
+adult.interaction.matchmaker.fail.novillagers3_=Oh, but there doesn't seem to be anyone close by. Who should I marry?
+
+adult.interaction.sethome.success1_=Okay, this will be my new home point.
+adult.interaction.sethome.success2_=I understand, I'll be sleeping here at night.
+adult.interaction.sethome.success3_=Sure thing, %1$s.
+spouse.interaction.sethome.success1_=I really like this place, good job %1$s!
+spouse.interaction.sethome.success2_=This is like a dream home!
+childp.interaction.sethome.success1_=Okay fine, where's my room?
+childp.interaction.sethome.success2_=This is cool I guess. Can I go play now?
+childp.interaction.sethome.success3_=Okay, but I want the biggest room!
+child.interaction.sethome.success2_=This is cool I guess.
+
+adult.interaction.sethome.fail1_=This doesn't look like a safe home point for me. There's some %1$s in the way.
+adult.interaction.sethome.fail2_=Is there another place nearby? There's some %1$s in the way.
+adult.interaction.sethome.fail3_=I can't have my home point here. There's some %1$s in the way.
+
+adult.interaction.setworkplace.success1_=Sure thing, %1$s.
+spouse.interaction.setworkplace.success1_=I really like this place.
+child.interaction.setworkplace.success1_=Okay fine!
+childp.interaction.setworkplace.success1_=Okay fine!
+
+adult.interaction.sethangout.success1_=This is my favorite spot. I'm often here in the evening.
+spouse.interaction.sethangout.success1_=I really like this place.
+child.interaction.sethangout.success1_=Okay fine! I will play here before bedtime.
+childp.interaction.sethangout.success1_=Okay fine! I will play here before bedtime.
+
+adult.interaction.gohome.success1_=Alright, I'll go there immediately!
+adult.interaction.gohome.success2_=Sure, I'll go home now.
+adult.interaction.gohome.success3_=I'm going home. Goodbye!
+spouse.interaction.gohome.success1_=Sure, dear, I'll head home now.
+spouse.interaction.gohome.success2_=See you there, dear!
+childp.interaction.gohome.success1_=See ya!
+childp.interaction.gohome.success2_=Okay! Bye!
+child.interaction.gohome.success1_=Okay! I think I remember where I live...
+
+adult.interaction.gohome.fail.nohome_=I don't have a home...
+spouse.interaction.gohome.fail.nohome_=Remind me again where our house was?
+child.interaction.gohome.fail.nohome_=I don't remember where I live...
+childp.interaction.gohome.fail.nohome_=I don't remember where home is! We move too much!
+
+child.interaction.ridehorse.fail.notnearby_=Where are the horses? I want to ride!
+childp.interaction.ridehorse.fail.notnearby_=Where is my horse? I hope I didn't lose it again...
+adult.interaction.ridehorse.fail.notnearby_=I don't see any rideable horses nearby.
+spouse.interaction.ridehorse.fail.notnearby_=Where is my horse, dear? I can't find it.
+
+spouse.interaction.procreate.fail.hasbaby1_=We already have a baby...you didn't lose it did you?!
+spouse.interaction.procreate.fail.hasbaby2_=...you lost baby Joby didn't you? Wait...was his name Joby?
+spouse.interaction.procreate.fail.lowhearts1_=Spend more time with me! I'm not ready for a child.
+spouse.interaction.procreate.fail.lowhearts2_=Hmm...not just yet. I think we need to spend more time together first.
+
+notify.spouseendedmarriage_=%s has ended their marriage with you.
+notify.spousedied_=Your spouse %1$s has died by %2$s
+notify.childdied_=Your child %1$s has died by %2$s
+notify.child.grownup_=%1$s has grown into an adult!
+notify.revival.disabled_=Revivals have been disabled by the server administrator.
+notify.trading.disabled_=Trading is disabled by the server administrator.
+gift.cake.fail_=I will only eat cake if my spouse is nearby...please find them!
+
+##################################
+# Responses to interactions
+##################################
+adult.gift.fail1_=This isn't a good gift...
+adult.gift.fail2_=What made you think that I would like this?
+adult.gift.fail3_=No thanks.
+adult.gift.fail4_=I don't want that, why would I?
+adult.gift.fail5_=Why are you giving me that?
+adult.gift.fail6_=Is this supposed to be a gift? No thanks.
+adult.gift.good1_=How considerate! Thank you.
+adult.gift.good2_=Thanks!
+adult.gift.good3_=How thoughtful!
+adult.gift.good4_=Oh, I love these!
+adult.gift.good5_=A gift? For me? How nice!
+adult.gift.better1_=Hey, this is pretty cool!
+adult.gift.better2_=Thanks, friend!
+adult.gift.better3_=%1$s, you're such a good friend!
+adult.gift.better4_=Oh wow, I actually needed one of these!
+adult.gift.better5_=This is a pretty good gift!
+adult.gift.best1_=I...I don't know what to say. Thank you so much, %1$s!
+adult.gift.best2_=How did you...nevermind, this is amazing!
+adult.gift.best3_=Oh wow, I've always wanted one of these!
+adult.gift.best4_=This is fantastic! I'll put it to good use.
+adult.gift.best5_=Thank you so much. I will remember this forever.
+adult.chat.success1_=Man, cookies and milk does sound delicious right now.
+adult.chat.success2_=Yes, I suppose the weather is nice today.
+adult.chat.success3_=I'm doing just fine! Hit my toe when I woke up, though.
+adult.chat.success4_=An apple a day keeps the zombies away!
+adult.chat.success5_=My dream is to build my own village, but I'm so lazy.
+adult.chat.success6_=I think I saw %Supporter% the other day in Diamond armor.
+adult.chat.success7_=My friend %Supporter% told me that they found a chest full of diamonds yesterday!
+adult.chat.fail1_=Did you seriously just say that?
+adult.chat.fail2_=I don't believe it exploded on its own.
+adult.chat.fail3_=You know, you're not that cool.
+adult.chat.fail4_=Show off.
+adult.chat.fail5_=You should be thrown in a dungeon!
+adult.joke.success1_=Haha! Serves that Skelly right!
+adult.joke.success2_=*Laughs* That's hilarious!
+adult.joke.success3_=That's funny! Did you hear the one about the cows?
+adult.joke.success4_=Unfortunate for the sheep to lose its wool, but funny!
+adult.joke.success5_=That's the best I have ever heard!
+adult.joke.success6_=You might be funnier than %Supporter%!
+adult.joke.fail1_=Don't speak about my pig like that!
+adult.joke.fail2_=Ha. Ha. Not funny.
+adult.joke.fail3_=Ah, you're not the funniest in town.
+adult.joke.fail4_=That's low.
+adult.joke.fail5_=You shouldn't joke about that.
+adult.shakehand.success1_=You have a nice grip!
+adult.shakehand.success2_=Your grip shows me you have great power!
+adult.shakehand.success3_=Wow, you're so polite!
+adult.shakehand.success4_=Good day!
+adult.shakehand.success5_=Why, hello there!
+adult.shakehand.fail1_=Seriously? After you slaughtered the cow?
+adult.shakehand.fail2_=Um, no that's okay.
+adult.shakehand.fail3_=I'm not a stranger, you don't have to be so polite.
+adult.shakehand.fail4_=Wow really? This isn't like you.
+adult.shakehand.fail5_=Go away.
+adult.tellstory.success1_=Really? I can't believe that all happened!
+adult.tellstory.success2_=I wish I was brave enough to take on a creeper.
+adult.tellstory.success3_=That was a really good story! Is it original?
+adult.tellstory.success4_=All of that happened yesterday? No way!
+adult.tellstory.success5_=I was near there yesterday, I can't believe I didn't hear this already.
+adult.tellstory.success6_=Haha! That definitely sounds like %Supporter%! Such an awesome person.
+adult.tellstory.success7_=I've heard the Legend of %Supporter% almost a million times. Tell me again!
+adult.tellstory.fail1_=*Ahem* That's my mother you're talking about.
+adult.tellstory.fail2_=This is why the village talks about you.
+adult.tellstory.fail3_=I don't get it...
+adult.tellstory.fail4_=You're terrible! Creepers have feelings too!
+adult.tellstory.fail5_=How could you kill a poor sheep?!
+adult.flirt.success1_=You're sooo brave!
+adult.flirt.success2_=Oh, you! Stop being so cute!
+adult.flirt.success3_=*Blushes* Do you mean it?
+adult.flirt.success4_=Oh, my...
+adult.flirt.success5_=That was so adorable! You had me at "hello"!
+adult.flirt.fail1_=If you mean that, then prove it.
+adult.flirt.fail2_=Aw.... Wait, you told the baker the same thing!
+adult.flirt.fail3_=Not in a million years.
+adult.flirt.fail4_=Pathetic much?
+adult.flirt.fail5_=A zombie has a better chance than you.
+adult.hug.success1_=Long time no see!
+adult.hug.success2_=Thank you, I needed that.
+adult.hug.success3_=At least one thing made my day today.
+adult.hug.success4_=You're as snuggly as a sheep!
+adult.hug.fail1_=You're covered in soot and mud!
+adult.hug.fail2_=No thanks.
+adult.hug.fail3_=Uh, why?
+adult.hug.fail4_=After you called me a dinosaur last week? No.
+adult.hug.fail5_=Quite frankly, you don't deserve a hug after you did that.
+adult.kiss.success1_=I wish this moment would last forever.
+adult.kiss.success2_=I think I love you...
+adult.kiss.success3_=Mmm, tastes like pumpkin pie!
+adult.kiss.fail1_=Not if someone can see.
+adult.kiss.fail2_=You call that a kiss?
+adult.kiss.fail3_=Ash kisses better than you.
+adult.kiss.fail4_=Two words... breath mints!
+adult.kiss.fail5_=Thank you?
+adult.greeting1_=Why, hello there!
+adult.greeting2_=Hey! How are you today?
+adult.greeting3_=Hey, good to see you!
+adult.greeting4_=What's going on with you today?
+adult.greeting5_=How are you today?
+
+child.chat.success1_=I heard stories about you! Are you a hero?
+child.chat.success2_=Hi. I was going to go try and climb to the roof.
+child.chat.success3_=Do you wanna go burn stuff with me?
+child.chat.success4_=I'm going to be a hunter like you and kill many things!
+child.chat.success5_=Hi! What are you doing today? I'm going swimmin'!
+child.chat.fail1_=If you don't give me cookies I'll hold my breath.
+child.chat.fail2_=My parents said not to talk to you, that you're bad.
+child.chat.fail3_=*Laughs* You look smelly!
+child.chat.fail4_=Oh yeah? Well I'm gonna egg your house!
+child.chat.fail5_=Lalala, I'm not listening! Lalala.
+child.joke.success1_=You're funnier than daddy!
+child.joke.success2_=Tell me another one!
+child.joke.success3_=You're the funniest person alive!
+child.joke.success4_=I'm tellin' my momma that one! *Laughs*
+child.joke.success5_=It should eat a leaf!
+child.joke.fail1_=I don't get it.
+child.joke.fail2_=You're not funny. Really.
+child.joke.fail3_=You need to stop...
+child.joke.fail4_=But, who's apple?
+child.joke.fail5_=Don't be mean!
+child.shakehand.success1_=Hiya! Someone I know likes you...
+child.shakehand.success2_=Dad said this is a very nice thing to do.
+child.shakehand.success3_=Now high five! Down low... too slow!
+child.shakehand.success4_=Hi stranger!
+child.shakehand.success5_=*Giggles* I just cleaned a cow with this hand.
+child.shakehand.fail1_=Stranger danger...
+child.shakehand.fail2_=Mom, dad! This person is trying to kidnap me!
+child.shakehand.fail3_=Don't touch me I'm famous!
+child.shakehand.fail4_=Ew, your hand has black stuff on it.
+child.shakehand.fail5_=I'll only shake your hand if you give me a diamond.
+child.tellstory.success1_=Wow! You're a beast!
+child.tellstory.success2_=I want to be just like you when I grow up. Shh, don't tell dad.
+child.tellstory.success3_=Can you adopt me?! You're awesome!
+child.tellstory.success4_=I went fishing and almost drowned.
+child.tellstory.success5_=Does this mean I can take whatever I want? I mean, "borrow?"
+child.tellstory.success6_=Tell me again about %Supporter%!!
+child.tellstory.fail1_=You're a meanie!
+child.tellstory.fail2_=I'm telling my mom what you said about her...
+child.tellstory.fail3_=I believe you're speaking about my grandpa...
+child.tellstory.fail4_=You're nothing but a scaredycat like dad said!
+child.tellstory.fail5_=How could you kill a poor chicken?
+child.greeting1_=Hi, who are you?
+child.greeting2_=Hi, what's your name?
+child.greeting3_=Eek! You look scary!
+child.gift.fail1_=Ew, I don't like this!
+child.gift.fail2_=Yuck! I don't want this.
+child.gift.fail3_=Why did you bring me this? It's dumb!
+child.gift.fail4_=I don't even know what this is!
+child.gift.good1_=Is it...is it all mine?
+child.gift.good2_=Is this really for me?
+child.gift.good3_=This is cool!
+child.gift.better1_=Awesome! I'm going to show this to all my friends.
+child.gift.better2_=You found it! I lost this a few minutes ago.
+child.gift.better3_=My friend stole one of these from me. Did you beat him up for me?
+child.gift.best1_=%1$s, you give the best presents!
+child.gift.best2_=Finally! My friend will stop bragging now.
+child.gift.best3_=Wow! Where did you get this thing?
+child.gift.best4_=My Dad has one of these. Now I have one too!
+
+childp.chat.success1_=Oh, I was just going to go explorin' later.
+childp.chat.success2_=Can we go camping? Please?!
+childp.chat.success3_=Hi, can you make me a cake?
+childp.chat.success4_=Can I have my own room away from our house? That would be cool!
+childp.chat.success5_=Let's move into a cave! That sounds so fun!
+childp.chat.fail2_=I don't think I'd like that very much.
+childp.chat.fail3_=Is that why I've heard so much about "divorce"? What does that mean?
+childp.chat.fail4_=I want a new daddy.
+childp.chat.fail5_=I don't want a baby sister.
+childp.joke.success1_=*Laughs* Tell that one again!
+childp.joke.success2_=I've got to tell my friend that one!
+childp.joke.success3_=How did the creeper explode?!
+childp.joke.success4_=*Laughs*Why is there no longer 3 of them?
+childp.joke.success5_=*Laughs* ... *Laughs*... *Laughs*
+childp.joke.fail1_=I thought you were funny, though...
+childp.joke.fail2_=I like knock knock jokes better.
+childp.joke.fail3_=I don't get it, that was dumb.
+childp.joke.fail4_=*Yawn* My friend's dad is cooler and funnier than you.
+childp.joke.fail5_=I'd rather have cake.
+childp.shakehand.success1_=Why do I need to learn this stuff?
+childp.shakehand.success2_=I heard that this is a polite thing to do.
+childp.shakehand.success3_=I'm gonna be just like you when I grow up!
+childp.shakehand.success4_=Can I have cake now?
+childp.shakehand.success5_=I don't get it, but okay!
+childp.shakehand.fail1_=I spit on my hand.
+childp.shakehand.fail2_=You're such an old person.
+childp.shakehand.fail3_=Only losers shake hands.
+childp.shakehand.fail4_=I'll shake your hand if you give me cake.
+childp.shakehand.fail5_=No, you'll slip and hit me.
+childp.tellstory.success1_=What!? You really did that?! But...what happened to your friend?
+childp.tellstory.success2_=I want to explore a cave, too! Let's go!
+childp.tellstory.success3_=One day I'll kill more creepers than you!
+childp.tellstory.success4_=Oh, oh, oh! Can we climb a tree, too?!
+childp.tellstory.success5_=Did the lava hurt?
+childp.tellstory.fail1_=I don't want to hear about grandma.
+childp.tellstory.fail2_=You always say that. I just want a pet.
+childp.tellstory.fail3_=You're just fibbing. I don't belive that.
+childp.tellstory.fail4_=You said you didn't eat the cake and cookies...
+childp.tellstory.fail5_=Someone said you were a bad person, and I believe them!
+childp.hug.success1_=*Kisses* You're the best ever!
+childp.hug.success2_=I'm going to be as strong as you are one day!
+childp.hug.success3_=hug anymore?
+childp.hug.success4_=I love hugs! You're soft and warm!
+childp.hug.fail1_=I'm too old for hugs!
+childp.hug.fail2_=Stop it! I don't want people to see!
+childp.hug.fail3_=Go away, you're so annoying!
+childp.hug.fail4_=Just leave me alone or give me some cookies!
+childp.hug.fail5_=I'd rather hug a skeleton.
+childp.greeting1_=Hey there!
+childp.greeting2_=Hey, what's going on?
+childp.greeting3_=What are you doing?
+childp.greeting4_=Where are you going?
+childp.gift.fail1_=This...is a really bad gift.
+childp.gift.fail2_=Ew, I've gotten so much better before!
+childp.gift.fail3_=Didn't you give me this like, last year?
+childp.gift.fail4_=I could get this easily, no thanks.
+childp.gift.good1_=Oh, cool! Thank you!
+childp.gift.good2_=Is it my birthday? This is awesome!
+childp.gift.good3_=This is much better than the last gift I got!
+childp.gift.good4_=Woo hoo! It's mine, all mine!
+childp.gift.good5_=Can I...can I eat it?
+childp.gift.better1_=For me? For free?!
+childp.gift.better2_=Ooh! Shiny!
+childp.gift.better3_=I really like this one, can I have another?
+childp.gift.better4_=All of my friends will be jealous now!
+childp.gift.better5_=This is so cool! I've wanted one of these forever!
+childp.gift.best1_=This must have cost a fortune!
+childp.gift.best2_=I knew you would get me one of these. I just knew it!
+childp.gift.best3_=Yay! I have the best parents in the world!
+childp.gift.best4_=This is so amazing! I can't believe this is all mine!
+childp.gift.best5_=Thank you so much! You're the best ever!
+
+spouse.chat.success1_=I cleaned the entire house. How was your day?
+spouse.chat.success2_=Honey, let's go camping sometime. Doesn't that sound like fun?
+spouse.chat.success3_=So today I saw a spider. It was huge so I ran away.
+spouse.chat.success4_=We should build a new house together!
+spouse.chat.success5_=I almost walked into a lava pit the other day. That wouldn't have been good!
+spouse.chat.fail1_=I know we're not the poorest family, but...
+spouse.chat.fail2_=I love being around you but I need some space.
+spouse.chat.fail3_=Sometimes I wish I had my own "cave" to escape from you and everyone.
+spouse.chat.fail4_=Go away, I'm not in the mood.
+spouse.chat.fail5_=Where have you been? Are you seeing someone behind my back?
+spouse.joke.success1_=*Laughs* I married you for your humor!
+spouse.joke.success2_=You should throw an egg at him next time!
+spouse.joke.success3_=Then the wolf fell in love with the sheep.
+spouse.joke.success4_=That never gets old!
+spouse.joke.success5_=Here's one for you... How many chickens does a creeper blow up?
+spouse.joke.fail1_=Lame...
+spouse.joke.fail2_=Sweetheart, you're not funny.
+spouse.joke.fail3_=Ha...Ha...Ha...Not funny.
+spouse.joke.fail4_=You need to erase that from your mind.
+spouse.joke.fail5_=Okay...
+spouse.shakehand.success1_=Your hand is so soft!
+spouse.shakehand.success2_=Our hands fit perfectly together.
+spouse.shakehand.success3_=One day people will forget to shake hands.
+spouse.shakehand.success4_=Our children will need to be this polite.
+spouse.shakehand.success5_=*Continues to shake hand* Tell me when to stop!
+spouse.shakehand.fail1_=shakehand? How about a kiss, instead?
+spouse.shakehand.fail2_=*Squeezes hand hard*
+spouse.shakehand.fail3_=Your hand is nasty, no way.
+spouse.shakehand.fail4_=They have germs on them.
+spouse.shakehand.fail5_=Why don't you get a decent job instead of shaking my hand?
+spouse.tellstory.success1_=Let's not tell our children that one...
+spouse.tellstory.success2_=You were so rebellious! I love it!
+spouse.tellstory.success3_=Did you ever tell your parents about losing their rings?
+spouse.tellstory.success4_=It was that moment when I fell in love with you!
+spouse.tellstory.success5_=Wow, you're the best hunter ever!
+spouse.tellstory.fail1_=Talk to me when you kill something other than a harmless cow.
+spouse.tellstory.fail2_=Don't do something that reckless!
+spouse.tellstory.fail3_=You have a family to think about!
+spouse.tellstory.fail4_=...If you liked them why didn't you marry them, instead?
+spouse.tellstory.fail5_=Why did you wear the pink fluffy underwear? Whose were they?
+spouse.flirt.success1_=*Blushes* Well, how about we do something like that, then!
+spouse.flirt.success2_=Aw, you said that when we first met.
+spouse.flirt.success3_=Baby, you're so cute!
+spouse.flirt.success4_=You bet I am!
+spouse.flirt.success5_=*Winks* You still got it!
+spouse.flirt.fail1_=*Sighs*
+spouse.flirt.fail2_=This one is getting old... like you.
+spouse.flirt.fail3_=We're married, we don't have to do this anymore.
+spouse.flirt.fail4_=Talk to the tree, it cares more.
+spouse.flirt.fail5_=Yeah, yeah... What was it you were saying?
+spouse.hug.success1_=I love being entangled in your arms!
+spouse.hug.success2_=Wait, don't leave... you're warm.
+spouse.hug.success3_=Would you rather only being able to hug or kiss?
+spouse.hug.success4_=*Kisses*
+spouse.hug.success5_=Let's stay like this forever!
+spouse.hug.fail1_=Why don't you go hug your ex?
+spouse.hug.fail2_=No thanks.
+spouse.hug.fail3_=Man, you stink.
+spouse.hug.fail4_=What do you want?
+spouse.hug.fail5_=Huge someone else.
+spouse.kiss.success1_=I fall in love all over again when our lips meet!
+spouse.kiss.success2_=Time stops ticking when I'm with you.
+spouse.kiss.success3_=Sweet as cake!
+spouse.kiss.success4_=I love you, baby!
+spouse.kiss.success5_=I wouldn't trade you for anyone in the world!
+spouse.kiss.fail1_=Not where someone can see us...
+spouse.kiss.fail2_=We don't have to if you don't want to.
+spouse.kiss.fail3_=Your breath smells like wolf kibble.
+spouse.kiss.fail4_=Go take a drink from the lake.
+spouse.kiss.fail5_=Now that we're married I can tell you how lousy you are at kissing.
+spouse.greeting1_=Hi honey, where have you been?
+spouse.greeting2_=Hello dear, how is your day going?
+spouse.greeting3_=Oh, %1$s! You look tired.
+spouse.greeting4_=Hey %1$s! You look hungry. Would you like me to cook something?
+spouse.greeting5_=%1$s, you're back! I missed you.
+spouse.lowhearts.greeting1_=There you are. Where did you go? You never tell me anything anymore.
+spouse.lowhearts.greeting2_=Are you going to say hi to me this time?
+spouse.lowhearts.greeting3_=Um, hi! I still exist, you know!
+spouse.lowhearts.greeting4_=%1$s, are you ignoring me on purpose?
+spouse.lowhearts.greeting5_=I'm starting to feel like you don't pay attention to me.
+spouse.endmarriage1_=I've had it. You don't treat me well enough. I'm leaving you!
+spouse.endmarriage2_=I'm leaving. Forever! Don't look for me.
+spouse.endmarriage3_=I'm sorry - I thought we could work things out, but it's not working for me. Goodbye.
+spouse.endmarriage4_=%1$s, this is goodbye. Don't try to follow me.
+spouse.gift.fail1_=Oh honey...this is just terrible.
+spouse.gift.fail2_=Um, is this supposed to be a gift for me?
+spouse.gift.fail3_=Throw away your own junk! Oh, this was a gift?...sorry.
+spouse.gift.fail4_=I thought you knew me better than that. I hate these.
+spouse.gift.good1_=%1$s, you're so sweet.
+spouse.gift.good2_=Ah! You're too good to me.
+spouse.gift.good3_=This is unexpected, thank you, dear!
+spouse.gift.good4_=Aw, how sweet of you.
+spouse.gift.good5_=Thanks, hun!
+spouse.gift.better1_=Oh wow, this is actually really nice!
+spouse.gift.better2_=I love it! Thank you!
+spouse.gift.better3_=This is amazing, dear!
+spouse.gift.better4_=You got this for me? How sweet!
+spouse.gift.better5_=Oh, thank you %1$s!
+spouse.gift.best1_=Oh %1$s, I love you!
+spouse.gift.best2_=You are *way* too good to me!
+spouse.gift.best3_=This must have been extremely expensive! Thank you!
+spouse.gift.best4_=I...can't believe you'd get me something so thoughtful!
+
+##################################
+# Mod Messages
+##################################
+message.mca.updateAvailable=§2An update for Minecraft Comes Alive is available:
+message.mca.clickToUpdate=§eClick §9§o§nhere§r§e to download the update.
+
+command.mca.admin.disabled=MCA admin commands have been disabled by the server administrator.
+command.mca.admin.forceFullHearts=§aForced full hearts on all villagers.
+command.mca.admin.forceBabyGrow=§aForced any held babies to grow up age.
+command.mca.admin.forceChildGrow=§aForced any children to grow to adults.
+command.mca.admin.clearLoadedVillagers=§aCleared %d villagers from the world.
+command.mca.admin.incrementHearts=§aIncreased hearts for all villagers by 10.
+command.mca.admin.decrementHearts=§aDecreased hearts for all villagers by 10.
+command.mca.admin.resetVillagerData.notPresent=Target villager was not found.
+command.mca.admin.resetVillagerData.present=%s has been reset successfully.
+command.mca.admin.resetPlayerData.notPresent=Player not found on the server.
+command.mca.admin.resetPlayerData.present1=Player data for %s has been reset successfully.
+command.mca.admin.resetPlayerData.present2=Your player data has been reset by %s.
+command.mca.admin.clearVillagerEditors=All villager editors cleared from inventories.
+command.mca.admin.help.1=§4--- §6OP COMMANDS§4 ---
+command.mca.admin.help.2=§f /mca-admin ffh §6 - Force all hearts on all villagers.
+command.mca.admin.help.3=§f /mca-admin fbg §6 - Force your baby to grow up.
+command.mca.admin.help.4=§f /mca-admin fcg §6 - Force nearby children to grow.
+command.mca.admin.help.5=§f /mca-admin clv §6 - Clear all loaded villagers. §c(IRREVERSABLE)
+command.mca.admin.help.6=§f /mca-admin inh §6 - Increase hearts by 10.
+command.mca.admin.help.7=§f /mca-admin deh §6 - Decrease hearts by 10.
+command.mca.admin.help.8=§f /mca-admin kgr §6 - Kill all Grim Reapers in the world.
+command.mca.admin.help.9=§f /mca-admin dpd §6 - Dumps player data to chat.
+command.mca.admin.help.10=§f /mca-admin rvd <UUID>§6 - Resets the given villager.
+command.mca.admin.help.11=§f /mca-admin rpd <PlayerName>§6 - Resets the given player's MCA data.
+command.mca.admin.help.12=§f /mca-admin cve§6 - Remove all villager editors from the game.
+command.mca.admin.help.13=§4--- §6GLOBAL COMMANDS§4 ---
+command.mca.admin.help.14=§f /mca-admin help §6 - Shows this list of commands.
+
+command.mca.disabled=MCA commands have been disabled by the server administrator.
+command.mca.playerNotFound=Player not found on the server.
+command.mca.help.1=§4--- §6PLAYER COMMANDS§4 ---
+command.mca.help.2=§f /mca propose <PlayerName>§6 - Proposes marriage to the given player.
+command.mca.help.3=§f /mca proposals §6 - Shows all active proposals.
+command.mca.help.4=§f /mca accept <PlayerName>§6 - Accepts the player's marriage request.
+command.mca.help.5=§f /mca reject <PlayerName>§6 - Rejects the player's marriage request.
+command.mca.help.6=§f /mca procreate §6 - Starts procreation.
+command.mca.help.7=§f /mca separate §6 - Ends your marriage.
+command.mca.help.8=§4--- §6GLOBAL COMMANDS§4 ---
+command.mca.help.9=§f /mca help §6 - Shows this list of commands.
+
+
+# Added by Localizator
+
+
+
+
+
+message.mca.copyuuid=Villager UUID copied to clipboard.
+message.mca.professionHandler.careerSet=Career set to %s
+message.mca.professionHandler.careerNotFound=Career not found: %s
+
+info.trading.disabled=Trading disabled

@@ -5,8 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
+  "mixins": [
+    
+  ],
   "client": [
-    "minecraft.BiomeMixin"
+    "dshuds.CompassHUDMixin"
   ],
   "injectors": {
     "maxShiftBy": 10
