@@ -22,6 +22,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         list.add(new ConfigToMixin("(Minecraft) Localized Lore Mixin", "mixins.localizator.core.loclore.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Written Book Mixin", "mixins.localizator.core.writtenbooks.json"));
         list.add(new ConfigToMixin("(Minecraft) Better Localized Name Mixin", "mixins.localizator.core.locname.json"));
+        list.add(new ConfigToMixin("(Minecraft) Localized Biome Name Mixin", "mixins.localizator.core.biomename.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Writable Book Mixin", "mixins.localizator.core.writablebooks.json"));
         list.add(new ConfigToMixin("(Minecraft) Localized Container Name Mixin", "mixins.localizator.core.containername.json"));
         list.add(new ConfigToMixin("(Minecraft) Item Names on Kill Command Mixin", "mixins.localizator.core.itementitykill.json"));

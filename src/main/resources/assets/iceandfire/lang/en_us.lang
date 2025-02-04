@@ -1,4 +1,7 @@
-# Biome names
+# Biome names (Vanilla Mixin)
+biome.iceandfire:glacier.name=Glacier
+
+# Biome names (DSHUDs Compass Mixin)
 Glacier=Glacier
 
 # Damage sources

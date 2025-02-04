@@ -67,12 +67,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.minecraftLocNameMixin")
 		@Config.RequiresMcRestart
 		public boolean minecraftLocNameMixin = !Production.inProduction;
-		
-		@Config.Comment("Localizes Biome Names showed in Dynamic Surroundings HUDs. \nFor modded biomes, please create and include their respective lang keys in your modpack.")
-		@Config.Name("(DSHUDs) Localized Biome Name Mixin")
-		@Config.LangKey("config.localizator.mixins.dshudsBiomeMixin")
+
+		@Config.Comment("Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack")
+		@Config.Name("(Minecraft) Localized Biome Name Mixin")
+		@Config.LangKey("config.localizator.mixins.minecraftBiomeMixin")
 		@Config.RequiresMcRestart
-		public boolean dshudsBiomeMixin = !Production.inProduction;
+		public boolean minecraftBiomeMixin = !Production.inProduction;
 		
 		@Config.Comment("Enables \"locTitle\" and \"locAuthor\" NBT tags support.\nFor Written Books with localized author and title.")
 		@Config.Name("(Minecraft) Localized Written Book Mixin")
@@ -307,6 +307,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.MCATextsMixin")
 		@Config.RequiresMcRestart
 		public boolean MCATextsMixin = !Production.inProduction;
+
+		@Config.Comment("Localizes Biome Names showed in Dynamic Surroundings HUDs. \nFor modded biomes, please create and include their respective lang keys in your modpack.")
+		@Config.Name("(DSHUDs) Localized Biome Name Mixin")
+		@Config.LangKey("config.localizator.mixins.dshudsBiomeMixin")
+		@Config.RequiresMcRestart
+		public boolean dshudsBiomeMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

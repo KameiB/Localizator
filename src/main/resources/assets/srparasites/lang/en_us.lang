@@ -2,7 +2,10 @@
 tooltip.srparasites.armor.adaptation=Current Adaptation:
 tooltip.srparasites.armor.reduction=§a  Reduction:
 
-# Biomes names
+# Biome Names (Vanilla Biome Mixin)
+biome.srparasites:biome_parasite.name=Parasite Biome
+
+# Biomes names (DSHUDs Compass Mixin)
 Parasite Biome=Parasite Biome
 
 # Command messages

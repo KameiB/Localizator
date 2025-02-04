@@ -30,8 +30,8 @@ config.localizator.mixins.minecraftLocWrittenBookMixin=(Minecraft) Mixin Libro e
 config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Habilita el soporte de los tags NBT "locTitle" y "locAuthor"\nPara título y autor traducibles en los libros escritos.\n 
 config.localizator.mixins.minecraftLocWritableBookMixin=(Minecraft) Mixin Libro editable localizado
 config.localizator.mixins.minecraftLocWritableBookMixin.tooltip=Habilita el soporte del tag NBT "locPages". \nPara páginas traducibles en los libros editables generados por comandos.\n 
-config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Mixin Nombres localizados de Biomas
-config.localizator.mixins.dshudsBiomeMixin.tooltip=Localiza los nombres de los biomas, mostrados en la interfase de la Brújula que agrega el mod Dynamic Surroundings HUD. \nPara biomas de mods, por favor crea e incluye sus respectivas claves de idioma en tu modpack.\n\nPuedes usar el comando §b/ct biomes§r de CraftTweaker para obtener todos los biomas registrados.\n 
+config.localizator.mixins.minecraftBiomeMixin=(Minecraft) Mixin Nombres localizados de Biomas
+config.localizator.mixins.minecraftBiomeMixin.tooltip=Localiza los nombres de los Biomas. \nPara biomas de mods, por favor crea e incluye sus respectivas claves de idioma en tu modpack.\n\nPuedes usar el comando §b/ct biomes§r de CraftTweaker para obtener todos los biomas registrados, en este formato:\n§6 biome.<biome resource name>.name\n\n§cADVERTENCIA: Si usas scripts de CraftTweaker para ejecutar acciones que dependen del bioma, llamando a getBiomeName, ¡no habilites este Mixin!\n 
 config.localizator.mixins.minecraftLocContainerNameMixin=(Minecraft) Mixin Nombre localizado de contenedores
 config.localizator.mixins.minecraftLocContainerNameMixin.tooltip=Localiza el CustomName de un contenedor (TileEntityLockable).\n 
 config.localizator.mixins.neatLocHealthBarMixin=(Neat) Mixin Barra de salud
@@ -104,6 +104,8 @@ config.localizator.mixins.bountifulbaublesWormholeMessagesMixin=(BountifulBauble
 config.localizator.mixins.bountifulbaublesWormholeMessagesMixin.tooltip=Localiza los mensajes relacionados a los items de Agujero de gusano.\n 
 config.localizator.mixins.IGIlangTagMixin=(IGI) Mixin Agregar tag "lang" en XML
 config.localizator.mixins.IGIlangTagMixin.tooltip=Agrega la capacidad de interpretar la etiqueta "lang" en el parseador de XML del mod "InGame Info XML".\n 
+config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Mixin Nombres localizados de Biomas
+config.localizator.mixins.dshudsBiomeMixin.tooltip=Localiza los nombres de los biomas, mostrados en la interfase de la Brújula que agrega el mod Dynamic Surroundings HUD. \nPara biomas de mods, por favor crea e incluye sus respectivas claves de idioma en tu modpack.\n\nPuedes usar el comando §b/ct biomes§r de CraftTweaker para obtener todos los biomas registrados.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones

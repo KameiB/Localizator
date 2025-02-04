@@ -30,8 +30,8 @@ config.localizator.mixins.minecraftLocWrittenBookMixin=(Minecraft) Localized Wri
 config.localizator.mixins.minecraftLocWrittenBookMixin.tooltip=Enables "locTitle" and "locAuthor" NBT tags support.\nFor Written Books with localized author and title.\n 
 config.localizator.mixins.minecraftLocWritableBookMixin=(Minecraft) Localized Writable Book Mixin
 config.localizator.mixins.minecraftLocWritableBookMixin.tooltip=Enables "locPages" NBT List tag support. \nFor Command-Generated Writable Books with localized pages.\n 
-config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Localized Biome Name Mixin
-config.localizator.mixins.dshudsBiomeMixin.tooltip=Localizes Biome Names showed in Dynamic Surroundings HUDs' Compass GUI. \nFor modded biomes, please create and include their respective lang keys for your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes.\n 
+config.localizator.mixins.minecraftBiomeMixin=(Minecraft) Localized Biome Name Mixin
+config.localizator.mixins.minecraftBiomeMixin.tooltip=Localizes Biome Names. \nFor modded biomes, please create and include their respective lang keys in your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes, in this format:\n§6 biome.<biome resource name>.name\n\n§cWARNING: If you use CraftTweaker scripts to perform Biome-dependant actions calling getBiomeName, don't enable this Mixin!\n 
 config.localizator.mixins.minecraftLocContainerNameMixin=(Minecraft) Localized Container Name Mixin
 config.localizator.mixins.minecraftLocContainerNameMixin.tooltip=Localizes a Container (TileEntityLockable) CustomName.\n 
 config.localizator.mixins.neatLocHealthBarMixin=(Neat) Health Bar Mixin
@@ -104,6 +104,8 @@ config.localizator.mixins.bountifulbaublesWormholeMessagesMixin=(BountifulBauble
 config.localizator.mixins.bountifulbaublesWormholeMessagesMixin.tooltip=Localizes messages related to Wormhole teleport items.\n 
 config.localizator.mixins.IGIlangTagMixin=(IGI) Add "lang" Tag in XML Mixin
 config.localizator.mixins.IGIlangTagMixin.tooltip=Adds the capability to interpret the "lang" Tag into the "InGame Info XML" mod XML Parser.\n 
+config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Localized Biome Name Mixin
+config.localizator.mixins.dshudsBiomeMixin.tooltip=Localizes Biome Names showed in Dynamic Surroundings HUDs' Compass GUI. \nFor modded biomes, please create and include their respective lang keys for your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes.\n 
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
