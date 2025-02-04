@@ -14,7 +14,10 @@
     "mca.ItemsMCAMixin",
     "mca.NetMCA_SetProfessionHandlerMixin",
     "mca.BlocksMCAMixin",
-    "mca.LocalizerMixin"
+    "mca.LocalizerMixin",
+    "mca.EnumChoreMixin",
+    "mca.EnumMoveStateMixin",
+    "mca.InventoryMCAMixin"
   ],
   "client": [
     "mca.GuiButtonExMixin",
@@ -25,7 +28,9 @@
     "mca.ItemEngagementRingMixin",
     "mca.ItemStaffOfLifeMixin",
     "mca.ItemWhistleMixin",
-    "mca.RenderVillagerMCAMixin"
+    "mca.RenderVillagerMCAMixin",
+    "mca.GuiNameBabyMixin",
+    "mca.ItemBabyMixin"
   ],
   "injectors": {
     "maxShiftBy": 10

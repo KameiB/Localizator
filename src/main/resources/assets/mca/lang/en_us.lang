@@ -760,13 +760,10 @@ command.mca.help.9=§f /mca help §6 - Shows this list of commands.
 
 
 # Added by Localizator
-
-
-
-
-
 message.mca.copyuuid=Villager UUID copied to clipboard.
 message.mca.professionHandler.careerSet=Career set to %s
 message.mca.professionHandler.careerNotFound=Career not found: %s
 
 info.trading.disabled=Trading disabled
+
+gui.mca.villager.inventory=%s's Inventory

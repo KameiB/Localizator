@@ -1,82 +1,82 @@
 package kameib.localizator.mixin.mca;
-import kameib.localizator.data.Production;
+
 import mca.client.gui.GuiWhistle;
-import mca.core.Localizer;
+import mca.core.forge.NetMCA;
+import mca.entity.EntityVillagerMCA;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.StringUtils;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
+
+import java.util.List;
 
 @SideOnly(Side.CLIENT)
 @Mixin(GuiWhistle.class)
 public abstract class GuiWhistleMixin extends GuiScreen {
-    @Redirect(
-            method = "initGui()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lmca/core/Localizer;localize(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;",
-                    remap = false
-            ),
-            remap = false
-    )
-    // Use I18n instead of custom localizer
-    // Line 54: this.buttonList.add(this.callButton = new GuiButton(4, this.width / 2 - 100, this.height / 2 + 90, 60, 20, MCA.getLocalizer().localize("gui.button.call", new String[0])));
-    // Line 55: this.buttonList.add(this.exitButton = new GuiButton(6, this.width / 2 + 40, this.height / 2 + 90, 60, 20, MCA.getLocalizer().localize("gui.button.exit", new String[0])));
-    private String MCA_GuiWhistle_initGui_buttons_localize(Localizer instance, String key, String[] vars) {
-        return I18n.format(key);
+    /**
+     * @author KameiB
+     * @reason Use I18n instead of custom localizer
+     */
+    @Overwrite(remap = false)
+    public void initGui() {
+        this.buttonList.clear();
+        this.buttonList.add(this.selectionLeftButton = new GuiButton(1, this.width / 2 - 123, this.height / 2 + 65, 20, 20, "<<"));
+        this.buttonList.add(this.selectionRightButton = new GuiButton(2, this.width / 2 + 103, this.height / 2 + 65, 20, 20, ">>"));
+        this.buttonList.add(this.villagerNameButton = new GuiButton(3, this.width / 2 - 100, this.height / 2 + 65, 200, 20, ""));
+        this.buttonList.add(this.callButton = new GuiButton(4, this.width / 2 - 100, this.height / 2 + 90, 60, 20, I18n.format("gui.button.call")));
+        this.buttonList.add(this.exitButton = new GuiButton(6, this.width / 2 + 40, this.height / 2 + 90, 60, 20, I18n.format("gui.button.exit")));
+        NetMCA.INSTANCE.sendToServer(new NetMCA.GetFamily());
     }
     
-    @Redirect(
-            method = "drawScreen(IIF)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lmca/core/Localizer;localize(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;",
-                    remap = false
-            ),
-            remap = false
-    )
-    // Replace custom localize method with I18n
-    // Line 95: this.drawCenteredString(this.fontRenderer, MCA.getLocalizer().localize("gui.title.whistle", new String[0]), this.width / 2, this.height / 2 - 110, 16777215);
-    private String MCA_GuiWhistle_drawScreen_whistle_localize(Localizer instance, String key, String[] vars) {
-        return I18n.format(key);
+    /**
+     * @author KameiB
+     * @reason Use I18n instead of custom localizer
+     */
+    @Overwrite(remap = false)
+    public void drawScreen(int sizeX, int sizeY, float offset) {
+        this.drawDefaultBackground();
+        this.drawCenteredString(this.fontRenderer, I18n.format("gui.title.whistle"), this.width / 2, this.height / 2 - 120, 16777215);
+        if (this.loadingAnimationTicks != -1) {
+            this.drawString(this.fontRenderer, I18n.format("gui.mca.whistle.loading") + StringUtils.repeat(".", this.loadingAnimationTicks % 10), this.width / 2 - 20, this.height / 2 - 10, 16777215);
+        } else if (this.villagerDataList.isEmpty()) {
+            this.drawCenteredString(this.fontRenderer, I18n.format("gui.mca.whistle.noFamilyFound"), this.width / 2, this.height / 2 + 50, 16777215);
+        } else {
+            this.drawCenteredString(this.fontRenderer, this.selectedIndex + " / " + this.villagerDataList.size(), this.width / 2, this.height / 2 + 50, 16777215);
+        }
+
+        if (this.dummyHuman != null) {
+            this.drawDummyVillager();
+        }
+
+        super.drawScreen(sizeX, sizeY, offset);
     }
     
-    @ModifyArg(
-            method = "drawScreen(IIF)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lmca/client/gui/GuiWhistle;drawString(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V",
-                    ordinal = 0,
-                    remap = Production.inProduction
-            ),
-            index = 1,
-            remap = false
-            
-    )
-    // Localize "Loading"
-    // Line 97: this.drawString(this.fontRenderer, "Loading" + StringUtils.repeat(".", this.loadingAnimationTicks % 10), this.width / 2 - 20, this.height / 2 - 10, 16777215);
-    private String MCA_GuiWhistle_drawScreen_drawString_loading(String par2) {
-        return par2.replace("Loading", I18n.format("gui.mca.whistle.loading"));
-    }
     
-    @ModifyArg(
-            method = "drawScreen(IIF)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lmca/client/gui/GuiWhistle;drawCenteredString(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V",
-                    ordinal = 1,
-                    remap = Production.inProduction
-            ),
-            index = 1,
-            remap = false
-    )
-    // Localize "No family members could be found in the area."
-    // Line 99: this.drawCenteredString(this.fontRenderer, "No family members could be found in the area.", this.width / 2, this.height / 2 + 50, 16777215);
-    private String MCA_GuiWhistle_drawScreen_drawCenteredString1_noFamilyMembers(String par2) {
-        return I18n.format("gui.mca.whistle.noFamilyFound");
-    }
+    @Shadow(remap = false)
+    private EntityVillagerMCA dummyHuman;
+    @Shadow(remap = false)
+    private List<NBTTagCompound> villagerDataList;
+    @Shadow(remap = false)
+    private GuiButton selectionLeftButton;
+    @Shadow(remap = false)
+    private GuiButton selectionRightButton;
+    @Shadow(remap = false)
+    private GuiButton villagerNameButton;
+    @Shadow(remap = false)
+    private GuiButton callButton;
+    @Shadow(remap = false)
+    private GuiButton exitButton;
+    @Shadow(remap = false)
+    private int loadingAnimationTicks;
+    @Shadow(remap = false)
+    private int selectedIndex;
+    
+    @Shadow(remap = false)
+    private void drawDummyVillager() {}
 }
