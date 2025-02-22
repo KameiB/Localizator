@@ -35,7 +35,7 @@ public abstract class GuiInteractMixin extends GuiScreen {
             } else if (marriageState == EnumMarriageState.ENGAGED) {
                 marriageInfo = I18n.format("gui.interact.label.engaged_", spouseName);
             } else {
-                marriageInfo = I18n.format("gui.interact.label.notmarried");
+                marriageInfo = I18n.format("gui.interact.label.notmarried_");
             }
 
             this.drawHoveringText(marriageInfo, 35, 85);
@@ -47,7 +47,7 @@ public abstract class GuiInteractMixin extends GuiScreen {
         }
 
         if (this.canDrawGiftIcon() && this.hoveringOverGiftIcon()) {
-            this.drawHoveringText(I18n.format("gui.interact.label.gift"), 35, 145);
+            this.drawHoveringText(I18n.format("gui.interact.label.gift_"), 35, 145);
         }
 
     }

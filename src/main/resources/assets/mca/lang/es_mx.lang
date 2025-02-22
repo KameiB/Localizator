@@ -51,8 +51,8 @@ item.mca.book_family.name=Administrando tu familia Vol.XI
 item.mca.book_rose_gold.name=Sobre el Oro rosado
 item.mca.book_infection.name=¡Cuidado con la Infección!
 tile.mca.villager_spawner.name=Generador de Aldeanos
-tile.mca.rose_gold_block.name=Bloque de oro rosado
 tile.mca.rose_gold_ore.name=Mineral de oro rosado
+tile.mca.rose_gold_block.name=Bloque de oro rosado
 
 item.mca.book.book_death.title=Muerte, y ¡cómo curarla!
 item.mca.book.book_death.author=Ozzie el guerrero
@@ -567,7 +567,7 @@ childp.chat.success3_=Holi, ¿puedes hacerme un pastel?
 childp.chat.success4_=¿Puedo tener mi cuarto lejos de casa? ¡Estaría chido!
 childp.chat.success5_=¡Mudémonos a una cueva! ¡Suena divertido!
 childp.chat.fail2_=No creo que me guste mucho.
-childp.chat.fail3_=¿Es por eso que he oído tanto sobr el "divorcio"? ¿Qué significa?
+childp.chat.fail3_=¿Es por eso que he oído tanto sobre el "divorcio"? ¿Qué significa?
 childp.chat.fail4_=Quiero un nuevo papi.
 childp.chat.fail5_=No quiero una hermanita.
 childp.joke.success1_=*Se ríe* ¡Vuelve a contarlo!
@@ -773,10 +773,10 @@ command.mca.admin.help.14=§f /mca-admin help §6- Muestra esta lista de comando
 command.mca.disabled=Los comandos MCA han sido deshabilitados por el adminsitrador del servidor.
 command.mca.playerNotFound=Jugador no encontrado en el servidor.
 command.mca.help.1=§4--- §6COMANDOS DE JUGADOR§4 ---
-command.mca.help.2=§f /mca propose <PlayerName> §6- Proponer matrimonio a jugador.
+command.mca.help.2=§f /mca propose <Jugador> §6- Proponer matrimonio a jugador.
 command.mca.help.3=§f /mca proposals §6- Mostrar todas las propuestas activas.
-command.mca.help.4=§f /mca accept <PlayerName> §6- Aceptar propuesta de jugador.
-command.mca.help.5=§f /mca reject <PlayerName> §6- Rechazar propuesta de jugador.
+command.mca.help.4=§f /mca accept <Jugador> §6- Aceptar propuesta de jugador.
+command.mca.help.5=§f /mca reject <Jugador> §6- Rechazar propuesta de jugador.
 command.mca.help.6=§f /mca procreate §6- Iniciar procreación.
 command.mca.help.7=§f /mca separate §6- Terminar tu matrimonio.
 command.mca.help.8=§4--- §6COMANDOS GLOBALES§4 ---
@@ -786,5 +786,6 @@ message.mca.copyuuid=UUID del aldeano, copiado al portapapeles.
 message.mca.professionHandler.careerSet=Ocupación asignada a %s
 message.mca.professionHandler.careerNotFound=Ocupación no encontrada: %s
 
-# Additional lang keys
+info.trading.disabled=Trueques deshabilitados
+
 gui.mca.villager.inventory=Inventario de %s

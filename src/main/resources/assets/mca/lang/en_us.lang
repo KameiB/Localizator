@@ -1,4 +1,21 @@
 #PARSE_ESCAPES
+itemGroup.MCA=Minecraft Comes Alive
+
+enum.agestate.baby=Baby
+enum.agestate.toddler=Toddler
+enum.agestate.child=Child
+enum.agestate.teen=Teen
+enum.agestate.adult=Adult
+entity.Villager.marauder=Marauder
+entity.Villager.outlaw=Outlaw
+entity.Villager.pillager=Pillager
+entity.Villager.miner=Miner
+entity.Villager.baker=Baker
+entity.Villager.warrior=Warrior
+entity.Villager.archer=Archer
+entity.Villager.hero=Hero
+entity.Villager.child=Child
+
 ##############################
 # Items & Blocks
 ##############################
@@ -34,12 +51,12 @@ item.mca.book_family.name=Managing Your Family Vol. XI
 item.mca.book_rose_gold.name=On Rose Gold
 item.mca.book_infection.name=Beware the Infection!
 tile.mca.villager_spawner.name=Villager Spawner
-tile.mca.rose_gold_block.name=Rose Gold Block
 tile.mca.rose_gold_ore.name=Rose Gold Ore
+tile.mca.rose_gold_block.name=Rose Gold Block
 
 item.mca.book.book_death.title=Death, and How to Cure It!
 item.mca.book.book_death.author=Ozzie the Warrior
-item.mca.book.book_death.page.1="I couldn't count how many times my family has been blown to pieces by creepers.\n\nHow are they still around, you may ask?\n\nEasy! I, dear reader, have discovered a CURE for death itself! And through this book, I can share it with you."
+item.mca.book.book_death.page.1=I couldn't count how many times my family has been blown to pieces by creepers.\n\nHow are they still around, you may ask?\n\nEasy! I, dear reader, have discovered a CURE for death itself! And through this book, I can share it with you.
 item.mca.book.book_death.page.2=§lStaff Of Life\n§rThe Staff is a powerful item that can revive up to 5 people. Wave the staff around and speak the name of the villager you wish to revive. Within moments, your loved one will be fully revived!\n\n
 item.mca.book.book_death.page.3=§lSummoning Grim\n§rUnfortunately, you must obtain the Staff from the Grim Reaper himself.\n\nTo summon him, you must build an altar consisting of 3 obsidian columns that are at least 2 blocks high. They may be higher if you like.
 item.mca.book.book_death.page.4=§lSummoning Grim pt. 2\n\n§r     # # # X # # #\n     # # # # # # #\n     # # # # # # #\n     X # # E # # X\n\nX = Obsidian Column\nE = Emerald\n# = Empty
@@ -81,6 +98,13 @@ item.mca.book.book_infection.page.3=§lCuring\n§rContrary to popular belief, th
 item.mca.book.book_infection.page.4=§lCuring pt. 2\n§rZombies that can be cured often have enlarged heads and noses.\n\nAny other zombies you see unfortunately are too far gone, and cannot be cured.
 item.mca.book.book_infection.page.5=§lCuring pt. 3\n§rZombies will take a couple of minutes to be fully cured.\n\nVillagers who were recently infected, though, and haven't had time to degrade into a full zombie, will be cured instantly!
 item.mca.book.book_infection.page.6=§lWarnings\n§rVillagers are highly susceptible to infection, and children even more so!\n\nIf you carry a baby with you while fighting zombies, there is a chance it can become infected.
+
+################################
+# Relations
+################################
+relation.spouse=Spouse
+relation.daughter=Daughter
+relation.son=Son
 
 ##########################
 # Reactions
@@ -127,7 +151,7 @@ cooking.nofood_=I don't have any food to cook.
 cooking.nofuel_=I don't have any fuel.
 cooking.nofurnace_=There's no furnace nearby.
 
-#################
+################################
 # GUI
 ################################
 gui.button.debug.startraid=Start Raid
@@ -369,8 +393,8 @@ spouse.interaction.procreate.fail.lowhearts1_=Spend more time with me! I'm not r
 spouse.interaction.procreate.fail.lowhearts2_=Hmm...not just yet. I think we need to spend more time together first.
 
 notify.spouseendedmarriage_=%s has ended their marriage with you.
-notify.spousedied_=Your spouse %1$s has died by %2$s
-notify.childdied_=Your child %1$s has died by %2$s
+notify.spousedied_=Your spouse %1$s has died by %2$s.
+notify.childdied_=Your child %1$s has died by %2$s.
 notify.child.grownup_=%1$s has grown into an adult!
 notify.revival.disabled_=Revivals have been disabled by the server administrator.
 notify.trading.disabled_=Trading is disabled by the server administrator.
@@ -405,8 +429,8 @@ adult.chat.success2_=Yes, I suppose the weather is nice today.
 adult.chat.success3_=I'm doing just fine! Hit my toe when I woke up, though.
 adult.chat.success4_=An apple a day keeps the zombies away!
 adult.chat.success5_=My dream is to build my own village, but I'm so lazy.
-adult.chat.success6_=I think I saw %Supporter% the other day in Diamond armor.
-adult.chat.success7_=My friend %Supporter% told me that they found a chest full of diamonds yesterday!
+adult.chat.success6_=I think I saw %3$s the other day in Diamond armor.
+adult.chat.success7_=My friend %3$s told me that they found a chest full of diamonds yesterday!
 adult.chat.fail1_=Did you seriously just say that?
 adult.chat.fail2_=I don't believe it exploded on its own.
 adult.chat.fail3_=You know, you're not that cool.
@@ -417,7 +441,7 @@ adult.joke.success2_=*Laughs* That's hilarious!
 adult.joke.success3_=That's funny! Did you hear the one about the cows?
 adult.joke.success4_=Unfortunate for the sheep to lose its wool, but funny!
 adult.joke.success5_=That's the best I have ever heard!
-adult.joke.success6_=You might be funnier than %Supporter%!
+adult.joke.success6_=You might be funnier than %3$s!
 adult.joke.fail1_=Don't speak about my pig like that!
 adult.joke.fail2_=Ha. Ha. Not funny.
 adult.joke.fail3_=Ah, you're not the funniest in town.
@@ -438,8 +462,8 @@ adult.tellstory.success2_=I wish I was brave enough to take on a creeper.
 adult.tellstory.success3_=That was a really good story! Is it original?
 adult.tellstory.success4_=All of that happened yesterday? No way!
 adult.tellstory.success5_=I was near there yesterday, I can't believe I didn't hear this already.
-adult.tellstory.success6_=Haha! That definitely sounds like %Supporter%! Such an awesome person.
-adult.tellstory.success7_=I've heard the Legend of %Supporter% almost a million times. Tell me again!
+adult.tellstory.success6_=Haha! That definitely sounds like %3$s! Such an awesome person.
+adult.tellstory.success7_=I've heard the Legend of %3$s almost a million times. Tell me again!
 adult.tellstory.fail1_=*Ahem* That's my mother you're talking about.
 adult.tellstory.fail2_=This is why the village talks about you.
 adult.tellstory.fail3_=I don't get it...
@@ -513,7 +537,7 @@ child.tellstory.success2_=I want to be just like you when I grow up. Shh, don't 
 child.tellstory.success3_=Can you adopt me?! You're awesome!
 child.tellstory.success4_=I went fishing and almost drowned.
 child.tellstory.success5_=Does this mean I can take whatever I want? I mean, "borrow?"
-child.tellstory.success6_=Tell me again about %Supporter%!!
+child.tellstory.success6_=Tell me again about %3$s!!
 child.tellstory.fail1_=You're a meanie!
 child.tellstory.fail2_=I'm telling my mom what you said about her...
 child.tellstory.fail3_=I believe you're speaking about my grandpa...
@@ -715,7 +739,7 @@ spouse.gift.best4_=I...can't believe you'd get me something so thoughtful!
 ##################################
 # Mod Messages
 ##################################
-message.mca.updateAvailable=§2An update for Minecraft Comes Alive is available:
+message.mca.updateAvailable=§2An update for Minecraft Comes Alive is available: v
 message.mca.clickToUpdate=§eClick §9§o§nhere§r§e to download the update.
 
 command.mca.admin.disabled=MCA admin commands have been disabled by the server administrator.
@@ -733,33 +757,31 @@ command.mca.admin.resetPlayerData.present2=Your player data has been reset by %s
 command.mca.admin.clearVillagerEditors=All villager editors cleared from inventories.
 command.mca.admin.help.1=§4--- §6OP COMMANDS§4 ---
 command.mca.admin.help.2=§f /mca-admin ffh §6 - Force all hearts on all villagers.
-command.mca.admin.help.3=§f /mca-admin fbg §6 - Force your baby to grow up.
-command.mca.admin.help.4=§f /mca-admin fcg §6 - Force nearby children to grow.
-command.mca.admin.help.5=§f /mca-admin clv §6 - Clear all loaded villagers. §c(IRREVERSABLE)
-command.mca.admin.help.6=§f /mca-admin inh §6 - Increase hearts by 10.
-command.mca.admin.help.7=§f /mca-admin deh §6 - Decrease hearts by 10.
-command.mca.admin.help.8=§f /mca-admin kgr §6 - Kill all Grim Reapers in the world.
-command.mca.admin.help.9=§f /mca-admin dpd §6 - Dumps player data to chat.
-command.mca.admin.help.10=§f /mca-admin rvd <UUID>§6 - Resets the given villager.
-command.mca.admin.help.11=§f /mca-admin rpd <PlayerName>§6 - Resets the given player's MCA data.
-command.mca.admin.help.12=§f /mca-admin cve§6 - Remove all villager editors from the game.
+command.mca.admin.help.3=§f /mca-admin fbg §6- Force your baby to grow up.
+command.mca.admin.help.4=§f /mca-admin fcg §6- Force nearby children to grow.
+command.mca.admin.help.5=§f /mca-admin clv §6- Clear all loaded villagers. §c(IRREVERSABLE)
+command.mca.admin.help.6=§f /mca-admin inh §6- Increase hearts by 10.
+command.mca.admin.help.7=§f /mca-admin deh §6- Decrease hearts by 10.
+command.mca.admin.help.8=§f /mca-admin kgr §6- Kill all Grim Reapers in the world.
+command.mca.admin.help.9=§f /mca-admin dpd §6- Dumps player data to chat.
+command.mca.admin.help.10=§f /mca-admin rvd <UUID> §6- Resets the given villager.
+command.mca.admin.help.11=§f /mca-admin rpd <PlayerName> §6- Resets the given player's MCA data.
+command.mca.admin.help.12=§f /mca-admin cve §6- Remove all villager editors from the game.
 command.mca.admin.help.13=§4--- §6GLOBAL COMMANDS§4 ---
-command.mca.admin.help.14=§f /mca-admin help §6 - Shows this list of commands.
+command.mca.admin.help.14=§f /mca-admin help §6- Shows this list of commands.
 
 command.mca.disabled=MCA commands have been disabled by the server administrator.
 command.mca.playerNotFound=Player not found on the server.
 command.mca.help.1=§4--- §6PLAYER COMMANDS§4 ---
-command.mca.help.2=§f /mca propose <PlayerName>§6 - Proposes marriage to the given player.
-command.mca.help.3=§f /mca proposals §6 - Shows all active proposals.
-command.mca.help.4=§f /mca accept <PlayerName>§6 - Accepts the player's marriage request.
-command.mca.help.5=§f /mca reject <PlayerName>§6 - Rejects the player's marriage request.
-command.mca.help.6=§f /mca procreate §6 - Starts procreation.
-command.mca.help.7=§f /mca separate §6 - Ends your marriage.
+command.mca.help.2=§f /mca propose <PlayerName> §6- Proposes marriage to the given player.
+command.mca.help.3=§f /mca proposals §6- Shows all active proposals.
+command.mca.help.4=§f /mca accept <PlayerName> §6- Accepts the player's marriage request.
+command.mca.help.5=§f /mca reject <PlayerName> §6- Rejects the player's marriage request.
+command.mca.help.6=§f /mca procreate §6- Starts procreation.
+command.mca.help.7=§f /mca separate §6- Ends your marriage.
 command.mca.help.8=§4--- §6GLOBAL COMMANDS§4 ---
-command.mca.help.9=§f /mca help §6 - Shows this list of commands.
+command.mca.help.9=§f /mca help §6- Shows this list of commands.
 
-
-# Added by Localizator
 message.mca.copyuuid=Villager UUID copied to clipboard.
 message.mca.professionHandler.careerSet=Career set to %s
 message.mca.professionHandler.careerNotFound=Career not found: %s
