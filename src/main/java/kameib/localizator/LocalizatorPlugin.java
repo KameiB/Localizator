@@ -186,6 +186,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> dshudsList = new ArrayList<>();
         dshudsList.add(new ConfigToMixin("(DSHUDs) Localized Biome Name Mixin", "mixins.localizator.dshuds.biomename.json"));
         map.put("dshuds", dshudsList);
+        // EnhancedVisuals
+        List<ConfigToMixin> enhancedvisualsList = new ArrayList<>();
+        enhancedvisualsList.add(new ConfigToMixin("(EnhancedVisuals) Localized Death Message Mixin", "mixins.localizator.enhancedvisuals.deathmessage.json"));
+        map.put("enhancedvisuals", enhancedvisualsList);
 
         return Collections.unmodifiableMap(map);
     }

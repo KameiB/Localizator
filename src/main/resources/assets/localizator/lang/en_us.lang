@@ -106,6 +106,8 @@ config.localizator.mixins.IGIlangTagMixin=(IGI) Add "lang" Tag in XML Mixin
 config.localizator.mixins.IGIlangTagMixin.tooltip=Adds the capability to interpret the "lang" Tag into the "InGame Info XML" mod XML Parser.\n 
 config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Localized Biome Name Mixin
 config.localizator.mixins.dshudsBiomeMixin.tooltip=Localizes Biome Names showed in Dynamic Surroundings HUDs' Compass GUI. \nFor modded biomes, please create and include their respective lang keys for your modpack.\n\nYou can use CraftTweaker's §b/ct biomes§r command to retrieve all registered biomes.\n 
+config.localizator.mixins.evDeathMessageMixin=(EnhancedVisuals) Localized Death Message Mixin
+config.localizator.mixins.evDeathMessageMixin.tooltip=Allows custom EnhancedVisuals death messages to be localized.
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin
