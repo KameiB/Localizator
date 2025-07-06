@@ -313,6 +313,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.dshudsBiomeMixin")
 		@Config.RequiresMcRestart
 		public boolean dshudsBiomeMixin = !Production.inProduction;
+		
+		@Config.Comment("Allows custom EnhancedVisuals death messages to be localized.")
+		@Config.Name("(EnhancedVisuals) Localized Death Message Mixin")
+		@Config.LangKey("config.localizator.mixins.evDeathMessageMixin")
+		@Config.RequiresMcRestart
+		public boolean evDeathMessageMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {
