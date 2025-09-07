@@ -56,6 +56,9 @@ message.srparasites.phase_9_warning=Nine
 message.srparasites.phase_10_warning=Ten
 message.srparasites.node_warning=Node
 message.srparasites.colony_warning=Colony
+message.srparasites.scentdeployed=A Scent has been deployed in this area
+message.srparasites.scentnotified=Closest Scent was notified
+message.srparasites.scentactive=Scent is active
 
 # Boss names
 Assimilated Ender Dragon=Assimilated Ender Dragon
@@ -63,6 +66,7 @@ Ancient Dreadnaut=Ancient Dreadnaut
 Ancient Overlord=Ancient Overlord
 Beckon Stage IV=Beckon Stage IV
 Beckon Stage V=Beckon Stage V
+Dispatcher Stage IV=Dispatcher Stage IV
 Haunter=Haunter
 
 # Missing lang keys =======================
