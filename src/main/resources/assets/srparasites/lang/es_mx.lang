@@ -56,9 +56,9 @@ message.srparasites.phase_9_warning=Nueve
 message.srparasites.phase_10_warning=Diez
 message.srparasites.node_warning=Nodo
 message.srparasites.colony_warning=Colonia
-message.srparasites.scentdeployed=Un rastro ha sido desplegado en el área
-message.srparasites.scentnotified=El rastro más cercano ha sido notificado
-message.srparasites.scentactive=El rastro está activo
+message.srparasites.scentdeployed=Un rastro de olor se ha liberado en el área
+message.srparasites.scentnotified=El rastro de olor ha sido percibido
+message.srparasites.scentactive=El rastro de olor está activo
 
 # Boss names
 Assimilated Ender Dragon=Ender dragón asimilado
