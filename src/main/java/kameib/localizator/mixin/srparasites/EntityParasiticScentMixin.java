@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(EntityParasiticScent.class)
 public abstract class EntityParasiticScentMixin {
     @ModifyArg(
-            method = "scentListener",
+            method = "scentListener()V",
             at = @At(
                     value = "INVOKE",
                     target = "Lcom/dhanantry/scapeandrunparasites/entity/EntityParasiticScent;warnPlayers(Ljava/lang/String;)V",
@@ -21,12 +21,12 @@ public abstract class EntityParasiticScentMixin {
     )
     // Replace the hardcoded message with a lang key
     // Line 157: this.warnPlayers("Scent is active");
-    private static String SRParasites_EntityParasiticScent_scentListener_warnPlayers(String message) {
+    private String SRParasites_EntityParasiticScent_scentListener_warnPlayers(String message) {
         return "message.srparasites.scentactive";
     }
 
     @ModifyArg(
-            method = "warnPlayers",
+            method = "warnPlayers(Ljava/lang/String;)V",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/entity/player/EntityPlayer;func_146105_b(Lnet/minecraft/util/text/ITextComponent;Z)V",
@@ -38,7 +38,7 @@ public abstract class EntityParasiticScentMixin {
     )
     // Replace the hardcoded text with a lang key
     // Line 647: mob.func_146105_b(new TextComponentString(in), true);
-    private static ITextComponent SRParasite_EntityParasiticScent_warnPlayers_sendStatusMessage(ITextComponent message) {
+    private ITextComponent SRParasite_EntityParasiticScent_warnPlayers_sendStatusMessage(ITextComponent message) {
         return new TextComponentTranslation(message.getUnformattedComponentText());
     }
 }
