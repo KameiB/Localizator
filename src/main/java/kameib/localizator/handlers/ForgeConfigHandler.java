@@ -404,7 +404,7 @@ public class ForgeConfigHandler {
 		@Config.Name("(Minecraft) Prevent Novelties Placement Mixin")
 		@Config.LangKey("config.localizator.mixins.minecraftPreventNoveltyPlacementMixin")
 		@Config.RequiresMcRestart
-		public boolean minecraftPreventNoveltyPlacementMixin = !Production.inProduction;
+		public boolean minecraftPreventNoveltyPlacementHandler = !Production.inProduction;
 	}
 
 	public static class ClientConfig {
