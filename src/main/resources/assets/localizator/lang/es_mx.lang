@@ -1,5 +1,5 @@
 #PARSE_ESCAPES
-localizator.credits=\n     - §6fonnymunkey§r:§7 Sin RLMixins y su guía, Localizator no hubiera sido posible.\n     - §6Kotlin§e y la comunidad de RLCraft§r:§7 Por su gran amabilidad y apoyo.\n     - §eMis §6patrones §ey§6 suscriptores§r:§7 Por creer en mí y en mi misión.
+localizator.credits=\n     - §6fonnymunkey§r:§7 Sin RLMixins y su guía, Localizator no hubiera sido posible.\n     - §6Kotlin§e, §6Nischhelm§e y la comunidad de RLCraft§r:§7 Por su gran amabilidad y apoyo.\n     - §eMis §6patrones §ey§6 suscriptores§r:§7 Por creer en mí y en mi misión.
 localizator.description=No más textos hardcodeados. Los localizaré!
 entity.localizator.KameiB.name=§2El §a§lKame
 book.localizator.Example.title=§b§oCuando me muera
@@ -106,6 +106,8 @@ config.localizator.mixins.IGIlangTagMixin=(IGI) Mixin Agregar tag "lang" en XML
 config.localizator.mixins.IGIlangTagMixin.tooltip=Agrega la capacidad de interpretar la etiqueta "lang" en el parseador de XML del mod "InGame Info XML".\n 
 config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Mixin Nombres localizados de Biomas
 config.localizator.mixins.dshudsBiomeMixin.tooltip=Localiza los nombres de los biomas, mostrados en la interfase de la Brújula que agrega el mod Dynamic Surroundings HUD. \nPara biomas de mods, por favor crea e incluye sus respectivas claves de idioma en tu modpack.\n\nPuedes usar el comando §b/ct biomes§r de CraftTweaker para obtener todos los biomas registrados.\n 
+config.localizator.mixins.evDeathMessageMixin=(EnhancedVisuals) Mixin Mensajes de muerte localizados
+config.localizator.mixins.evDeathMessageMixin.tooltip=Permite que los mensajes de muerte personalizados de EnhancedVisuals sean localizados.\n
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones

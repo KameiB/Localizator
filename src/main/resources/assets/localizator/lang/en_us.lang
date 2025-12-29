@@ -1,5 +1,5 @@
 #PARSE_ESCAPES
-localizator.credits=\n     - §6fonnymunkey§r:§7 Without RLMixins and his guide, Localizator wouldn't be possible.\n     - §6Kotlin§e and the RLCraft community§r:§7 For their huge kindness and support.\n     - §eMy §6Patreons §eand§6 subs§r:§7 For believing in me and my mission.
+localizator.credits=\n     - §6fonnymunkey§r:§7 Without RLMixins and his guide, Localizator wouldn't be possible.\n     - §6Kotlin§e, §6Nischhelm§e and the RLCraft community§r:§7 For their huge kindness and support.\n     - §eMy §6Patreons §eand§6 subs§r:§7 For believing in me and my mission.
 localizator.description=No more hardcoded texts. I'll localize them!
 entity.localizator.KameiB.name=§aThe §2§lKameiB
 book.localizator.Example.title=§b§oWhen I die
