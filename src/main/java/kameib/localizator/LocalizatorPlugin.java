@@ -4,6 +4,9 @@ import fermiumbooter.FermiumRegistryAPI;
 import kameib.localizator.data.ConfigToMixin;
 import kameib.localizator.handlers.ForgeConfigHandler;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModContainer;
+import net.minecraftforge.fml.common.versioning.ArtifactVersion;
+import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
 
@@ -217,7 +220,17 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
             for (ConfigToMixin config : entry.getValue()) {
                 if (config.isEnabled()) {
                     Localizator.LOGGER.info("[Localizator] Late Enqueue: {}", config.getName());
-                    FermiumRegistryAPI.enqueueMixin(true, config.getJson(), () -> Loader.isModLoaded(entry.getKey()));
+                    FermiumRegistryAPI.enqueueMixin(true, config.getJson(), () -> {
+                        boolean isLoaded = Loader.isModLoaded(entry.getKey());
+                        if (isLoaded && entry.getKey().equals("mca")) {
+                            ModContainer mca = Loader.instance().getIndexedModList().get("mca");
+                            if (mca != null) {
+                                ArtifactVersion version = new DefaultArtifactVersion(mca.getVersion());
+                                return version.compareTo(new DefaultArtifactVersion("6.2.0")) < 0;
+                            }
+                        }
+                        return isLoaded;
+                    });
                 }
             }
         }
