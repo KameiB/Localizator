@@ -319,6 +319,12 @@ public class ForgeConfigHandler {
 		@Config.LangKey("config.localizator.mixins.evDeathMessageMixin")
 		@Config.RequiresMcRestart
 		public boolean evDeathMessageMixin = !Production.inProduction;
+
+		@Config.Comment("Localizes BisectHosting's multiplayer config screen texts")
+		@Config.Name("(BHMenu) Localized config screen Mixin")
+		@Config.LangKey("config.localizator.mixins.bhmenuConfigMixin")
+		@Config.RequiresMcRestart
+		public boolean bhmenuConfigMixin = !Production.inProduction;
 	}
 	
 	public static class MiscelaneousMixinsConfig {

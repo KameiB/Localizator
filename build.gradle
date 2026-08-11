@@ -173,6 +173,8 @@ dependencies {
 
     implementation fg.deobf("curse.maven:enhancedvisuals-${enhancedvisuals_version}")
 
+    implementation fg.deobf("curse.maven:bisecthosting-server-integration-menu-forge-585546:7207726")
+
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"

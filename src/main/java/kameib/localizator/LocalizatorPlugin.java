@@ -189,6 +189,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> enhancedvisualsList = new ArrayList<>();
         enhancedvisualsList.add(new ConfigToMixin("(EnhancedVisuals) Localized Death Message Mixin", "mixins.localizator.enhancedvisuals.deathmessage.json"));
         map.put("enhancedvisuals", enhancedvisualsList);
+        // BHMenu
+        List<ConfigToMixin> bhMenuList = new ArrayList<>();
+        bhMenuList.add(new ConfigToMixin("(BHMenu) Localized config screen Mixin", "mixins.localizator.bhmenu.config.json"));
+        map.put("bhmenu", bhMenuList);
 
         return Collections.unmodifiableMap(map);
     }

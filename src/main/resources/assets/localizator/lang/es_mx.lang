@@ -108,6 +108,8 @@ config.localizator.mixins.dshudsBiomeMixin=(DSHUDs) Mixin Nombres localizados de
 config.localizator.mixins.dshudsBiomeMixin.tooltip=Localiza los nombres de los biomas, mostrados en la interfase de la Brújula que agrega el mod Dynamic Surroundings HUD. \nPara biomas de mods, por favor crea e incluye sus respectivas claves de idioma en tu modpack.\n\nPuedes usar el comando §b/ct biomes§r de CraftTweaker para obtener todos los biomas registrados.\n 
 config.localizator.mixins.evDeathMessageMixin=(EnhancedVisuals) Mixin Mensajes de muerte localizados
 config.localizator.mixins.evDeathMessageMixin.tooltip=Permite que los mensajes de muerte personalizados de EnhancedVisuals sean localizados.\n
+config.localizator.mixins.bhmenuConfigMixin=(BHMenu) Mixin Pantallas de configuración localizadas
+config.localizator.mixins.bhmenuConfigMixin.tooltip=Localiza los textos de las pantallas de configuración de BisectHosting Menu
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
