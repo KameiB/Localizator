@@ -18,6 +18,8 @@ config.localizator.client=4. Client
 config.localizator.client.tooltip=Apply Enabled §bClient-side §dMixins§e
 
 # Localizing Mixin config
+config.localizator.localizingMixins.minecraft=Minecraft
+config.localizator.localizingMixins.minecraft.tooltip=Minecraft Localization Mixins
 config.localizator.mixins.minecraftMobLocCustomNamesMixin=(Minecraft) Mob Custom Names Mixin
 config.localizator.mixins.minecraftMobLocCustomNamesMixin.tooltip=Enables the Client config: \n- §b(Minecraft) Translate Mob Custom Names\n 
 config.localizator.mixins.minecraftBossLocCustomNamesMixin=(Minecraft) Boss Custom Names Mixin
@@ -110,6 +112,8 @@ config.localizator.mixins.evDeathMessageMixin=(EnhancedVisuals) Localized Death 
 config.localizator.mixins.evDeathMessageMixin.tooltip=Allows custom EnhancedVisuals death messages to be localized.
 config.localizator.mixins.bhmenuConfigMixin=(BHMenu) Localized config screen Mixin
 config.localizator.mixins.bhmenuConfigMixin.tooltip=Localizes BisectHosting's multiplayer config screen texts
+config.localizator.mixins.immersiveEngineeringMBMixin=(ImmersiveEngineering) Localized mB texts Mixin
+config.localizator.mixins.immersiveEngineeringMBMixin.tooltip=Localizes the hardcoded 'mB' texts in fluid containers descriptions.
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Tooltip fixes Mixin

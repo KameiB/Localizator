@@ -18,6 +18,8 @@ config.localizator.client=4. Cliente
 config.localizator.client.tooltip=Aplicar §dMixins§e habilitados que corren del lado del §bCliente
 
 # Localizing Mixin config
+config.localizator.localizingMixins.minecraft=Minecraft
+config.localizator.localizingMixins.minecraft.tooltip=Mixins de localización para Minecraft
 config.localizator.mixins.minecraftMobLocCustomNamesMixin=(Minecraft) Mixin Nombres de Entidades
 config.localizator.mixins.minecraftMobLocCustomNamesMixin.tooltip=Habilita la configuración Cliente: \n- §b(Minecraft) Traducir nombres de mobs\n 
 config.localizator.mixins.minecraftBossLocCustomNamesMixin=(Minecraft) Mixin Nombres de Boss
@@ -110,6 +112,8 @@ config.localizator.mixins.evDeathMessageMixin=(EnhancedVisuals) Mixin Mensajes d
 config.localizator.mixins.evDeathMessageMixin.tooltip=Permite que los mensajes de muerte personalizados de EnhancedVisuals sean localizados.\n
 config.localizator.mixins.bhmenuConfigMixin=(BHMenu) Mixin Pantallas de configuración localizadas
 config.localizator.mixins.bhmenuConfigMixin.tooltip=Localiza los textos de las pantallas de configuración de BisectHosting Menu
+config.localizator.mixins.immersiveEngineeringMBMixin=(ImmersiveEngineering) Mixin Textos mB localizados
+config.localizator.mixins.immersiveEngineeringMBMixin.tooltip=Localiza los textos 'mB' en las descripciones de los contenedores de fluidos.
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones

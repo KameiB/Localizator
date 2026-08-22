@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "kameib.localizator.mixin",
+  "refmap": "mixins.localizator.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "client": [
+    "immersiveengineering.ItemJerrycanMixin",
+    "immersiveengineering.ItemChemthrowerMixin",
+    "immersiveengineering.ItemDrillMixin",
+    "immersiveengineering.ItemBlockIEBaseMixin",
+    "immersiveengineering.TileEntitySheetmetalTankMixin",
+    "immersiveengineering.TileEntityWoodenBarrelMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

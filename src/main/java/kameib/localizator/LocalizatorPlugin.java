@@ -193,6 +193,10 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         List<ConfigToMixin> bhMenuList = new ArrayList<>();
         bhMenuList.add(new ConfigToMixin("(BHMenu) Localized config screen Mixin", "mixins.localizator.bhmenu.config.json"));
         map.put("bhmenu", bhMenuList);
+        // ImmersiveEngineering
+        List<ConfigToMixin> immersiveEngList = new ArrayList<>();
+        immersiveEngList.add(new ConfigToMixin("(ImmersiveEngineering) Localized mB texts Mixin", "mixins.localizator.immersiveengineering.tooltips.json"));
+        map.put("immersiveengineering", immersiveEngList);
 
         return Collections.unmodifiableMap(map);
     }
