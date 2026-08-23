@@ -114,6 +114,8 @@ config.localizator.mixins.bhmenuConfigMixin=(BHMenu) Mixin Pantallas de configur
 config.localizator.mixins.bhmenuConfigMixin.tooltip=Localiza los textos de las pantallas de configuración de BisectHosting Menu
 config.localizator.mixins.immersiveEngineeringMBMixin=(ImmersiveEngineering) Mixin Textos mB localizados
 config.localizator.mixins.immersiveEngineeringMBMixin.tooltip=Localiza los textos 'mB' en las descripciones de los contenedores de fluidos.
+config.localizator.mixins.campfireDisplayNameMixin=(Campfire) Mixin nombres de fogatas mejorados
+config.localizator.mixins.campfireDisplayNameMixin.tooltip=Mejora el intento de traducción automático por defecto para las variantes de material de las fogatas.\nToma en cuenta que, normalmente, Camfire espera encontrar claves de idioma con el siguiente formato para cada variante de material.\nEjemplo:\ntile.campfire.type.tile.log.oak.name
 
 # Miscelaneous Mixin Config
 config.localizator.mixins.bountifulbaublesTooltipFixesMixin=(BountifulBaubles) Mixin Correcciones a descripciones
