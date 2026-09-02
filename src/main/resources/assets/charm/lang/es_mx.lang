@@ -14,7 +14,7 @@ tile.charm.cake_haste.name=Pastel de Prisa minera
 
 # JEI
 charm.jei.recipe.composter=Compostador
-charm.jei.recipe.composter.compost_chance=Probab. de compostar:
+charm.jei.recipe.composter.compost_chance=Probab. de compostar: %d%%
 charm.jei.recipe.composter.outputs=Genera %s
 charm.jei.recipe.composter.1_item=1 item
 charm.jei.recipe.composter.many_items=1-%d items

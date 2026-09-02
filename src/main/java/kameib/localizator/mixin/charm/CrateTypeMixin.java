@@ -10,7 +10,7 @@ import svenhjol.charm.crafting.feature.Crate;
 import svenhjol.charm.crafting.feature.Crate.CrateType;
 
 @Mixin(CrateType.class)
-public abstract class CrateCrateTypeMixin {
+public abstract class CrateTypeMixin {
     @Shadow(remap = false)
     public String name;
 
@@ -21,7 +21,7 @@ public abstract class CrateCrateTypeMixin {
     )
     // Use individual lang keys for each crate, instead of smooshing 2 lang keys in a hardcoded order.
     // Line 335: this.name = net.minecraft.util.text.translation.I18n.translateToLocal(id) + " " + net.minecraft.util.text.translation.I18n.translateToLocal("crate");
-    private void Charm_CrateType_constructor(Crate this$0, String id, ResourceLocation pool, CallbackInfo ci) {
+    private void localizator_Charm_CrateType_constructor(Crate this$0, String id, ResourceLocation pool, CallbackInfo ci) {
         name = "charm.crate_" + id + ".name";
     }
 }

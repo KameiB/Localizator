@@ -25,7 +25,7 @@ public abstract class MesonGuiContainerMixin {
     )
     // Apply I18n.format to displayName
     // Line 47: this.fontRenderer.drawString(this.displayName, 8, 6, 4210752);
-    private String Charm_MesonGuiContainer_drawGuiContainerForegroundLayer_translateDisplayName(String name) {
+    private String localizator_Charm_MesonGuiContainer_drawGuiContainerForegroundLayer_translateDisplayName(String name) {
         return I18n.hasKey(name) ? I18n.format(name) : name;
     }
 }

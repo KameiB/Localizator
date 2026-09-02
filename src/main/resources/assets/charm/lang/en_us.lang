@@ -14,7 +14,7 @@ tile.charm.cake_haste.name=Cake of Haste
 
 # JEI
 charm.jei.recipe.composter=Composter
-charm.jei.recipe.composter.compost_chance=Compost chance:
+charm.jei.recipe.composter.compost_chance=Compost chance: %d%%
 charm.jei.recipe.composter.outputs=Outputs %s
 charm.jei.recipe.composter.1_item=1 item
 charm.jei.recipe.composter.many_items=1-%d items
