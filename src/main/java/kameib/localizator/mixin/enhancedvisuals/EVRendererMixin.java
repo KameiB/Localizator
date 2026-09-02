@@ -15,7 +15,7 @@ public abstract class EVRendererMixin {
             at = @At(value = "INVOKE", target = "Lteam/creative/enhancedvisuals/common/death/DeathMessages;pickRandomDeathMessage()Ljava/lang/String;"),
             remap = false
     )
-    private static String EnhancedVisuals_EVRenderer_render(DeathMessages instance) {
+    private static String localizator_EnhancedVisuals_EVRenderer_render(DeathMessages instance) {
         return I18n.format(instance.pickRandomDeathMessage());
     }
 }
