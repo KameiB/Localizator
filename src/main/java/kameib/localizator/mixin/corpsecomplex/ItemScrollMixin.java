@@ -26,7 +26,7 @@ public abstract class ItemScrollMixin {
     )
     @SideOnly(Side.CLIENT)
     // Line 103: tooltip.add("Return to death location");
-    private Object CorpseComplex_ItemScroll_addInformation(Object desc) {
+    private Object localizator_CorpseComplex_ItemScroll_addInformation(Object desc) {
         return I18n.format("item.corpsecomplex.scroll.desc");
     }
 }
