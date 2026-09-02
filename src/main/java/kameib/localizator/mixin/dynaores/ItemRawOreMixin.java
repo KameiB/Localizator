@@ -22,7 +22,7 @@ public abstract class ItemRawOreMixin extends Item {
     // Line 27.
     // If a custom lang key (for example: item.dynaores.RawIron.name) exists, use it.
     // Else, use the default system (which takes the Material Ingot lang key, strips the "Ingot" text from it and sends it to the items.dynaores.RawOreBlock.name lang key)
-    public void DynaOres_ItemRawOre_getItemStackDisplayName(ItemStack stack, CallbackInfoReturnable<String> cir) {
+    public void localizator_DynaOres_ItemRawOre_getItemStackDisplayName(ItemStack stack, CallbackInfoReturnable<String> cir) {
         if (I18n.canTranslate(stack.getTranslationKey() + ".name")) {
            cir.setReturnValue(super.getItemStackDisplayName(stack));
            cir.cancel();
