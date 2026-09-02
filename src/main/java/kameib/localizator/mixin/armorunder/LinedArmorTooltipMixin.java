@@ -1,36 +1,48 @@
 package kameib.localizator.mixin.armorunder;
 
-import net.minecraft.util.text.translation.I18n;
+import net.minecraft.client.resources.I18n;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
 import org.jwaresoftware.mcmods.armorunder.runtime.LinedArmorTooltip;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(LinedArmorTooltip.class)
 public abstract class LinedArmorTooltipMixin {
-    /**
-     * @author KameiB
-     * @reason Localize the hardcoded "MILD", "COOL", "WARM" texts when a piece of armor
-     * has an Ozzy liner
-     */
-    @Redirect(
+    @ModifyConstant(
             method = "addPlainLinedArmorTooltip(Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;)V",
-            at = @At(
-                    value = "INVOKE", 
-                    target = "Lorg/jwaresoftware/mcmods/lib/Strings;translateFormatted(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
-                    remap = false
-            ),            
+            constant = @Constant(stringValue = "MILD"),
             remap = false
     )
-    @SuppressWarnings("deprecation")
-    // Line 31: tip = Strings.translateFormatted("tooltip.auw.xlining.ozzy", new Object[]{what});
-    private String localizator_LinedArmorTooltip_addPlainLinedArmorTooltip(String key, Object[] format) {
-        // This 'if' is in case the mod's author applies this fix.
-        // https://github.com/Wabbit0101/mods_hoardercraft/issues/151
-        if (format[0].toString().length()<5) {
-            return I18n.translateToLocalFormatted(key,
-                    I18n.translateToLocal("tooltip.auw.xlining.ozzy_" + format[0].toString().toLowerCase()));
-        }
-        return I18n.translateToLocalFormatted(key,format);
+    // Replace the hardcoded "MILD" with a translated lang key
+    // Line 26: String what = defn.value == 0 ? "MILD" : (defn.value < 0 ? "COOL" : "WARM");
+    @SideOnly(Side.CLIENT)
+    private String localizator_ArmorUnder_LinedArmorTooltip_addPlainLinedArmorTooltip_replaceMILD(String constant) {
+        return I18n.format("tooltip.auw.xlining.ozzy_mild");
+    }
+
+    @ModifyConstant(
+            method = "addPlainLinedArmorTooltip(Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;)V",
+            constant = @Constant(stringValue = "COOL"),
+            remap = false
+    )
+    // Replace the hardcoded "COOL" with a translated lang key
+    // Line 26: String what = defn.value == 0 ? "MILD" : (defn.value < 0 ? "COOL" : "WARM");
+    @SideOnly(Side.CLIENT)
+    private String localizator_ArmorUnder_LinedArmorTooltip_addPlainLinedArmorTooltip_replaceCOOL(String constant) {
+        return I18n.format("tooltip.auw.xlining.ozzy_cool");
+    }
+
+    @ModifyConstant(
+            method = "addPlainLinedArmorTooltip(Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;)V",
+            constant = @Constant(stringValue = "WARM"),
+            remap = false
+    )
+    // Replace the hardcoded "WARM" with a translated lang key
+    // Line 26: String what = defn.value == 0 ? "MILD" : (defn.value < 0 ? "COOL" : "WARM");
+    @SideOnly(Side.CLIENT)
+    private String localizator_ArmorUnder_LinedArmorTooltip_addPlainLinedArmorTooltip_replaceWARM(String constant) {
+        return I18n.format("tooltip.auw.xlining.ozzy_warm");
     }
 }
