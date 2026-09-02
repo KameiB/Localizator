@@ -26,7 +26,7 @@ public abstract class FishingReloadCommandMixin {
     )
     // Capture the result of loadFishes
     // Line 31: boolean loaded = CustomConfigurationHandler.loadFishes();
-    private boolean FMB_FishingReloadCommand_execute_getLoadFishes() {
+    private boolean localizator_FMB_FishingReloadCommand_execute_getLoadFishes() {
         localizator$fishesLoaded = CustomConfigurationHandler.loadFishes();
         return localizator$fishesLoaded;
     }
@@ -43,7 +43,7 @@ public abstract class FishingReloadCommandMixin {
     )
     // Send a TextComponentTranslation instead of a TextComponentString
     // Line 39: sender.sendMessage(new TextComponentString(message));
-    private ITextComponent FMB_FishingReloadCommand_execute_sendMessage(ITextComponent component) {
+    private ITextComponent localizator_FMB_FishingReloadCommand_execute_sendMessage(ITextComponent component) {
         return localizator$fishesLoaded ? 
                 new TextComponentTranslation("notif.fishingmadebetter.command.reload_success") :
                 new TextComponentTranslation("notif.fishingmadebetter.command.reload_fail");

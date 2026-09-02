@@ -30,7 +30,7 @@ public abstract class BetterFishUtilMixin {
     )
     // Append LocLore and LocLoreArg NBT tags to the fish
     // Line 66: itemStack = ItemStackUtil.appendToolTip(itemStack, tooltipList);
-    private static ItemStack FishingMadeBetter_BetterFishUtil_appendLocLore(ItemStack itemStack) {
+    private static ItemStack localizator_FishingMadeBetter_BetterFishUtil_appendLocLore(ItemStack itemStack) {
         List<String> locLoreList = new ArrayList<>();
         locLoreList.add("tooltip.fishingmadebetter.fish.weight");
         locLoreList.add("tooltip.fishingmadebetter.fish.scale_detached");
@@ -56,7 +56,7 @@ public abstract class BetterFishUtilMixin {
             remap = false
     )
     // Add compatiblity for the new Fish Buckets
-    private static void FMB_BetterFishUtil_isBetterFish(ItemStack itemStack, CallbackInfoReturnable<Boolean> cir) {
+    private static void localizator_FMB_BetterFishUtil_isBetterFish(ItemStack itemStack, CallbackInfoReturnable<Boolean> cir) {
         if (itemStack.getItem() instanceof ItemLavaFishBucket || itemStack.getItem() instanceof ItemVoidBucket || itemStack.getItem() instanceof ItemVoidFishBucket) {
             cir.setReturnValue(false);
             cir.cancel();

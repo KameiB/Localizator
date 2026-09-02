@@ -30,7 +30,7 @@ public abstract class ItemReelBasicMixin extends ItemReel {
     )
     // Make it show its details on the tooltip
     // Line 23
-    private void FMB_ItemReelBasic_addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
+    private void localizator_FMB_ItemReelBasic_addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }

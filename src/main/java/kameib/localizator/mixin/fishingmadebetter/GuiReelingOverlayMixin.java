@@ -37,7 +37,7 @@ public abstract class GuiReelingOverlayMixin extends Gui {
             remap = false
     ) 
     // Line 53: this.fontColor = this.getIntFromColor(fishingData.getLineBreak());
-    private int FMB_GuiReelingOverlay_getFishingData(IFishingData instance) {
+    private int localizator_FMB_GuiReelingOverlay_getFishingData(IFishingData instance) {
         localizator$myFishingData = instance;
         return instance.getLineBreak();
     }
@@ -57,7 +57,7 @@ public abstract class GuiReelingOverlayMixin extends Gui {
     )
     // Arguments: 0 = String text, 1 = float x, 2 = float y, 3 = int color 
     // Line 54:  this.fontRenderer.drawStringWithShadow(I18n.format("fishingmadebetter.reelingoverlay.distance", new Object[0]) + String.format(": %sm", distance), (float)this.getBarPosX(scaledWidth) + 67.0F - 30.0F, (float)(this.getBarPosY(scaledHeight) + 30 + 2), this.fontColor);
-    private void FMB_GuiReelingOverlay_onRenderOverlay_drawDistanceCentered(Args args) {
+    private void localizator_FMB_GuiReelingOverlay_onRenderOverlay_drawDistanceCentered(Args args) {
         // Received x: getBarPosX(scaledWidth) + (outlineBarWidth * 0.5f) - 30
         localizator$myX = ((float)args.get(1)) + 30; // Get rid of the hardcoded "centering" and capture this position for later use
         args.set(1, localizator$myX - (fontRenderer.getStringWidth(args.get(0)) * 0.5f)); // Apply a true centering, based on the text width
@@ -81,8 +81,8 @@ public abstract class GuiReelingOverlayMixin extends Gui {
             remap = false
     )
     // Before Line 55: int posX = this.getBarPosX(scaledWidth);
-    private void FMB_GuiReelingOverlay_onRenderOverlay_drawPressLeftRight(RenderGameOverlayEvent.Post e, CallbackInfo ci) {
-        if (ForgeConfigHandler.clientConfig.fishingmadebetterMinigameHelpText) {
+    private void localizator_FMB_GuiReelingOverlay_onRenderOverlay_drawPressLeftRight(RenderGameOverlayEvent.Post e, CallbackInfo ci) {
+        if (ForgeConfigHandler.clientConfig.fmb.minigameHelpText) {
             // Trying to emulate the situation when a player doesn't know how to play and just stare at the fish swimming further in the distance.
             if ((Math.abs(localizator$myFishingData.getReelTarget() - localizator$myFishingData.getReelAmount()) > (localizator$myFishingData.getErrorVariance() + 10)) && localizator$myFishingData.getLineBreak() > 0) {
                 String txtInstructions = I18n.format("fishingmadebetter.reelingoverlay.move_with", KeybindManager.reelIn.getDisplayName(), KeybindManager.reelOut.getDisplayName());

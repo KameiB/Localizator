@@ -30,7 +30,7 @@ public abstract class ItemBobberBasicMixin extends ItemBobber {
     )
     // Make it show its details on the tooltip
     // Line 25
-    private void FMB_ItemBobberBasic_addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
+    private void localizator_FMB_ItemBobberBasic_addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn, CallbackInfo ci) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 }

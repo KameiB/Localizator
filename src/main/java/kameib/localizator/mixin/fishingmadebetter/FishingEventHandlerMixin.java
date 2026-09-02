@@ -44,7 +44,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Add LocLore and LocLoreArg
     // Line 422: itemStack = ItemStackUtil.appendToolTip(itemStack, tooltipList);
-    private ItemStack FMB_FishingEventHandler_checkForFishInventory_appendLocLore(ItemStack itemStack) {
+    private ItemStack localizator_FMB_FishingEventHandler_checkForFishInventory_appendLocLore(ItemStack itemStack) {
         List<String> locLoreList = new ArrayList<>();
         List<String> argList = new ArrayList<>();
         
@@ -79,7 +79,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Capture "currentTime"
     // Line 410: long currentTime = player.world.getTotalWorldTime();
-    private long FMB_FishingEventHandler_checkForFishInventory_getCurrentTime(World world) {
+    private long localizator_FMB_FishingEventHandler_checkForFishInventory_getCurrentTime(World world) {
         localizator$myCurrentTime = world.getTotalWorldTime();
         return world.getTotalWorldTime();
     }
@@ -96,7 +96,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Capture populationData
     // Line 501: fishData = (FishData)CustomConfigurationHandler.fishDataMap.get(populationData.getFishType());
-    private String FMB_FishingMadeBetter_getTrackingFish_getPopulationData(PopulationData populationData) {
+    private String localizator_FMB_FishingMadeBetter_getTrackingFish_getPopulationData(PopulationData populationData) {
         localizator$myPopulationData = populationData;
         return populationData.getFishType();
     }
@@ -112,7 +112,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Capture FishData
     // Line 501: fishData = (FishData)CustomConfigurationHandler.fishDataMap.get(populationData.getFishType());
-    private Object FMB_FishingEventHandler_getTrackingFish_getFishData(Map<String, net.theawesomegem.fishingmadebetter.common.data.FishData> fishDataMap, Object fishType) {
+    private Object localizator_FMB_FishingEventHandler_getTrackingFish_getFishData(Map<String, net.theawesomegem.fishingmadebetter.common.data.FishData> fishDataMap, Object fishType) {
         localizator$myFishData = fishDataMap.get((String)fishType);
         return fishDataMap.get((String)fishType);
     }
@@ -130,7 +130,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Send a localized message (when in Creative)
     // Line 505: player.sendMessage(new TextComponentString(String.format("%s %s in %s at Y%s-%s", populationData.getQuantity(), fishData.fishId, fishData.liquid.toString(), fishData.minYLevel, fishData.maxYLevel)));
-    private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage1(ITextComponent par1) {
+    private ITextComponent localizator_FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage1(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.fishQty_Y_levels", // Message
             localizator$myPopulationData.getQuantity(), // Quantity
                 new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData)) // Fish Name
@@ -155,7 +155,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Send a localized message (when in Creative)
     // Line 506: player.sendMessage(new TextComponentString(String.format("MinLine %sm, Time %s, MaxLight %s, Rain %s, Thunder %s", fishData.minDeepLevel, fishData.time.toString(), fishData.maxLightLevel, fishData.rainRequired, fishData.thunderRequired)));
-    private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage2(ITextComponent par1) {
+    private ITextComponent localizator_FMB_FishingEventHandler_getTrackingFish_sendCreativeMessage2(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.fishEnvironmentConditions", // Message
                     localizator$myFishData.minDeepLevel, // MinLine
                         new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.creative.time." + localizator$myFishData.time.toString()), // Time
@@ -177,7 +177,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Send a localized message (when in Survival, limited)
     // Line 541: player.sendMessage((new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.detected", new Object[0])).appendText(" " + fishData.fishId + "."));
-    private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageLimited(ITextComponent par1) {
+    private ITextComponent localizator_FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageLimited(ITextComponent par1) {
         return new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.survival.limited", // Message
                     new TextComponentTranslation(FMB_BetterFishUtil.getFishDataUnlocalizedName(localizator$myFishData))
                             .setStyle(new Style().setColor(TextFormatting.YELLOW).setBold(true)
@@ -198,7 +198,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Send a localized message (when in Survival, detailed)
     // Line 543: player.sendMessage((new TextComponentTranslation("notif.fishingmadebetter.fish_tracker.detected", new Object[0])).appendText(" " + fishData.fishId + ", " + fishData.description + " in ").appendSibling(new TextComponentTranslation(quantity, new Object[0])));
-    private ITextComponent FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageDetailed(ITextComponent par1) {
+    private ITextComponent localizator_FMB_FishingEventHandler_getTrackingFish_sendSurvivalMessageDetailed(ITextComponent par1) {
         int pop = localizator$myPopulationData.getQuantity();
         String quantity;
         if (pop > 50) {
@@ -240,7 +240,7 @@ public abstract class FishingEventHandlerMixin {
     )
     // Add LocName, LocLore & LocLoreArg to the freshly caught fish on return
     // Line 558: private ItemStack getFishItemStack(FishCaughtData fishCaughtData, long currentTime, int weightModifier) {
-    private void FMB_FishingEventHandler_getFishItemStack_addLocalizedNBT(FishCaughtData fishCaughtData, long currentTime, int weightModifier, CallbackInfoReturnable<ItemStack> cir) {
+    private void localizator_FMB_FishingEventHandler_getFishItemStack_addLocalizedNBT(FishCaughtData fishCaughtData, long currentTime, int weightModifier, CallbackInfoReturnable<ItemStack> cir) {
         if (ItemStack.EMPTY.equals(cir.getReturnValue())) {
             cir.setReturnValue(ItemStack.EMPTY);
         }
