@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class BaubleAttributeModifierHandlerMixin {
     /**
      * @author KameiB
-     * @reason Prevents adding the Modifier name into the Bauble name
+     * @reason Prevents adding the Modifier name into the Bauble's item name
      */
     @Inject(
             method = "onItemTooltip(Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;)V",

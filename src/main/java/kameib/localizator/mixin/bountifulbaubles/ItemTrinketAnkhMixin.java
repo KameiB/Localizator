@@ -34,7 +34,7 @@ public abstract class ItemTrinketAnkhMixin extends ItemTrinketPotionCharm implem
         }
     }
 
-    // Had to override this method just to add the added cobweb immunity in the place I wanted
+    // Had to override this method just to add the new cobweb immunity description in the place I wanted. I'm sorry
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

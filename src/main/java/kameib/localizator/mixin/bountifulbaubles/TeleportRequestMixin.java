@@ -20,7 +20,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with target's name as its argument.
     // Line 41: origin.sendMessage(new TextComponentString("Teleport request sent to " + target.getName()));
-    private static ITextComponent BountifulBaubles_TeleportRequest_makeReq_sendMessage(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_makeReq_sendMessage(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Teleport request sent to ", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.makeReq", targetName);
@@ -38,7 +38,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 75: from.sendMessage(new TextComponentString("Teleport request to " + to.getName() + " has expired."));
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage0(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage0(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Teleport request to ", "").replace(" has expired.", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.reqToExpired", targetName);
@@ -56,7 +56,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 76: to.sendMessage(new TextComponentString("Teleport request from " + from.getName() + " has expired."));
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage1(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage1(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Teleport request from ", "").replace(" has expired.", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.reqFromExpired", targetName);
@@ -74,7 +74,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 89: target.sendMessage(new TextComponentString("Rejected teleport request from " + player.getName() + "."));
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage2(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage2(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Rejected teleport request from ", "").replace(".", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.reqFromRejected", targetName);
@@ -92,7 +92,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 90: player.sendMessage(new TextComponentString("Teleport request to " + target.getName() + " was rejected."));
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage3(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage3(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Teleport request to ", "").replace(" was rejected.", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.reqToRejected", targetName);
@@ -110,7 +110,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 95: target.sendMessage(new TextComponentString("Accepted teleport request from " + player.getName() + "."));
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage4(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage4(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Accepted teleport request from ", "").replace(".", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.reqFromAccepted", targetName);
@@ -128,7 +128,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 96: player.sendMessage(new TextComponentString("Teleport request to " + target.getName() + " was accepted."));
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage5(ITextComponent par1) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage5(ITextComponent par1) {
         ITextComponent targetName = new TextComponentString(par1.getUnformattedComponentText().replace("Teleport request to ", "").replace(" was accepted.", ""))
                 .setStyle(new Style().setColor(TextFormatting.YELLOW));
         return new TextComponentTranslation("message.bountifulbaubles.wormhole.reqToAccepted", targetName);
@@ -146,7 +146,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 113: target.sendMessage(message1);
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage6(ITextComponent original) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage6(ITextComponent original) {
         String msgOriginal = original.getUnformattedComponentText();
         ITextComponent targetName;
 
@@ -185,7 +185,7 @@ public abstract class TeleportRequestMixin {
     )
     // Replace TextComponentString with a TextComponentTranslation with the player name as its argument.
     // Line 117: player.sendMessage(message2);
-    private static ITextComponent BountifulBaubles_TeleportRequest_acceptReject_sendMessage7(ITextComponent original) {
+    private static ITextComponent localizator_BountifulBaubles_TeleportRequest_acceptReject_sendMessage7(ITextComponent original) {
         String msgOriginal = original.getUnformattedComponentText();
 
         switch (msgOriginal) {

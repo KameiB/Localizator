@@ -36,13 +36,13 @@ public abstract class ItemShieldAnkhMixin extends ItemShieldObsidian {
     )
     // Adds Cobweb immunity because it makes sense to me >:c
     // Line 25: public void onWornTick(ItemStack stack, EntityLivingBase player)
-    private void BountifulBaubles_ItemShieldAnkh_cobwebImmunity(ItemStack stack, EntityLivingBase player, CallbackInfo ci) {
+    private void localizator_BountifulBaubles_ItemShieldAnkh_cobwebImmunity(ItemStack stack, EntityLivingBase player, CallbackInfo ci) {
         if (player instanceof EntityPlayer) {
             ((EntityAccessor)(player)).setPlayerInCobWeb(false);
         }
     }
     
-    // Had to override this method just to add the added cobweb immunity in the place I wanted
+    // Had to override this method just to add the new cobweb immunity description in the place I wanted. I'm sorry.
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
