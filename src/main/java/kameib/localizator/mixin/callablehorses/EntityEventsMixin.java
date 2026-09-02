@@ -25,9 +25,10 @@ public abstract class EntityEventsMixin {
     )
     // Translate message on client side
     // Line 187: owner.sendMessage(new TextComponentString(TextFormatting.RED + I18n.translateToLocal("callablehorses.alert.death")));
-    private static ITextComponent CallableHorses_EntityEvents_onLivingDeath_alertDeath(ITextComponent message) {
+    private static ITextComponent localizator_CallableHorses_EntityEvents_onLivingDeath_alertDeath(ITextComponent message) {
         return new TextComponentTranslation("callablehorses.alert.death").setStyle(new Style().setColor(TextFormatting.RED));
     }
+    
     @ModifyArg(
             method = "onJoinWorld(Lnet/minecraftforge/event/entity/EntityJoinWorldEvent;)V",
             at = @At(
@@ -41,7 +42,7 @@ public abstract class EntityEventsMixin {
     )
     // Translate message on client side
     // Line 217: player.sendMessage(new TextComponentString(TextFormatting.RED + I18n.translateToLocal("callablehorses.alert.offlinedeath")));
-    private static ITextComponent CallableHorses_EntityEvents_onJoinWorld_alertOfflineDeath(ITextComponent message) {
+    private static ITextComponent localizator_CallableHorses_EntityEvents_onJoinWorld_alertOfflineDeath(ITextComponent message) {
         return new TextComponentTranslation("callablehorses.alert.offlinedeath").setStyle(new Style().setColor(TextFormatting.RED));
     }
 }

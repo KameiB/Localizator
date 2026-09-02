@@ -7,7 +7,7 @@
   "minVersion": "0.8",
   "mixins": [
     "callablehorses.EntityEventsMixin",
-    "callablehorses.HoseManagerMixin"
+    "callablehorses.HorseManagerMixin"
   ],
   "injectors": {
     "maxShiftBy": 10
