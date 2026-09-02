@@ -22,7 +22,7 @@ public abstract class ItemCampfireMixin {
     // Use translateToLocalFormatted and pass the type lang key as a parameter instead of hardcoding "<type> Campfire"
     // Line 26: return I18n.canTranslate(specialCase) ? I18n.translateToLocal(specialCase) : type.getDisplayName().replaceFirst(I18n.translateToLocal(this.getRegexTarget()), I18n.translateToLocal(this.getRegexReplacement()));
     @SuppressWarnings("deprecation")
-    private String Campfire_ItemCampfire_getItemStackDisplayName_translatedName(ItemStack itemStack) {
+    private String localizator_Campfire_ItemCampfire_getItemStackDisplayName_translatedName(ItemStack itemStack) {
         String typeTranslated = I18n.translateToLocal(itemStack.getTranslationKey() + ".name");
         
         return I18n.translateToLocalFormatted("tile.campfire.campfire_of.name", typeTranslated);
@@ -39,7 +39,7 @@ public abstract class ItemCampfireMixin {
     )
     // Cancel any regex stuff and just return what I already prepared
     // Line 26: return I18n.canTranslate(specialCase) ? I18n.translateToLocal(specialCase) : type.getDisplayName().replaceFirst(I18n.translateToLocal(this.getRegexTarget()), I18n.translateToLocal(this.getRegexReplacement()));
-    private String Campfire_ItemCampfire_getItemStackDisplayName_replaceFirst_cancel(String translatedName, String regexTarget, String regexReplacement) {
+    private String localizator_Campfire_ItemCampfire_getItemStackDisplayName_replaceFirst_cancel(String translatedName, String regexTarget, String regexReplacement) {
         return translatedName;
     }
 }
