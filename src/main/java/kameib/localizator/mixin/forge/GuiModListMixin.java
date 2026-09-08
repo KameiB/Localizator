@@ -1,59 +1,55 @@
 package kameib.localizator.mixin.forge;
 
 import kameib.localizator.data.Production;
-import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.client.GuiModList;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.*;
 
 @Mixin(GuiModList.class)
 public abstract class GuiModListMixin {
-    @Shadow(remap = false) private ModContainer selectedMod;    
-        
-    @ModifyArg(
+    @ModifyConstant(
             method = "initGui()V",
-            at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 1),
+            constant = @Constant(stringValue = "Config"),
             remap = Production.inProduction
     )
-    // Localize "Config" button text
-    // Line 176: this.buttonList.add(configModButton);
-    private Object localizator_Forge_GuiModList_initGui_configButton(Object button) {
-        ((GuiButton)button).displayString = I18n.format("fml.button.config");
-        return button;        
+    @SideOnly(Side.CLIENT)
+    // Localize the hardcoded "Config" text at the moment of this.configModButton initialization
+    // Line 101: this.configModButton = new GuiButton(20, 10, this.height - 49, this.listWidth, 20, "Config");
+    private static String localizator_FML_GuiModList_initGui_configModButton_constant(String original) {
+        return I18n.format("fml.button.config");
     }
-    
-    @ModifyArg(
+
+    @ModifyConstant(
             method = "initGui()V",
-            at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 2),
+            constant = @Constant(stringValue = "Disable"),
             remap = Production.inProduction
     )
-    // Localize "Disable" button text
-    // Line 177: this.buttonList.add(disableModButton);
-    private Object localizator_Forge_GuiModList_initGui_disableButton(Object button) {
-        ((GuiButton)button).displayString = I18n.format("fml.button.disable");
-        return button;
+    @SideOnly(Side.CLIENT)
+    // Localize the hardcoded "Mod List" text at the moment of this.configModButton initialization
+    // Line 102: this.disableModButton = new GuiButton(21, 10, this.height - 27, this.listWidth, 20, "Disable");
+    private static String localizator_FML_GuiModList_drawScreen_modList(String original) {
+        return I18n.format("fml.button.disable");
     }
-        
-    @ModifyArg(
+
+    @ModifyConstant(
             method = "drawScreen(IIF)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraftforge/fml/client/GuiModList;drawCenteredString(Lnet/minecraft/client/gui/FontRenderer;Ljava/lang/String;III)V"
-            ),
-            index = 1,
+            constant = @Constant(stringValue = "Mod List"),
             remap = Production.inProduction
     )
-    // Localize "Mod List" screen text
-    // Line 314: this.drawCenteredString(this.fontRenderer, "Mod List", left, 16, 0xFFFFFF);
-    private String localizator_Forge_GuiModList_drawScreen_ModList(String modList) {
+    @SideOnly(Side.CLIENT)
+    // Localize the hardcoded "Mod List" text before passing it to drawCenteredString
+    // Line 214: this.drawCenteredString(this.fontRenderer, "Mod List", left, 16, 16777215);
+    private static String localizator_FML_GuiModList_initGui_disableModButton_constant(String original) {
         return I18n.format("fml.menu.mods.modlist");
     }
+    
+    @Shadow(remap = false) private ModContainer selectedMod;    
 
     @ModifyArg(
             method = "updateCache()V",
@@ -64,41 +60,46 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
-    // Gives a little color to the Mod's name. TODO: Add an option to customize both colors
-    // Line 423: lines.add(selectedMod.getMetadata().name);
-    private Object localizator_Forge_GuiModList_updateCache_Name(Object e) {
-        return TextFormatting.AQUA + (String)e;
-    }
-    @ModifyArg(
-            method = "updateCache()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 1
-            ),
-            remap = false
-    )
-    // Localize hardcoded "Version:" text
-    // Line 424: lines.add(String.format("Version: %s (%s)", selectedMod.getDisplayVersion(), selectedMod.getVersion()));
-    private Object localizator_Forge_GuiModList_updateCache_Version(Object e) {
-        return I18n.format("fml.mod.details.version",  TextFormatting.AQUA + selectedMod.getDisplayVersion() + TextFormatting.WHITE, TextFormatting.AQUA + selectedMod.getVersion() + TextFormatting.WHITE);
+    @SideOnly(Side.CLIENT)
+    // Gives a little color to the Mod's name, depending on its lang key value.
+    // Line 304: lines.add(selectedMod.getMetadata().name);
+    private Object localizator_Forge_GuiModList_updateCache_Name(Object modName) {
+        return I18n.format("fml.mod.name.format") + (String)modName;
     }
     
-    @ModifyArg(
+    @Redirect(
             method = "updateCache()V",
             at = @At(
                     value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 2
+                    target = "Ljava/lang/String;format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
+                    ordinal = 0,
+                    remap = false
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
+    // Instead of calling String.format, which generates an English string, we'll call I18n.format, using a lang key that receives the same arguments.
+    // Plus! Now you can customize the colors to your heart's content, at the lang key :D
+    // Line 305: lines.add(String.format("Version: %s (%s)", this.selectedMod.getDisplayVersion(), this.selectedMod.getVersion()));
+    private static String localizator_FML_GuiModList_updateCache_Version(String s, Object[] params) {
+        return I18n.format("fml.mod.details.version", params);
+    }
+    
+    @Redirect(
+            method = "updateCache()V",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Ljava/lang/String;format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
+                    ordinal = 1,
+                    remap = false
+            ),
+            remap = false
+    )
+    @SideOnly(Side.CLIENT)
     // Localize hardcoded "Mod ID:" text
-    // Line 425: lines.add(String.format("Mod ID: '%s' Mod State: %s", selectedMod.getModId(), Loader.instance().getModState(selectedMod)));
-    private Object localizator_Forge_GuiModList_updateCache_modID(Object e) {
-        return I18n.format("fml.mod.details.modid", 
-                TextFormatting.AQUA + selectedMod.getModId() + TextFormatting.WHITE,
-                TextFormatting.AQUA + I18n.format(Loader.instance().getModState(selectedMod).toString()) + TextFormatting.WHITE);
+    // Line 306: lines.add(String.format("Mod ID: '%s' Mod State: %s", selectedMod.getModId(), Loader.instance().getModState(selectedMod)));
+    private static String localizator_FML_GuiModList_updateCache_modID(String s, Object[] params) {
+        return I18n.format("fml.mod.details.modid", params);
     }    
     
     @ModifyArg(
@@ -110,11 +111,13 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
-    // Localize hardcoded "Credits:" text
-    // Line 429: lines.add("Credits: " + selectedMod.getMetadata().credits);
+    @SideOnly(Side.CLIENT)
+    // Localize hardcoded "Credits:" text.
+    // Plus, if the mod author created a lang key for the mod's credits, translate it!
+    // Line 308: lines.add("Credits: " + selectedMod.getMetadata().credits);
     private Object localizator_Forge_GuiModList_updateCache_credits(Object e) {
         return I18n.format("fml.mod.details.credits",
-                 TextFormatting.AQUA + (I18n.hasKey(selectedMod.getMetadata().credits) ? 
+                  (I18n.hasKey(selectedMod.getMetadata().credits) ? 
                         I18n.format(selectedMod.getMetadata().credits) : 
                         selectedMod.getMetadata().credits));
     }
@@ -128,25 +131,22 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // Localize hardcoded "Authors:" text
-    // Line 432: lines.add("Authors: " + selectedMod.getMetadata().getAuthorList());
+    // Line 311: lines.add("Authors: " + selectedMod.getMetadata().getAuthorList());
     private Object localizator_Forge_GuiModList_updateCache_authors(Object e) {
-        return I18n.format("fml.mod.details.authors", 
-                TextFormatting.AQUA + selectedMod.getMetadata().getAuthorList());
+        return I18n.format("fml.mod.details.authors", selectedMod.getMetadata().getAuthorList());
     }
 
-    @ModifyArg(
+    @ModifyConstant(
             method = "updateCache()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 6
-            ),
+            constant = @Constant(stringValue = "No child mods for this mod"),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // Localize hardcoded "No child mods for this mod" text
     // Line 436: lines.add("No child mods for this mod");
-    private Object localizator_Forge_GuiModList_updateCache_noChildmods(Object e) {
+    private String localizator_Forge_GuiModList_updateCache_noChildMods(String original) {
         return I18n.format("fml.mod.details.nochildmods");
     }
 
@@ -159,11 +159,12 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // Localize hardcoded "Child mods:" text
     // Line 438: lines.add("Child mods: " + selectedMod.getMetadata().getChildModList());
-    private Object localizator_Forge_GuiModList_updateCache_childmods(Object e) {
+    private Object localizator_Forge_GuiModList_updateCache_childMods(Object e) {
         return I18n.format("fml.mod.details.childmods", 
-                TextFormatting.AQUA + selectedMod.getMetadata().getChildModList() + TextFormatting.WHITE);
+                 selectedMod.getMetadata().getChildModList());
     }
 
     @ModifyArg(
@@ -175,13 +176,14 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // Localize hardcoded "Update Available: " text
     // Line 441: lines.add("Update Available: " + (vercheck.url == null ? "" : vercheck.url));
     private Object localizator_Forge_GuiModList_updateCache_updateAvailable(Object e) {
         if (e instanceof String) {
             String vercheckURL = (String)e;
             return I18n.format("fml.mod.details.updateavailable",
-                    TextFormatting.AQUA + vercheckURL.replace("Update Available: ", ""));
+                    vercheckURL.replace("Update Available: ", ""));
         }
         return e;
     }
@@ -195,10 +197,11 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // In case a mod developer wants their mod description to be translated :D
     // Line 444: lines.add(selectedMod.getMetadata().description);
     private Object localizator_Forge_GuiModList_updateCache_description(Object e) {
-        return TextFormatting.AQUA + (I18n.hasKey(selectedMod.getMetadata().description) ? 
+        return I18n.format("fml.mod.name.format") + (I18n.hasKey(selectedMod.getMetadata().description) ? 
                 I18n.format(selectedMod.getMetadata().description) : 
                 selectedMod.getMetadata().description);
     }
@@ -212,11 +215,12 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // If the mod has no mcmod.info file...
-    // Line 449: lines.add(WHITE + "Version: " + selectedMod.getVersion());
+    // Line 327: lines.add(TextFormatting.WHITE + "Version: " + this.selectedMod.getVersion());
     private Object localizator_Forge_GuiModList_updateCache_autoGeneratedVersion(Object e) {
         return I18n.format("fml.mod.details.autogenerated.version", 
-                  TextFormatting.AQUA + selectedMod.getVersion());
+                  selectedMod.getVersion());
     }
 
     @ModifyArg(
@@ -228,11 +232,12 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // If the mod has no info file...
-    // Line 450: lines.add(WHITE + "Mod State: " + Loader.instance().getModState(selectedMod));
+    // Line 328: lines.add(TextFormatting.WHITE + "Mod State: " + Loader.instance().getModState(this.selectedMod));
     private Object localizator_Forge_GuiModList_updateCache_autoGeneratedModState(Object e) {
         return I18n.format("fml.mod.details.autogenerated.modstate", 
-                TextFormatting.AQUA + Loader.instance().getModState(selectedMod).toString());
+                Loader.instance().getModState(selectedMod).toString());
     }
 
     @ModifyArg(
@@ -244,59 +249,51 @@ public abstract class GuiModListMixin {
             ),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // If the mod has no info file...
-    // Line 452: lines.add("Update Available: " + (vercheck.url == null ? "" : vercheck.url));
+    // Line 330: lines.add("Update Available: " + (vercheck.url == null ? "" : vercheck.url));
     private Object localizator_Forge_GuiModList_updateCache_updateAvailable2(Object e) {
         if (e instanceof String) {
             String vercheckURL = (String)e;
             return I18n.format("fml.mod.details.updateavailable", 
-                    TextFormatting.AQUA + vercheckURL.replace("Update Available: ", ""));
+                    vercheckURL.replace("Update Available: ", ""));
         }
         return e;
     }
 
-    @ModifyArg(
+    @ModifyConstant(
             method = "updateCache()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 16
-            ),
+            constant = @Constant(stringValue = "No mod information found"),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // If the mod has no info file...
-    // Line 455: lines.add(RED + "No mod information found");
-    private Object localizator_Forge_GuiModList_updateCache_autoGeneratedNoModInfo(Object e) {
-        return TextFormatting.RED + I18n.format("fml.mod.details.autogenerated.nomodinfo");
+    // Line 334: lines.add(RED + "No mod information found");
+    private String localizator_Forge_GuiModList_updateCache_autoGeneratedNoModInfo(String original) {
+        return I18n.format("fml.mod.details.autogenerated.nomodinfo");
     }
     
-    @ModifyArg(
+    @ModifyConstant(
             method = "updateCache()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 17
-            ),
+            constant = @Constant(stringValue = "Ask your mod author to provide a mod mcmod.info file"),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // If the mod has no info file...
-    // Line 456: lines.add(RED + "Ask your mod author to provide a mod mcmod.info file");
-    private Object localizator_Forge_GuiModList_updateCache_autoGeneratedAskAuthor(Object e) {
-        return TextFormatting.RED + I18n.format("fml.mod.details.autogenerated.askauthor");
+    // Line 335: lines.add(RED + "Ask your mod author to provide a mod mcmod.info file");
+    private String localizator_Forge_GuiModList_updateCache_autoGeneratedAskAuthor(String original) {
+        return I18n.format("fml.mod.details.autogenerated.askauthor");
     }
 
-    @ModifyArg(
+    @ModifyConstant(
             method = "updateCache()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 19
-            ),
+            constant = @Constant(stringValue = "Changes:"),
             remap = false
     )
+    @SideOnly(Side.CLIENT)
     // If there are changes between one version and the other...
-    // Line 462: lines.add("Changes:");
-    private Object localizator_Forge_GuiModList_updateCache_updateChanges(Object e) {
+    // Line 340: lines.add("Changes:");
+    private String localizator_Forge_GuiModList_updateCache_updateChanges(String original) {
         return I18n.format("fml.mod.details.updatechanges");
     }
 }
