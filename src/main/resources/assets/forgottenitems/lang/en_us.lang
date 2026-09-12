@@ -14,16 +14,13 @@ item.ender_talisman.lore=§eTeleports you where you're looking§r
 item.water_talisman.lore=§eCreates a Water Block§r
 item.wind_talisman.lore=§eFly with the wind§r
 
-item.golem_helmet.desc=§3Hard like a Rock§r
-item.golem_chestplate.desc=§3Hard like a Rock§r
-item.golem_leggings.desc=§3Hard like a Rock§r
-item.golem_boots.desc=§3Hard like a Rock§r
-
-tooltip.forgottenitems.bound_tools.bound_to=§fBound to§r
+tooltip.forgottenitems.bound_tools.bound_to=§fBound to §r%s
 tooltip.forgottenitems.bound_tools.unbound=Unbound
 tooltip.forgottenitems.bound_tools.desc=§bStays in the inventory on death§r
 
 tooltip.forgottenitems.crafting_rune.output=Output:
 tooltip.forgottenitems.crafting_rune.output_none=None/Error
-
 tooltip.forgottenitems.gems.desc=§eIt glows and sparkles§r
+tooltip.forgottenitems.golem_armor.desc=§3Hard like a Rock§r
+
+message.forgottenitems.ender_talisman.out_of_range=Out of Range

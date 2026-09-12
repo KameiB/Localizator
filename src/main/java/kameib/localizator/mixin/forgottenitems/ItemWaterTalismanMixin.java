@@ -1,25 +1,20 @@
 package kameib.localizator.mixin.forgottenitems;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import tschipp.forgottenitems.items.ItemWaterTalisman;
 
 @Mixin(ItemWaterTalisman.class)
 public abstract class ItemWaterTalismanMixin {
-    /**
-     * @author KameiB
-     * @reason Localize item lore at constructor
-     */
-    @ModifyArg(
+    @ModifyConstant(
             method = "<init>",
-            at = @At(value = "INVOKE", target = "Ltschipp/forgottenitems/items/ItemTalisman;<init>(Ljava/lang/String;Ljava/lang/String;ILnet/minecraft/item/Item;)V"),
-            index = 1,
+            constant = @Constant(stringValue = "Creates a Water Block"),
             remap = false
     )
+    // Replace the hardcoded "Creates a Water Block" with a lang key for later translation.
     // Line 21: super("water_talisman", "Creates a Water Block", 14, ItemList.waterGem);
-    private static String ForgottenItems_ItemWaterTalisman_Constructor(String lore) {
+    private static String localizator_ForgottenItems_ItemWaterTalisman_Constructor(String lore) {
         return "item.water_talisman.lore";
     }
-    
 }

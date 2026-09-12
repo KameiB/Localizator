@@ -1,25 +1,20 @@
 package kameib.localizator.mixin.forgottenitems;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import tschipp.forgottenitems.items.ItemShockTalisman;
 
 @Mixin(ItemShockTalisman.class)
 public abstract class ItemShockTalismanMixin {
-    /**
-     * @author KameiB
-     * @reason Localize item lore at constructor
-     */
-    @ModifyArg(
+    @ModifyConstant(
             method = "<init>",
-            at = @At(value = "INVOKE", target = "Ltschipp/forgottenitems/items/ItemTalisman;<init>(Ljava/lang/String;Ljava/lang/String;ILnet/minecraft/item/Item;)V"),
-            index = 1,
+            constant = @Constant(stringValue = "Converts fall damage into an explosion"),
             remap = false
     )
+    // Replace the hardcoded "Converts fall damage into an explosion" with a lang key. Don't translate it yet.
     // Line 12: super("shock_talisman", "Converts fall damage into an explosion", 6, ItemList.shockGem);
-    private static String ForgottenItems_ItemShockTalisman_Constructor(String lore) {
+    private static String localizator_ForgottenItems_ItemShockTalisman_Constructor(String lore) {
         return "item.shock_talisman.lore";
     }
-    
 }

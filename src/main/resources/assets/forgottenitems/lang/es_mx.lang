@@ -14,16 +14,13 @@ item.ender_talisman.lore=§eTe teletransporta a donde apuntas§r
 item.water_talisman.lore=§eCrea un bloque de Agua§r
 item.wind_talisman.lore=§eVuela con el viento§r
 
-item.golem_helmet.desc=§3Duro como La Roca§r
-item.golem_chestplate.desc=§3Duro como La Roca§r
-item.golem_leggings.desc=§3Duro como La Roca§r
-item.golem_boots.desc=§3Duro como La Roca§r
-
-tooltip.forgottenitems.bound_tools.bound_to=§fUnido a§r
+tooltip.forgottenitems.bound_tools.bound_to=§fUnido a §r%s
 tooltip.forgottenitems.bound_tools.unbound=No unido
 tooltip.forgottenitems.bound_tools.desc=§bPermanece en tu inventario cuando mueres§r
 
 tooltip.forgottenitems.crafting_rune.output=Salida:
 tooltip.forgottenitems.crafting_rune.output_none=Nada/Error
-
 tooltip.forgottenitems.gems.desc=§eBrilla y destellea§r
+tooltip.forgottenitems.golem_armor.desc=§3Hard like a Rock§r
+
+message.forgottenitems.ender_talisman.out_of_range=Out of Range

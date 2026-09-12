@@ -2,36 +2,23 @@ package kameib.localizator.mixin.forgottenitems;
 
 import kameib.localizator.data.Production;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.*;
 import tschipp.forgottenitems.items.ItemGem;
-
-import java.util.List;
 
 @Mixin(ItemGem.class)
 public abstract class ItemGemMixin {
-    /**
-     * @author KameiB
-     * @reason Localize item description
-     */
-    @Inject(
+    @ModifyConstant(
             method = "addInformation(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)V",
-            at = @At("HEAD"),
-            cancellable = true,
+            constant = @Constant(stringValue = "It glows and sparkles"),
             remap = Production.inProduction
     )
     @SideOnly(Side.CLIENT)
-    // Line 46
-    private void ForgottenItems_ItemGem_addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag, CallbackInfo ci)
-    {        
-        tooltip.add(I18n.format(I18n.format("tooltip.forgottenitems.gems.desc")));
-        ci.cancel();
+    // Replace the hardcoded "It glows and sparkles" with a translated lang key.
+    // Line 47: tooltip.add("It glows and sparkles");
+    private static String localizator_ForgottenItems_ItemGem_addInformation(String original) {
+        return I18n.format("tooltip.forgottenitems.gems.desc");
     }
 }

@@ -5,25 +5,27 @@
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
-  "mixins": [
+  "client": [
     "forgottenitems.ItemBarkifiedAxeMixin",
     "forgottenitems.ItemBoundAxeMixin",
     "forgottenitems.ItemBoundPickaxeMixin",
     "forgottenitems.ItemBoundShovelMixin",
     "forgottenitems.ItemCraftingRuneMixin",
     "forgottenitems.ItemCushionedBootsMixin",
-    "forgottenitems.ItemEnderTalismanMixin",
     "forgottenitems.ItemExplosionPickaxeMixin",
     "forgottenitems.ItemGamblePickaxeMixin",
     "forgottenitems.ItemGemMixin",
     "forgottenitems.ItemGolemArmorMixin",
     "forgottenitems.ItemHastyPickaxeMixin",
-    "forgottenitems.ItemHeatTalismanMixin",
     "forgottenitems.ItemLifebeltMixin",
     "forgottenitems.ItemObsidianHarvesterMixin",
-    "forgottenitems.ItemShockTalismanMixin",
     "forgottenitems.ItemTalismanMixin",
-    "forgottenitems.ItemVeinPickaxeMixin",
+    "forgottenitems.ItemVeinPickaxeMixin"
+  ],
+  "mixins": [
+    "forgottenitems.ItemEnderTalismanMixin",
+    "forgottenitems.ItemHeatTalismanMixin",
+    "forgottenitems.ItemShockTalismanMixin",
     "forgottenitems.ItemWaterTalismanMixin",
     "forgottenitems.ItemWindTalismanMixin"
   ],
