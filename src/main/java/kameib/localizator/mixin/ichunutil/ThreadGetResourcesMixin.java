@@ -2,57 +2,39 @@ package kameib.localizator.mixin.ichunutil;
 
 import kameib.localizator.Localizator;
 import me.ichun.mods.ichunutil.common.thread.ThreadGetResources;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Mutable;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(ThreadGetResources.class)
 public abstract class ThreadGetResourcesMixin {
-    @Redirect(
+    @Unique
+    private static final String localizator$patronsNewURL = "https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/patrons.json";
+    @Unique
+    private static final String localizator$versionsNewURL = "https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/versions.json";
+    
+    @ModifyConstant(
             method = "run()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/net/URL;openStream()Ljava/io/InputStream;",
-                    ordinal = 0,
-                    remap = false
-            ),
+            constant = @Constant(stringValue = "https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/patrons.json"),
             remap = false
     )
-    // Replace patrons URL to a valid one
-    // Line 34: fileIn = new InputStreamReader((new URL("https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/patrons.json")).openStream());
-    private InputStream IChunUtil_ThreadGetResources_run_patrons(URL instance) throws IOException {
-        Localizator.LOGGER.info("Redirecting patrons call to the valid URL: {}", patronList);
-        return (new URL("https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/patrons.json")).openStream();
-    }
-
-    @Redirect(
-            method = "run()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/net/URL;openStream()Ljava/io/InputStream;",
-                    ordinal = 1,
-                    remap = false
-            ),
-            remap = false
-    )
-    // Replace versions URL to a valid one
-    // Line 59: fileIn = new InputStreamReader((new URL("https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/versions.json")).openStream());
-    private InputStream IChunUtil_ThreadGetResources_run_version(URL instance) throws IOException {
-        Localizator.LOGGER.info("Redirecting versions call to the valid URL: {}", versionList);
-        return (new URL("https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/versions.json")).openStream();
+    // Replace old broken URL with valid URL.
+    // Line 33: Reader fileIn = new InputStreamReader((new URL("https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/patrons.json")).openStream());
+    private static String localizator_ichunUtil_ThreadGetResources_run_patrons(String original) {
+        Localizator.LOGGER.info("Localizator -> Redirecting iChunUtils Patrons list to the valid URL: {}",  localizator$patronsNewURL);
+        return localizator$patronsNewURL;
     }
     
-    @Final @Mutable
-    @Shadow(remap = false)
-    private static String patronList = "https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/patrons.json";
-    @Final @Mutable
-    @Shadow(remap = false)
-    private static String versionList = "https://raw.github.com/iChun/iChunUtil/1.7.10_legacy/src/main/resources/assets/ichunutil/mod/versions.json";
+    @ModifyConstant(
+            method = "run()V",
+            constant = @Constant(stringValue = "https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/versions.json"),
+            remap = false
+    )
+    // Replace old broken URL with valid URL.
+    // Line 54: Reader fileIn = new InputStreamReader((new URL("https://raw.github.com/iChun/iChunUtil/master/src/main/resources/assets/ichunutil/mod/versions.json")).openStream());
+    private static String localizator_ichunUtil_ThreadGetResources_run_versions(String original) {
+        Localizator.LOGGER.info("Localizator -> Redirecting iChunUtils Versions list to the valid URL: {}",  localizator$versionsNewURL);
+        return localizator$versionsNewURL;
+    }
 }
