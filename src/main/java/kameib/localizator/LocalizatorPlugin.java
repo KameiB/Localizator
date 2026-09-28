@@ -66,6 +66,7 @@ public class LocalizatorPlugin implements IFMLLoadingPlugin {
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Ankh Charm Web Immune Mixin", "mixins.localizator.bountifulbaubles.ankhcharmcobweb.json"));
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Ankh Shield Web Immune Mixin", "mixins.localizator.bountifulbaubles.ankhshieldcobweb.json"));
         bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Localized Wormhole Messages Mixin", "mixins.localizator.bountifulbaubles.wormholemessages.json"));
+        bountifulbaublesList.add(new ConfigToMixin("(BountifulBaubles) Localized Server Item Names Mixin", "mixins.localizator.bountifulbaubles.servernames.json"));
         map.put("bountifulbaubles", bountifulbaublesList);
         // Rough Tweaks
         List<ConfigToMixin> roughtweaksList = new ArrayList<>();

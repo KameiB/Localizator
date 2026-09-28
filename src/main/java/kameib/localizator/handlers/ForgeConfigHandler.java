@@ -296,6 +296,12 @@ public class ForgeConfigHandler {
 		@Config.RequiresMcRestart
 		public boolean bountifulbaublesWormholeMessages = !Production.inProduction;
 
+		@Config.Comment("Localizes BountifulBaubles item names on dedicated servers instead of showing their lang keys.")
+		@Config.Name("(BountifulBaubles) Localized Server Item Names Mixin")
+		@Config.LangKey("config.localizator.mixins.bountifulbaublesServerItemNamesMixin")
+		@Config.RequiresMcRestart
+		public boolean bountifulbaublesServerItemNames = !Production.inProduction;
+
 		@Config.Comment("Adds the capability to interpret the \"lang\" Tag into the \"InGame Info XML\"'s XML Parser.")
 		@Config.Name("(IGI) Add lang Tag in XML Mixin")
 		@Config.LangKey("config.localizator.mixins.IGIlangTagMixin")
